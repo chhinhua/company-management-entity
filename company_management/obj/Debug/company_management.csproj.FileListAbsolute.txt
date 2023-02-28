@@ -1,0 +1,9 @@
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\company_management.exe.config
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\company_management.exe
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Properties.Resources.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.exe
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.pdb
