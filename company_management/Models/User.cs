@@ -30,9 +30,7 @@ namespace company_management.Models
         public string Address { get => address; set => address = value; }
         public UserRole Role { get => role; set => role = value; }
 
-        public User()
-        {
-        }
+        public User() { }
 
         public User(string username, string password, string fullName,
                     string email, string address, UserRole role)
@@ -57,19 +55,10 @@ namespace company_management.Models
             Role = role;
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public override string ToString() 
+            => $"Username: {Username}\nFullName: {FullName}" +
+               $"\nEmail: {Email}\nAddress: {Address}\nRole: {Role}%";
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
     }
 }

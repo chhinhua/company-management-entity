@@ -18,7 +18,7 @@ namespace company_management
             InitializeComponent();
 
             User user = new User("username", "password", "fullName", "email", "address", UserRole.Admin);
-            MessageBox.Show(user.Password + user.Role);
+            MessageBox.Show(user.ToString());
 
          
         }
