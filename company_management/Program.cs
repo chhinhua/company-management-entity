@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using company_management.Models;
+using company_management.Views;
 
 namespace company_management
 {
@@ -17,7 +18,7 @@ namespace company_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
 
             
         }
