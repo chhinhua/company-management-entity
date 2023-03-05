@@ -73,6 +73,12 @@
     <Compile Include="Views\CompanyInfoForm.Designer.cs">
       <DependentUpon>CompanyInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormLeaveQuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormLeaveQuest.Designer.cs">
+      <DependentUpon>FormLeaveQuest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,16 +97,28 @@
     <Compile Include="Views\PasswordChangeForm.Designer.cs">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UpdateCPInfoUC.cs">
+    <Compile Include="Views\UC\UCLeaveRequestManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UpdateCPInfoUC.Designer.cs">
+    <Compile Include="Views\UC\UCLeaveRequestManagement.Designer.cs">
+      <DependentUpon>UCLeaveRequestManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UC\UCTimeKeeping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UCTimeKeeping.Designer.cs">
+      <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UC\UpdateCPInfoUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UpdateCPInfoUC.Designer.cs">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserManagementUC.cs">
+    <Compile Include="Views\UC\UserManagementUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserManagementUC.Designer.cs">
+    <Compile Include="Views\UC\UserManagementUC.Designer.cs">
       <DependentUpon>UserManagementUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\VerifyEmailForm.cs">
@@ -122,6 +140,9 @@
     <EmbeddedResource Include="Views\CompanyInfoForm.resx">
       <DependentUpon>CompanyInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormLeaveQuest.resx">
+      <DependentUpon>FormLeaveQuest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,10 +152,16 @@
     <EmbeddedResource Include="Views\PasswordChangeForm.resx">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UpdateCPInfoUC.resx">
+    <EmbeddedResource Include="Views\UC\UCLeaveRequestManagement.resx">
+      <DependentUpon>UCLeaveRequestManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UCTimeKeeping.resx">
+      <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UpdateCPInfoUC.resx">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserManagementUC.resx">
+    <EmbeddedResource Include="Views\UC\UserManagementUC.resx">
       <DependentUpon>UserManagementUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VerifyEmailForm.resx">
@@ -177,6 +204,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-chevron-left-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10673808141645017009-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10673808141645017009-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10673808141645017009-482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8437872081540882603-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21367537321540882611-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
