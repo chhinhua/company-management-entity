@@ -7,3 +7,25 @@ E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.exe
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.pdb
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\company_management.exe.config
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\company_management.exe
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\company_management.pdb
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.SuggestedBindingRedirects.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.exe
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.pdb
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.MainForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Guna.UI2.dll
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
