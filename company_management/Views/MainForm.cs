@@ -17,6 +17,7 @@ namespace company_management.Views
             InitializeComponent();
         }
 
+
         private void AddUC(UserControl Uc)
         {
             Uc.Dock= DockStyle.Fill;
@@ -29,21 +30,54 @@ namespace company_management.Views
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
+            LoginForm flogin = new LoginForm();
             this.Hide();
-            login.ShowDialog();
+            flogin.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            CompanyInfoForm companyInfo = new CompanyInfoForm();
+            CompanyInfoForm fcompanyInfo = new CompanyInfoForm();
             this.Hide();
-            companyInfo.Show();
+            fcompanyInfo.Show();
+        }
+
+        private void btnLeavereq_Click(object sender, EventArgs e)
+        {
+            UCLeaveRequestManagement ucLRM = new UCLeaveRequestManagement();
+            AddUC(ucLRM);
+        }
+
+        private void ptbProfile_Click(object sender, EventArgs e)
+        {
+            cbbprofile.DroppedDown= true;
+        }
+
+
+        private void btnCheckin_Click(object sender, EventArgs e)
+        {
+            UCTimeKeeping ucTimeKeeping = new UCTimeKeeping();
+            AddUC(ucTimeKeeping);
+        }
+
+        private void btnAssignment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKpi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

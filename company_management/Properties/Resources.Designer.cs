@@ -63,6 +63,36 @@ namespace company_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10673808141645017009_48 {
+            get {
+                object obj = ResourceManager.GetObject("10673808141645017009-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _10673808141645017009_481 {
+            get {
+                object obj = ResourceManager.GetObject("10673808141645017009-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _10673808141645017009_482 {
+            get {
+                object obj = ResourceManager.GetObject("10673808141645017009-482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _132352648716276482833764_128__1_ {
             get {
                 object obj = ResourceManager.GetObject("132352648716276482833764-128 (1)", resourceCulture);
@@ -76,6 +106,26 @@ namespace company_management.Properties {
         internal static System.Drawing.Bitmap _15009037641673701313_64 {
             get {
                 object obj = ResourceManager.GetObject("15009037641673701313-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _21367537321540882611_48 {
+            get {
+                object obj = ResourceManager.GetObject("21367537321540882611-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8437872081540882603_48 {
+            get {
+                object obj = ResourceManager.GetObject("8437872081540882603-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

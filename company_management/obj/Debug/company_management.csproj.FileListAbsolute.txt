@@ -26,3 +26,6 @@ D:\Winform\Final_project\company-management-project\company_management\obj\Debug
 D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Guna.UI2.dll
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
