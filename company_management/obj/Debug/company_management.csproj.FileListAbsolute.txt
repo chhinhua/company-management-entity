@@ -29,3 +29,15 @@ D:\Winform\Final_project\company-management-project\company_management\obj\Debug
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Guna.UI2.dll
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.LoginForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.MainForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.CopyComplete
