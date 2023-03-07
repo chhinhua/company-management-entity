@@ -1,6 +1,6 @@
-﻿namespace company_management.Views
+﻿namespace company_management.Views.UC
 {
-    partial class UCTimeKeeping
+    partial class UCTask
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,56 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dgvTK = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvTask = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpToTK = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpFromTK = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpToTask = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpFromTask = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbbTK = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.tbSearchTK = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbbTask = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.tbSearchTask = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
             // guna2Panel5
             // 
             this.guna2Panel5.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel5.BorderThickness = 1;
-            this.guna2Panel5.Controls.Add(this.dgvTK);
+            this.guna2Panel5.Controls.Add(this.dgvTask);
             this.guna2Panel5.Controls.Add(this.guna2DataGridView1);
             this.guna2Panel5.Location = new System.Drawing.Point(362, 28);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(992, 655);
-            this.guna2Panel5.TabIndex = 13;
+            this.guna2Panel5.TabIndex = 10;
             // 
-            // dgvTK
+            // dgvTask
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvTK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dgvTask.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTask.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,9 +77,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTK.ColumnHeadersHeight = 4;
-            this.dgvTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvTask.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTask.ColumnHeadersHeight = 4;
+            this.dgvTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,37 +87,37 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTK.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTK.Location = new System.Drawing.Point(0, 0);
-            this.dgvTK.Name = "dgvTK";
-            this.dgvTK.RowHeadersVisible = false;
-            this.dgvTK.RowHeadersWidth = 62;
-            this.dgvTK.RowTemplate.Height = 28;
-            this.dgvTK.Size = new System.Drawing.Size(992, 655);
-            this.dgvTK.TabIndex = 1;
-            this.dgvTK.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvTK.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvTK.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvTK.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvTK.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvTK.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvTK.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTK.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvTK.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvTK.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTK.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvTK.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvTK.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvTK.ThemeStyle.ReadOnly = false;
-            this.dgvTK.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvTK.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvTK.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTK.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvTK.ThemeStyle.RowsStyle.Height = 28;
-            this.dgvTK.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTK.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvTask.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTask.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTask.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvTask.Location = new System.Drawing.Point(0, 0);
+            this.dgvTask.Name = "dgvTask";
+            this.dgvTask.RowHeadersVisible = false;
+            this.dgvTask.RowHeadersWidth = 62;
+            this.dgvTask.RowTemplate.Height = 28;
+            this.dgvTask.Size = new System.Drawing.Size(992, 655);
+            this.dgvTask.TabIndex = 1;
+            this.dgvTask.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvTask.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvTask.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvTask.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvTask.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvTask.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvTask.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvTask.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvTask.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTask.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTask.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvTask.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvTask.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvTask.ThemeStyle.ReadOnly = false;
+            this.dgvTask.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvTask.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvTask.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTask.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvTask.ThemeStyle.RowsStyle.Height = 28;
+            this.dgvTask.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvTask.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2DataGridView1
             // 
@@ -186,13 +178,13 @@
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.label5);
             this.guna2Panel4.Controls.Add(this.label4);
-            this.guna2Panel4.Controls.Add(this.dtpToTK);
-            this.guna2Panel4.Controls.Add(this.dtpFromTK);
+            this.guna2Panel4.Controls.Add(this.dtpToTask);
+            this.guna2Panel4.Controls.Add(this.dtpFromTask);
             this.guna2Panel4.Controls.Add(this.label6);
             this.guna2Panel4.Location = new System.Drawing.Point(36, 295);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(302, 388);
-            this.guna2Panel4.TabIndex = 12;
+            this.guna2Panel4.TabIndex = 9;
             // 
             // label5
             // 
@@ -216,37 +208,37 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "FROM:";
             // 
-            // dtpToTK
+            // dtpToTask
             // 
-            this.dtpToTK.BorderRadius = 6;
-            this.dtpToTK.BorderThickness = 1;
-            this.dtpToTK.Checked = true;
-            this.dtpToTK.FillColor = System.Drawing.Color.White;
-            this.dtpToTK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpToTK.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToTK.Location = new System.Drawing.Point(94, 157);
-            this.dtpToTK.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpToTK.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpToTK.Name = "dtpToTK";
-            this.dtpToTK.Size = new System.Drawing.Size(200, 36);
-            this.dtpToTK.TabIndex = 0;
-            this.dtpToTK.Value = new System.DateTime(2023, 3, 6, 0, 25, 11, 176);
+            this.dtpToTask.BorderRadius = 6;
+            this.dtpToTask.BorderThickness = 1;
+            this.dtpToTask.Checked = true;
+            this.dtpToTask.FillColor = System.Drawing.Color.White;
+            this.dtpToTask.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpToTask.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpToTask.Location = new System.Drawing.Point(94, 157);
+            this.dtpToTask.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpToTask.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpToTask.Name = "dtpToTask";
+            this.dtpToTask.Size = new System.Drawing.Size(200, 36);
+            this.dtpToTask.TabIndex = 0;
+            this.dtpToTask.Value = new System.DateTime(2023, 3, 6, 0, 25, 11, 176);
             // 
-            // dtpFromTK
+            // dtpFromTask
             // 
-            this.dtpFromTK.BorderRadius = 6;
-            this.dtpFromTK.BorderThickness = 1;
-            this.dtpFromTK.Checked = true;
-            this.dtpFromTK.FillColor = System.Drawing.Color.White;
-            this.dtpFromTK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpFromTK.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromTK.Location = new System.Drawing.Point(94, 88);
-            this.dtpFromTK.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFromTK.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFromTK.Name = "dtpFromTK";
-            this.dtpFromTK.Size = new System.Drawing.Size(200, 36);
-            this.dtpFromTK.TabIndex = 1;
-            this.dtpFromTK.Value = new System.DateTime(2023, 3, 6, 0, 25, 11, 176);
+            this.dtpFromTask.BorderRadius = 6;
+            this.dtpFromTask.BorderThickness = 1;
+            this.dtpFromTask.Checked = true;
+            this.dtpFromTask.FillColor = System.Drawing.Color.White;
+            this.dtpFromTask.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpFromTask.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFromTask.Location = new System.Drawing.Point(94, 88);
+            this.dtpFromTask.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFromTask.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFromTask.Name = "dtpFromTask";
+            this.dtpFromTask.Size = new System.Drawing.Size(200, 36);
+            this.dtpFromTask.TabIndex = 1;
+            this.dtpFromTask.Value = new System.DateTime(2023, 3, 6, 0, 25, 11, 176);
             // 
             // label6
             // 
@@ -265,53 +257,53 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.cbbTK);
-            this.guna2Panel1.Controls.Add(this.tbSearchTK);
+            this.guna2Panel1.Controls.Add(this.cbbTask);
+            this.guna2Panel1.Controls.Add(this.tbSearchTask);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Location = new System.Drawing.Point(36, 28);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(302, 258);
-            this.guna2Panel1.TabIndex = 11;
+            this.guna2Panel1.TabIndex = 8;
             // 
-            // cbbTK
+            // cbbTask
             // 
-            this.cbbTK.BackColor = System.Drawing.Color.Transparent;
-            this.cbbTK.BorderColor = System.Drawing.Color.Black;
-            this.cbbTK.BorderRadius = 6;
-            this.cbbTK.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTK.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbTK.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbTK.ItemHeight = 30;
-            this.cbbTK.Location = new System.Drawing.Point(8, 77);
-            this.cbbTK.Name = "cbbTK";
-            this.cbbTK.Size = new System.Drawing.Size(286, 36);
-            this.cbbTK.TabIndex = 4;
+            this.cbbTask.BackColor = System.Drawing.Color.Transparent;
+            this.cbbTask.BorderColor = System.Drawing.Color.Black;
+            this.cbbTask.BorderRadius = 6;
+            this.cbbTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTask.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTask.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbTask.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbTask.ItemHeight = 30;
+            this.cbbTask.Location = new System.Drawing.Point(8, 77);
+            this.cbbTask.Name = "cbbTask";
+            this.cbbTask.Size = new System.Drawing.Size(286, 36);
+            this.cbbTask.TabIndex = 4;
             // 
-            // tbSearchTK
+            // tbSearchTask
             // 
-            this.tbSearchTK.BorderColor = System.Drawing.Color.Black;
-            this.tbSearchTK.BorderRadius = 6;
-            this.tbSearchTK.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSearchTK.DefaultText = "";
-            this.tbSearchTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSearchTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSearchTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSearchTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSearchTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearchTK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbSearchTK.ForeColor = System.Drawing.Color.Black;
-            this.tbSearchTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearchTK.Location = new System.Drawing.Point(8, 148);
-            this.tbSearchTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbSearchTK.Name = "tbSearchTK";
-            this.tbSearchTK.PasswordChar = '\0';
-            this.tbSearchTK.PlaceholderText = "";
-            this.tbSearchTK.SelectedText = "";
-            this.tbSearchTK.Size = new System.Drawing.Size(286, 47);
-            this.tbSearchTK.TabIndex = 3;
+            this.tbSearchTask.BorderColor = System.Drawing.Color.Black;
+            this.tbSearchTask.BorderRadius = 6;
+            this.tbSearchTask.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearchTask.DefaultText = "";
+            this.tbSearchTask.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSearchTask.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSearchTask.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearchTask.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearchTask.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearchTask.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbSearchTask.ForeColor = System.Drawing.Color.Black;
+            this.tbSearchTask.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearchTask.Location = new System.Drawing.Point(8, 148);
+            this.tbSearchTask.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbSearchTask.Name = "tbSearchTask";
+            this.tbSearchTask.PasswordChar = '\0';
+            this.tbSearchTask.PlaceholderText = "";
+            this.tbSearchTask.SelectedText = "";
+            this.tbSearchTask.Size = new System.Drawing.Size(286, 47);
+            this.tbSearchTask.TabIndex = 3;
             // 
             // label1
             // 
@@ -325,7 +317,7 @@
             this.label1.Text = "SEARCH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UCTimeKeeping
+            // UCTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -333,10 +325,10 @@
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "UCTimeKeeping";
+            this.Name = "UCTask";
             this.Size = new System.Drawing.Size(1390, 711);
             this.guna2Panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
@@ -346,19 +338,19 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvTK;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvTask;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpToTK;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFromTK;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpToTask;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFromTask;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbTK;
-        private Guna.UI2.WinForms.Guna2TextBox tbSearchTK;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbTask;
+        private Guna.UI2.WinForms.Guna2TextBox tbSearchTask;
         private System.Windows.Forms.Label label1;
     }
 }

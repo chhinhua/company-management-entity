@@ -41,3 +41,6 @@ E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.CopyComplete
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources

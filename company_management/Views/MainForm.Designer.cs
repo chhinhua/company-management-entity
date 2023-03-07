@@ -35,7 +35,7 @@
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeavereq = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimeKeep = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAssignment = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTask = new Guna.UI2.WinForms.Guna2Button();
             this.btnSalary = new Guna.UI2.WinForms.Guna2Button();
             this.btnKpi = new Guna.UI2.WinForms.Guna2Button();
             this.cbbprofile = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -69,7 +69,7 @@
             this.guna2Panel1.Controls.Add(this.btnHome);
             this.guna2Panel1.Controls.Add(this.btnLeavereq);
             this.guna2Panel1.Controls.Add(this.btnTimeKeep);
-            this.guna2Panel1.Controls.Add(this.btnAssignment);
+            this.guna2Panel1.Controls.Add(this.btnTask);
             this.guna2Panel1.Controls.Add(this.btnSalary);
             this.guna2Panel1.Controls.Add(this.btnKpi);
             this.guna2Panel1.Controls.Add(this.cbbprofile);
@@ -151,25 +151,25 @@
             this.btnTimeKeep.Text = "Time Keeping";
             this.btnTimeKeep.Click += new System.EventHandler(this.btnCheckin_Click);
             // 
-            // btnAssignment
+            // btnTask
             // 
-            this.btnAssignment.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnAssignment.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.btnAssignment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAssignment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAssignment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAssignment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAssignment.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAssignment.FillColor = System.Drawing.Color.White;
-            this.btnAssignment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignment.ForeColor = System.Drawing.Color.Black;
-            this.btnAssignment.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAssignment.Location = new System.Drawing.Point(284, 0);
-            this.btnAssignment.Name = "btnAssignment";
-            this.btnAssignment.Size = new System.Drawing.Size(142, 95);
-            this.btnAssignment.TabIndex = 18;
-            this.btnAssignment.Text = "Assignment";
-            this.btnAssignment.Click += new System.EventHandler(this.btnAssignment_Click);
+            this.btnTask.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTask.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btnTask.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTask.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTask.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTask.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTask.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTask.FillColor = System.Drawing.Color.White;
+            this.btnTask.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTask.ForeColor = System.Drawing.Color.Black;
+            this.btnTask.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTask.Location = new System.Drawing.Point(284, 0);
+            this.btnTask.Name = "btnTask";
+            this.btnTask.Size = new System.Drawing.Size(142, 95);
+            this.btnTask.TabIndex = 18;
+            this.btnTask.Text = "Task";
+            this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
             // 
             // btnSalary
             // 
@@ -311,7 +311,7 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnLeavereq;
         private Guna.UI2.WinForms.Guna2Button btnTimeKeep;
-        private Guna.UI2.WinForms.Guna2Button btnAssignment;
+        private Guna.UI2.WinForms.Guna2Button btnTask;
         private Guna.UI2.WinForms.Guna2Button btnSalary;
         private Guna.UI2.WinForms.Guna2Button btnKpi;
         private Guna.UI2.WinForms.Guna2PictureBox ptbProfile;
