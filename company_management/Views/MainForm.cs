@@ -1,4 +1,5 @@
-﻿using System;
+﻿using company_management.Views.UC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,19 +66,22 @@ namespace company_management.Views
             AddUC(ucTimeKeeping);
         }
 
-        private void btnAssignment_Click(object sender, EventArgs e)
+        private void btnTask_Click(object sender, EventArgs e)
         {
-
+            UCTask ucTask = new UCTask();
+            AddUC(ucTask);
         }
 
         private void btnSalary_Click(object sender, EventArgs e)
         {
-
+            UCSalary ucSalary = new UCSalary();
+            AddUC(ucSalary);
         }
 
         private void btnKpi_Click(object sender, EventArgs e)
         {
-
+            UC_KPI uc_KPI = new UC_KPI();
+            AddUC(uc_KPI);
         }
     }
 }

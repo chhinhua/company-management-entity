@@ -107,11 +107,29 @@
     <Compile Include="Views\UC\UCLeaveRequestManagement.Designer.cs">
       <DependentUpon>UCLeaveRequestManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UC\UCSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UCSalary.Designer.cs">
+      <DependentUpon>UCSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UC\UCTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UCTask.Designer.cs">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UC\UCTimeKeeping.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\UC\UCTimeKeeping.Designer.cs">
       <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UC\UC_KPI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UC_KPI.Designer.cs">
+      <DependentUpon>UC_KPI.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UC\UpdateCPInfoUC.cs">
       <SubType>UserControl</SubType>
@@ -159,8 +177,17 @@
     <EmbeddedResource Include="Views\UC\UCLeaveRequestManagement.resx">
       <DependentUpon>UCLeaveRequestManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UCSalary.resx">
+      <DependentUpon>UCSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UCTask.resx">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UCTimeKeeping.resx">
       <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UC_KPI.resx">
+      <DependentUpon>UC_KPI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UpdateCPInfoUC.resx">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
