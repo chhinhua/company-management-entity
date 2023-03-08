@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using company_management.Models;
 
 namespace company_management.Views
 {
     public partial class LoginForm : Form
     {
+        public static User loggedInUser;
+
         public LoginForm()
         {
             InitializeComponent();
         }
 
-
-
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            // login process
+            // if login cuccessful, create user object and save user info
+            //loggedInUser = new User(username, pass, fullname, email, address, role, avt);
+
             MainForm main = new MainForm();
             this.Hide();
             main.Show();

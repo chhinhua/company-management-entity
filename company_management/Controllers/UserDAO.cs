@@ -48,5 +48,7 @@ namespace company_management.Controllers
             }
             return imageBytes;
         }*/
+
+        
     }
 }
