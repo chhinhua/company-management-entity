@@ -13,7 +13,7 @@ namespace company_management
     {
         private readonly SqlConnection connection;
 
-        public DBConnection() => connection = new SqlConnection();
+        public DBConnection() => connection = new SqlConnection(Properties.Settings.Default.connStr);
 
         public void loadData(DataGridView dataGridView, string tableName)
         {

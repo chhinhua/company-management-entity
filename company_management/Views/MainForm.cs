@@ -1,18 +1,15 @@
 ﻿using company_management.Views.UC;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using company_management.Models;
 
 namespace company_management.Views
 {
     public partial class MainForm : Form
     {
+
+        public static User user;
+
         public MainForm()
         {
             InitializeComponent();
@@ -82,6 +79,12 @@ namespace company_management.Views
         {
             UC_KPI uc_KPI = new UC_KPI();
             AddUC(uc_KPI);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            UserManagementUC userManagement = new UserManagementUC();
+            AddUC(userManagement);
         }
     }
 }

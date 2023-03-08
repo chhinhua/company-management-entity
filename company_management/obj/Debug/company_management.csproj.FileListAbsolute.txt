@@ -68,3 +68,8 @@ D:\LTWin\project\company-management-project\company_management\obj\Debug\company
 D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
 D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.exe
 D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Database.mdf
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Database_log.ldf
