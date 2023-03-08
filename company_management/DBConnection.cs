@@ -1,4 +1,5 @@
-﻿using System;
+﻿using company_management.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -60,6 +61,40 @@ namespace company_management
                 connection.Close();
             }
         }
-    }
+
+        public void getShowUserProfile(int id, string sqlStr)
+        {
+
+            connection.Open();
+
+            // Tạo đối tượng SqlCommand
+            SqlCommand command = new SqlCommand(sqlStr, connection);
+
+            // Thực thi câu truy vấn SQL và đọc dữ liệu
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    // Đổ dữ liệu vào các text fiels tương ứng
+                    idUser = reader.GetInt32(reader.GetOrdinal("id"));
+                    username = reader.GetString(reader.GetOrdinal("username"));
+                    password = reader.GetString(reader.GetOrdinal("password"));
+                    fullName = reader.GetString(reader.GetOrdinal("fullName"));
+                    email = reader.GetString(reader.GetOrdinal("email"));
+                    address = reader.GetString(reader.GetOrdinal("address"));
+                    role = (UserRole)reader.GetInt32(reader.GetOrdinal("role"));
+                    avatar = (byte[])reader["avatar"];
+
+                    // Hiển thị ảnh lên PictureBox
+                    if (avatar != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream(avatar))
+                        {
+                            pictureBox1.Image = Image.FromStream(ms);
+                        }
+                    }
+                }
+            }
+        }
 }
 

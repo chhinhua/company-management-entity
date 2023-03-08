@@ -8,8 +8,6 @@ namespace company_management.Views
     public partial class MainForm : Form
     {
 
-        public static User user;
-
         public MainForm()
         {
             InitializeComponent();
