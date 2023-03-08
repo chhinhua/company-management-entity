@@ -40,6 +40,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,7 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CheckinCheckoutDAO.cs" />
     <Compile Include="Controllers\KpiDAO.cs" />
+    <Compile Include="Controllers\LeaveRequestDAO.cs" />
+    <Compile Include="Controllers\SalaryDAO.cs" />
     <Compile Include="Controllers\TaskDAO.cs" />
     <Compile Include="Controllers\UserDAO.cs" />
     <Compile Include="DBConnection.cs" />
