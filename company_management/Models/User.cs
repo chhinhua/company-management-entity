@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace company_management.Models
         private string email;
         private string address;
         private UserRole role;
+        private byte[] avatar;
 
         public int IdUser { get => idUser; set => idUser = value; }
         public string Username { get => username; set => username = value; }
@@ -29,10 +31,11 @@ namespace company_management.Models
         public string Email { get => email; set => email = value; }
         public string Address { get => address; set => address = value; }
         public UserRole Role { get => role; set => role = value; }
+        public byte[] Avatar { get => avatar; set => avatar = value; }
 
         public User() { }
 
-        public User(string username, string password, string fullName,
+        public User(string username, string password, string fullName, 
                     string email, string address, UserRole role)
         {
             Username = username;
@@ -43,22 +46,21 @@ namespace company_management.Models
             Role = role;
         }
 
-        public User(int idUser, string username, string password, string fullName, 
-                    string email, string address, UserRole role)
+        public User(string username, string password, string fullName, 
+                    string email, string address, UserRole role, byte[] avatar)
         {
-            IdUser = idUser;
             Username = username;
             Password = password;
             FullName = fullName;
             Email = email;
             Address = address;
             Role = role;
+            Avatar = avatar;
         }
 
         public override string ToString() 
             => $"Username: {Username}\nFullName: {FullName}" +
-               $"\nEmail: {Email}\nAddress: {Address}\nRole: {Role}%";
-
+               $"\nEmail: {Email}\nAddress: {Address}\nRole: {Role}";
 
     }
 }
