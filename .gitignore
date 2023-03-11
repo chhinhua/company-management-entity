@@ -2,6 +2,7 @@
 *.cache
 *.cache
 .vs/company_management/v16/.suo
+.vs/
 *.exe
 *.pdb
 company_management/bin/Debug/company_management.exe
