@@ -1,4 +1,6 @@
-﻿namespace company_management.Views
+﻿using System.Windows.Forms;
+
+namespace company_management.Views
 {
     partial class UserManagementUC
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +48,14 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox_role = new System.Windows.Forms.ComboBox();
+=======
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btbAdd = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+>>>>>>> hua
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,15 +63,20 @@
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(1073, 59);
+=======
+            this.label1.Size = new System.Drawing.Size(928, 38);
+>>>>>>> hua
             this.label1.TabIndex = 9;
             this.label1.Text = "USER MANAGEMENT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+<<<<<<< HEAD
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -71,9 +87,35 @@
             this.dataGridView.RowTemplate.Height = 28;
             this.dataGridView.Size = new System.Drawing.Size(671, 379);
             this.dataGridView.TabIndex = 8;
+=======
+            // guna2TextBox1
             // 
-            // label2
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox1.BorderRadius = 5;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(33, 54);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(455, 32);
+            this.guna2TextBox1.TabIndex = 53;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+>>>>>>> hua
             // 
+            // pictureBox1
+            // 
+<<<<<<< HEAD
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -82,9 +124,21 @@
             this.label2.Size = new System.Drawing.Size(102, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "Username:";
+=======
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::company_management.Properties.Resources.icons8_search_48;
+            this.pictureBox1.Location = new System.Drawing.Point(459, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+>>>>>>> hua
             // 
-            // label3
+            // dataGridView
             // 
+<<<<<<< HEAD
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -257,18 +311,28 @@
             this.guna2Button1.Size = new System.Drawing.Size(107, 26);
             this.guna2Button1.TabIndex = 44;
             this.guna2Button1.Text = "REMOVE";
+=======
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(17, 135);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.RowTemplate.Height = 28;
+            this.dataGridView.Size = new System.Drawing.Size(881, 456);
+            this.dataGridView.TabIndex = 57;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
+            this.dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_RowPostPaint);
+>>>>>>> hua
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.White;
-            this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
-            this.btnUpdate.BorderRadius = 15;
-            this.btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnUpdate.BorderThickness = 2;
+            this.btnUpdate.BorderRadius = 10;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+<<<<<<< HEAD
             this.btnUpdate.FillColor = System.Drawing.Color.White;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
@@ -279,9 +343,21 @@
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+=======
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = global::company_management.Properties.Resources.icons8_uninstalling_updates_32;
+            this.btnUpdate.Location = new System.Drawing.Point(739, 54);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(140, 38);
+            this.btnUpdate.TabIndex = 52;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdatee_Click);
+>>>>>>> hua
             // 
-            // btnAdd
+            // btbAdd
             // 
+<<<<<<< HEAD
             this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(135)))), ((int)(((byte)(48)))));
             this.btnAdd.BorderRadius = 15;
@@ -323,12 +399,29 @@
             this.comboBox_role.Name = "comboBox_role";
             this.comboBox_role.Size = new System.Drawing.Size(171, 24);
             this.comboBox_role.TabIndex = 48;
+=======
+            this.btbAdd.BorderRadius = 10;
+            this.btbAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btbAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btbAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btbAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btbAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbAdd.ForeColor = System.Drawing.Color.White;
+            this.btbAdd.Image = global::company_management.Properties.Resources.icons8_add_64;
+            this.btbAdd.Location = new System.Drawing.Point(566, 54);
+            this.btbAdd.Name = "btbAdd";
+            this.btbAdd.Size = new System.Drawing.Size(140, 38);
+            this.btbAdd.TabIndex = 51;
+            this.btbAdd.Text = "Add";
+            this.btbAdd.Click += new System.EventHandler(this.btbAdd_Click);
+>>>>>>> hua
             // 
             // UserManagementUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.Controls.Add(this.comboBox_role);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAdd);
@@ -350,15 +443,28 @@
             this.Name = "UserManagementUC";
             this.Size = new System.Drawing.Size(1073, 539);
             this.Load += new System.EventHandler(this.UserManagementUC_Load);
+=======
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.btbAdd);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UserManagementUC";
+            this.Size = new System.Drawing.Size(928, 618);
+            this.Load += new System.EventHandler(this.UserManagementUC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+>>>>>>> hua
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -375,5 +481,12 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox_role;
+=======
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private PictureBox pictureBox1;
+        private DataGridView dataGridView;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btbAdd;
+>>>>>>> hua
     }
 }

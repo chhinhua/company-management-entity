@@ -1,0 +1,12 @@
+
+*.cache
+*.cache
+.vs/company_management/v16/.suo
+*.exe
+*.pdb
+company_management/bin/Debug/company_management.exe
+*.pdb
+*.mdf
+*.ldf
+*.cs
+*.csproj
