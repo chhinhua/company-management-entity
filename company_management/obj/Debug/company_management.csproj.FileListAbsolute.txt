@@ -73,3 +73,4 @@ E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Database.mdf
 E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Database_log.ldf
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.AddUserForm.resources

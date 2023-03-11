@@ -13,9 +13,9 @@ namespace company_management.Controllers
 
         public void addUser(User user)
         {
-            string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, address, role)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
-                   user.Username, user.Password, user.FullName, user.Email, user.Address, user.Role);
+            string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, phoneNumber, address, role)" +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
+                   user.Username, user.Password, user.FullName, user.Email, user.PhoneNumber, user.Address, user.Role);
             dBConnection.executeQuery(sqlStr);
         }
 

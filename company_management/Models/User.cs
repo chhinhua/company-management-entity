@@ -20,6 +20,7 @@ namespace company_management.Models
         private string password;
         private string fullName;
         private string email;
+        private string phoneNumber;
         private string address;
         private UserRole role;
         private byte[] avatar;
@@ -29,6 +30,7 @@ namespace company_management.Models
         public string Password { get => password; set => password = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public string Email { get => email; set => email = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Address { get => address; set => address = value; }
         public UserRole Role { get => role; set => role = value; }
         public byte[] Avatar { get => avatar; set => avatar = value; }
@@ -36,23 +38,25 @@ namespace company_management.Models
         public User() { }
 
         public User(string username, string password, string fullName, 
-                    string email, string address, UserRole role)
+                    string email, string phoneNumber, string address, UserRole role)
         {
             Username = username;
             Password = password;
             FullName = fullName;
             Email = email;
+            PhoneNumber = phoneNumber;
             Address = address;
             Role = role;
         }
 
         public User(string username, string password, string fullName, 
-                    string email, string address, UserRole role, byte[] avatar)
+                    string email, string phoneNumber, string address, UserRole role, byte[] avatar)
         {
             Username = username;
             Password = password;
             FullName = fullName;
             Email = email;
+            PhoneNumber = phoneNumber;
             Address = address;
             Role = role;
             Avatar = avatar;
@@ -60,7 +64,8 @@ namespace company_management.Models
 
         public override string ToString() 
             => $"Username: {Username}\nFullName: {FullName}" +
-               $"\nEmail: {Email}\nAddress: {Address}\nRole: {Role}";
+               $"\nEmail: {Email}\nPhone: {PhoneNumber}" +
+               $"\nAddress: {Address}\nRole: {Role}";
 
     }
 }

@@ -29,6 +29,9 @@ namespace company_management
 
                 dataGridView.DataSource = dataTable;
                 dataGridView.Columns["Id"].Visible = false;
+                dataGridView.Columns["password"].Visible = false;
+                dataGridView.Columns["role"].Visible = false;
+                dataGridView.Columns["avatar"].Visible = false;
             }
             catch (Exception exc)
             {
@@ -62,7 +65,7 @@ namespace company_management
             }
         }
 
-        public void getShowUserProfile(int id, string sqlStr)
+        /*public void getShowUserProfile(int id, string sqlStr)
         {
 
             connection.Open();
@@ -94,7 +97,9 @@ namespace company_management
                         }
                     }
                 }
-            }
-        }
+             }
+         }*/
+    }
+        
 }
 
