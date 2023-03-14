@@ -24,11 +24,21 @@ namespace company_management.Views
             main.Show();
         }
 
-        private void btnForgotpw_Click(object sender, EventArgs e)
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            this.Hide();
+            main.Show();
+        }
+
+        private void btnForgotpw_Click_1(object sender, EventArgs e)
         {
             VerifyEmailForm verifyEmail = new VerifyEmailForm();
             this.Hide();
             verifyEmail.Show();
         }
+
+   
     }
 }

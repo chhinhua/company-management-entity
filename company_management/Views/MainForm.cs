@@ -51,7 +51,7 @@ namespace company_management.Views
 
         private void ptbProfile_Click(object sender, EventArgs e)
         {
-            cbbprofile.DroppedDown= true;
+            combobox_profile.DroppedDown= true;
         }
 
 
@@ -83,6 +83,10 @@ namespace company_management.Views
         {
             UserManagementUC userManagement = new UserManagementUC();
             AddUC(userManagement);
+        }
+
+        private void picboxProfile_Click(object sender, EventArgs e)
+        {
         }
     }
 }
