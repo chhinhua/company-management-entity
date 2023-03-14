@@ -38,11 +38,7 @@ namespace company_management.Models
         public User() { }
 
         public User(string username, string password, string fullName, 
-<<<<<<< HEAD
-                    string email, string address, UserRole role)
-=======
                     string email, string phoneNumber, string address, UserRole role)
->>>>>>> hua
         {
             Username = username;
             Password = password;
@@ -54,11 +50,7 @@ namespace company_management.Models
         }
 
         public User(string username, string password, string fullName, 
-<<<<<<< HEAD
-                    string email, string address, UserRole role, byte[] avatar)
-=======
                     string email, string phoneNumber, string address, UserRole role, byte[] avatar)
->>>>>>> hua
         {
             Username = username;
             Password = password;
@@ -72,12 +64,8 @@ namespace company_management.Models
 
         public override string ToString() 
             => $"Username: {Username}\nFullName: {FullName}" +
-<<<<<<< HEAD
-               $"\nEmail: {Email}\nAddress: {Address}\nRole: {Role}";
-=======
                $"\nEmail: {Email}\nPhone: {PhoneNumber}" +
                $"\nAddress: {Address}\nRole: {Role}";
->>>>>>> hua
 
     }
 }

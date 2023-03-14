@@ -290,8 +290,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
-<<<<<<< HEAD
-=======
+    <None Include="Resources\user-circle %281%29.png" />
+    <None Include="Resources\x.png" />
     <None Include="Resources\icons8-search-48.png" />
     <None Include="Resources\icons8-uninstalling-updates-32.png" />
     <None Include="Resources\icons8-add-32.png" />
@@ -300,7 +300,6 @@
     <None Include="Resources\avatar.jpg" />
     <None Include="Resources\icons8-add-64.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
->>>>>>> hua
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
