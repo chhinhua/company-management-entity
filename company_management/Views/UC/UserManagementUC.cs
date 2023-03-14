@@ -69,6 +69,14 @@ namespace company_management.Views
 
         }
 
-    
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

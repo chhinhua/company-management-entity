@@ -299,6 +299,9 @@
     <None Include="Resources\icons8-add-48.png" />
     <None Include="Resources\avatar.jpg" />
     <None Include="Resources\icons8-add-64.png" />
+    <None Include="Resources\brand-apple.png" />
+    <None Include="Resources\company-background.png" />
+    <None Include="Resources\download.jpg" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
