@@ -9,7 +9,7 @@ namespace company_management.Controllers
 
         public CheckinCheckoutDAO() => dBConnection = new DBConnection();
 
-        public void loadCheckinCheckout(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "checkin_checkout");
+        //public void loadCheckinCheckout(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "checkin_checkout");
 
         public void addCheckinCheckout(CheckinCheckout checkinCheckout)
         {

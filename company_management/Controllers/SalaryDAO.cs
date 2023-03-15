@@ -9,7 +9,7 @@ namespace company_management.Controllers
 
         public SalaryDAO() => dBConnection = new DBConnection();
 
-        public void loadSalary(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "salary");
+        //public void loadSalary(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "salary");
 
         public void addSalary(Salary salary)
         {

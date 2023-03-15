@@ -9,10 +9,26 @@ namespace company_management.Controllers
 
         public UserDAO() => dBConnection = new DBConnection();
 
-        public void loadUser(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "users");
+        public void loadUsers(DataGridView dataGridView)
+        {
+            string query = string.Format("SELECT * FROM {0}", "users");
+            dBConnection.loadData(dataGridView, "users", query);
+
+            dataGridView.Columns["Id"].Visible = false;
+            dataGridView.Columns["password"].Visible = false;
+            dataGridView.Columns["role"].Visible = false;
+            dataGridView.Columns["avatar"].Visible = false;
+        }
+
+        public void searchUsers(DataGridView dataGridView)
+        {
+            string query = string.Format("SELECT * FROM {0}", "users");
+            dBConnection.loadData(dataGridView, "users", query);
+        }
 
         public void addUser(User user)
         {
+            
             string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, phoneNumber, address, role)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
                    user.Username, user.Password, user.FullName, user.Email, user.PhoneNumber, user.Address, user.Role);

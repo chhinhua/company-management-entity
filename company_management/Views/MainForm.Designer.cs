@@ -107,7 +107,7 @@
             // 
             this.combobox_profile.AutoRoundedCorners = true;
             this.combobox_profile.BackColor = System.Drawing.Color.Transparent;
-            this.combobox_profile.BorderColor = System.Drawing.Color.Transparent;
+            this.combobox_profile.BorderColor = System.Drawing.Color.Silver;
             this.combobox_profile.BorderRadius = 17;
             this.combobox_profile.BorderThickness = 0;
             this.combobox_profile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;

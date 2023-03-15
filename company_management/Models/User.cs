@@ -49,6 +49,20 @@ namespace company_management.Models
             Role = role;
         }
 
+        public User(int idUser, string username, string password, string fullName,
+                    string email, string phoneNumber, string address, UserRole role, byte[] avatar)
+        {
+            IdUser = idUser;
+            Username = username;
+            Password = password;
+            FullName = fullName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Address = address;
+            Role = role;
+            Avatar = avatar;
+        }
+
         public User(string username, string password, string fullName, 
                     string email, string phoneNumber, string address, UserRole role, byte[] avatar)
         {

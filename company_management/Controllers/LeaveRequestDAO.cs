@@ -9,7 +9,7 @@ namespace company_management.Controllers
 
         public LeaveRequestDAO() => dBConnection = new DBConnection();
 
-        public void loadLeaveRequest(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "leave_request");
+        //public void loadLeaveRequest(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "leave_request");
 
         public void addLeaveRequest(LeaveRequest leaveRequest)
         {
