@@ -9,7 +9,7 @@ namespace company_management.Controllers
 
         public KpiDAO() => dBConnection = new DBConnection();
 
-        public void loadKpi(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "kpi");
+        //public void loadKpi(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "kpi");
 
         public void addKpi(KPI kpi)
         {

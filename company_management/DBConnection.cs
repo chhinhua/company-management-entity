@@ -16,26 +16,21 @@ namespace company_management
 
         public DBConnection() => connection = new SqlConnection(Properties.Settings.Default.connStr);
 
-        public void loadData(DataGridView dataGridView, string tableName)
+        public void loadData(DataGridView dataGridView, string tableName, string query)
         {
             try
             {
                 connection.Open();
-                string sqlStr = string.Format("SELECT * FROM {0}", tableName);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
                 dataGridView.DataSource = dataTable;
-                dataGridView.Columns["Id"].Visible = false;
-                dataGridView.Columns["password"].Visible = false;
-                dataGridView.Columns["role"].Visible = false;
-                dataGridView.Columns["avatar"].Visible = false;
             }
-            catch (Exception exc)
+            catch (Exception e)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -55,9 +50,10 @@ namespace company_management
                     MessageBox.Show("Successfully");
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Failed action");
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Failed action");
             }
             finally
             {
