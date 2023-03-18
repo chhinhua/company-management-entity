@@ -58,8 +58,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1384, 59);
+            this.label1.Size = new System.Drawing.Size(1557, 74);
             this.label1.TabIndex = 10;
+            this.label1.Text = " ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabbar
@@ -77,14 +78,14 @@
             this.tabbar.Controls.Add(this.btnKpi);
             this.tabbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbar.Location = new System.Drawing.Point(0, 59);
+            this.tabbar.Location = new System.Drawing.Point(0, 74);
             this.tabbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabbar.Name = "tabbar";
             this.tabbar.ShadowDecoration.BorderRadius = 0;
             this.tabbar.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tabbar.ShadowDecoration.Enabled = true;
             this.tabbar.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
-            this.tabbar.Size = new System.Drawing.Size(1384, 57);
+            this.tabbar.Size = new System.Drawing.Size(1557, 71);
             this.tabbar.TabIndex = 13;
             this.tabbar.TabStop = true;
             // 
@@ -94,10 +95,11 @@
             this.picboxProfile.FillColor = System.Drawing.Color.Transparent;
             this.picboxProfile.Image = global::company_management.Properties.Resources.user_circle__1_;
             this.picboxProfile.ImageRotate = 0F;
-            this.picboxProfile.Location = new System.Drawing.Point(1304, 8);
+            this.picboxProfile.Location = new System.Drawing.Point(1467, 10);
+            this.picboxProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picboxProfile.Name = "picboxProfile";
             this.picboxProfile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picboxProfile.Size = new System.Drawing.Size(50, 46);
+            this.picboxProfile.Size = new System.Drawing.Size(56, 58);
             this.picboxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxProfile.TabIndex = 21;
             this.picboxProfile.TabStop = false;
@@ -126,10 +128,10 @@
             this.combobox_profile.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.combobox_profile.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
             this.combobox_profile.ItemsAppearance.SelectedBackColor = System.Drawing.Color.Silver;
-            this.combobox_profile.Location = new System.Drawing.Point(1223, 17);
+            this.combobox_profile.Location = new System.Drawing.Point(1376, 21);
             this.combobox_profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.combobox_profile.Name = "combobox_profile";
-            this.combobox_profile.Size = new System.Drawing.Size(158, 36);
+            this.combobox_profile.Size = new System.Drawing.Size(177, 36);
             this.combobox_profile.TabIndex = 0;
             // 
             // guna2Button1
@@ -146,10 +148,10 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2Button1.Location = new System.Drawing.Point(559, 0);
+            this.guna2Button1.Location = new System.Drawing.Point(635, 0);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(70, 57);
+            this.guna2Button1.Size = new System.Drawing.Size(79, 71);
             this.guna2Button1.TabIndex = 20;
             this.guna2Button1.Text = "Users";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -168,10 +170,10 @@
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnHome.Location = new System.Drawing.Point(504, 0);
+            this.btnHome.Location = new System.Drawing.Point(574, 0);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(55, 57);
+            this.btnHome.Size = new System.Drawing.Size(61, 71);
             this.btnHome.TabIndex = 13;
             this.btnHome.Text = "KPI";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -190,10 +192,10 @@
             this.btnLeavereq.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeavereq.ForeColor = System.Drawing.Color.Black;
             this.btnLeavereq.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnLeavereq.Location = new System.Drawing.Point(369, 0);
+            this.btnLeavereq.Location = new System.Drawing.Point(418, 0);
             this.btnLeavereq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLeavereq.Name = "btnLeavereq";
-            this.btnLeavereq.Size = new System.Drawing.Size(135, 57);
+            this.btnLeavereq.Size = new System.Drawing.Size(156, 71);
             this.btnLeavereq.TabIndex = 19;
             this.btnLeavereq.Text = "Leave Request";
             this.btnLeavereq.Click += new System.EventHandler(this.btnLeavereq_Click);
@@ -213,10 +215,10 @@
             this.btnTimeKeep.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimeKeep.ForeColor = System.Drawing.Color.Black;
             this.btnTimeKeep.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTimeKeep.Location = new System.Drawing.Point(239, 0);
+            this.btnTimeKeep.Location = new System.Drawing.Point(267, 0);
             this.btnTimeKeep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimeKeep.Name = "btnTimeKeep";
-            this.btnTimeKeep.Size = new System.Drawing.Size(130, 57);
+            this.btnTimeKeep.Size = new System.Drawing.Size(151, 71);
             this.btnTimeKeep.TabIndex = 14;
             this.btnTimeKeep.Text = "Time Keeping";
             this.btnTimeKeep.Click += new System.EventHandler(this.btnCheckin_Click);
@@ -236,10 +238,10 @@
             this.btnTask.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTask.ForeColor = System.Drawing.Color.Black;
             this.btnTask.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTask.Location = new System.Drawing.Point(176, 0);
+            this.btnTask.Location = new System.Drawing.Point(196, 0);
             this.btnTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTask.Name = "btnTask";
-            this.btnTask.Size = new System.Drawing.Size(63, 57);
+            this.btnTask.Size = new System.Drawing.Size(71, 71);
             this.btnTask.TabIndex = 18;
             this.btnTask.Text = "Task";
             this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
@@ -259,10 +261,10 @@
             this.btnSalary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalary.ForeColor = System.Drawing.Color.Black;
             this.btnSalary.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSalary.Location = new System.Drawing.Point(101, 0);
+            this.btnSalary.Location = new System.Drawing.Point(112, 0);
             this.btnSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalary.Name = "btnSalary";
-            this.btnSalary.Size = new System.Drawing.Size(75, 57);
+            this.btnSalary.Size = new System.Drawing.Size(84, 71);
             this.btnSalary.TabIndex = 16;
             this.btnSalary.Text = "Salary";
             this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
@@ -286,7 +288,7 @@
             this.btnKpi.Location = new System.Drawing.Point(0, 0);
             this.btnKpi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKpi.Name = "btnKpi";
-            this.btnKpi.Size = new System.Drawing.Size(101, 57);
+            this.btnKpi.Size = new System.Drawing.Size(112, 71);
             this.btnKpi.TabIndex = 17;
             this.btnKpi.Text = "Home";
             this.btnKpi.Click += new System.EventHandler(this.btnKpi_Click);
@@ -295,10 +297,10 @@
             // 
             this.pnContainer.Controls.Add(this.guna2Panel2);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContainer.Location = new System.Drawing.Point(0, 116);
+            this.pnContainer.Location = new System.Drawing.Point(0, 145);
             this.pnContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1384, 667);
+            this.pnContainer.Size = new System.Drawing.Size(1557, 834);
             this.pnContainer.TabIndex = 15;
             // 
             // guna2Panel2
@@ -310,7 +312,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1384, 667);
+            this.guna2Panel2.Size = new System.Drawing.Size(1557, 834);
             this.guna2Panel2.TabIndex = 0;
             // 
             // label2
@@ -319,9 +321,9 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(569, 5);
+            this.label2.Location = new System.Drawing.Point(640, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 45);
+            this.label2.Size = new System.Drawing.Size(276, 54);
             this.label2.TabIndex = 16;
             this.label2.Text = "KMS Solution";
             // 
@@ -330,10 +332,10 @@
             this.pictureBox2.BackColor = System.Drawing.Color.SaddleBrown;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::company_management.Properties.Resources.icons8_logout_rounded_100;
-            this.pictureBox2.Location = new System.Drawing.Point(1332, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(1498, 14);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox2.Size = new System.Drawing.Size(45, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
@@ -341,10 +343,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1384, 783);
+            this.ClientSize = new System.Drawing.Size(1557, 979);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnContainer);
             this.Controls.Add(this.tabbar);

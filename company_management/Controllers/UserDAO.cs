@@ -11,8 +11,7 @@ namespace company_management.Controllers
 
         public void loadUsers(DataGridView dataGridView)
         {
-            string query = string.Format("SELECT * FROM {0}", "users");
-            dBConnection.loadData(dataGridView, "users", query);
+            dBConnection.loadData(dataGridView, "users");
 
             dataGridView.Columns["Id"].Visible = false;
             dataGridView.Columns["password"].Visible = false;
@@ -23,7 +22,7 @@ namespace company_management.Controllers
         public void searchUsers(DataGridView dataGridView)
         {
             string query = string.Format("SELECT * FROM {0}", "users");
-            dBConnection.loadData(dataGridView, "users", query);
+            dBConnection.loadData(dataGridView, "users");
         }
 
         public void addUser(User user)

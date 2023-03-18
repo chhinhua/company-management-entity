@@ -9,7 +9,7 @@ namespace company_management.Controllers
 
         public TaskDAO() => dBConnection = new DBConnection();
 
-        //public void loadTask(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "task");
+        public void loadTask(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "task");
 
         public void addTask(Task task)
         {                                       
