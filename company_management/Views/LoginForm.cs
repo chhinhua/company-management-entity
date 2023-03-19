@@ -19,7 +19,7 @@ namespace company_management.Views
             // if login cuccessful, create user object and save user info
             //loggedInUser = new User(username, pass, fullname, email, address, role, avt);
 
-            MainForm main = new MainForm();
+            FormMain main = new FormMain();
             this.Hide();
             main.Show();
         }
@@ -27,7 +27,7 @@ namespace company_management.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainForm main = new MainForm();
+            FormMain main = new FormMain();
             this.Hide();
             main.Show();
         }

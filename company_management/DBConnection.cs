@@ -16,8 +16,10 @@ namespace company_management
 
         public DBConnection() => connection = new SqlConnection(Properties.Settings.Default.connStr);
 
-        public void loadData(DataGridView dataGridView, string tableName, string query)
+        public void loadData(DataGridView dataGridView, string tableName)
         {
+            string query = string.Format("SELECT * FROM {0}", tableName);
+
             try
             {
                 connection.Open();
