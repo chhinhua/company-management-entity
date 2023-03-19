@@ -31,6 +31,8 @@ namespace company_management.Views
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnHome.Location.X, btnHome.Location.Y);
+            UCHome uCHome = new UCHome();
+            AddUC(uCHome);
         }
 
         private void btnTask_Click(object sender, EventArgs e)
@@ -65,5 +67,10 @@ namespace company_management.Views
             this.lb_menu_active.Location = new Point(btnUser.Location.X, btnUser.Location.Y);
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            UCHome uCHome = new UCHome();
+            AddUC(uCHome);
+        }
     }
 }
