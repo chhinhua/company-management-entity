@@ -137,3 +137,4 @@ D:\Winform\Final_project\company-management-project\company_management\bin\Debug
 D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Threading.AccessControl.xml
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.exe.licenses
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.Fody.CopyLocal.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources

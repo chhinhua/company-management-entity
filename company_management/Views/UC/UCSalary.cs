@@ -16,5 +16,6 @@ namespace company_management.Views.UC
         {
             InitializeComponent();
         }
+
     }
 }
