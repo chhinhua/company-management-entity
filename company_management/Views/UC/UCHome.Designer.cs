@@ -60,7 +60,7 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(20, 21);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(315, 252);
             this.guna2Panel1.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.guna2Panel5.Controls.Add(this.label4);
             this.guna2Panel5.Controls.Add(this.label6);
             this.guna2Panel5.Location = new System.Drawing.Point(101, 137);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(119, 100);
             this.guna2Panel5.TabIndex = 3;
@@ -104,7 +104,7 @@
             this.guna2Panel4.Controls.Add(this.label2);
             this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.Location = new System.Drawing.Point(175, 18);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(119, 100);
             this.guna2Panel4.TabIndex = 3;
@@ -113,10 +113,10 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(3, 53);
+            this.label2.Location = new System.Drawing.Point(2, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 22);
+            this.label2.Size = new System.Drawing.Size(135, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Leave Request";
             // 
@@ -137,7 +137,7 @@
             this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Controls.Add(this.label5);
             this.guna2Panel3.Location = new System.Drawing.Point(23, 18);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(119, 100);
             this.guna2Panel3.TabIndex = 0;
@@ -176,7 +176,7 @@
             this.guna2Panel2.Controls.Add(this.label7);
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(375, 21);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(504, 319);
             this.guna2Panel2.TabIndex = 1;
@@ -233,7 +233,7 @@
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
             this.guna2Panel6.Location = new System.Drawing.Point(20, 419);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(859, 65);
             this.guna2Panel6.TabIndex = 2;
@@ -245,7 +245,7 @@
             this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCHome";
             this.Size = new System.Drawing.Size(897, 516);
             this.guna2Panel1.ResumeLayout(false);

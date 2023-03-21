@@ -123,6 +123,16 @@ namespace company_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8011 {
+            get {
+                object obj = ResourceManager.GetObject("8011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8437872081540882603_48 {
             get {
                 object obj = ResourceManager.GetObject("8437872081540882603-48", resourceCulture);
@@ -426,6 +436,26 @@ namespace company_management.Properties {
         internal static System.Drawing.Bitmap icons8_user_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap O9FG400 {
+            get {
+                object obj = ResourceManager.GetObject("O9FG400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap O9FG4001 {
+            get {
+                object obj = ResourceManager.GetObject("O9FG4001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

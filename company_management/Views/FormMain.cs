@@ -55,6 +55,8 @@ namespace company_management.Views
         private void btnSalary_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnSalary.Location.X, btnSalary.Location.Y);
+            UCSalary uCSalary = new UCSalary();
+            AddUC(uCSalary);
         }
 
         private void btnTimekeeping_Click(object sender, EventArgs e)

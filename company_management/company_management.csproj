@@ -474,6 +474,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\O9FG4001.jpg" />
+    <None Include="Resources\O9FG400.jpg" />
     <None Include="Resources\icons8-user-48.png" />
     <None Include="Resources\icons8-pencil-32.png" />
     <None Include="Resources\icons8-receive-euro-50.png" />
@@ -498,6 +500,7 @@
     <None Include="Resources\company-background.png" />
     <None Include="Resources\download.jpg" />
     <None Include="Resources\icons8-bell-50.png" />
+    <None Include="Resources\8011.jpg" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
