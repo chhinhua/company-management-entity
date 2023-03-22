@@ -67,12 +67,29 @@ namespace company_management.Views
         private void btnUser_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnUser.Location.X, btnUser.Location.Y);
+            UserManagementUC userManagementUC = new UserManagementUC();
+            AddUC(userManagementUC);
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             UCHome uCHome = new UCHome();
             AddUC(uCHome);
+        }
+
+        private void picboxProfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combobox_profile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pn_main_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

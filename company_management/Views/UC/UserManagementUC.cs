@@ -240,5 +240,9 @@ namespace company_management.Views
             }
         }
 
+        private void groupInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

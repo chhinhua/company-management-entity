@@ -28,5 +28,10 @@ namespace company_management.Views.UC
         {
             dgvTask.CurrentRow.Selected = true;
         }
+
+        private void dgvTask_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

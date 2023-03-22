@@ -501,6 +501,7 @@
     <None Include="Resources\download.jpg" />
     <None Include="Resources\icons8-bell-50.png" />
     <None Include="Resources\8011.jpg" />
+    <None Include="Resources\bell-filled.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
