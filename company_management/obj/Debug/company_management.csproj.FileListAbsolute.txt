@@ -173,3 +173,4 @@ E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\o
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddTaskForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UserProfileForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.ViewOrUpdateTaskForm.resources

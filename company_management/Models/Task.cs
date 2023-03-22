@@ -17,8 +17,7 @@ namespace company_management.Models
 
         public Task() { }
 
-        public Task(int idUser, string taskName, string description,
-                    DateTime deadline, int progress)
+        public Task(int idUser, string taskName, string description, DateTime deadline, int progress)
         {
             IdUser = idUser;
             TaskName = taskName;
@@ -35,7 +34,7 @@ namespace company_management.Models
         public int Progress { get => progress; set => progress = value; }
 
         public override string ToString()
-            => $"User Id: {IdTask}\nTaskName: {TaskName}" +
+            => $"User Id: {IdUser}\nTaskName: {TaskName}" +
                $"\nDescription: {Description}\nDeadline: {Deadline}\nProgress: {Progress}%";
 
     }

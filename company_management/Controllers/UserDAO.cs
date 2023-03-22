@@ -21,7 +21,6 @@ namespace company_management.Controllers
 
         public void searchUsers(DataGridView dataGridView)
         {
-            string query = string.Format("SELECT * FROM {0}", "users");
             dBConnection.loadData(dataGridView, "users");
         }
 

@@ -31,11 +31,11 @@ namespace company_management.Views
         {
             this.components = new System.ComponentModel.Container();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbox_Desciption = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbox_Username = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label_taskName = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.combbox_Assignee = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,53 +57,53 @@ namespace company_management.Views
             this.label7.Text = "Assignee:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tbAddress
+            // txtbox_Desciption
             // 
-            this.tbAddress.BorderColor = System.Drawing.Color.Black;
-            this.tbAddress.BorderRadius = 5;
-            this.tbAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbAddress.DefaultText = "";
-            this.tbAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddress.ForeColor = System.Drawing.Color.Black;
-            this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.Location = new System.Drawing.Point(35, 195);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.tbAddress.Multiline = true;
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.PasswordChar = '\0';
-            this.tbAddress.PlaceholderText = "";
-            this.tbAddress.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbAddress.SelectedText = "";
-            this.tbAddress.Size = new System.Drawing.Size(478, 136);
-            this.tbAddress.TabIndex = 76;
+            this.txtbox_Desciption.BorderColor = System.Drawing.Color.Black;
+            this.txtbox_Desciption.BorderRadius = 5;
+            this.txtbox_Desciption.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_Desciption.DefaultText = "";
+            this.txtbox_Desciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbox_Desciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbox_Desciption.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_Desciption.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_Desciption.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_Desciption.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Desciption.ForeColor = System.Drawing.Color.Black;
+            this.txtbox_Desciption.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_Desciption.Location = new System.Drawing.Point(35, 195);
+            this.txtbox_Desciption.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbox_Desciption.Multiline = true;
+            this.txtbox_Desciption.Name = "txtbox_Desciption";
+            this.txtbox_Desciption.PasswordChar = '\0';
+            this.txtbox_Desciption.PlaceholderText = "";
+            this.txtbox_Desciption.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtbox_Desciption.SelectedText = "";
+            this.txtbox_Desciption.Size = new System.Drawing.Size(478, 136);
+            this.txtbox_Desciption.TabIndex = 76;
             // 
-            // tbUsername
+            // txtbox_Username
             // 
-            this.tbUsername.BorderColor = System.Drawing.Color.Black;
-            this.tbUsername.BorderRadius = 5;
-            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUsername.DefaultText = "";
-            this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.ForeColor = System.Drawing.Color.Black;
-            this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.Location = new System.Drawing.Point(35, 121);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.PasswordChar = '\0';
-            this.tbUsername.PlaceholderText = "";
-            this.tbUsername.SelectedText = "";
-            this.tbUsername.Size = new System.Drawing.Size(478, 32);
-            this.tbUsername.TabIndex = 72;
+            this.txtbox_Username.BorderColor = System.Drawing.Color.Black;
+            this.txtbox_Username.BorderRadius = 5;
+            this.txtbox_Username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_Username.DefaultText = "";
+            this.txtbox_Username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbox_Username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbox_Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_Username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Username.ForeColor = System.Drawing.Color.Black;
+            this.txtbox_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_Username.Location = new System.Drawing.Point(35, 121);
+            this.txtbox_Username.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbox_Username.Name = "txtbox_Username";
+            this.txtbox_Username.PasswordChar = '\0';
+            this.txtbox_Username.PlaceholderText = "";
+            this.txtbox_Username.SelectedText = "";
+            this.txtbox_Username.Size = new System.Drawing.Size(478, 32);
+            this.txtbox_Username.TabIndex = 72;
             // 
             // label3
             // 
@@ -131,24 +131,24 @@ namespace company_management.Views
             this.label_taskName.Text = "Task name:";
             this.label_taskName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // guna2ComboBox1
+            // combbox_Assignee
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 5;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.combbox_Assignee.BackColor = System.Drawing.Color.Transparent;
+            this.combbox_Assignee.BorderRadius = 5;
+            this.combbox_Assignee.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combbox_Assignee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combbox_Assignee.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combbox_Assignee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combbox_Assignee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combbox_Assignee.ForeColor = System.Drawing.Color.Black;
+            this.combbox_Assignee.ItemHeight = 30;
+            this.combbox_Assignee.Items.AddRange(new object[] {
             "Admin",
             "Employee"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(35, 455);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(478, 36);
-            this.guna2ComboBox1.TabIndex = 84;
+            this.combbox_Assignee.Location = new System.Drawing.Point(35, 455);
+            this.combbox_Assignee.Name = "combbox_Assignee";
+            this.combbox_Assignee.Size = new System.Drawing.Size(478, 36);
+            this.combbox_Assignee.TabIndex = 84;
             // 
             // guna2BorderlessForm1
             // 
@@ -236,16 +236,17 @@ namespace company_management.Views
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.combbox_Assignee);
             this.Controls.Add(this.label_taskName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.tbAddress);
-            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.txtbox_Desciption);
+            this.Controls.Add(this.txtbox_Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUserForm";
+            this.Load += new System.EventHandler(this.AddTaskForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,11 +254,11 @@ namespace company_management.Views
 
         #endregion
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox tbAddress;
-        private Guna.UI2.WinForms.Guna2TextBox tbUsername;
+        private Guna.UI2.WinForms.Guna2TextBox txtbox_Desciption;
+        private Guna.UI2.WinForms.Guna2TextBox txtbox_Username;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_taskName;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox combbox_Assignee;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;

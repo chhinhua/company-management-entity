@@ -13,8 +13,14 @@ namespace company_management.Controllers
         {
             dBConnection.loadData(dataGridView, "task");
 
-            dataGridView.Columns["Id"].Visible = false;
+            dataGridView.Columns["id"].Visible = false;
             dataGridView.Columns["idUser"].Visible = false;
+        }
+
+        public void loadUserToCombobox(ComboBox comboBox)
+        {
+            string query = string.Format("SELECT * FROM users WHERE role <> 'admin'");
+            dBConnection.loadDataControl<ComboBox>(comboBox, query);
         }
 
         public void addTask(Task task)

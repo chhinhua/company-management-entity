@@ -14,6 +14,7 @@ namespace company_management.Views.UC
     public partial class UCTask : UserControl
     {
         TaskDAO taskDAO = new TaskDAO();
+
         public UCTask()
         {
             InitializeComponent();
@@ -47,7 +48,8 @@ namespace company_management.Views.UC
 
         private void btnUpdatee_Click(object sender, EventArgs e)
         {
-
+            ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
+            viewOrUpdate.Show();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -77,6 +79,21 @@ namespace company_management.Views.UC
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvTask_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex == dgvTask.Columns["progress"].Index)
+            {
+                e.PaintBackground(e.CellBounds, true);
+                e.PaintContent(e.CellBounds);
+
+                // Thêm ký tự % vào header của cột progress
+                string headerText = dgvTask.Columns["deadline"].HeaderText.Replace("deadline", "") + "(%)";
+                e.Graphics.DrawString(headerText, e.CellStyle.Font, Brushes.Black, e.CellBounds, new StringFormat { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far});
+
+                e.Handled = true;
+            }
         }
     }
 }

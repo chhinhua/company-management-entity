@@ -352,6 +352,12 @@
     <Compile Include="Views\VerifyEmailForm.Designer.cs">
       <DependentUpon>VerifyEmailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewOrUpdateTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewOrUpdateTaskForm.Designer.cs">
+      <DependentUpon>ViewOrUpdateTaskForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VerifyEmailForm.resx">
       <DependentUpon>VerifyEmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewOrUpdateTaskForm.resx">
+      <DependentUpon>ViewOrUpdateTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
