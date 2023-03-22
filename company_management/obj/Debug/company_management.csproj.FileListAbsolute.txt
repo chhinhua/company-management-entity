@@ -113,7 +113,6 @@ D:\Winform\Final_project\company-management-project\company_management\obj\Debug
 D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
-E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddUserForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.FormMain.resources
@@ -172,3 +171,5 @@ E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\b
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Threading.AccessControl.xml
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.Fody.CopyLocal.cache
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddTaskForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UserProfileForm.resources

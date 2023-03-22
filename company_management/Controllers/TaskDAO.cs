@@ -9,7 +9,13 @@ namespace company_management.Controllers
 
         public TaskDAO() => dBConnection = new DBConnection();
 
-        public void loadTask(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "task");
+        public void loadTasks(DataGridView dataGridView)
+        {
+            dBConnection.loadData(dataGridView, "task");
+
+            dataGridView.Columns["Id"].Visible = false;
+            dataGridView.Columns["idUser"].Visible = false;
+        }
 
         public void addTask(Task task)
         {                                       

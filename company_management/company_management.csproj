@@ -221,6 +221,7 @@
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -249,11 +250,11 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\AddUserForm.cs">
+    <Compile Include="Views\AddTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AddUserForm.Designer.cs">
-      <DependentUpon>AddUserForm.cs</DependentUpon>
+    <Compile Include="Views\AddTaskForm.Designer.cs">
+      <DependentUpon>AddTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CompanyInfoForm.cs">
       <SubType>Form</SubType>
@@ -339,6 +340,12 @@
     <Compile Include="Views\UC\UserManagementUC.Designer.cs">
       <DependentUpon>UserManagementUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserProfileForm.Designer.cs">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\VerifyEmailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,8 +363,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\AddUserForm.resx">
-      <DependentUpon>AddUserForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddTaskForm.resx">
+      <DependentUpon>AddTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CompanyInfoForm.resx">
       <DependentUpon>CompanyInfoForm.cs</DependentUpon>
@@ -400,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UserManagementUC.resx">
       <DependentUpon>UserManagementUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserProfileForm.resx">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VerifyEmailForm.resx">
       <DependentUpon>VerifyEmailForm.cs</DependentUpon>
@@ -474,6 +484,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\printer.png" />
     <None Include="Resources\O9FG4001.jpg" />
     <None Include="Resources\O9FG400.jpg" />
     <None Include="Resources\icons8-user-48.png" />
@@ -502,6 +513,8 @@
     <None Include="Resources\icons8-bell-50.png" />
     <None Include="Resources\8011.jpg" />
     <None Include="Resources\bell-filled.png" />
+    <None Include="Resources\device-floppy.png" />
+    <None Include="Resources\arrow-back-up.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
