@@ -39,12 +39,14 @@ namespace company_management.Views
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtbox_Desciption = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbox_Username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbox_Taskname = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.assigned_value = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.CircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.circleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.progressValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.circleProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CirclePictureBox1
@@ -52,10 +54,10 @@ namespace company_management.Views
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.Image = global::company_management.Properties.Resources.avatar1;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(40, 76);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 76);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(149, 140);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(103, 91);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 104;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -199,54 +201,53 @@ namespace company_management.Views
             this.txtbox_Desciption.Size = new System.Drawing.Size(478, 136);
             this.txtbox_Desciption.TabIndex = 108;
             // 
-            // txtbox_Username
+            // txtbox_Taskname
             // 
-            this.txtbox_Username.BorderColor = System.Drawing.Color.Black;
-            this.txtbox_Username.BorderRadius = 5;
-            this.txtbox_Username.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Username.DefaultText = "";
-            this.txtbox_Username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbox_Username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbox_Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_Username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_Username.ForeColor = System.Drawing.Color.Black;
-            this.txtbox_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_Username.Location = new System.Drawing.Point(265, 76);
-            this.txtbox_Username.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbox_Username.Name = "txtbox_Username";
-            this.txtbox_Username.PasswordChar = '\0';
-            this.txtbox_Username.PlaceholderText = "";
-            this.txtbox_Username.SelectedText = "";
-            this.txtbox_Username.Size = new System.Drawing.Size(478, 32);
-            this.txtbox_Username.TabIndex = 107;
+            this.txtbox_Taskname.BorderColor = System.Drawing.Color.Black;
+            this.txtbox_Taskname.BorderRadius = 5;
+            this.txtbox_Taskname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_Taskname.DefaultText = "";
+            this.txtbox_Taskname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbox_Taskname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbox_Taskname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_Taskname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_Taskname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_Taskname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Taskname.ForeColor = System.Drawing.Color.Black;
+            this.txtbox_Taskname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_Taskname.Location = new System.Drawing.Point(265, 76);
+            this.txtbox_Taskname.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbox_Taskname.Name = "txtbox_Taskname";
+            this.txtbox_Taskname.PasswordChar = '\0';
+            this.txtbox_Taskname.PlaceholderText = "";
+            this.txtbox_Taskname.SelectedText = "";
+            this.txtbox_Taskname.Size = new System.Drawing.Size(478, 32);
+            this.txtbox_Taskname.TabIndex = 107;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(36, 38);
+            this.label1.Location = new System.Drawing.Point(37, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 28);
+            this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 115;
             this.label1.Text = "Assigned person";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label4
+            // assigned_value
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(35, 237);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 28);
-            this.label4.TabIndex = 116;
-            this.label4.Text = "Assigned person";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.assigned_value.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assigned_value.ForeColor = System.Drawing.Color.Black;
+            this.assigned_value.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.assigned_value.Location = new System.Drawing.Point(12, 183);
+            this.assigned_value.Name = "assigned_value";
+            this.assigned_value.Size = new System.Drawing.Size(192, 28);
+            this.assigned_value.TabIndex = 116;
+            this.assigned_value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -261,20 +262,32 @@ namespace company_management.Views
             this.label5.Text = "Progress:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CircleProgressBar
+            // circleProgressBar
             // 
-            this.CircleProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.CircleProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.CircleProgressBar.ForeColor = System.Drawing.Color.White;
-            this.CircleProgressBar.Location = new System.Drawing.Point(29, 370);
-            this.CircleProgressBar.Minimum = 0;
-            this.CircleProgressBar.Name = "CircleProgressBar";
-            this.CircleProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.CircleProgressBar.Size = new System.Drawing.Size(170, 170);
-            this.CircleProgressBar.TabIndex = 119;
-            this.CircleProgressBar.Text = "50";
-            this.CircleProgressBar.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
-            this.CircleProgressBar.Value = 50;
+            this.circleProgressBar.Controls.Add(this.progressValue);
+            this.circleProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.circleProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.circleProgressBar.ForeColor = System.Drawing.Color.White;
+            this.circleProgressBar.Location = new System.Drawing.Point(29, 370);
+            this.circleProgressBar.Minimum = 0;
+            this.circleProgressBar.Name = "circleProgressBar";
+            this.circleProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circleProgressBar.Size = new System.Drawing.Size(170, 170);
+            this.circleProgressBar.TabIndex = 119;
+            this.circleProgressBar.Text = "50";
+            this.circleProgressBar.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
+            this.circleProgressBar.Value = 50;
+            // 
+            // progressValue
+            // 
+            this.progressValue.BackColor = System.Drawing.Color.Transparent;
+            this.progressValue.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressValue.ForeColor = System.Drawing.Color.Red;
+            this.progressValue.Location = new System.Drawing.Point(44, 65);
+            this.progressValue.Name = "progressValue";
+            this.progressValue.Size = new System.Drawing.Size(95, 34);
+            this.progressValue.TabIndex = 120;
+            this.progressValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ViewOrUpdateTaskForm
             // 
@@ -282,8 +295,8 @@ namespace company_management.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 576);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.CircleProgressBar);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.circleProgressBar);
+            this.Controls.Add(this.assigned_value);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTime_deadline);
             this.Controls.Add(this.label2);
@@ -294,13 +307,14 @@ namespace company_management.Views
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtbox_Desciption);
-            this.Controls.Add(this.txtbox_Username);
+            this.Controls.Add(this.txtbox_Taskname);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Name = "ViewOrUpdateTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Detail";
             this.Load += new System.EventHandler(this.ViewOrUpdateTaskForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.circleProgressBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,10 +331,11 @@ namespace company_management.Views
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_Desciption;
-        private Guna.UI2.WinForms.Guna2TextBox txtbox_Username;
+        private Guna.UI2.WinForms.Guna2TextBox txtbox_Taskname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label assigned_value;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar CircleProgressBar;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar circleProgressBar;
+        private System.Windows.Forms.Label progressValue;
     }
 }

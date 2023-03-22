@@ -6,14 +6,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using company_management.Models;
 
 namespace company_management.Views.UC
 {
     public partial class UCTask : UserControl
     {
         TaskDAO taskDAO = new TaskDAO();
+        public static Task task = new Task();
 
         public UCTask()
         {
@@ -28,6 +29,16 @@ namespace company_management.Views.UC
         private void dgvTask_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvTask.CurrentRow.Selected = true;
+
+            if (e.RowIndex != -1)
+            {
+                object value = dgvTask.Rows[e.RowIndex].Cells[0].Value;
+                if (value != DBNull.Value)
+                {
+                    int id = Convert.ToInt32(value);
+                    task = taskDAO.GetTaskById(id);
+                }
+            }
         }
 
         private void dgvTask_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,7 +54,17 @@ namespace company_management.Views.UC
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (task.Id != 0)
+            {
+                DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    taskDAO.deleteTask(task.Id);
+                    taskDAO.loadTasks(dgvTask);
+                }
+            }
+            else MessageBox.Show("Task not selected!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnUpdatee_Click(object sender, EventArgs e)
@@ -90,7 +111,7 @@ namespace company_management.Views.UC
 
                 // Thêm ký tự % vào header của cột progress
                 string headerText = dgvTask.Columns["deadline"].HeaderText.Replace("deadline", "") + "(%)";
-                e.Graphics.DrawString(headerText, e.CellStyle.Font, Brushes.Black, e.CellBounds, new StringFormat { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far});
+                e.Graphics.DrawString(headerText, e.CellStyle.Font, Brushes.Black, e.CellBounds, new StringFormat { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far });
 
                 e.Handled = true;
             }

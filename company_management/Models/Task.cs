@@ -8,7 +8,7 @@ namespace company_management.Models
 {
     public class Task
     {
-        private int idTask;
+        private int id;
         private int idUser;
         private string taskName;
         private string description;
@@ -26,7 +26,7 @@ namespace company_management.Models
             Progress = progress;
         }
 
-        public int IdTask { get => idTask; set => idTask = value; }
+        public int Id { get => id; set => id = value; }
         public int IdUser { get => idUser; set => idUser = value; }
         public string TaskName { get => taskName; set => taskName = value; }
         public string Description { get => description; set => description = value; }

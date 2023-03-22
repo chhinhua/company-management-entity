@@ -207,16 +207,6 @@ namespace company_management.Views
                     txtbox_address.Text = row.Cells[6].Value.ToString();
 
                     string selectedValue = row.Cells[7].Value.ToString();
-
-                    // Thêm giá trị vào danh sách các mục của ComboBox
-                   /* if (!cbbox_role.Items.Contains(selectedValue))
-                    {
-                        cbbox_role.Items.Add(selectedValue);
-                    }
-
-                    // Set giá trị của ComboBox
-                    cbbox_role.SelectedItem = selectedValue;*/
-
                 }
             }
         }

@@ -39,6 +39,35 @@ namespace company_management
             }
         }
 
+        public T GetObjectById<T>(int objectId, string query) where T : new()
+        {
+            T obj = default(T);
+            connection.Open();
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    obj = new T();
+                    foreach (var prop in typeof(T).GetProperties())
+                    {
+                        if (reader[prop.Name] != DBNull.Value)
+                        {
+                            Type propType = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+                            object propValue = Convert.ChangeType(reader[prop.Name], propType);
+                            prop.SetValue(obj, propValue);
+                        }
+                    }
+                }
+                reader.Close();
+            }
+            connection.Close();
+
+            return obj;
+        }
+
+
         public void loadDataControl<T>(T control, string query) where T : Control
         {
             try
@@ -104,13 +133,12 @@ namespace company_management
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Successfully");
+                    MessageBox.Show("Successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
-                //MessageBox.Show("Failed action");
+                MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -118,7 +146,7 @@ namespace company_management
             }
         }
 
-       
+
     }
 
 }
