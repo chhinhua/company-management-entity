@@ -30,12 +30,11 @@ namespace company_management.Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupInfo = new System.Windows.Forms.GroupBox();
-            this.cbbox_role = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtbox_address = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtbox_phoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,9 +48,9 @@ namespace company_management.Views
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnUpdatee = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdatee = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -72,22 +71,20 @@ namespace company_management.Views
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(293, 26);
+            this.txtSearch.Location = new System.Drawing.Point(293, 30);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Search . . .";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(499, 32);
+            this.txtSearch.Size = new System.Drawing.Size(589, 32);
             this.txtSearch.TabIndex = 61;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // groupInfo
             // 
             this.groupInfo.Controls.Add(this.btnDelete);
-            this.groupInfo.Controls.Add(this.cbbox_role);
-            this.groupInfo.Controls.Add(this.label6);
             this.groupInfo.Controls.Add(this.btnAdd);
             this.groupInfo.Controls.Add(this.txtbox_address);
             this.groupInfo.Controls.Add(this.label4);
@@ -103,45 +100,13 @@ namespace company_management.Views
             this.groupInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupInfo.ForeColor = System.Drawing.Color.Sienna;
-            this.groupInfo.Location = new System.Drawing.Point(0, 69);
+            this.groupInfo.Location = new System.Drawing.Point(0, 98);
             this.groupInfo.Name = "groupInfo";
-            this.groupInfo.Size = new System.Drawing.Size(1238, 196);
+            this.groupInfo.Size = new System.Drawing.Size(1238, 229);
             this.groupInfo.TabIndex = 63;
             this.groupInfo.TabStop = false;
             this.groupInfo.Text = "Information";
             this.groupInfo.Enter += new System.EventHandler(this.groupInfo_Enter);
-            // 
-            // cbbox_role
-            // 
-            this.cbbox_role.AutoRoundedCorners = true;
-            this.cbbox_role.BackColor = System.Drawing.Color.Transparent;
-            this.cbbox_role.BorderRadius = 17;
-            this.cbbox_role.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbox_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbox_role.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbox_role.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbox_role.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbox_role.ForeColor = System.Drawing.Color.Black;
-            this.cbbox_role.ItemHeight = 30;
-            this.cbbox_role.Items.AddRange(new object[] {
-            "Admin",
-            "Employee"});
-            this.cbbox_role.Location = new System.Drawing.Point(912, 56);
-            this.cbbox_role.Name = "cbbox_role";
-            this.cbbox_role.Size = new System.Drawing.Size(152, 36);
-            this.cbbox_role.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(909, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 18);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Role";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtbox_address
             // 
@@ -166,7 +131,7 @@ namespace company_management.Views
             this.txtbox_address.PlaceholderText = "Enter your address";
             this.txtbox_address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_address.SelectedText = "";
-            this.txtbox_address.Size = new System.Drawing.Size(297, 107);
+            this.txtbox_address.Size = new System.Drawing.Size(408, 107);
             this.txtbox_address.TabIndex = 11;
             // 
             // label4
@@ -201,7 +166,7 @@ namespace company_management.Views
             this.txtbox_phoneNumber.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_phoneNumber.PlaceholderText = "(+84) 0326474610";
             this.txtbox_phoneNumber.SelectedText = "";
-            this.txtbox_phoneNumber.Size = new System.Drawing.Size(261, 28);
+            this.txtbox_phoneNumber.Size = new System.Drawing.Size(261, 32);
             this.txtbox_phoneNumber.TabIndex = 9;
             // 
             // label5
@@ -236,7 +201,7 @@ namespace company_management.Views
             this.txtbox_email.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_email.PlaceholderText = "example@gmail.com";
             this.txtbox_email.SelectedText = "";
-            this.txtbox_email.Size = new System.Drawing.Size(261, 28);
+            this.txtbox_email.Size = new System.Drawing.Size(261, 32);
             this.txtbox_email.TabIndex = 5;
             // 
             // label3
@@ -271,7 +236,7 @@ namespace company_management.Views
             this.txtbox_fullname.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_fullname.PlaceholderText = "John Doe";
             this.txtbox_fullname.SelectedText = "";
-            this.txtbox_fullname.Size = new System.Drawing.Size(238, 28);
+            this.txtbox_fullname.Size = new System.Drawing.Size(238, 32);
             this.txtbox_fullname.TabIndex = 3;
             // 
             // label2
@@ -306,7 +271,7 @@ namespace company_management.Views
             this.txtbox_username.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_username.PlaceholderText = "johndoe";
             this.txtbox_username.SelectedText = "";
-            this.txtbox_username.Size = new System.Drawing.Size(238, 28);
+            this.txtbox_username.Size = new System.Drawing.Size(238, 32);
             this.txtbox_username.TabIndex = 1;
             // 
             // label1
@@ -324,30 +289,36 @@ namespace company_management.Views
             // dataGridView
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.GridColor = System.Drawing.Color.Gray;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.RowHeadersWidth = 62;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(1238, 523);
+            this.dataGridView.Size = new System.Drawing.Size(1238, 461);
             this.dataGridView.TabIndex = 57;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
@@ -356,9 +327,9 @@ namespace company_management.Views
             // 
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 265);
+            this.panel1.Location = new System.Drawing.Point(0, 327);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1238, 523);
+            this.panel1.Size = new System.Drawing.Size(1238, 461);
             this.panel1.TabIndex = 58;
             // 
             // btnDelete
@@ -380,16 +351,23 @@ namespace company_management.Views
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // pictureBox2
+            // btnAdd
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::company_management.Properties.Resources.icons8_search_48;
-            this.pictureBox2.Location = new System.Drawing.Point(763, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 62;
-            this.pictureBox2.TabStop = false;
+            this.btnAdd.AutoRoundedCorners = true;
+            this.btnAdd.BorderRadius = 16;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::company_management.Properties.Resources.icons8_add_64;
+            this.btnAdd.Location = new System.Drawing.Point(1084, 35);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(111, 34);
+            this.btnAdd.TabIndex = 59;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdatee
             // 
@@ -410,23 +388,16 @@ namespace company_management.Views
             this.btnUpdatee.Text = "Update";
             this.btnUpdatee.Click += new System.EventHandler(this.btnUpdatee_Click_1);
             // 
-            // btnAdd
+            // pictureBox2
             // 
-            this.btnAdd.AutoRoundedCorners = true;
-            this.btnAdd.BorderRadius = 16;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::company_management.Properties.Resources.icons8_add_64;
-            this.btnAdd.Location = new System.Drawing.Point(1084, 35);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(111, 34);
-            this.btnAdd.TabIndex = 59;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::company_management.Properties.Resources.icons8_search_48;
+            this.pictureBox2.Location = new System.Drawing.Point(853, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 62;
+            this.pictureBox2.TabStop = false;
             // 
             // UserManagementUC
             // 
@@ -467,8 +438,6 @@ namespace company_management.Views
         private Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_fullname;
         private Label label2;
-        private Label label6;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbox_role;
         private DataGridView dataGridView;
         private Panel panel1;
     }

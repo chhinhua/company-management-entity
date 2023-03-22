@@ -14,7 +14,7 @@ namespace company_management.Views
     public partial class UserManagementUC : UserControl
     {
         UserDAO userDAO = new UserDAO();
-        static string initPassword = "123";
+        public static string DEFAULT_INIT_PASSWORD = "123";
         static int id = -1;
         private User user;
 
@@ -26,26 +26,7 @@ namespace company_management.Views
         private void UserManagementUC_Load(object sender, EventArgs e)
         {          
             userDAO.loadUsers(dataGridView);
-
         }
-
-        /*private void dataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            // Lấy chỉ số của dòng hiện tại
-            string rowNumber = (e.RowIndex + 1).ToString();
-
-            // Kiểm tra xem có cột STT trong DataGridView không
-            if (dataGridView.RowHeadersVisible)
-            {
-                // Nếu có, thì hiển thị số thứ tự tương ứng với dòng
-                dataGridView.Rows[e.RowIndex].HeaderCell.Value = rowNumber;
-            }
-            else
-            {
-                // Nếu không, thì thêm cột STT và hiển thị số thứ tự tương ứng với dòng
-                dataGridView.Rows[e.RowIndex].Cells[0].Value = rowNumber;
-            }
-        }*/
 
         public UserRole GetUserRoleFromString(string inputString)
         {
@@ -74,12 +55,12 @@ namespace company_management.Views
 
         private User getUserFromTextBox(User user)
         {
-            string selectedRoleString = cbbox_role.SelectedItem?.ToString();
-            UserRole userRole = GetUserRoleFromString(selectedRoleString);
+           /* string selectedRoleString = cbbox_role.SelectedItem?.ToString();
+            UserRole userRole = GetUserRoleFromString(selectedRoleString);*/
 
-            user = new User(id, txtbox_username.Text, initPassword, txtbox_fullname.Text,
-                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, userRole, null);
-
+            user = new User(id, txtbox_username.Text, DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
+                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, UserRole.Employee, null);
+            
             return user;
         }
 
@@ -155,13 +136,13 @@ namespace company_management.Views
 
         private void btnUpdatee_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("demo");
-/*            MessageBox.Show(txtbox_username.Text);
-            MessageBox.Show(txtbox_fullname.Text);
-            MessageBox.Show(txtbox_email.Text);
-            MessageBox.Show(txtbox_phoneNumber.Text);
-            MessageBox.Show(txtbox_address.Text);
-            MessageBox.Show(cbbox_role.Text);*/
+            MessageBox.Show(getUserFromTextBox(user).ToString());
+            if (checkDataInput())
+            {
+                userDAO.updateUser(getUserFromTextBox(user));
+                userDAO.loadUsers(dataGridView);
+            }
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -228,13 +209,13 @@ namespace company_management.Views
                     string selectedValue = row.Cells[7].Value.ToString();
 
                     // Thêm giá trị vào danh sách các mục của ComboBox
-                    if (!cbbox_role.Items.Contains(selectedValue))
+                   /* if (!cbbox_role.Items.Contains(selectedValue))
                     {
                         cbbox_role.Items.Add(selectedValue);
                     }
 
                     // Set giá trị của ComboBox
-                    cbbox_role.SelectedItem = selectedValue;
+                    cbbox_role.SelectedItem = selectedValue;*/
 
                 }
             }

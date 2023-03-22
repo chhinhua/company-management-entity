@@ -21,7 +21,6 @@ namespace company_management.Controllers
 
         public void searchUsers(DataGridView dataGridView)
         {
-            string query = string.Format("SELECT * FROM {0}", "users");
             dBConnection.loadData(dataGridView, "users");
         }
 
@@ -37,8 +36,8 @@ namespace company_management.Controllers
         public void updateUser(User user)
         {
             string sqlStr = string.Format("UPDATE users SET " +
-                   "username = '{0}', password = '{1}', fullname = '{2}', email = '{3}', address = '{4}', role = '{5}' WHERE id = '{6}'",
-                   user.Username, user.Password, user.FullName, user.Email, user.Address, user.Role, user.IdUser);
+                   "username = '{0}', fullname = '{1}', email = '{2}', phoneNumber = '{3}', address = '{4}' WHERE id = '{5}'",
+                   user.Username, user.FullName, user.Email, user.PhoneNumber, user.Address, user.IdUser);
             dBConnection.executeQuery(sqlStr);
         }
 

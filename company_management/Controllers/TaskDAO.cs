@@ -9,7 +9,19 @@ namespace company_management.Controllers
 
         public TaskDAO() => dBConnection = new DBConnection();
 
-        public void loadTask(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "task");
+        public void loadTasks(DataGridView dataGridView)
+        {
+            dBConnection.loadData(dataGridView, "task");
+
+            dataGridView.Columns["id"].Visible = false;
+            dataGridView.Columns["idUser"].Visible = false;
+        }
+
+        public void loadUserToCombobox(ComboBox comboBox)
+        {
+            string query = string.Format("SELECT * FROM users WHERE role <> 'admin'");
+            dBConnection.loadDataControl<ComboBox>(comboBox, query);
+        }
 
         public void addTask(Task task)
         {                                       
