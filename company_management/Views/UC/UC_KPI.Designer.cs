@@ -53,9 +53,10 @@
             this.guna2Panel5.BorderThickness = 1;
             this.guna2Panel5.Controls.Add(this.dgvKPI);
             this.guna2Panel5.Controls.Add(this.guna2DataGridView1);
-            this.guna2Panel5.Location = new System.Drawing.Point(362, 28);
+            this.guna2Panel5.Location = new System.Drawing.Point(322, 22);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(992, 655);
+            this.guna2Panel5.Size = new System.Drawing.Size(882, 524);
             this.guna2Panel5.TabIndex = 10;
             // 
             // dgvKPI
@@ -84,11 +85,12 @@
             this.dgvKPI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvKPI.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvKPI.Location = new System.Drawing.Point(0, 0);
+            this.dgvKPI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvKPI.Name = "dgvKPI";
             this.dgvKPI.RowHeadersVisible = false;
             this.dgvKPI.RowHeadersWidth = 62;
             this.dgvKPI.RowTemplate.Height = 28;
-            this.dgvKPI.Size = new System.Drawing.Size(992, 655);
+            this.dgvKPI.Size = new System.Drawing.Size(882, 524);
             this.dgvKPI.TabIndex = 1;
             this.dgvKPI.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvKPI.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -135,12 +137,13 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(128, 189);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(114, 151);
+            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 62;
             this.guna2DataGridView1.RowTemplate.Height = 28;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(213, 120);
             this.guna2DataGridView1.TabIndex = 0;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -172,9 +175,10 @@
             this.guna2Panel1.Controls.Add(this.cbbSearchKPI);
             this.guna2Panel1.Controls.Add(this.tbSearchKPI);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(36, 28);
+            this.guna2Panel1.Location = new System.Drawing.Point(32, 22);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(302, 655);
+            this.guna2Panel1.Size = new System.Drawing.Size(268, 524);
             this.guna2Panel1.TabIndex = 8;
             // 
             // cbbSearchKPI
@@ -189,9 +193,10 @@
             this.cbbSearchKPI.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbSearchKPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbSearchKPI.ItemHeight = 30;
-            this.cbbSearchKPI.Location = new System.Drawing.Point(8, 77);
+            this.cbbSearchKPI.Location = new System.Drawing.Point(7, 62);
+            this.cbbSearchKPI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbSearchKPI.Name = "cbbSearchKPI";
-            this.cbbSearchKPI.Size = new System.Drawing.Size(286, 36);
+            this.cbbSearchKPI.Size = new System.Drawing.Size(255, 36);
             this.cbbSearchKPI.TabIndex = 4;
             // 
             // tbSearchKPI
@@ -208,13 +213,13 @@
             this.tbSearchKPI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearchKPI.ForeColor = System.Drawing.Color.Black;
             this.tbSearchKPI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearchKPI.Location = new System.Drawing.Point(8, 148);
-            this.tbSearchKPI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbSearchKPI.Location = new System.Drawing.Point(7, 118);
+            this.tbSearchKPI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSearchKPI.Name = "tbSearchKPI";
             this.tbSearchKPI.PasswordChar = '\0';
             this.tbSearchKPI.PlaceholderText = "";
             this.tbSearchKPI.SelectedText = "";
-            this.tbSearchKPI.Size = new System.Drawing.Size(286, 47);
+            this.tbSearchKPI.Size = new System.Drawing.Size(254, 38);
             this.tbSearchKPI.TabIndex = 3;
             // 
             // label1
@@ -224,20 +229,21 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 47);
+            this.label1.Size = new System.Drawing.Size(268, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "SEARCH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UC_KPI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_KPI";
-            this.Size = new System.Drawing.Size(1390, 711);
+            this.Size = new System.Drawing.Size(1292, 788);
             this.guna2Panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKPI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();

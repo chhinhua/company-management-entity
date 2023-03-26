@@ -17,11 +17,5 @@ namespace company_management.Views
             InitializeComponent();
         }
 
-        private void ptbReturn_Click(object sender, EventArgs e)
-        {
-            MainForm main = new MainForm();
-            this.Hide();
-            main.Show();
-        }
     }
 }

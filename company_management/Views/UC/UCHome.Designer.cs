@@ -59,20 +59,20 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel4);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 21);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel1.Location = new System.Drawing.Point(27, 26);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(315, 252);
+            this.guna2Panel1.Size = new System.Drawing.Size(420, 310);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.label4);
             this.guna2Panel5.Controls.Add(this.label6);
-            this.guna2Panel5.Location = new System.Drawing.Point(101, 137);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel5.Location = new System.Drawing.Point(135, 169);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(119, 100);
+            this.guna2Panel5.Size = new System.Drawing.Size(159, 123);
             this.guna2Panel5.TabIndex = 3;
             // 
             // label4
@@ -80,10 +80,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(32, 48);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(43, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 22);
+            this.label4.Size = new System.Drawing.Size(72, 30);
             this.label4.TabIndex = 2;
             this.label4.Text = "Users";
             // 
@@ -92,10 +91,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(50, 23);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(67, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 26);
+            this.label6.Size = new System.Drawing.Size(30, 32);
             this.label6.TabIndex = 1;
             this.label6.Text = "0";
             // 
@@ -103,20 +101,19 @@
             // 
             this.guna2Panel4.Controls.Add(this.label2);
             this.guna2Panel4.Controls.Add(this.label3);
-            this.guna2Panel4.Location = new System.Drawing.Point(175, 18);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel4.Location = new System.Drawing.Point(233, 22);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(119, 100);
+            this.guna2Panel4.Size = new System.Drawing.Size(159, 123);
             this.guna2Panel4.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(2, 53);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(3, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 22);
+            this.label2.Size = new System.Drawing.Size(180, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "Leave Request";
             // 
@@ -125,10 +122,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(50, 23);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(67, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 26);
+            this.label3.Size = new System.Drawing.Size(30, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "0";
             // 
@@ -136,10 +132,10 @@
             // 
             this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Controls.Add(this.label5);
-            this.guna2Panel3.Location = new System.Drawing.Point(23, 18);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel3.Location = new System.Drawing.Point(31, 22);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(119, 100);
+            this.guna2Panel3.Size = new System.Drawing.Size(159, 123);
             this.guna2Panel3.TabIndex = 0;
             // 
             // label1
@@ -147,10 +143,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(32, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(43, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 22);
+            this.label1.Size = new System.Drawing.Size(72, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tasks";
             // 
@@ -159,10 +154,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(50, 23);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(67, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 26);
+            this.label5.Size = new System.Drawing.Size(30, 32);
             this.label5.TabIndex = 1;
             this.label5.Text = "0";
             // 
@@ -175,10 +169,10 @@
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.Controls.Add(this.label7);
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(375, 21);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel2.Location = new System.Drawing.Point(500, 26);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(504, 319);
+            this.guna2Panel2.Size = new System.Drawing.Size(672, 393);
             this.guna2Panel2.TabIndex = 1;
             // 
             // btnAddtask
@@ -194,9 +188,10 @@
             this.btnAddtask.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(185)))), ((int)(((byte)(83)))));
             this.btnAddtask.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnAddtask.ForeColor = System.Drawing.Color.White;
-            this.btnAddtask.Location = new System.Drawing.Point(366, 267);
+            this.btnAddtask.Location = new System.Drawing.Point(488, 329);
+            this.btnAddtask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddtask.Name = "btnAddtask";
-            this.btnAddtask.Size = new System.Drawing.Size(122, 35);
+            this.btnAddtask.Size = new System.Drawing.Size(163, 43);
             this.btnAddtask.TabIndex = 4;
             this.btnAddtask.Text = "Read More";
             // 
@@ -205,10 +200,9 @@
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(17, 66);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(23, 81);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 22);
+            this.label8.Size = new System.Drawing.Size(152, 27);
             this.label8.TabIndex = 3;
             this.label8.Text = "Decription";
             // 
@@ -218,10 +212,9 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Forte", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(185)))), ((int)(((byte)(83)))));
-            this.label7.Location = new System.Drawing.Point(14, 24);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(19, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(265, 30);
+            this.label7.Size = new System.Drawing.Size(327, 37);
             this.label7.TabIndex = 0;
             this.label7.Text = "Company Decription";
             // 
@@ -232,22 +225,22 @@
             this.guna2Panel6.BorderRadius = 25;
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
-            this.guna2Panel6.Location = new System.Drawing.Point(20, 419);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel6.Location = new System.Drawing.Point(27, 516);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(859, 65);
+            this.guna2Panel6.Size = new System.Drawing.Size(1145, 80);
             this.guna2Panel6.TabIndex = 2;
             // 
             // UCHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(897, 516);
+            this.Size = new System.Drawing.Size(1292, 788);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();

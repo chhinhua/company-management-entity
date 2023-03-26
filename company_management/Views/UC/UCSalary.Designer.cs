@@ -74,9 +74,9 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel4);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1196, 299);
+            this.guna2Panel1.Size = new System.Drawing.Size(1292, 299);
             this.guna2Panel1.TabIndex = 0;
             // 
             // label11
@@ -124,8 +124,8 @@
             this.guna2Panel7.BackColor = System.Drawing.Color.White;
             this.guna2Panel7.Controls.Add(this.label7);
             this.guna2Panel7.Controls.Add(this.label8);
-            this.guna2Panel7.Location = new System.Drawing.Point(923, 55);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel7.Location = new System.Drawing.Point(1019, 55);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(243, 127);
             this.guna2Panel7.TabIndex = 5;
@@ -176,8 +176,8 @@
             this.guna2Panel6.Controls.Add(this.label5);
             this.guna2Panel6.Controls.Add(this.label6);
             this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(185)))), ((int)(((byte)(83)))));
-            this.guna2Panel6.Location = new System.Drawing.Point(632, 55);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel6.Location = new System.Drawing.Point(728, 55);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(243, 127);
             this.guna2Panel6.TabIndex = 4;
@@ -214,8 +214,8 @@
             this.guna2Panel5.BackColor = System.Drawing.Color.White;
             this.guna2Panel5.Controls.Add(this.label1);
             this.guna2Panel5.Controls.Add(this.label4);
-            this.guna2Panel5.Location = new System.Drawing.Point(340, 55);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel5.Location = new System.Drawing.Point(436, 55);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(243, 127);
             this.guna2Panel5.TabIndex = 4;
@@ -253,8 +253,8 @@
             this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.Controls.Add(this.label2);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(185)))), ((int)(((byte)(83)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(51, 55);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel4.Location = new System.Drawing.Point(147, 55);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(243, 127);
             this.guna2Panel4.TabIndex = 3;
@@ -292,9 +292,9 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
             this.guna2Panel2.Controls.Add(this.dgvTask);
             this.guna2Panel2.Location = new System.Drawing.Point(28, 322);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(643, 282);
+            this.guna2Panel2.Size = new System.Drawing.Size(739, 282);
             this.guna2Panel2.TabIndex = 1;
             // 
             // dgvTask
@@ -317,11 +317,11 @@
             this.dgvTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTask.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvTask.Location = new System.Drawing.Point(0, 0);
-            this.dgvTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTask.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTask.Name = "dgvTask";
             this.dgvTask.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvTask.RowHeadersWidth = 51;
-            this.dgvTask.Size = new System.Drawing.Size(643, 282);
+            this.dgvTask.Size = new System.Drawing.Size(739, 282);
             this.dgvTask.TabIndex = 6;
             // 
             // guna2Panel3
@@ -329,8 +329,8 @@
             this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel3.Location = new System.Drawing.Point(716, 322);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Location = new System.Drawing.Point(812, 322);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(449, 282);
             this.guna2Panel3.TabIndex = 2;
@@ -343,7 +343,7 @@
             this.guna2PictureBox1.Image = global::company_management.Properties.Resources.O9FG4001;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(449, 282);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -360,7 +360,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCSalary";
-            this.Size = new System.Drawing.Size(1196, 635);
+            this.Size = new System.Drawing.Size(1292, 788);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);

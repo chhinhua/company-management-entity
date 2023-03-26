@@ -68,9 +68,10 @@
             this.guna2Panel5.BorderThickness = 1;
             this.guna2Panel5.Controls.Add(this.dgvTK);
             this.guna2Panel5.Controls.Add(this.guna2DataGridView1);
-            this.guna2Panel5.Location = new System.Drawing.Point(362, 28);
+            this.guna2Panel5.Location = new System.Drawing.Point(322, 22);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(992, 655);
+            this.guna2Panel5.Size = new System.Drawing.Size(882, 524);
             this.guna2Panel5.TabIndex = 13;
             // 
             // dgvTK
@@ -99,11 +100,12 @@
             this.dgvTK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTK.Location = new System.Drawing.Point(0, 0);
+            this.dgvTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTK.Name = "dgvTK";
             this.dgvTK.RowHeadersVisible = false;
             this.dgvTK.RowHeadersWidth = 62;
             this.dgvTK.RowTemplate.Height = 28;
-            this.dgvTK.Size = new System.Drawing.Size(992, 655);
+            this.dgvTK.Size = new System.Drawing.Size(882, 524);
             this.dgvTK.TabIndex = 1;
             this.dgvTK.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTK.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -150,12 +152,13 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(128, 189);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(114, 151);
+            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 62;
             this.guna2DataGridView1.RowTemplate.Height = 28;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(213, 120);
             this.guna2DataGridView1.TabIndex = 0;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -189,9 +192,10 @@
             this.guna2Panel4.Controls.Add(this.dtpToTK);
             this.guna2Panel4.Controls.Add(this.dtpFromTK);
             this.guna2Panel4.Controls.Add(this.label6);
-            this.guna2Panel4.Location = new System.Drawing.Point(36, 295);
+            this.guna2Panel4.Location = new System.Drawing.Point(32, 236);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(302, 388);
+            this.guna2Panel4.Size = new System.Drawing.Size(268, 310);
             this.guna2Panel4.TabIndex = 12;
             // 
             // label5
@@ -199,9 +203,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 168);
+            this.label5.Location = new System.Drawing.Point(33, 134);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 25);
+            this.label5.Size = new System.Drawing.Size(40, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "TO:";
             // 
@@ -210,9 +214,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 99);
+            this.label4.Location = new System.Drawing.Point(5, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 25);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "FROM:";
             // 
@@ -224,11 +228,12 @@
             this.dtpToTK.FillColor = System.Drawing.Color.White;
             this.dtpToTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpToTK.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpToTK.Location = new System.Drawing.Point(94, 157);
+            this.dtpToTK.Location = new System.Drawing.Point(84, 126);
+            this.dtpToTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpToTK.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpToTK.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpToTK.Name = "dtpToTK";
-            this.dtpToTK.Size = new System.Drawing.Size(200, 36);
+            this.dtpToTK.Size = new System.Drawing.Size(178, 29);
             this.dtpToTK.TabIndex = 0;
             this.dtpToTK.Value = new System.DateTime(2023, 3, 6, 0, 25, 11, 176);
             // 
@@ -240,11 +245,12 @@
             this.dtpFromTK.FillColor = System.Drawing.Color.White;
             this.dtpFromTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFromTK.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromTK.Location = new System.Drawing.Point(94, 88);
+            this.dtpFromTK.Location = new System.Drawing.Point(84, 70);
+            this.dtpFromTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFromTK.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFromTK.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFromTK.Name = "dtpFromTK";
-            this.dtpFromTK.Size = new System.Drawing.Size(200, 36);
+            this.dtpFromTK.Size = new System.Drawing.Size(178, 29);
             this.dtpFromTK.TabIndex = 1;
             this.dtpFromTK.Value = new System.DateTime(2023, 3, 6, 0, 25, 11, 176);
             // 
@@ -255,7 +261,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(302, 47);
+            this.label6.Size = new System.Drawing.Size(268, 38);
             this.label6.TabIndex = 0;
             this.label6.Text = "TIME";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,9 +274,10 @@
             this.guna2Panel1.Controls.Add(this.cbbTK);
             this.guna2Panel1.Controls.Add(this.tbSearchTK);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(36, 28);
+            this.guna2Panel1.Location = new System.Drawing.Point(32, 22);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(302, 258);
+            this.guna2Panel1.Size = new System.Drawing.Size(268, 206);
             this.guna2Panel1.TabIndex = 11;
             // 
             // cbbTK
@@ -285,9 +292,10 @@
             this.cbbTK.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbTK.ItemHeight = 30;
-            this.cbbTK.Location = new System.Drawing.Point(8, 77);
+            this.cbbTK.Location = new System.Drawing.Point(7, 62);
+            this.cbbTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbTK.Name = "cbbTK";
-            this.cbbTK.Size = new System.Drawing.Size(286, 36);
+            this.cbbTK.Size = new System.Drawing.Size(255, 36);
             this.cbbTK.TabIndex = 4;
             // 
             // tbSearchTK
@@ -304,13 +312,13 @@
             this.tbSearchTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearchTK.ForeColor = System.Drawing.Color.Black;
             this.tbSearchTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearchTK.Location = new System.Drawing.Point(8, 148);
-            this.tbSearchTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbSearchTK.Location = new System.Drawing.Point(7, 118);
+            this.tbSearchTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSearchTK.Name = "tbSearchTK";
             this.tbSearchTK.PasswordChar = '\0';
             this.tbSearchTK.PlaceholderText = "";
             this.tbSearchTK.SelectedText = "";
-            this.tbSearchTK.Size = new System.Drawing.Size(286, 47);
+            this.tbSearchTK.Size = new System.Drawing.Size(254, 38);
             this.tbSearchTK.TabIndex = 3;
             // 
             // label1
@@ -320,21 +328,22 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 47);
+            this.label1.Size = new System.Drawing.Size(268, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "SEARCH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UCTimeKeeping
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCTimeKeeping";
-            this.Size = new System.Drawing.Size(1390, 711);
+            this.Size = new System.Drawing.Size(1292, 788);
             this.guna2Panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
