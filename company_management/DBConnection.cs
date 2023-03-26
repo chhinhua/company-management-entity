@@ -39,7 +39,7 @@ namespace company_management
             }
         }
 
-        public T GetObjectById<T>(int objectId, string query) where T : new()
+        public T GetObjectById<T>(string query) where T : new()
         {
             T obj = default(T);
             connection.Open();

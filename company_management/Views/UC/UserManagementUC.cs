@@ -15,6 +15,7 @@ namespace company_management.Views
     {
         UserDAO userDAO = new UserDAO();
         public static string DEFAULT_INIT_PASSWORD = "123";
+        public static string DEFAULT_USER_ROLE = "Employee";
         static int id = -1;
         private User user;
 
@@ -26,40 +27,13 @@ namespace company_management.Views
         private void UserManagementUC_Load(object sender, EventArgs e)
         {          
             userDAO.loadUsers(dataGridView);
-        }
-
-        public UserRole GetUserRoleFromString(string inputString)
-        {
-            UserRole userRole;
-
-            // Nếu chuỗi đầu vào rỗng hoặc null, mặc định giá trị UserRole là Employee
-            if (string.IsNullOrEmpty(inputString))
-            {
-                userRole = UserRole.Employee;
-            }
-            else
-            {
-                // Chuyển đổi chuỗi thành UserRole
-                if (Enum.TryParse(inputString, out userRole) == false)
-                {
-                    // Nếu chuỗi không chuyển đổi thành UserRole được, mặc định giá trị UserRole là Employee
-                    userRole = UserRole.Employee;
-                }
-                else
-                {
-                    userRole = (UserRole)Enum.Parse(typeof(UserRole), inputString); ;
-                }
-            }
-            return userRole;
-        }
+        }       
 
         private User getUserFromTextBox(User user)
         {
-           /* string selectedRoleString = cbbox_role.SelectedItem?.ToString();
-            UserRole userRole = GetUserRoleFromString(selectedRoleString);*/
 
             user = new User(id, txtbox_username.Text, DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
-                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, UserRole.Employee, null);
+                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, DEFAULT_USER_ROLE, null);
             
             return user;
         }
@@ -136,7 +110,6 @@ namespace company_management.Views
 
         private void btnUpdatee_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(getUserFromTextBox(user).ToString());
             if (checkDataInput())
             {
                 userDAO.updateUser(getUserFromTextBox(user));

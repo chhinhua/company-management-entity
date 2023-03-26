@@ -31,11 +31,11 @@ namespace company_management.Controllers
             dBConnection.executeQuery(sqlStr);
         }
 
-        public void updateTask(Task task)
+        public void updateTask(Task updateTask)
         {
             string sqlStr = string.Format("UPDATE task SET " +
                    "idUser = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}' WHERE id = '{5}'",
-                   task.IdUser, task.TaskName, task.Description, task.Deadline, task.Progress, task.Id);
+                   updateTask.IdUser, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.Id);
             dBConnection.executeQuery(sqlStr);
         }
 
@@ -48,7 +48,7 @@ namespace company_management.Controllers
         public Task GetTaskById(int id)
         {
             string query = string.Format("SELECT * FROM task WHERE id = {0}", id);
-            Task task = dBConnection.GetObjectById<Task>(id, query);
+            Task task = dBConnection.GetObjectById<Task>(query);
             return task;
         }
     }

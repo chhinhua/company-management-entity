@@ -7,38 +7,32 @@ using System.Threading.Tasks;
 
 namespace company_management.Models
 {
-    public enum UserRole
-    {
-        Admin,
-        Employee
-    }
-
     public class User
     {
-        private int idUser;
+        private int id;
         private string username;
         private string password;
         private string fullName;
         private string email;
         private string phoneNumber;
         private string address;
-        private UserRole role;
+        private string role;
         private byte[] avatar;
 
-        public int IdUser { get => idUser; set => idUser = value; }
+        public int Id { get => id; set => id = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public string Email { get => email; set => email = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Address { get => address; set => address = value; }
-        public UserRole Role { get => role; set => role = value; }
+        public string Role { get => role; set => role = value; }
         public byte[] Avatar { get => avatar; set => avatar = value; }
 
         public User() { }
 
         public User(string username, string password, string fullName, 
-                    string email, string phoneNumber, string address, UserRole role)
+                    string email, string phoneNumber, string address, string role)
         {
             Username = username;
             Password = password;
@@ -49,10 +43,10 @@ namespace company_management.Models
             Role = role;
         }
 
-        public User(int idUser, string username, string password, string fullName,
-                    string email, string phoneNumber, string address, UserRole role, byte[] avatar)
+        public User(int id, string username, string password, string fullName,
+                    string email, string phoneNumber, string address, string role, byte[] avatar)
         {
-            IdUser = idUser;
+            Id = id;
             Username = username;
             Password = password;
             FullName = fullName;
@@ -64,7 +58,7 @@ namespace company_management.Models
         }
 
         public User(string username, string password, string fullName, 
-                    string email, string phoneNumber, string address, UserRole role, byte[] avatar)
+                    string email, string phoneNumber, string address, string role, byte[] avatar)
         {
             Username = username;
             Password = password;

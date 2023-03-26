@@ -14,7 +14,7 @@ namespace company_management.Views.UC
     public partial class UCTask : UserControl
     {
         TaskDAO taskDAO = new TaskDAO();
-        public static Task task = new Task();
+        public static Task viewTask = new Task();
 
         public UCTask()
         {
@@ -36,7 +36,7 @@ namespace company_management.Views.UC
                 if (value != DBNull.Value)
                 {
                     int id = Convert.ToInt32(value);
-                    task = taskDAO.GetTaskById(id);
+                    viewTask = taskDAO.GetTaskById(id);
                 }
             }
         }
@@ -54,13 +54,13 @@ namespace company_management.Views.UC
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (task.Id != 0)
+            if (viewTask.Id != 0)
             {
                 DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    taskDAO.deleteTask(task.Id);
+                    taskDAO.deleteTask(viewTask.Id);
                     taskDAO.loadTasks(dgvTask);
                 }
             }

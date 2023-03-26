@@ -29,7 +29,7 @@ namespace company_management.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.picturebox_Avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.dateTime_deadline = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -45,22 +45,23 @@ namespace company_management.Views
             this.label5 = new System.Windows.Forms.Label();
             this.circleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.progressValue = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.combobox_progress = new Guna.UI2.WinForms.Guna2ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Avatar)).BeginInit();
             this.circleProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2CirclePictureBox1
+            // picturebox_Avatar
             // 
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::company_management.Properties.Resources.avatar1;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 76);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(103, 91);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 104;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.picturebox_Avatar.FillColor = System.Drawing.Color.Transparent;
+            this.picturebox_Avatar.Image = global::company_management.Properties.Resources.avatar1;
+            this.picturebox_Avatar.ImageRotate = 0F;
+            this.picturebox_Avatar.Location = new System.Drawing.Point(56, 88);
+            this.picturebox_Avatar.Name = "picturebox_Avatar";
+            this.picturebox_Avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picturebox_Avatar.Size = new System.Drawing.Size(103, 91);
+            this.picturebox_Avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_Avatar.TabIndex = 104;
+            this.picturebox_Avatar.TabStop = false;
             // 
             // dateTime_deadline
             // 
@@ -227,12 +228,12 @@ namespace company_management.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(37, 35);
+            this.label1.Location = new System.Drawing.Point(43, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 23);
+            this.label1.Size = new System.Drawing.Size(135, 23);
             this.label1.TabIndex = 115;
             this.label1.Text = "Assigned person";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -243,7 +244,7 @@ namespace company_management.Views
             this.assigned_value.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assigned_value.ForeColor = System.Drawing.Color.Black;
             this.assigned_value.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.assigned_value.Location = new System.Drawing.Point(12, 183);
+            this.assigned_value.Location = new System.Drawing.Point(12, 195);
             this.assigned_value.Name = "assigned_value";
             this.assigned_value.Size = new System.Drawing.Size(192, 28);
             this.assigned_value.TabIndex = 116;
@@ -252,14 +253,14 @@ namespace company_management.Views
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(69, 332);
+            this.label5.Location = new System.Drawing.Point(7, 323);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(96, 18);
             this.label5.TabIndex = 118;
-            this.label5.Text = "Progress:";
+            this.label5.Text = "Progress (%)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // circleProgressBar
@@ -277,6 +278,7 @@ namespace company_management.Views
             this.circleProgressBar.Text = "50";
             this.circleProgressBar.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
             this.circleProgressBar.Value = 50;
+            this.circleProgressBar.ValueChanged += new System.EventHandler(this.circleProgressBar_ValueChanged);
             // 
             // progressValue
             // 
@@ -289,11 +291,41 @@ namespace company_management.Views
             this.progressValue.TabIndex = 120;
             this.progressValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // combobox_progress
+            // 
+            this.combobox_progress.BackColor = System.Drawing.Color.Transparent;
+            this.combobox_progress.BorderRadius = 5;
+            this.combobox_progress.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combobox_progress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_progress.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_progress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_progress.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.combobox_progress.ForeColor = System.Drawing.Color.Black;
+            this.combobox_progress.ItemHeight = 30;
+            this.combobox_progress.Items.AddRange(new object[] {
+            "0",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "80",
+            "90",
+            "100"});
+            this.combobox_progress.Location = new System.Drawing.Point(109, 314);
+            this.combobox_progress.Name = "combobox_progress";
+            this.combobox_progress.Size = new System.Drawing.Size(95, 36);
+            this.combobox_progress.TabIndex = 120;
+            this.combobox_progress.SelectedIndexChanged += new System.EventHandler(this.combobox_progress_SelectedIndexChanged);
+            // 
             // ViewOrUpdateTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 576);
+            this.Controls.Add(this.combobox_progress);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.circleProgressBar);
             this.Controls.Add(this.assigned_value);
@@ -308,12 +340,12 @@ namespace company_management.Views
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtbox_Desciption);
             this.Controls.Add(this.txtbox_Taskname);
-            this.Controls.Add(this.guna2CirclePictureBox1);
+            this.Controls.Add(this.picturebox_Avatar);
             this.Name = "ViewOrUpdateTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Detail";
             this.Load += new System.EventHandler(this.ViewOrUpdateTaskForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_Avatar)).EndInit();
             this.circleProgressBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,7 +353,7 @@ namespace company_management.Views
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox picturebox_Avatar;
         private System.Windows.Forms.DateTimePicker dateTime_deadline;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
@@ -337,5 +369,6 @@ namespace company_management.Views
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2CircleProgressBar circleProgressBar;
         private System.Windows.Forms.Label progressValue;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_progress;
     }
 }

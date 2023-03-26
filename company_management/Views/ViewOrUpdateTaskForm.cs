@@ -9,6 +9,7 @@ namespace company_management.Views
     public partial class ViewOrUpdateTaskForm : Form
     {
         TaskDAO taskDAO = new TaskDAO();
+        UserDAO userDAO = new UserDAO();
 
         public ViewOrUpdateTaskForm()
         {
@@ -37,18 +38,26 @@ namespace company_management.Views
 
             Task task = new Task(idUser, txtbox_Taskname.Text,
                             txtbox_Desciption.Text, selectedDate, circleProgressBar.Value);
+            task.Id = UCTask.viewTask.Id;
+
             return task;
         }
 
         public void bindingTaskToFields()
         {
-            txtbox_Taskname.Text = UCTask.task.TaskName;
-            txtbox_Desciption.Text = UCTask.task.Description;
-            dateTime_deadline.Value = UCTask.task.Deadline;
-            combbox_Assignee.SelectedValue = UCTask.task.IdUser;
-            circleProgressBar.Value = UCTask.task.Progress;
-            progressValue.Text = UCTask.task.Progress.ToString() + "%";
-            assigned_value.Text = combbox_Assignee.SelectedItem.ToString(); 
+            int id = UCTask.viewTask.IdUser;
+            User user = userDAO.getUserById(id);           
+           
+            txtbox_Taskname.Text = UCTask.viewTask.TaskName;
+            txtbox_Desciption.Text = UCTask.viewTask.Description;
+            dateTime_deadline.Value = UCTask.viewTask.Deadline;
+            combbox_Assignee.SelectedValue = UCTask.viewTask.IdUser;
+            assigned_value.Text = user.FullName;
+            userDAO.DisplayImage(user.Avatar, picturebox_Avatar);
+
+            circleProgressBar.Value = UCTask.viewTask.Progress;
+            progressValue.Text = UCTask.viewTask.Progress.ToString() + "%";
+            combobox_progress.SelectedText = UCTask.viewTask.Progress.ToString();
         }
 
         private bool checkDataInput()
@@ -68,6 +77,19 @@ namespace company_management.Views
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void circleProgressBar_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void combobox_progress_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int progress = Convert.ToInt32(combobox_progress.SelectedItem);
+            circleProgressBar.Value = progress;
+            progressValue.Text = progress.ToString() + "%";
 
         }
     }

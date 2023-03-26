@@ -1,4 +1,6 @@
 ﻿using company_management.Models;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace company_management.Controllers
@@ -37,7 +39,7 @@ namespace company_management.Controllers
         {
             string sqlStr = string.Format("UPDATE users SET " +
                    "username = '{0}', fullname = '{1}', email = '{2}', phoneNumber = '{3}', address = '{4}' WHERE id = '{5}'",
-                   user.Username, user.FullName, user.Email, user.PhoneNumber, user.Address, user.IdUser);
+                   user.Username, user.FullName, user.Email, user.PhoneNumber, user.Address, user.Id);
             dBConnection.executeQuery(sqlStr);
         }
 
@@ -45,6 +47,13 @@ namespace company_management.Controllers
         {
             string sqlStr = string.Format("DELETE FROM users WHERE id = '{0}'", id);
             dBConnection.executeQuery(sqlStr);
+        }
+
+        public User getUserById(int id)
+        {
+            string query = string.Format("SELECT * FROM users WHERE users.id = {0}", id);
+            User user = dBConnection.GetObjectById<User>(query);
+            return user;
         }
 
         //=================================================
@@ -63,6 +72,20 @@ namespace company_management.Controllers
             return imageBytes;
         }*/
 
-        
+        public void DisplayImage(byte[] avatarBytes, PictureBox pictureBox)
+        {
+            if (avatarBytes == null || avatarBytes.Length == 0)
+            {
+                return;
+            }
+
+            // Tạo một MemoryStream để đọc mảng byte
+            using (var ms = new MemoryStream(avatarBytes))
+            {
+                var image = Image.FromStream(ms);
+                pictureBox.Image = image;
+            }
+        }
+
     }
 }
