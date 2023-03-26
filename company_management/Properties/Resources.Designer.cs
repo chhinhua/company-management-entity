@@ -233,6 +233,16 @@ namespace company_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_filled {
+            get {
+                object obj = ResourceManager.GetObject("eye-filled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-32", resourceCulture);
@@ -326,6 +336,16 @@ namespace company_management.Properties {
         internal static System.Drawing.Bitmap icons8_chevron_left_80__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-chevron-left-80 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

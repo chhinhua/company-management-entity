@@ -1,4 +1,8 @@
 ﻿using company_management.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace company_management.Controllers
@@ -6,6 +10,8 @@ namespace company_management.Controllers
     public class TaskDAO
     {
         private readonly DBConnection dBConnection;
+
+        private SqlConnection connection = new DBConnection().connection;
 
         public TaskDAO() => dBConnection = new DBConnection();
 
@@ -15,6 +21,7 @@ namespace company_management.Controllers
 
             dataGridView.Columns["id"].Visible = false;
             dataGridView.Columns["idUser"].Visible = false;
+            dataGridView.Columns["description"].Visible = false;
         }
 
         public void loadUserToCombobox(ComboBox comboBox)
@@ -24,7 +31,7 @@ namespace company_management.Controllers
         }
 
         public void addTask(Task task)
-        {                                       
+        {
             string sqlStr = string.Format("INSERT INTO task(idUser, taskName, description, deadline, progress)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
                    task.IdUser, task.TaskName, task.Description, task.Deadline, task.Progress);
@@ -50,6 +57,38 @@ namespace company_management.Controllers
             string query = string.Format("SELECT * FROM task WHERE id = {0}", id);
             Task task = dBConnection.GetObjectById<Task>(query);
             return task;
+        }
+
+        public TaskStatusPercentage getTaskStatusPercentage()
+        {
+            TaskStatusPercentage taskStatus = new TaskStatusPercentage();
+
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM GetTaskStatusPercentage()", connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    taskStatus.TodoPercent = (double)reader["todoPercent"];
+                    taskStatus.InprogressPercent = (double)reader["inprogressPercent"];
+                    taskStatus.DonePercent = (double)reader["donePercent"];
+                }
+                reader.Close();
+
+                return taskStatus;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return taskStatus;
         }
     }
 }

@@ -24,11 +24,16 @@ namespace company_management.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(getTaskFromFields().ToString());
-            if (checkDataInput())
+            DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                taskDAO.updateTask(getTaskFromFields());
+                if (checkDataInput())
+                {
+                    taskDAO.updateTask(getTaskFromFields());
+                }
             }
+            
         }
 
         private Task getTaskFromFields()

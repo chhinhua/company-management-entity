@@ -247,6 +247,7 @@
     <Compile Include="Models\LeaveRequest.cs" />
     <Compile Include="Models\Salary.cs" />
     <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\TaskStatusPercentage.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -279,12 +280,6 @@
     </Compile>
     <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\PasswordChangeForm.cs">
       <SubType>Form</SubType>
@@ -383,9 +378,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PasswordChangeForm.resx">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
@@ -493,6 +485,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-eye-25.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\O9FG4001.jpg" />
     <None Include="Resources\O9FG400.jpg" />
@@ -524,6 +517,7 @@
     <None Include="Resources\bell-filled.png" />
     <None Include="Resources\device-floppy.png" />
     <None Include="Resources\arrow-back-up.png" />
+    <None Include="Resources\eye-filled.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

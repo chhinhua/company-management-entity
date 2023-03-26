@@ -12,7 +12,7 @@ namespace company_management
 {
     public class DBConnection
     {
-        private readonly SqlConnection connection;
+        public SqlConnection connection;
 
         public DBConnection() => connection = new SqlConnection(Properties.Settings.Default.connStr);
 

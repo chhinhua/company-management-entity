@@ -91,5 +91,15 @@ namespace company_management.Views
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

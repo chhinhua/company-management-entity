@@ -68,7 +68,6 @@
             this.ptbReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbReturn.TabIndex = 42;
             this.ptbReturn.TabStop = false;
-            this.ptbReturn.Click += new System.EventHandler(this.ptbReturn_Click);
             // 
             // label5
             // 

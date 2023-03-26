@@ -24,6 +24,37 @@ namespace company_management.Views.UC
         private void UCTask_Load(object sender, EventArgs e)
         {
             taskDAO.loadTasks(dgvTask);
+            loadProgressChart();
+        }
+
+        private void loadProgressChart()
+        {
+            TaskStatusPercentage taskStatus = taskDAO.getTaskStatusPercentage();
+
+            double todoPercent = taskStatus.TodoPercent;
+            double inprogressPercent = taskStatus.InprogressPercent;
+            double donePercent = taskStatus.DonePercent;
+
+            // Thêm các phần tử vào danh sách
+            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
+            chart_taskProgress.Series["SeriesProgress"].Points[0].LegendText = "Todo";
+
+            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
+            chart_taskProgress.Series["SeriesProgress"].Points[1].LegendText = "Inprogress";
+
+            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", donePercent);
+            chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
+
+            // Ẩn nhãn trên biểu đồ tròn
+            chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = false;
+
+            chart_taskProgress.Series["SeriesProgress"].Points[0].Color = Color.FromArgb(214, 40, 40);
+            chart_taskProgress.Series["SeriesProgress"].Points[1].Color = Color.FromArgb(0, 255, 0);
+            chart_taskProgress.Series["SeriesProgress"].Points[2].Color = Color.FromArgb(67, 97, 238);
+
+            label_todoTask.Text = todoPercent + "%";
+            label_inprogressTask.Text = inprogressPercent + "%";
+            label_doneTask.Text = donePercent + "%";
         }
 
         private void dgvTask_CellClick(object sender, DataGridViewCellEventArgs e)
