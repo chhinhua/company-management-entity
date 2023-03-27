@@ -189,7 +189,7 @@
             this.btnAddtask.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnAddtask.ForeColor = System.Drawing.Color.White;
             this.btnAddtask.Location = new System.Drawing.Point(488, 329);
-            this.btnAddtask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddtask.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddtask.Name = "btnAddtask";
             this.btnAddtask.Size = new System.Drawing.Size(163, 43);
             this.btnAddtask.TabIndex = 4;

@@ -24,7 +24,7 @@ namespace company_management.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Save changed?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -32,8 +32,7 @@ namespace company_management.Views
                 {
                     taskDAO.updateTask(getTaskFromFields());
                 }
-            }
-            
+            }        
         }
 
         private Task getTaskFromFields()
@@ -55,7 +54,6 @@ namespace company_management.Views
            
             txtbox_Taskname.Text = UCTask.viewTask.TaskName;
             txtbox_Desciption.Text = UCTask.viewTask.Description;
-            dateTime_deadline.Value = UCTask.viewTask.Deadline;
             combbox_Assignee.SelectedValue = UCTask.viewTask.IdUser;
             assigned_value.Text = user.FullName;
             userDAO.DisplayImage(user.Avatar, picturebox_Avatar);
@@ -63,6 +61,15 @@ namespace company_management.Views
             circleProgressBar.Value = UCTask.viewTask.Progress;
             progressValue.Text = UCTask.viewTask.Progress.ToString() + "%";
             combobox_progress.SelectedText = UCTask.viewTask.Progress.ToString();
+
+            try
+            {
+                dateTime_deadline.Value = UCTask.viewTask.Deadline;
+            } catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
         }
 
         private bool checkDataInput()
@@ -96,6 +103,11 @@ namespace company_management.Views
             circleProgressBar.Value = progress;
             progressValue.Text = progress.ToString() + "%";
 
+        }
+
+        private void ViewOrUpdateTaskForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            UCTask.dataChanged = true;
         }
     }
 }

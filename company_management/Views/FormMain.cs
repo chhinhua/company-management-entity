@@ -62,6 +62,8 @@ namespace company_management.Views
         private void btnTimekeeping_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnTimekeeping.Location.X, btnTimekeeping.Location.Y);
+            UCTimeKeeping timeKeeping = new UCTimeKeeping();
+            AddUC(timeKeeping);
         }
 
         private void btnUser_Click(object sender, EventArgs e)
