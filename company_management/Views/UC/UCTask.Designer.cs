@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.dgvTask = new System.Windows.Forms.DataGridView();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_taskProgress)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -66,25 +64,13 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.pictureBox2);
             this.guna2Panel1.Controls.Add(this.txtSearch);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1238, 76);
+            this.guna2Panel1.Size = new System.Drawing.Size(1393, 95);
             this.guna2Panel1.TabIndex = 4;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::company_management.Properties.Resources.icons8_search_48;
-            this.pictureBox2.Location = new System.Drawing.Point(613, 33);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 69;
-            this.pictureBox2.TabStop = false;
             // 
             // txtSearch
             // 
@@ -100,14 +86,15 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(71, 25);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_48;
+            this.txtSearch.Location = new System.Drawing.Point(80, 31);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Search . . .";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(571, 32);
+            this.txtSearch.Size = new System.Drawing.Size(642, 40);
             this.txtSearch.TabIndex = 68;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -126,10 +113,10 @@
             this.guna2Panel2.Controls.Add(this.label_doneTask);
             this.guna2Panel2.Controls.Add(this.label4);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 76);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 95);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1238, 262);
+            this.guna2Panel2.Size = new System.Drawing.Size(1393, 328);
             this.guna2Panel2.TabIndex = 5;
             // 
             // label1
@@ -138,10 +125,10 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(580, 182);
+            this.label1.Location = new System.Drawing.Point(652, 228);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 20);
+            this.label1.Size = new System.Drawing.Size(164, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "Targeting is 80% ";
             // 
@@ -151,10 +138,10 @@
             this.label_todoTask.BackColor = System.Drawing.Color.White;
             this.label_todoTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_todoTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(96)))), ((int)(((byte)(79)))));
-            this.label_todoTask.Location = new System.Drawing.Point(681, 146);
+            this.label_todoTask.Location = new System.Drawing.Point(766, 182);
             this.label_todoTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_todoTask.Name = "label_todoTask";
-            this.label_todoTask.Size = new System.Drawing.Size(64, 29);
+            this.label_todoTask.Size = new System.Drawing.Size(76, 33);
             this.label_todoTask.TabIndex = 10;
             this.label_todoTask.Text = "30%";
             // 
@@ -164,10 +151,10 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(96)))), ((int)(((byte)(79)))));
-            this.label3.Location = new System.Drawing.Point(579, 146);
+            this.label3.Location = new System.Drawing.Point(651, 182);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 29);
+            this.label3.Size = new System.Drawing.Size(113, 33);
             this.label3.TabIndex = 9;
             this.label3.Text = "TODO:";
             // 
@@ -179,6 +166,7 @@
             legend1.Name = "Legend_progress";
             this.chart_taskProgress.Legends.Add(legend1);
             this.chart_taskProgress.Location = new System.Drawing.Point(0, 0);
+            this.chart_taskProgress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chart_taskProgress.Name = "chart_taskProgress";
             this.chart_taskProgress.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea";
@@ -186,7 +174,7 @@
             series1.Legend = "Legend_progress";
             series1.Name = "SeriesProgress";
             this.chart_taskProgress.Series.Add(series1);
-            this.chart_taskProgress.Size = new System.Drawing.Size(411, 262);
+            this.chart_taskProgress.Size = new System.Drawing.Size(462, 328);
             this.chart_taskProgress.TabIndex = 8;
             this.chart_taskProgress.Text = " ";
             // 
@@ -203,10 +191,10 @@
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.Black;
             this.btnPrint.Image = global::company_management.Properties.Resources.printer;
-            this.btnPrint.Location = new System.Drawing.Point(1014, 62);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Location = new System.Drawing.Point(1141, 78);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(208, 56);
+            this.btnPrint.Size = new System.Drawing.Size(234, 70);
             this.btnPrint.TabIndex = 7;
             this.btnPrint.Text = "PRINT REPORT";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -217,10 +205,10 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(682, 82);
+            this.label7.Location = new System.Drawing.Point(767, 102);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 20);
+            this.label7.Size = new System.Drawing.Size(164, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "Targeting is 80% ";
             // 
@@ -230,10 +218,10 @@
             this.label_inprogressTask.BackColor = System.Drawing.Color.White;
             this.label_inprogressTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_inprogressTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(96)))), ((int)(((byte)(79)))));
-            this.label_inprogressTask.Location = new System.Drawing.Point(843, 46);
+            this.label_inprogressTask.Location = new System.Drawing.Point(948, 58);
             this.label_inprogressTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_inprogressTask.Name = "label_inprogressTask";
-            this.label_inprogressTask.Size = new System.Drawing.Size(64, 29);
+            this.label_inprogressTask.Size = new System.Drawing.Size(76, 33);
             this.label_inprogressTask.TabIndex = 5;
             this.label_inprogressTask.Text = "30%";
             // 
@@ -243,10 +231,10 @@
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(96)))), ((int)(((byte)(79)))));
-            this.label9.Location = new System.Drawing.Point(681, 46);
+            this.label9.Location = new System.Drawing.Point(766, 58);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 29);
+            this.label9.Size = new System.Drawing.Size(184, 33);
             this.label9.TabIndex = 4;
             this.label9.Text = "In Progress:";
             // 
@@ -256,10 +244,10 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(474, 82);
+            this.label6.Location = new System.Drawing.Point(533, 102);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 20);
+            this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 3;
             this.label6.Text = "Targeting is 80% ";
             // 
@@ -269,10 +257,10 @@
             this.label_doneTask.BackColor = System.Drawing.Color.White;
             this.label_doneTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_doneTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(96)))), ((int)(((byte)(79)))));
-            this.label_doneTask.Location = new System.Drawing.Point(569, 46);
+            this.label_doneTask.Location = new System.Drawing.Point(640, 58);
             this.label_doneTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_doneTask.Name = "label_doneTask";
-            this.label_doneTask.Size = new System.Drawing.Size(64, 29);
+            this.label_doneTask.Size = new System.Drawing.Size(76, 33);
             this.label_doneTask.TabIndex = 2;
             this.label_doneTask.Text = "70%";
             // 
@@ -282,10 +270,10 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(96)))), ((int)(((byte)(79)))));
-            this.label4.Location = new System.Drawing.Point(473, 46);
+            this.label4.Location = new System.Drawing.Point(532, 58);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 29);
+            this.label4.Size = new System.Drawing.Size(97, 33);
             this.label4.TabIndex = 1;
             this.label4.Text = "Done:";
             // 
@@ -294,10 +282,10 @@
             this.guna2Panel3.Controls.Add(this.panel1);
             this.guna2Panel3.Controls.Add(this.dgvTask);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 338);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 423);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1238, 450);
+            this.guna2Panel3.Size = new System.Drawing.Size(1393, 562);
             this.guna2Panel3.TabIndex = 6;
             // 
             // panel1
@@ -308,14 +296,15 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1238, 63);
+            this.panel1.Size = new System.Drawing.Size(1393, 79);
             this.panel1.TabIndex = 6;
             // 
             // btnViewTask
             // 
             this.btnViewTask.AutoRoundedCorners = true;
-            this.btnViewTask.BorderRadius = 19;
+            this.btnViewTask.BorderRadius = 24;
             this.btnViewTask.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnViewTask.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnViewTask.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -324,9 +313,10 @@
             this.btnViewTask.ForeColor = System.Drawing.Color.White;
             this.btnViewTask.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnViewTask.Image = global::company_management.Properties.Resources.icons8_eye_25;
-            this.btnViewTask.Location = new System.Drawing.Point(219, 10);
+            this.btnViewTask.Location = new System.Drawing.Point(246, 12);
+            this.btnViewTask.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewTask.Name = "btnViewTask";
-            this.btnViewTask.Size = new System.Drawing.Size(164, 40);
+            this.btnViewTask.Size = new System.Drawing.Size(184, 50);
             this.btnViewTask.TabIndex = 66;
             this.btnViewTask.Text = "View task";
             this.btnViewTask.Click += new System.EventHandler(this.btnViewTask_Click);
@@ -334,7 +324,7 @@
             // btnAdd
             // 
             this.btnAdd.AutoRoundedCorners = true;
-            this.btnAdd.BorderRadius = 19;
+            this.btnAdd.BorderRadius = 24;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -342,9 +332,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::company_management.Properties.Resources.icons8_add_64;
-            this.btnAdd.Location = new System.Drawing.Point(32, 10);
+            this.btnAdd.Location = new System.Drawing.Point(36, 12);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(164, 40);
+            this.btnAdd.Size = new System.Drawing.Size(184, 50);
             this.btnAdd.TabIndex = 65;
             this.btnAdd.Text = "New task";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -352,7 +343,7 @@
             // btnDelete
             // 
             this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BorderRadius = 19;
+            this.btnDelete.BorderRadius = 24;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -363,9 +354,10 @@
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::company_management.Properties.Resources.x;
-            this.btnDelete.Location = new System.Drawing.Point(1098, 10);
+            this.btnDelete.Location = new System.Drawing.Point(1235, 12);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(124, 40);
+            this.btnDelete.Size = new System.Drawing.Size(140, 50);
             this.btnDelete.TabIndex = 67;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -396,8 +388,8 @@
             this.dgvTask.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTask.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTask.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvTask.Location = new System.Drawing.Point(0, 57);
-            this.dgvTask.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTask.Location = new System.Drawing.Point(0, 71);
+            this.dgvTask.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTask.Name = "dgvTask";
             this.dgvTask.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvTask.RowHeadersWidth = 51;
@@ -405,7 +397,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvTask.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTask.Size = new System.Drawing.Size(1238, 393);
+            this.dgvTask.Size = new System.Drawing.Size(1393, 491);
             this.dgvTask.TabIndex = 5;
             this.dgvTask.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellClick);
             this.dgvTask.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellContentClick);
@@ -413,7 +405,7 @@
             // 
             // UCTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.guna2Panel3);
@@ -421,10 +413,9 @@
             this.Controls.Add(this.guna2Panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCTask";
-            this.Size = new System.Drawing.Size(1238, 788);
+            this.Size = new System.Drawing.Size(1393, 985);
             this.Load += new System.EventHandler(this.UCTask_Load);
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_taskProgress)).EndInit();
@@ -450,7 +441,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnViewTask;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_taskProgress;

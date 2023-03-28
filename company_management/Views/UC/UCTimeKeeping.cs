@@ -32,7 +32,7 @@ namespace company_management.Views
             string keyword = txtSearch.Text;
 
             // Tạo một chuỗi điều kiện để lọc dữ liệu
-            StringBuilder filterExpression = new StringBuilder();
+            /*StringBuilder filterExpression = new StringBuilder();
             foreach (DataGridViewColumn column in datagridview_timeKeeping.Columns)
             {
                 // Chỉ áp dụng lọc cho các cột chứa dữ liệu và không phải cột deadline
@@ -47,7 +47,7 @@ namespace company_management.Views
             }
 
             // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
-            (datagridview_timeKeeping.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
+            (datagridview_timeKeeping.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();*/
         }
     }
 }

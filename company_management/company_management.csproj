@@ -485,6 +485,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-search-482.png" />
+    <None Include="Resources\icons8-search-481.png" />
     <None Include="Resources\icons8-user-24 %281%29.png" />
     <None Include="Resources\icons8-user-24.png" />
     <None Include="Resources\icons8-eye-25.png" />

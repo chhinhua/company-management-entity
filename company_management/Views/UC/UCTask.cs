@@ -154,5 +154,7 @@ namespace company_management.Views.UC
             else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
+
+
     }
 }

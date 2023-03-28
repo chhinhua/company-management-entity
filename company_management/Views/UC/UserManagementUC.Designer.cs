@@ -35,11 +35,8 @@ namespace company_management.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupInfo = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.txtbox_address = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnUpdatee = new Guna.UI2.WinForms.Guna2Button();
             this.txtbox_phoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbox_email = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,11 +47,12 @@ namespace company_management.Views
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdatee = new Guna.UI2.WinForms.Guna2Button();
             this.groupInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -71,6 +69,7 @@ namespace company_management.Views
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_48;
             this.txtSearch.Location = new System.Drawing.Point(331, 30);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
@@ -107,44 +106,6 @@ namespace company_management.Views
             this.groupInfo.TabStop = false;
             this.groupInfo.Text = "Information";
             this.groupInfo.Enter += new System.EventHandler(this.groupInfo_Enter);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BorderRadius = 16;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.Red;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Image = global::company_management.Properties.Resources.x;
-            this.btnDelete.Location = new System.Drawing.Point(1135, 161);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 34);
-            this.btnDelete.TabIndex = 64;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.AutoRoundedCorners = true;
-            this.btnAdd.BorderRadius = 16;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::company_management.Properties.Resources.icons8_add_64;
-            this.btnAdd.Location = new System.Drawing.Point(1135, 35);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(111, 34);
-            this.btnAdd.TabIndex = 59;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtbox_address
             // 
@@ -183,25 +144,6 @@ namespace company_management.Views
             this.label4.TabIndex = 10;
             this.label4.Text = "Address";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnUpdatee
-            // 
-            this.btnUpdatee.AutoRoundedCorners = true;
-            this.btnUpdatee.BorderRadius = 16;
-            this.btnUpdatee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdatee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdatee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdatee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdatee.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnUpdatee.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatee.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnUpdatee.Image = global::company_management.Properties.Resources.icons8_uninstalling_updates_32;
-            this.btnUpdatee.Location = new System.Drawing.Point(1135, 98);
-            this.btnUpdatee.Name = "btnUpdatee";
-            this.btnUpdatee.Size = new System.Drawing.Size(111, 34);
-            this.btnUpdatee.TabIndex = 60;
-            this.btnUpdatee.Text = "Update";
-            this.btnUpdatee.Click += new System.EventHandler(this.btnUpdatee_Click_1);
             // 
             // txtbox_phoneNumber
             // 
@@ -389,16 +331,62 @@ namespace company_management.Views
             this.panel1.Size = new System.Drawing.Size(1292, 461);
             this.panel1.TabIndex = 58;
             // 
-            // pictureBox2
+            // btnDelete
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::company_management.Properties.Resources.icons8_search_48;
-            this.pictureBox2.Location = new System.Drawing.Point(853, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 62;
-            this.pictureBox2.TabStop = false;
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderRadius = 16;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.Color.Red;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Image = global::company_management.Properties.Resources.x;
+            this.btnDelete.Location = new System.Drawing.Point(1135, 161);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(111, 34);
+            this.btnDelete.TabIndex = 64;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoRoundedCorners = true;
+            this.btnAdd.BorderRadius = 16;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::company_management.Properties.Resources.icons8_add_64;
+            this.btnAdd.Location = new System.Drawing.Point(1135, 35);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(111, 34);
+            this.btnAdd.TabIndex = 59;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdatee
+            // 
+            this.btnUpdatee.AutoRoundedCorners = true;
+            this.btnUpdatee.BorderRadius = 16;
+            this.btnUpdatee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdatee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdatee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdatee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdatee.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnUpdatee.ForeColor = System.Drawing.Color.White;
+            this.btnUpdatee.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnUpdatee.Image = global::company_management.Properties.Resources.icons8_uninstalling_updates_32;
+            this.btnUpdatee.Location = new System.Drawing.Point(1135, 98);
+            this.btnUpdatee.Name = "btnUpdatee";
+            this.btnUpdatee.Size = new System.Drawing.Size(111, 34);
+            this.btnUpdatee.TabIndex = 60;
+            this.btnUpdatee.Text = "Update";
+            this.btnUpdatee.Click += new System.EventHandler(this.btnUpdatee_Click_1);
             // 
             // UserManagementUC
             // 
@@ -406,7 +394,6 @@ namespace company_management.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.groupInfo);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -417,7 +404,6 @@ namespace company_management.Views
             this.groupInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,7 +411,6 @@ namespace company_management.Views
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnUpdatee;
-        private PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private GroupBox groupInfo;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
