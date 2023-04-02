@@ -8,14 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using company_management.Models;
+using company_management.DTO;
 
 namespace company_management.Views
 {
     public partial class UCTimeKeeping : UserControl
     {
         CheckinCheckoutDAO cicoDAO = new CheckinCheckoutDAO();
-        public static CheckinCheckout timeKeeping = new CheckinCheckout();
-        //public static bool dataChanged = false;
+        public static CheckinCheckoutDTO timeKeeping = new CheckinCheckoutDTO();
+        private TaskDAO taskDAO = new TaskDAO();
 
         public UCTimeKeeping()
         {
@@ -24,7 +25,24 @@ namespace company_management.Views
 
         private void UCTimeKeeping_Load(object sender, EventArgs e)
         {
-            cicoDAO.loadCheckinCheckout(datagridview_timeKeeping);
+            taskDAO.loadUserToCombobox(combbox_employee);
+            loadGridview();
+            loadTimeNow();
+        }
+
+        public void loadTimeNow()
+        {
+            datetime_Checkin.ShowUpDown = true;
+            datetime_Checkin.Value = DateTime.Now;
+
+            datetime_Checkout.ShowUpDown = true;
+            datetime_Checkout.Value = DateTime.Now;
+        }
+
+        public void loadGridview()
+        {
+            List<TimeKeepingDTO> data = cicoDAO.GetAllCheckinCheckouts();
+            datagridview_timeKeeping.DataSource = data;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -32,11 +50,11 @@ namespace company_management.Views
             string keyword = txtSearch.Text;
 
             // Tạo một chuỗi điều kiện để lọc dữ liệu
-            /*StringBuilder filterExpression = new StringBuilder();
+            StringBuilder filterExpression = new StringBuilder();
             foreach (DataGridViewColumn column in datagridview_timeKeeping.Columns)
             {
-                // Chỉ áp dụng lọc cho các cột chứa dữ liệu và không phải cột deadline
-                if (column.DataPropertyName != null && column.Visible && column.Name == "idUser")
+                // Chỉ áp dụng lọc cho các cột chứa dữ liệu
+                if (column.Visible && column.Name == "Employee")
                 {
                     if (filterExpression.Length > 0)
                     {
@@ -47,7 +65,22 @@ namespace company_management.Views
             }
 
             // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
-            (datagridview_timeKeeping.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();*/
+            (datagridview_timeKeeping.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

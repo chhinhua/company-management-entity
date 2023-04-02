@@ -23,7 +23,7 @@ namespace company_management.Controllers
         {
             string sqlStr = string.Format("UPDATE kpi SET " +
                    "idUser = '{0}', kpiName = '{1}', description = '{2}', progress = '{3}' WHERE id = '{4}'",
-                   kpi.IdUser, kpi.KpiName, kpi.Description, kpi.Progress, kpi.IdKpi);
+                   kpi.IdUser, kpi.KpiName, kpi.Description, kpi.Progress, kpi.Id);
             dBConnection.executeQuery(sqlStr);
         }
 

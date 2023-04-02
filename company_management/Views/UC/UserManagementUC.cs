@@ -139,8 +139,6 @@ namespace company_management.Views
 
             // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
             (dataGridView.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
-
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

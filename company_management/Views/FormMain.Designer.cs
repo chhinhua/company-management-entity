@@ -456,9 +456,9 @@
             // pn_main
             // 
             this.pn_main.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pn_main.Location = new System.Drawing.Point(236, 53);
+            this.pn_main.Location = new System.Drawing.Point(230, 53);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1286, 788);
+            this.pn_main.Size = new System.Drawing.Size(1292, 788);
             this.pn_main.TabIndex = 2;
             // 
             // FormMain

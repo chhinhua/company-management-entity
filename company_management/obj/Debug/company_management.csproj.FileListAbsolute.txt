@@ -236,3 +236,36 @@ C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\c
 C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
 C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.exe
 C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.HashCode.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Logging.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Options.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Collections.Immutable.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Data.SqlClient.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Identity.Client.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Logging.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.SqlServer.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\AutoMapper.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.ValueTuple.xml

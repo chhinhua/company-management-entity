@@ -23,7 +23,7 @@ namespace company_management.Controllers
         {
             string sqlStr = string.Format("UPDATE Salary SET " +
                    "idUser = '{0}', basicSalary = '{1}', totalHours = '{2}', overtimeHours = '{3}', leaveHours = '{4}', bonus = '{5}' WHERE id = '{6}'",
-                   salary.IdUser, salary.BasicSalary, salary.TotalHours, salary.OvertimeHours, salary.LeaveHours, salary.Bonus, salary.IdSalary);
+                   salary.IdUser, salary.BasicSalary, salary.TotalHours, salary.OvertimeHours, salary.LeaveHours, salary.Bonus, salary.Id);
             dBConnection.executeQuery(sqlStr);
         }
 

@@ -85,7 +85,7 @@ namespace company_management
                 else if (control is ComboBox comboBox)
                 {
                     comboBox.DataSource = dataTable;
-                    comboBox.DisplayMember = "username";
+                    comboBox.DisplayMember = "fullName";
                     comboBox.ValueMember = "id";
                 }
                 // Add additional else if statements for other types of controls as needed

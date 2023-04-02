@@ -25,12 +25,21 @@ namespace company_management.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"E:\\Study\\HKII - 3th\\LTWD\\Pro" +
-            "ject\\company_management\\company_management\\Database.mdf\";Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=company_management;Integrated Security=True" +
+            "")]
         public string connStr {
             get {
                 return ((string)(this["connStr"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=company_management;Integrated Security=True")]
+        public string company_managementConnectionString {
+            get {
+                return ((string)(this["company_managementConnectionString"]));
             }
         }
     }

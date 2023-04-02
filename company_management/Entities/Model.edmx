@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="company_managementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="checkin_checkout">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="checkinTime" Type="datetime" Nullable="false" />
+          <Property Name="checkoutTime" Type="datetime" Nullable="false" />
+          <Property Name="totalHours" Type="float" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="kpi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="kpiName" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+          <Property Name="progress" Type="int" />
+        </EntityType>
+        <EntityType Name="leave_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="startDate" Type="datetime" />
+          <Property Name="endDate" Type="datetime" />
+          <Property Name="numberDate" Type="int" />
+          <Property Name="reason" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="salary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="basicSalary" Type="float" />
+          <Property Name="totalHours" Type="float" />
+          <Property Name="overtimeHours" Type="float" />
+          <Property Name="leaveHours" Type="float" />
+          <Property Name="bonus" Type="float" />
+        </EntityType>
+        <EntityType Name="task">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="taskName" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+          <Property Name="deadline" Type="datetime" />
+          <Property Name="progress" Type="int" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="role" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="avatar" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_UserCiCo">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="checkin_checkout" Type="Self.checkin_checkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkin_checkout">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserKpi">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="kpi" Type="Self.kpi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kpi">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLeaveRq">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="leave_request" Type="Self.leave_request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="leave_request">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSalary">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="salary" Type="Self.salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="salary">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTask">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="task" Type="Self.task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="task">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CountTasksByStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="status" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetTaskStatusPercentage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="todoPercent" Type="float" />
+                <Property Name="inprogressPercent" Type="float" />
+                <Property Name="donePercent" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="company_managementModelStoreContainer">
+          <EntitySet Name="checkin_checkout" EntityType="Self.checkin_checkout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi" EntityType="Self.kpi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="leave_request" EntityType="Self.leave_request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="salary" EntityType="Self.salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="task" EntityType="Self.task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_UserCiCo" Association="Self.FK_UserCiCo">
+            <End Role="users" EntitySet="users" />
+            <End Role="checkin_checkout" EntitySet="checkin_checkout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserKpi" Association="Self.FK_UserKpi">
+            <End Role="users" EntitySet="users" />
+            <End Role="kpi" EntitySet="kpi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLeaveRq" Association="Self.FK_UserLeaveRq">
+            <End Role="users" EntitySet="users" />
+            <End Role="leave_request" EntitySet="leave_request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSalary" Association="Self.FK_UserSalary">
+            <End Role="users" EntitySet="users" />
+            <End Role="salary" EntitySet="salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTask" Association="Self.FK_UserTask">
+            <End Role="users" EntitySet="users" />
+            <End Role="task" EntitySet="task" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="company_managementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="GetTaskStatusPercentage_Result">
+          <Property Name="todoPercent" Type="Double" />
+          <Property Name="inprogressPercent" Type="Double" />
+          <Property Name="donePercent" Type="Double" />
+        </ComplexType>
+        <EntityType Name="checkin_checkout">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="checkinTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="checkoutTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="totalHours" Type="Double" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="user" Relationship="Self.FK_UserCiCo" FromRole="checkin_checkout" ToRole="users" />
+        </EntityType>
+        <EntityType Name="kpi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="kpiName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="progress" Type="Int32" />
+          <NavigationProperty Name="user" Relationship="Self.FK_UserKpi" FromRole="kpi" ToRole="users" />
+        </EntityType>
+        <EntityType Name="leave_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="startDate" Type="DateTime" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Precision="3" />
+          <Property Name="numberDate" Type="Int32" />
+          <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="user" Relationship="Self.FK_UserLeaveRq" FromRole="leave_request" ToRole="users" />
+        </EntityType>
+        <EntityType Name="salary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="basicSalary" Type="Double" />
+          <Property Name="totalHours" Type="Double" />
+          <Property Name="overtimeHours" Type="Double" />
+          <Property Name="leaveHours" Type="Double" />
+          <Property Name="bonus" Type="Double" />
+          <NavigationProperty Name="user" Relationship="Self.FK_UserSalary" FromRole="salary" ToRole="users" />
+        </EntityType>
+        <EntityType Name="task">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="taskName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="deadline" Type="DateTime" Precision="3" />
+          <Property Name="progress" Type="Int32" />
+          <NavigationProperty Name="user" Relationship="Self.FK_UserTask" FromRole="task" ToRole="users" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="checkin_checkout" Relationship="Self.FK_UserCiCo" FromRole="users" ToRole="checkin_checkout" />
+          <NavigationProperty Name="kpis" Relationship="Self.FK_UserKpi" FromRole="users" ToRole="kpi" />
+          <NavigationProperty Name="leave_request" Relationship="Self.FK_UserLeaveRq" FromRole="users" ToRole="leave_request" />
+          <NavigationProperty Name="salaries" Relationship="Self.FK_UserSalary" FromRole="users" ToRole="salary" />
+          <NavigationProperty Name="tasks" Relationship="Self.FK_UserTask" FromRole="users" ToRole="task" />
+        </EntityType>
+        <Association Name="FK_UserCiCo">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="checkin_checkout" Type="Self.checkin_checkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkin_checkout">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserKpi">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="kpi" Type="Self.kpi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kpi">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLeaveRq">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="leave_request" Type="Self.leave_request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="leave_request">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSalary">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="salary" Type="Self.salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="salary">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTask">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="task" Type="Self.task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="task">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="company_managementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="checkin_checkout" EntityType="Self.checkin_checkout" />
+          <EntitySet Name="kpis" EntityType="Self.kpi" />
+          <EntitySet Name="leave_request" EntityType="Self.leave_request" />
+          <EntitySet Name="salaries" EntityType="Self.salary" />
+          <EntitySet Name="tasks" EntityType="Self.task" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <AssociationSet Name="FK_UserCiCo" Association="Self.FK_UserCiCo">
+            <End Role="users" EntitySet="users" />
+            <End Role="checkin_checkout" EntitySet="checkin_checkout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserKpi" Association="Self.FK_UserKpi">
+            <End Role="users" EntitySet="users" />
+            <End Role="kpi" EntitySet="kpis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLeaveRq" Association="Self.FK_UserLeaveRq">
+            <End Role="users" EntitySet="users" />
+            <End Role="leave_request" EntitySet="leave_request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSalary" Association="Self.FK_UserSalary">
+            <End Role="users" EntitySet="users" />
+            <End Role="salary" EntitySet="salaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTask" Association="Self.FK_UserTask">
+            <End Role="users" EntitySet="users" />
+            <End Role="task" EntitySet="tasks" />
+          </AssociationSet>
+          <FunctionImport Name="GetTaskStatusPercentage" IsComposable="true" ReturnType="Collection(company_managementModel.GetTaskStatusPercentage_Result)" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="company_managementModelStoreContainer" CdmEntityContainer="company_managementEntities">
+          <EntitySetMapping Name="checkin_checkout">
+            <EntityTypeMapping TypeName="company_managementModel.checkin_checkout">
+              <MappingFragment StoreEntitySet="checkin_checkout">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="checkinTime" ColumnName="checkinTime" />
+                <ScalarProperty Name="checkoutTime" ColumnName="checkoutTime" />
+                <ScalarProperty Name="totalHours" ColumnName="totalHours" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpis">
+            <EntityTypeMapping TypeName="company_managementModel.kpi">
+              <MappingFragment StoreEntitySet="kpi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="kpiName" ColumnName="kpiName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="progress" ColumnName="progress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leave_request">
+            <EntityTypeMapping TypeName="company_managementModel.leave_request">
+              <MappingFragment StoreEntitySet="leave_request">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="numberDate" ColumnName="numberDate" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salaries">
+            <EntityTypeMapping TypeName="company_managementModel.salary">
+              <MappingFragment StoreEntitySet="salary">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="basicSalary" ColumnName="basicSalary" />
+                <ScalarProperty Name="totalHours" ColumnName="totalHours" />
+                <ScalarProperty Name="overtimeHours" ColumnName="overtimeHours" />
+                <ScalarProperty Name="leaveHours" ColumnName="leaveHours" />
+                <ScalarProperty Name="bonus" ColumnName="bonus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tasks">
+            <EntityTypeMapping TypeName="company_managementModel.task">
+              <MappingFragment StoreEntitySet="task">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="taskName" ColumnName="taskName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="deadline" ColumnName="deadline" />
+                <ScalarProperty Name="progress" ColumnName="progress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="company_managementModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="company_managementModel.Store.GetTaskStatusPercentage" FunctionImportName="GetTaskStatusPercentage">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="company_managementModel.GetTaskStatusPercentage_Result">
+                <ScalarProperty Name="todoPercent" ColumnName="todoPercent" />
+                <ScalarProperty Name="inprogressPercent" ColumnName="inprogressPercent" />
+                <ScalarProperty Name="donePercent" ColumnName="donePercent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
