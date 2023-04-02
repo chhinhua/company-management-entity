@@ -41,7 +41,6 @@
             this.label_todoTask = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chart_taskProgress = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label_inprogressTask = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,10 +49,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvTask = new System.Windows.Forms.DataGridView();
             this.btnViewTask = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvTask = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_taskProgress)).BeginInit();
@@ -87,8 +87,13 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_48;
+<<<<<<< Updated upstream
             this.txtSearch.Location = new System.Drawing.Point(80, 31);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+=======
+            this.txtSearch.Location = new System.Drawing.Point(71, 25);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+>>>>>>> Stashed changes
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -178,6 +183,7 @@
             this.chart_taskProgress.TabIndex = 8;
             this.chart_taskProgress.Text = " ";
             // 
+<<<<<<< Updated upstream
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -199,6 +205,8 @@
             this.btnPrint.Text = "PRINT REPORT";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+=======
+>>>>>>> Stashed changes
             // label7
             // 
             this.label7.AutoSize = true;
@@ -301,6 +309,47 @@
             this.panel1.Size = new System.Drawing.Size(1393, 79);
             this.panel1.TabIndex = 6;
             // 
+            // dgvTask
+            // 
+            this.dgvTask.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTask.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTask.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvTask.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTask.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTask.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTask.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTask.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTask.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvTask.Location = new System.Drawing.Point(0, 57);
+            this.dgvTask.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTask.Name = "dgvTask";
+            this.dgvTask.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTask.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvTask.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTask.Size = new System.Drawing.Size(1238, 393);
+            this.dgvTask.TabIndex = 5;
+            this.dgvTask.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellClick);
+            this.dgvTask.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellContentClick);
+            this.dgvTask.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvTask_CellPainting);
+            // 
             // btnViewTask
             // 
             this.btnViewTask.AutoRoundedCorners = true;
@@ -362,8 +411,9 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // dgvTask
+            // btnPrint
             // 
+<<<<<<< Updated upstream
             this.dgvTask.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTask.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTask.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -402,6 +452,26 @@
             this.dgvTask.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellClick);
             this.dgvTask.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellContentClick);
             this.dgvTask.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvTask_CellPainting);
+=======
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BorderRadius = 7;
+            this.btnPrint.BorderThickness = 1;
+            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrint.FillColor = System.Drawing.Color.Gainsboro;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.ForeColor = System.Drawing.Color.Black;
+            this.btnPrint.Image = global::company_management.Properties.Resources.printer;
+            this.btnPrint.Location = new System.Drawing.Point(1014, 62);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(208, 56);
+            this.btnPrint.TabIndex = 7;
+            this.btnPrint.Text = "PRINT REPORT";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+>>>>>>> Stashed changes
             // 
             // UCTask
             // 
