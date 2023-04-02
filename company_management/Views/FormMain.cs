@@ -50,6 +50,8 @@ namespace company_management.Views
         private void btnKPI_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnKPI.Location.X, btnKPI.Location.Y);
+            UC_KPI uckpi = new UC_KPI();
+            AddUC(uckpi);
         }
 
         private void btnSalary_Click(object sender, EventArgs e)
@@ -62,6 +64,8 @@ namespace company_management.Views
         private void btnTimekeeping_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnTimekeeping.Location.X, btnTimekeeping.Location.Y);
+            UCTimeKeeping timeKeeping = new UCTimeKeeping();
+            AddUC(timeKeeping);
         }
 
         private void btnUser_Click(object sender, EventArgs e)

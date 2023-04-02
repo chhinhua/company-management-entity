@@ -443,6 +443,36 @@ namespace company_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_482 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_483 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-483", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_slice_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-slice-100", resourceCulture);
@@ -476,6 +506,36 @@ namespace company_management.Properties {
         internal static System.Drawing.Bitmap icons8_uninstalling_updates_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-uninstalling-updates-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_uninstalling_updates_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-uninstalling-updates-321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-24 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,6 +15,7 @@ namespace company_management.Views.UC
     {
         TaskDAO taskDAO = new TaskDAO();
         public static Task viewTask = new Task();
+        public static bool dataChanged = false;
 
         public UCTask()
         {
@@ -93,15 +94,10 @@ namespace company_management.Views.UC
                 {
                     taskDAO.deleteTask(viewTask.Id);
                     taskDAO.loadTasks(dgvTask);
+                    
                 }
             }
             else MessageBox.Show("Task not selected!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private void btnUpdatee_Click(object sender, EventArgs e)
-        {
-            ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
-            viewOrUpdate.Show();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -147,5 +143,18 @@ namespace company_management.Views.UC
                 e.Handled = true;
             }
         }
+
+        private void btnViewTask_Click(object sender, EventArgs e)
+        {
+            if (viewTask.Id != 0)
+            {
+                ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
+                viewOrUpdate.Show();
+            }
+            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        }
+
+
     }
 }

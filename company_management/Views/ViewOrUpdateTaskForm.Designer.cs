@@ -344,6 +344,7 @@ namespace company_management.Views
             this.Name = "ViewOrUpdateTaskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Detail";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewOrUpdateTaskForm_FormClosed);
             this.Load += new System.EventHandler(this.ViewOrUpdateTaskForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Avatar)).EndInit();
             this.circleProgressBar.ResumeLayout(false);

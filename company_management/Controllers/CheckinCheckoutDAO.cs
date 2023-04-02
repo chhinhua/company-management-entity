@@ -9,8 +9,13 @@ namespace company_management.Controllers
 
         public CheckinCheckoutDAO() => dBConnection = new DBConnection();
 
-        //public void loadCheckinCheckout(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "checkin_checkout");
+        public void loadCheckinCheckout(DataGridView dataGridView)
+        {
+            dBConnection.loadData(dataGridView, "checkin_checkout");
 
+            dataGridView.Columns["id"].Visible = false;
+            //dataGridView.Columns["idUser"].Visible = false;
+        }
         public void addCheckinCheckout(CheckinCheckout checkinCheckout)
         {
             string sqlStr = string.Format("INSERT INTO checkin_checkout(idUser, checkinTime, checkoutTime, totalHours, date)" +

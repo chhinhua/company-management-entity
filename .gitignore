@@ -13,7 +13,9 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+company_management/bin/*
+company_management/obj/*
+.vs/company_management/v16/.suo
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -400,5 +402,3 @@ FodyWeavers.xsd
 *.sln.iml
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
-*.pdb
-company_management/obj/Debug/company_management.exe
