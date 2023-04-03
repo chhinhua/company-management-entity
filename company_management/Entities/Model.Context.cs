@@ -10,11 +10,11 @@
 namespace company_management.Entities
 {
     using System;
+    using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    using System.Data.Entity;
-
+    
     public partial class company_managementEntities : DbContext
     {
         public company_managementEntities()
@@ -29,10 +29,10 @@ namespace company_management.Entities
     
         public virtual DbSet<checkin_checkout> checkin_checkout { get; set; }
         public virtual DbSet<kpi> kpis { get; set; }
-        public virtual DbSet<leave_request> leave_request { get; set; }
         public virtual DbSet<salary> salaries { get; set; }
         public virtual DbSet<task> tasks { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<leave_request> leave_request { get; set; }
     
         [DbFunction("company_managementEntities", "GetTaskStatusPercentage")]
         public virtual IQueryable<GetTaskStatusPercentage_Result> GetTaskStatusPercentage()

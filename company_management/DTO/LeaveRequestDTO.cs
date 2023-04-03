@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace company_management.Models
+namespace company_management.DTO
 {
-    public class LeaveRequest
+    public class LeaveRequestDTO
     {
         private int id;
         private int idUser;
@@ -15,10 +15,11 @@ namespace company_management.Models
         private int numberDay;
         private string reason;
         private string status;
+        private string employee;
 
-        public LeaveRequest() { }
+        public LeaveRequestDTO() { }
 
-        public LeaveRequest(int idUser, DateTime startDate, DateTime endDate, int numberDay, string reason, string status)
+        public LeaveRequestDTO(int idUser, DateTime startDate, DateTime endDate, int numberDay, string reason, string status)
         {
             IdUser = idUser;
             StartDate = startDate;
@@ -35,9 +36,11 @@ namespace company_management.Models
         public int NumberDay { get => numberDay; set => numberDay = value; }
         public string Reason { get => reason; set => reason = value; }
         public string Status { get => status; set => status = value; }
+        public string Employee { get => employee; set => employee = value; }
 
-        public override string ToString() 
+        public override string ToString()
             => $"IdUser: {IdUser}\nStartDate: {StartDate}\nEndDate: {EndDate}" +
                $"\nNumberDay: {NumberDay}\nReason: {Reason}\nStatus: {Status}%";
+
     }
 }

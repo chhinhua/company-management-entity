@@ -18,7 +18,7 @@ namespace company_management.Entities
         public int idUser { get; set; }
         public Nullable<System.DateTime> startDate { get; set; }
         public Nullable<System.DateTime> endDate { get; set; }
-        public Nullable<int> numberDate { get; set; }
+        public Nullable<int> numberDay { get; set; }
         public string reason { get; set; }
         public string status { get; set; }
     

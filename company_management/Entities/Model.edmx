@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="company_managementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="company_managementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="checkin_checkout">
           <Key>
             <PropertyRef Name="id" />
@@ -34,7 +34,7 @@
           <Property Name="idUser" Type="int" Nullable="false" />
           <Property Name="startDate" Type="datetime" />
           <Property Name="endDate" Type="datetime" />
-          <Property Name="numberDate" Type="int" />
+          <Property Name="numberDay" Type="int" />
           <Property Name="reason" Type="nvarchar" MaxLength="50" />
           <Property Name="status" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -177,8 +177,7 @@
             <End Role="task" EntitySet="task" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="company_managementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -209,19 +208,6 @@
           <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="progress" Type="Int32" />
           <NavigationProperty Name="user" Relationship="Self.FK_UserKpi" FromRole="kpi" ToRole="users" />
-        </EntityType>
-        <EntityType Name="leave_request">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idUser" Type="Int32" Nullable="false" />
-          <Property Name="startDate" Type="DateTime" Precision="3" />
-          <Property Name="endDate" Type="DateTime" Precision="3" />
-          <Property Name="numberDate" Type="Int32" />
-          <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="user" Relationship="Self.FK_UserLeaveRq" FromRole="leave_request" ToRole="users" />
         </EntityType>
         <EntityType Name="salary">
           <Key>
@@ -263,9 +249,9 @@
           <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="checkin_checkout" Relationship="Self.FK_UserCiCo" FromRole="users" ToRole="checkin_checkout" />
           <NavigationProperty Name="kpis" Relationship="Self.FK_UserKpi" FromRole="users" ToRole="kpi" />
-          <NavigationProperty Name="leave_request" Relationship="Self.FK_UserLeaveRq" FromRole="users" ToRole="leave_request" />
           <NavigationProperty Name="salaries" Relationship="Self.FK_UserSalary" FromRole="users" ToRole="salary" />
           <NavigationProperty Name="tasks" Relationship="Self.FK_UserTask" FromRole="users" ToRole="task" />
+          <NavigationProperty Name="leave_request" Relationship="company_managementModel.FK_UserLeaveRq" FromRole="user" ToRole="leave_request" />
         </EntityType>
         <Association Name="FK_UserCiCo">
           <End Role="users" Type="Self.user" Multiplicity="1" />
@@ -287,18 +273,6 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="kpi">
-              <PropertyRef Name="idUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserLeaveRq">
-          <End Role="users" Type="Self.user" Multiplicity="1" />
-          <End Role="leave_request" Type="Self.leave_request" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="leave_request">
               <PropertyRef Name="idUser" />
             </Dependent>
           </ReferentialConstraint>
@@ -330,7 +304,6 @@
         <EntityContainer Name="company_managementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="checkin_checkout" EntityType="Self.checkin_checkout" />
           <EntitySet Name="kpis" EntityType="Self.kpi" />
-          <EntitySet Name="leave_request" EntityType="Self.leave_request" />
           <EntitySet Name="salaries" EntityType="Self.salary" />
           <EntitySet Name="tasks" EntityType="Self.task" />
           <EntitySet Name="users" EntityType="Self.user" />
@@ -342,10 +315,6 @@
             <End Role="users" EntitySet="users" />
             <End Role="kpi" EntitySet="kpis" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserLeaveRq" Association="Self.FK_UserLeaveRq">
-            <End Role="users" EntitySet="users" />
-            <End Role="leave_request" EntitySet="leave_request" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserSalary" Association="Self.FK_UserSalary">
             <End Role="users" EntitySet="users" />
             <End Role="salary" EntitySet="salaries" />
@@ -355,7 +324,37 @@
             <End Role="task" EntitySet="tasks" />
           </AssociationSet>
           <FunctionImport Name="GetTaskStatusPercentage" IsComposable="true" ReturnType="Collection(company_managementModel.GetTaskStatusPercentage_Result)" />
+          <EntitySet Name="leave_request" EntityType="company_managementModel.leave_request" />
+          <AssociationSet Name="FK_UserLeaveRq" Association="company_managementModel.FK_UserLeaveRq">
+            <End Role="user" EntitySet="users" />
+            <End Role="leave_request" EntitySet="leave_request" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="leave_request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="startDate" Type="DateTime" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Precision="3" />
+          <Property Name="numberDay" Type="Int32" />
+          <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="user" Relationship="company_managementModel.FK_UserLeaveRq" FromRole="leave_request" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_UserLeaveRq">
+          <End Type="company_managementModel.user" Role="user" Multiplicity="1" />
+          <End Type="company_managementModel.leave_request" Role="leave_request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="leave_request">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -382,19 +381,6 @@
                 <ScalarProperty Name="kpiName" ColumnName="kpiName" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="progress" ColumnName="progress" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="leave_request">
-            <EntityTypeMapping TypeName="company_managementModel.leave_request">
-              <MappingFragment StoreEntitySet="leave_request">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idUser" ColumnName="idUser" />
-                <ScalarProperty Name="startDate" ColumnName="startDate" />
-                <ScalarProperty Name="endDate" ColumnName="endDate" />
-                <ScalarProperty Name="numberDate" ColumnName="numberDate" />
-                <ScalarProperty Name="reason" ColumnName="reason" />
-                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -447,6 +433,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="leave_request">
+            <EntityTypeMapping TypeName="company_managementModel.leave_request">
+              <MappingFragment StoreEntitySet="leave_request">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="numberDay" ColumnName="numberDay" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -468,6 +467,20 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="ede4ea169bec41abb8bc7ca66a90fea3" Name="Diagram1">
+        <EntityTypeShape EntityType="company_managementModel.checkin_checkout" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.kpi" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.salary" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.task" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.user" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="company_managementModel.FK_UserCiCo" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_UserKpi" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_UserSalary" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_UserTask" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="company_managementModel.leave_request" Width="1.5" PointX="3" PointY="18" />
+        <AssociationConnector Association="company_managementModel.FK_UserLeaveRq" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>

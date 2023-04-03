@@ -17,6 +17,7 @@ namespace company_management.Controllers
             dbContext = new company_managementEntities();
             dBConnection = new DBConnection();
         }
+
         public void loadCheckinCheckout(DataGridView dataGridView)
         {
             dBConnection.loadData(dataGridView, "checkin_checkout");
@@ -83,7 +84,7 @@ namespace company_management.Controllers
             return data.ToList();
         }
 
-        public void AddCheckinCheckout(CheckinCheckoutDTO checkinCheckoutDTO)
+       /* public void AddCheckinCheckout(CheckinCheckoutDTO checkinCheckoutDTO)
         {
             // Chuyển đổi đối tượng DTO sang đối tượng Entity
             var checkinCheckout = new checkin_checkout
@@ -98,6 +99,6 @@ namespace company_management.Controllers
             // Thêm đối tượng Entity vào context và lưu vào CSDL
             dbContext.checkin_checkout.Add(checkinCheckout);
             dbContext.SaveChanges();
-        }
+        }*/
     }
 }

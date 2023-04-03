@@ -119,7 +119,6 @@ E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\o
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources
-E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
@@ -269,3 +268,5 @@ E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\b
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.SqlServer.xml
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\AutoMapper.xml
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.ValueTuple.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddRequestForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequest.resources
