@@ -241,6 +241,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCHome";
             this.Size = new System.Drawing.Size(1292, 788);
+            this.Load += new System.EventHandler(this.UCHome_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();

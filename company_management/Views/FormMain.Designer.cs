@@ -51,7 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel_tabbar = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_main = new System.Windows.Forms.Panel();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -60,7 +60,7 @@
             this.guna2Panel4.SuspendLayout();
             this.lb_menu_active.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.panel_tabbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -175,7 +175,7 @@
             this.btnUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.btnUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnUser.ForeColor = System.Drawing.Color.White;
             this.btnUser.Image = global::company_management.Properties.Resources.icons8_user_48;
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -286,7 +286,7 @@
             this.btnLeaveRequest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLeaveRequest.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLeaveRequest.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.btnLeaveRequest.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeaveRequest.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLeaveRequest.ForeColor = System.Drawing.Color.White;
             this.btnLeaveRequest.Image = global::company_management.Properties.Resources.icons8_request_64;
             this.btnLeaveRequest.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -330,7 +330,7 @@
             this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = global::company_management.Properties.Resources.icons8_home_48__2_;
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -442,16 +442,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "KPI";
             // 
-            // guna2Panel1
+            // panel_tabbar
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.guna2Panel1.Controls.Add(this.guna2Panel5);
-            this.guna2Panel1.Controls.Add(this.guna2Panel4);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 53);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(230, 788);
-            this.guna2Panel1.TabIndex = 0;
+            this.panel_tabbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
+            this.panel_tabbar.Controls.Add(this.guna2Panel5);
+            this.panel_tabbar.Controls.Add(this.guna2Panel4);
+            this.panel_tabbar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel_tabbar.Location = new System.Drawing.Point(0, 53);
+            this.panel_tabbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_tabbar.Name = "panel_tabbar";
+            this.panel_tabbar.Size = new System.Drawing.Size(230, 788);
+            this.panel_tabbar.TabIndex = 0;
             // 
             // pn_main
             // 
@@ -468,7 +469,7 @@
             this.ClientSize = new System.Drawing.Size(1522, 841);
             this.Controls.Add(this.pn_main);
             this.Controls.Add(this.guna2Panel3);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.panel_tabbar);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -482,7 +483,7 @@
             this.lb_menu_active.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
+            this.panel_tabbar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -506,7 +507,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel_tabbar;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_user_action;

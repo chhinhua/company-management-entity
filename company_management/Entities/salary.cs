@@ -16,11 +16,12 @@ namespace company_management.Entities
     {
         public int id { get; set; }
         public int idUser { get; set; }
-        public Nullable<double> basicSalary { get; set; }
+        public Nullable<decimal> basicSalary { get; set; }
         public Nullable<double> totalHours { get; set; }
         public Nullable<double> overtimeHours { get; set; }
         public Nullable<double> leaveHours { get; set; }
-        public Nullable<double> bonus { get; set; }
+        public Nullable<decimal> bonus { get; set; }
+        public Nullable<decimal> finalSalary { get; set; }
     
         public virtual user user { get; set; }
     }

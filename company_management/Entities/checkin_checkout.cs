@@ -19,7 +19,7 @@ namespace company_management.Entities
         public System.DateTime checkinTime { get; set; }
         public System.DateTime checkoutTime { get; set; }
         public double totalHours { get; set; }
-        public Nullable<DateTime> date { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
     
         public virtual user user { get; set; }
     }

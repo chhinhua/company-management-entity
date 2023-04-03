@@ -17,19 +17,22 @@ namespace company_management.DTO
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<checkin_checkout, CheckinCheckoutDTO>().ReverseMap();
+                cfg.CreateMap<leave_request, LeaveRequestDTO > ().ReverseMap();
+                cfg.CreateMap<salary, SalaryDTO> ().ReverseMap();
             });
 
             _mapper = config.CreateMapper();
         }
 
-        public static CheckinCheckoutDTO ToDto(this checkin_checkout entity)
+        public static TDto ToDto<TSource, TDto>(this TSource entity)
         {
-            return _mapper.Map<CheckinCheckoutDTO>(entity);
+            return _mapper.Map<TDto>(entity);
         }
 
-        public static checkin_checkout ToEntity(this CheckinCheckoutDTO dto)
+        public static TEntity ToEntity<TSource, TEntity>(this TSource dto)
         {
-            return _mapper.Map<checkin_checkout>(dto);
+            return _mapper.Map<TEntity>(dto);
         }
     }
+
 }

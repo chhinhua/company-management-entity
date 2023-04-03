@@ -30,6 +30,7 @@ namespace company_management.Views
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            btnHome.BackColor = Color.Teal;
             this.lb_menu_active.Location = new Point(btnHome.Location.X, btnHome.Location.Y);
             UCHome uCHome = new UCHome();
             AddUC(uCHome);
@@ -45,6 +46,8 @@ namespace company_management.Views
         private void btnLeaveRequest_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnLeaveRequest.Location.X, btnLeaveRequest.Location.Y);
+            UCLeaveRequest request = new UCLeaveRequest();
+            AddUC(request);
         }
 
         private void btnKPI_Click(object sender, EventArgs e)

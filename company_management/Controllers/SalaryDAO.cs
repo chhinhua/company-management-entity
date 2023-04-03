@@ -1,36 +1,59 @@
-﻿using company_management.Models;
-using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using company_management.DTO;
+using company_management.Entities;
+using company_management.Models;
 
 namespace company_management.Controllers
 {
     public class SalaryDAO
     {
-        private readonly DBConnection dBConnection;
+        private readonly company_managementEntities dbContext;
+        public static readonly decimal DEFAULT_BASIC_SALALRY = 6500000;
 
-        public SalaryDAO() => dBConnection = new DBConnection();
-
-        //public void loadSalary(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "salary");
-
-        public void addSalary(Salary salary)
+        public SalaryDAO()
         {
-            string sqlStr = string.Format("INSERT INTO salary(idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus)" +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
-                salary.IdUser, salary.BasicSalary, salary.TotalHours, salary.OvertimeHours, salary.LeaveHours, salary.Bonus);
-            dBConnection.executeQuery(sqlStr);
+            dbContext = new company_managementEntities();
         }
 
-        public void updateSalary(Salary salary)
+        public List<SalaryDTO> GetAllSalaries()
         {
-            string sqlStr = string.Format("UPDATE Salary SET " +
-                   "idUser = '{0}', basicSalary = '{1}', totalHours = '{2}', overtimeHours = '{3}', leaveHours = '{4}', bonus = '{5}' WHERE id = '{6}'",
-                   salary.IdUser, salary.BasicSalary, salary.TotalHours, salary.OvertimeHours, salary.LeaveHours, salary.Bonus, salary.Id);
-            dBConnection.executeQuery(sqlStr);
+            var listSalary = dbContext.salaries.ToList();
+
+            return listSalary.Select(salary => MappingExtensions.ToDto<salary, SalaryDTO>(salary)).ToList();
         }
 
-        public void deleteSalary(int id)
+        public void InitData()
         {
-            string sqlStr = string.Format("DELETE FROM salary WHERE id = '{0}'", id);
-            dBConnection.executeQuery(sqlStr);
+            var listSalaryDTO = new List<SalaryDTO>
+                {
+                    // SalaryDTO(idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus)
+                    new SalaryDTO(1, DEFAULT_BASIC_SALALRY, 176, 4, 0, 500000),
+                    new SalaryDTO(2, DEFAULT_BASIC_SALALRY, 169, 24, 8, 400000),
+                    new SalaryDTO(4, DEFAULT_BASIC_SALALRY, 180, 8, 4, 650000),
+                    new SalaryDTO(14, DEFAULT_BASIC_SALALRY, 200, 8, 0, 1000000),
+                    new SalaryDTO(3, DEFAULT_BASIC_SALALRY, 176, 16, 0, 650000),
+                    new SalaryDTO(6, DEFAULT_BASIC_SALALRY, 176, 8, 4, 500000),                
+                };
+
+            foreach (var salaryDTO in listSalaryDTO)
+            {
+                var salary = MappingExtensions.ToEntity<SalaryDTO, salary>(salaryDTO);
+                dbContext.salaries.Add(salary);
+            }
+
+            dbContext.SaveChanges();
         }
+
+        public User GetUserById(int userId)
+        {
+            var userEntity = dbContext.users.FirstOrDefault(u => u.id == userId);
+
+            return MappingExtensions.ToDto<user, User>(userEntity);
+        }
+
+
+
     }
 }
