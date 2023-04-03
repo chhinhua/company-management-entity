@@ -386,6 +386,14 @@
     <Compile Include="DBConnection.cs" />
     <Compile Include="DTO\MappingExtensions.cs" />
     <Compile Include="DTO\TimeKeepingDTO.cs" />
+    <Compile Include="DTO\CheckinCheckoutDTO.cs" />
+    <Compile Include="DTO\Company.cs" />
+    <Compile Include="DTO\KpiDTO.cs" />
+    <Compile Include="DTO\LeaveRequestDTO.cs" />
+    <Compile Include="DTO\SalaryDTO.cs" />
+    <Compile Include="DTO\Task.cs" />
+    <Compile Include="DTO\TaskStatusPercentage.cs" />
+    <Compile Include="DTO\User.cs" />
     <Compile Include="Entities\checkin_checkout.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -416,20 +424,21 @@
     <Compile Include="Entities\salary.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\task.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\user.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\CheckinCheckoutDTO.cs" />
-    <Compile Include="DTO\Company.cs" />
-    <Compile Include="DTO\KpiDTO.cs" />
-    <Compile Include="DTO\LeaveRequestDTO.cs" />
-    <Compile Include="DTO\Salary.cs" />
-    <Compile Include="DTO\Task.cs" />
-    <Compile Include="DTO\TaskStatusPercentage.cs" />
-    <Compile Include="DTO\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AddRequestForm.cs">
@@ -516,6 +525,12 @@
     <Compile Include="Views\UC\UpdateCPInfoUC.Designer.cs">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UC\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UC\UserManagementUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -593,6 +608,9 @@
     <EmbeddedResource Include="Views\UC\UpdateCPInfoUC.resx">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UserManagementUC.resx">
       <DependentUpon>UserManagementUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,6 +627,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Entities\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -718,17 +739,17 @@
     <None Include="Resources\device-floppy.png" />
     <None Include="Resources\arrow-back-up.png" />
     <None Include="Resources\eye-filled.png" />
+    <None Include="Resources\edit.png" />
     <Content Include="Entities\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
       <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entities\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\edit.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <ItemGroup />

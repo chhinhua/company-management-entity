@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2e762a34591440c9b607d76209e860c" Name="Diagram1">
+        <EntityTypeShape EntityType="company_managementModel.checkin_checkout" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.kpi" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.leave_request" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.salary" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.task" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_managementModel.user" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="company_managementModel.FK_UserCiCo" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_UserKpi" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_UserLeaveRq" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_salary_users" ManuallyRouted="false" />
+        <AssociationConnector Association="company_managementModel.FK_UserTask" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

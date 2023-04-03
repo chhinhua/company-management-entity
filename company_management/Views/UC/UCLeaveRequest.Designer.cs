@@ -46,6 +46,7 @@
             this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.panelData.SuspendLayout();
             this.groupBox_fillter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_leaveRequest)).BeginInit();
@@ -57,15 +58,15 @@
             this.checkbox_checkedOut.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.checkbox_checkedOut.CheckedState.BorderRadius = 10;
             this.checkbox_checkedOut.CheckedState.BorderThickness = 0;
-            this.checkbox_checkedOut.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkbox_checkedOut.CheckedState.FillColor = System.Drawing.Color.Black;
             this.checkbox_checkedOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.checkbox_checkedOut.ForeColor = System.Drawing.Color.Black;
-            this.checkbox_checkedOut.Location = new System.Drawing.Point(301, 10);
+            this.checkbox_checkedOut.Location = new System.Drawing.Point(383, 10);
             this.checkbox_checkedOut.Name = "checkbox_checkedOut";
-            this.checkbox_checkedOut.Size = new System.Drawing.Size(147, 31);
+            this.checkbox_checkedOut.Size = new System.Drawing.Size(107, 31);
             this.checkbox_checkedOut.TabIndex = 89;
-            this.checkbox_checkedOut.Text = "Checked out";
-            this.checkbox_checkedOut.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkbox_checkedOut.Text = "Từ chối";
+            this.checkbox_checkedOut.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.checkbox_checkedOut.UncheckedState.BorderRadius = 0;
             this.checkbox_checkedOut.UncheckedState.BorderThickness = 0;
             this.checkbox_checkedOut.UncheckedState.FillColor = System.Drawing.Color.White;
@@ -77,14 +78,14 @@
             this.checkbox_checkedIn.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.checkbox_checkedIn.CheckedState.BorderRadius = 10;
             this.checkbox_checkedIn.CheckedState.BorderThickness = 0;
-            this.checkbox_checkedIn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkbox_checkedIn.CheckedState.FillColor = System.Drawing.Color.Black;
             this.checkbox_checkedIn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.checkbox_checkedIn.ForeColor = System.Drawing.Color.Black;
-            this.checkbox_checkedIn.Location = new System.Drawing.Point(133, 10);
+            this.checkbox_checkedIn.Location = new System.Drawing.Point(270, 10);
             this.checkbox_checkedIn.Name = "checkbox_checkedIn";
-            this.checkbox_checkedIn.Size = new System.Drawing.Size(129, 31);
+            this.checkbox_checkedIn.Size = new System.Drawing.Size(107, 31);
             this.checkbox_checkedIn.TabIndex = 88;
-            this.checkbox_checkedIn.Text = "Checked in";
+            this.checkbox_checkedIn.Text = "Đã duyệt";
             this.checkbox_checkedIn.UncheckedState.BorderColor = System.Drawing.Color.White;
             this.checkbox_checkedIn.UncheckedState.BorderRadius = 0;
             this.checkbox_checkedIn.UncheckedState.BorderThickness = 0;
@@ -131,6 +132,7 @@
             // 
             this.groupBox_fillter.BackColor = System.Drawing.Color.White;
             this.groupBox_fillter.BorderRadius = 10;
+            this.groupBox_fillter.Controls.Add(this.guna2CheckBox1);
             this.groupBox_fillter.Controls.Add(this.checkbox_checkedOut);
             this.groupBox_fillter.Controls.Add(this.checkbox_checkedIn);
             this.groupBox_fillter.Controls.Add(this.datetime_fillter);
@@ -168,7 +170,7 @@
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Search ...";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(472, 32);
+            this.txtSearch.Size = new System.Drawing.Size(472, 41);
             this.txtSearch.TabIndex = 70;
             // 
             // datagridview_leaveRequest
@@ -314,6 +316,26 @@
             this.label1.Text = "Leave Request Board";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // guna2CheckBox1
+            // 
+            this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox1.CheckedState.BorderRadius = 10;
+            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.guna2CheckBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2CheckBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2CheckBox1.Location = new System.Drawing.Point(145, 10);
+            this.guna2CheckBox1.Name = "guna2CheckBox1";
+            this.guna2CheckBox1.Size = new System.Drawing.Size(103, 31);
+            this.guna2CheckBox1.TabIndex = 90;
+            this.guna2CheckBox1.Text = "Đang chờ";
+            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.White;
+            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            // 
             // UCLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,7 +350,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCLeaveRequest";
             this.Size = new System.Drawing.Size(1292, 788);
-            this.Load += new System.EventHandler(this.UCLeaveRequestManagement_Load);
+            this.Load += new System.EventHandler(this.UCLeaveRequest_Load);
             this.panelData.ResumeLayout(false);
             this.groupBox_fillter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_leaveRequest)).EndInit();
@@ -350,5 +372,6 @@
         private Guna.UI2.WinForms.Guna2Button buttonRemove;
         private Guna.UI2.WinForms.Guna2Button buttonAdd;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
     }
 }

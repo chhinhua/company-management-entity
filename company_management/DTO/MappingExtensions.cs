@@ -18,6 +18,7 @@ namespace company_management.DTO
             {
                 cfg.CreateMap<checkin_checkout, CheckinCheckoutDTO>().ReverseMap();
                 cfg.CreateMap<leave_request, LeaveRequestDTO > ().ReverseMap();
+                cfg.CreateMap<salary, SalaryDTO> ().ReverseMap();
             });
 
             _mapper = config.CreateMapper();

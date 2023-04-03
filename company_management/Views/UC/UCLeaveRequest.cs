@@ -23,7 +23,7 @@ namespace company_management.Views
             InitializeComponent();
         }
 
-        private void UCLeaveRequestManagement_Load(object sender, EventArgs e)
+        private void UCLeaveRequest_Load(object sender, EventArgs e)
         {
             loadGridview();
             CustomeGridColumn();
@@ -110,5 +110,7 @@ namespace company_management.Views
         {
             loadGridview();
         }
+
+      
     }
 }

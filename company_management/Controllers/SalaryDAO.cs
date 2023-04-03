@@ -10,13 +10,14 @@ namespace company_management.Controllers
     public class SalaryDAO
     {
         private readonly company_managementEntities dbContext;
+        public static readonly decimal DEFAULT_BASIC_SALALRY = 6500000;
 
         public SalaryDAO()
         {
             dbContext = new company_managementEntities();
         }
 
-        public List<SalaryDTO> GetAllLeaveRequests()
+        public List<SalaryDTO> GetAllSalaries()
         {
             var listSalary = dbContext.salaries.ToList();
 
@@ -25,66 +26,24 @@ namespace company_management.Controllers
 
         public void InitData()
         {
-            using (var db = new company_managementEntities())
-            {
-                var listSalaryDto = new List<LeaveRequestDTO>
+            var listSalaryDTO = new List<SalaryDTO>
                 {
-                    new LeaveRequestDTO
-                    {
-                        IdUser = 1,
-                        StartDate = new DateTime(2023, 5, 1),
-                        EndDate = new DateTime(2023, 5, 5),
-                        NumberDay = 5,
-                        Reason = "Về quê",
-                        Status = "pending"
-                    },
-                    new LeaveRequestDTO
-                    {
-                        IdUser = 2,
-                        StartDate = new DateTime(2023, 7, 1),
-                        EndDate = new DateTime(2023, 7, 2),
-                        NumberDay = 2,
-                        Reason = "Đi khám bệnh",
-                        Status = "approved"
-                    },
-                    new LeaveRequestDTO
-                    {
-                        IdUser = 14,
-                        StartDate = new DateTime(2023, 6, 10),
-                        EndDate = new DateTime(2023, 6, 14),
-                        NumberDay = 4,
-                        Reason = "Tham gia hội thảo",
-                        Status = "rejected"
-                    },
-                    new LeaveRequestDTO
-                    {
-                        IdUser = 3,
-                        StartDate = new DateTime(2023, 8, 20),
-                        EndDate = new DateTime(2023, 8, 22),
-                        NumberDay = 3,
-                        Reason = "Cưới bạn thân",
-                        Status = "cancelled"
-                    },
-                    new LeaveRequestDTO
-                    {
-                        IdUser = 1,
-                        StartDate = new DateTime(2023, 9, 1),
-                        EndDate = new DateTime(2023, 9, 5),
-                        NumberDay = 5,
-                        Reason = "Du lịch",
-                        Status = "pending"
-                    }
+                    // SalaryDTO(idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus)
+                    new SalaryDTO(1, DEFAULT_BASIC_SALALRY, 176, 4, 0, 500000),
+                    new SalaryDTO(2, DEFAULT_BASIC_SALALRY, 169, 24, 8, 400000),
+                    new SalaryDTO(4, DEFAULT_BASIC_SALALRY, 180, 8, 4, 650000),
+                    new SalaryDTO(14, DEFAULT_BASIC_SALALRY, 200, 8, 0, 1000000),
+                    new SalaryDTO(3, DEFAULT_BASIC_SALALRY, 176, 16, 0, 650000),
+                    new SalaryDTO(6, DEFAULT_BASIC_SALALRY, 176, 8, 4, 500000),                
                 };
 
-                foreach (var leaveRequestDto in listSalaryDto)
-                {
-                    var leaveRequest = MappingExtensions.ToEntity<LeaveRequestDTO, leave_request>(leaveRequestDto);
-                    db.leave_request.Add(leaveRequest);
-                }
-
-                db.SaveChanges();
+            foreach (var salaryDTO in listSalaryDTO)
+            {
+                var salary = MappingExtensions.ToEntity<SalaryDTO, salary>(salaryDTO);
+                dbContext.salaries.Add(salary);
             }
 
+            dbContext.SaveChanges();
         }
 
         public User GetUserById(int userId)
@@ -93,5 +52,8 @@ namespace company_management.Controllers
 
             return MappingExtensions.ToDto<user, User>(userEntity);
         }
+
+
+
     }
 }

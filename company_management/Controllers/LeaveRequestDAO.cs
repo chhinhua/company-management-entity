@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using company_management.DTO;
 using company_management.Entities;
 using company_management.Models;
@@ -15,29 +14,7 @@ namespace company_management.Controllers
         public LeaveRequestDAO()
         {
             dbContext = new company_managementEntities();
-        }
-
-        /*public void addLeaveRequest(LeaveRequestDTO leaveRequest)
-        {
-            string sqlStr = string.Format("INSERT INTO leave_request(idUser, startDate, endDate, numberDay, reason, status)" +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
-                leaveRequest.IdUser, leaveRequest.StartDate, leaveRequest.EndDate, leaveRequest.NumberDay, leaveRequest.Reason, leaveRequest.Status);
-            dBConnection.executeQuery(sqlStr);
-        }
-
-        public void updateLeaveRequest(LeaveRequestDTO leaveRequest)
-        {
-            string sqlStr = string.Format("UPDATE leave_request SET " +
-                   "idUser = '{0}', startDate = '{1}', endDate = '{2}', numberDay = '{3}', reason = '{4}', status = '{5}' WHERE id = '{6}'",
-                   leaveRequest.IdUser, leaveRequest.StartDate, leaveRequest.EndDate, leaveRequest.NumberDay, leaveRequest.Reason, leaveRequest.Status, leaveRequest.IdUser);
-            dBConnection.executeQuery(sqlStr);
-        }
-
-        public void deleteLeaveRequest(int id)
-        {
-            string sqlStr = string.Format("DELETE FROM leave_request WHERE id = '{0}'", id);
-            dBConnection.executeQuery(sqlStr);
-        }*/
+        }     
 
         public List<LeaveRequestDTO> GetAllLeaveRequests()
         {

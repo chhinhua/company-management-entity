@@ -38,16 +38,18 @@ namespace company_management.Views.UC
 
             // Thêm các phần tử vào danh sách
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
-            chart_taskProgress.Series["SeriesProgress"].Points[0].LegendText = "Todo";
+            //chart_taskProgress.Series["SeriesProgress"].Points[0].LegendText = "Todo";
 
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
-            chart_taskProgress.Series["SeriesProgress"].Points[1].LegendText = "Inprogress";
+            //chart_taskProgress.Series["SeriesProgress"].Points[1].LegendText = "Inprogress";
 
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", donePercent);
-            chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
+            // chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
 
             // Ẩn nhãn trên biểu đồ tròn
-            chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = false;
+            chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = true;
+
+            chart_taskProgress.Legends.Clear();
 
             chart_taskProgress.Series["SeriesProgress"].Points[0].Color = Color.FromArgb(214, 40, 40);
             chart_taskProgress.Series["SeriesProgress"].Points[1].Color = Color.FromArgb(0, 255, 0);
@@ -73,18 +75,36 @@ namespace company_management.Views.UC
             }
         }
 
-        private void dgvTask_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
-
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void dgvTask_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex == dgvTask.Columns["progress"].Index)
+            {
+                e.PaintBackground(e.CellBounds, true);
+                e.PaintContent(e.CellBounds);
+
+                // Thêm ký tự % vào header của cột progress
+                string headerText = dgvTask.Columns["deadline"].HeaderText.Replace("deadline", "") + "(%)";
+                e.Graphics.DrawString(headerText, e.CellStyle.Font, Brushes.Black, e.CellBounds, new StringFormat { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far });
+
+                e.Handled = true;
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             AddTaskForm addTask = new AddTaskForm();
             addTask.Show();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
         {
             if (viewTask.Id != 0)
             {
@@ -94,10 +114,19 @@ namespace company_management.Views.UC
                 {
                     taskDAO.deleteTask(viewTask.Id);
                     taskDAO.loadTasks(dgvTask);
-                    
                 }
             }
             else MessageBox.Show("Task not selected!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnViewTask_Click(object sender, EventArgs e)
+        {
+            if (viewTask.Id != 0)
+            {
+                ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
+                viewOrUpdate.Show();
+            }
+            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -121,40 +150,7 @@ namespace company_management.Views.UC
 
             // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
             (dgvTask.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
-
         }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvTask_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex == -1 && e.ColumnIndex == dgvTask.Columns["progress"].Index)
-            {
-                e.PaintBackground(e.CellBounds, true);
-                e.PaintContent(e.CellBounds);
-
-                // Thêm ký tự % vào header của cột progress
-                string headerText = dgvTask.Columns["deadline"].HeaderText.Replace("deadline", "") + "(%)";
-                e.Graphics.DrawString(headerText, e.CellStyle.Font, Brushes.Black, e.CellBounds, new StringFormat { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far });
-
-                e.Handled = true;
-            }
-        }
-
-        private void btnViewTask_Click(object sender, EventArgs e)
-        {
-            if (viewTask.Id != 0)
-            {
-                ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
-                viewOrUpdate.Show();
-            }
-            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-        }
-
 
     }
 }
