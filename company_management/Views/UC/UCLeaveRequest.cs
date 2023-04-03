@@ -26,6 +26,7 @@ namespace company_management.Views
         private void UCLeaveRequestManagement_Load(object sender, EventArgs e)
         {
             loadGridview();
+            CustomeGridColumn();
         }
 
         private void btnLR_Click(object sender, EventArgs e)
@@ -48,20 +49,20 @@ namespace company_management.Views
 
             // Đổi tên cột
             datagridview_leaveRequest.Columns["numberDay"].HeaderText = "Số ngày";
+            datagridview_leaveRequest.Columns["startDate"].HeaderText = "From";
+            datagridview_leaveRequest.Columns["endDate"].HeaderText = "To";
+            datagridview_leaveRequest.Columns["reason"].HeaderText = "Nội dung";
+
 
             // Thêm cột vào DataGridView
             datagridview_leaveRequest.Columns.Add(approveColumn);
             datagridview_leaveRequest.Columns.Add(rejectColumn);
 
             // custom chiều rộng cột
-            datagridview_leaveRequest.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            datagridview_leaveRequest.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             datagridview_leaveRequest.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             datagridview_leaveRequest.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             datagridview_leaveRequest.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             datagridview_leaveRequest.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-
-            
         }
 
         private void datagridview_leaveRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,20 +77,21 @@ namespace company_management.Views
                     var result = MessageBox.Show("Lưu thay đổi", "Từ chối yêu cầu xin nghỉ!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        datagridview_leaveRequest[approveColumn.Index, e.RowIndex].Value = false;
-                        datagridview_leaveRequest[rejectColumn.Index, e.RowIndex].Value = true;
+                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Duyệt"].Value = false;
+                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = true;
                     }
                     else
                     {
-                        datagridview_leaveRequest[rejectColumn.Index, e.RowIndex].Value = false;
+                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = false;
                     }
                 }
                 else if (datagridview_leaveRequest.Columns[e.ColumnIndex] == approveColumn)
                 {
-                    datagridview_leaveRequest[rejectColumn.Index, e.RowIndex].Value = false;
+                    datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = false;
                 }
             }
-        }
+
+        }   
 
         private void loadGridview()
         {
@@ -102,8 +104,6 @@ namespace company_management.Views
             }
 
             datagridview_leaveRequest.DataSource = data;
-
-            CustomeGridColumn();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

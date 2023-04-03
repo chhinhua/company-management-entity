@@ -33,62 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.checkbox_checkedOut = new Guna.UI2.WinForms.Guna2CheckBox();
             this.checkbox_checkedIn = new Guna.UI2.WinForms.Guna2CheckBox();
             this.datetime_fillter = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.groupBox_fillter = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.datagridview_leaveRequest = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.buttonEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelData.SuspendLayout();
             this.groupBox_fillter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_leaveRequest)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.AutoRoundedCorners = true;
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BorderRadius = 19;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.btnEdit.Image = global::company_management.Properties.Resources.icons8_uninstalling_updates_321;
-            this.btnEdit.Location = new System.Drawing.Point(230, 175);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(124, 40);
-            this.btnEdit.TabIndex = 84;
-            this.btnEdit.Text = "Edit";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BorderRadius = 19;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.Red;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::company_management.Properties.Resources.x;
-            this.btnDelete.Location = new System.Drawing.Point(392, 175);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(129, 40);
-            this.btnDelete.TabIndex = 85;
-            this.btnDelete.Text = "Delete";
             // 
             // checkbox_checkedOut
             // 
@@ -147,29 +108,9 @@
             this.datetime_fillter.TabIndex = 88;
             this.datetime_fillter.Value = new System.DateTime(2023, 4, 2, 18, 8, 25, 868);
             // 
-            // btnSave
-            // 
-            this.btnSave.AutoRoundedCorners = true;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BorderRadius = 19;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::company_management.Properties.Resources.icons8_add_64;
-            this.btnSave.Location = new System.Drawing.Point(67, 175);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(131, 40);
-            this.btnSave.TabIndex = 83;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // panelData
             // 
-            this.panelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.panelData.BackColor = System.Drawing.Color.Transparent;
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 25;
             this.panelData.BorderThickness = 1;
@@ -179,6 +120,10 @@
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(17, 231);
             this.panelData.Name = "panelData";
+            this.panelData.ShadowDecoration.BorderRadius = 25;
+            this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelData.ShadowDecoration.Enabled = true;
+            this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 538);
             this.panelData.TabIndex = 82;
             // 
@@ -285,24 +230,99 @@
             // 
             // panelFields
             // 
-            this.panelFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.panelFields.BackColor = System.Drawing.Color.Transparent;
             this.panelFields.BorderColor = System.Drawing.Color.White;
             this.panelFields.BorderRadius = 25;
             this.panelFields.BorderThickness = 1;
             this.panelFields.FillColor = System.Drawing.Color.White;
             this.panelFields.Location = new System.Drawing.Point(17, 19);
             this.panelFields.Name = "panelFields";
+            this.panelFields.ShadowDecoration.BorderRadius = 25;
+            this.panelFields.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelFields.ShadowDecoration.Enabled = true;
+            this.panelFields.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelFields.Size = new System.Drawing.Size(1258, 136);
             this.panelFields.TabIndex = 81;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.AutoRoundedCorners = true;
+            this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.BorderRadius = 19;
+            this.buttonEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEdit.FillColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.buttonEdit.ForeColor = System.Drawing.Color.White;
+            this.buttonEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.buttonEdit.Image = global::company_management.Properties.Resources.edit;
+            this.buttonEdit.ImageSize = new System.Drawing.Size(24, 24);
+            this.buttonEdit.Location = new System.Drawing.Point(1170, 185);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(49, 40);
+            this.buttonEdit.TabIndex = 92;
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.AutoRoundedCorners = true;
+            this.buttonRemove.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRemove.BorderRadius = 19;
+            this.buttonRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonRemove.FillColor = System.Drawing.Color.Transparent;
+            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.buttonRemove.ForeColor = System.Drawing.Color.White;
+            this.buttonRemove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
+            this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
+            this.buttonRemove.ImageSize = new System.Drawing.Size(24, 24);
+            this.buttonRemove.Location = new System.Drawing.Point(1225, 185);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(50, 40);
+            this.buttonRemove.TabIndex = 93;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.AutoRoundedCorners = true;
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.BorderRadius = 20;
+            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
+            this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
+            this.buttonAdd.Location = new System.Drawing.Point(1118, 183);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(46, 42);
+            this.buttonAdd.TabIndex = 91;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 33);
+            this.label1.TabIndex = 94;
+            this.label1.Text = "Leave Request Board";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // UCLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panelData);
             this.Controls.Add(this.panelFields);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -317,18 +337,18 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2CheckBox checkbox_checkedOut;
         private Guna.UI2.WinForms.Guna2CheckBox checkbox_checkedIn;
         private Guna.UI2.WinForms.Guna2DateTimePicker datetime_fillter;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Panel panelData;
         private Guna.UI2.WinForms.Guna2GroupBox groupBox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2DataGridView datagridview_leaveRequest;
         private Guna.UI2.WinForms.Guna2Panel panelFields;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2Button buttonEdit;
+        private Guna.UI2.WinForms.Guna2Button buttonRemove;
+        private Guna.UI2.WinForms.Guna2Button buttonAdd;
+        private System.Windows.Forms.Label label1;
     }
 }

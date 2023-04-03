@@ -679,6 +679,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\trash.png" />
     <None Include="Resources\icons8-search-482.png" />
     <None Include="Resources\icons8-search-481.png" />
     <None Include="Resources\icons8-user-24 %281%29.png" />
@@ -726,6 +728,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\edit.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <ItemGroup />
