@@ -424,15 +424,6 @@
     <Compile Include="Entities\salary.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sysdiagram.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\task.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -525,12 +516,6 @@
     <Compile Include="Views\UC\UpdateCPInfoUC.Designer.cs">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UC\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\UC\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\UC\UserManagementUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -607,9 +592,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UpdateCPInfoUC.resx">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\UC\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UserManagementUC.resx">
       <DependentUpon>UserManagementUC.cs</DependentUpon>

@@ -14,7 +14,7 @@ namespace company_management.Views
 {
     public partial class UCTimeKeeping : UserControl
     {
-        CheckinCheckoutDAO cicoDAO = new CheckinCheckoutDAO();
+        CheckinCheckoutDAO checkin_coDAO = new CheckinCheckoutDAO();
         public static CheckinCheckoutDTO timeKeeping = new CheckinCheckoutDTO();
         private TaskDAO taskDAO = new TaskDAO();
 
@@ -41,7 +41,7 @@ namespace company_management.Views
 
         public void loadGridview()
         {
-            List<TimeKeepingDTO> data = cicoDAO.GetAllCheckinCheckouts();
+            List<TimeKeepingDTO> data = checkin_coDAO.GetAllCheckinCheckouts();
             datagridview_timeKeeping.DataSource = data;
         }
 
@@ -81,6 +81,11 @@ namespace company_management.Views
         private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            checkin_coDAO.InitData();
         }
     }
 }

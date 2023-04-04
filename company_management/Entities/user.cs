@@ -17,11 +17,11 @@ namespace company_management.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public user()
         {
-            this.checkin_checkout = new HashSet<checkin_checkout>();
             this.kpis = new HashSet<kpi>();
             this.leave_request = new HashSet<leave_request>();
             this.salaries = new HashSet<salary>();
             this.tasks = new HashSet<task>();
+            this.checkin_checkout = new HashSet<checkin_checkout>();
         }
     
         public int id { get; set; }
@@ -35,8 +35,6 @@ namespace company_management.Entities
         public byte[] avatar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<checkin_checkout> checkin_checkout { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<kpi> kpis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<leave_request> leave_request { get; set; }
@@ -44,5 +42,7 @@ namespace company_management.Entities
         public virtual ICollection<salary> salaries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<task> tasks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<checkin_checkout> checkin_checkout { get; set; }
     }
 }

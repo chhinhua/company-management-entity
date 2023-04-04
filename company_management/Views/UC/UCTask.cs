@@ -47,7 +47,7 @@ namespace company_management.Views.UC
             // chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
 
             // Ẩn nhãn trên biểu đồ tròn
-            chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = true;
+            chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = false;
 
             chart_taskProgress.Legends.Clear();
 
@@ -60,20 +60,6 @@ namespace company_management.Views.UC
             label_doneTask.Text = donePercent + "%";
         }
 
-        private void dgvTask_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvTask.CurrentRow.Selected = true;
-
-            if (e.RowIndex != -1)
-            {
-                object value = dgvTask.Rows[e.RowIndex].Cells[0].Value;
-                if (value != DBNull.Value)
-                {
-                    int id = Convert.ToInt32(value);
-                    viewTask = taskDAO.GetTaskById(id);
-                }
-            }
-        }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -108,7 +94,7 @@ namespace company_management.Views.UC
         {
             if (viewTask.Id != 0)
             {
-                DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Delete task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -152,5 +138,19 @@ namespace company_management.Views.UC
             (dgvTask.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
         }
 
+        private void dgvTask_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvTask.CurrentRow.Selected = true;
+
+            if (e.RowIndex != -1)
+            {
+                object value = dgvTask.Rows[e.RowIndex].Cells[0].Value;
+                if (value != DBNull.Value)
+                {
+                    int id = Convert.ToInt32(value);
+                    viewTask = taskDAO.GetTaskById(id);
+                }
+            }
+        }
     }
 }

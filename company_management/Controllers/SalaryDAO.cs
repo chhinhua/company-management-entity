@@ -10,12 +10,9 @@ namespace company_management.Controllers
     public class SalaryDAO
     {
         private readonly company_managementEntities dbContext;
-        public static readonly decimal DEFAULT_BASIC_SALALRY = 6500000;
+        public static readonly decimal DEFAULT_BASIC_SALARY = 6500000;
 
-        public SalaryDAO()
-        {
-            dbContext = new company_managementEntities();
-        }
+        public SalaryDAO() => dbContext = new company_managementEntities();
 
         public List<SalaryDTO> GetAllSalaries()
         {
@@ -29,12 +26,12 @@ namespace company_management.Controllers
             var listSalaryDTO = new List<SalaryDTO>
                 {
                     // SalaryDTO(idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus)
-                    new SalaryDTO(1, DEFAULT_BASIC_SALALRY, 176, 4, 0, 500000),
-                    new SalaryDTO(2, DEFAULT_BASIC_SALALRY, 169, 24, 8, 400000),
-                    new SalaryDTO(4, DEFAULT_BASIC_SALALRY, 180, 8, 4, 650000),
-                    new SalaryDTO(14, DEFAULT_BASIC_SALALRY, 200, 8, 0, 1000000),
-                    new SalaryDTO(3, DEFAULT_BASIC_SALALRY, 176, 16, 0, 650000),
-                    new SalaryDTO(6, DEFAULT_BASIC_SALALRY, 176, 8, 4, 500000),                
+                    new SalaryDTO(1, DEFAULT_BASIC_SALARY, 176, 4, 0, 500000),
+                    new SalaryDTO(2, DEFAULT_BASIC_SALARY, 169, 24, 8, 400000),
+                    new SalaryDTO(4, DEFAULT_BASIC_SALARY, 180, 8, 4, 650000),
+                    new SalaryDTO(14, DEFAULT_BASIC_SALARY, 200, 8, 0, 1000000),
+                    new SalaryDTO(3, DEFAULT_BASIC_SALARY, 176, 16, 0, 650000),
+                    new SalaryDTO(6, DEFAULT_BASIC_SALARY, 176, 8, 4, 500000),                
                 };
 
             foreach (var salaryDTO in listSalaryDTO)
@@ -53,7 +50,17 @@ namespace company_management.Controllers
             return MappingExtensions.ToDto<user, User>(userEntity);
         }
 
+        public decimal calculateBonus(double kpiValue, double averageProgress)
+        {
+            decimal bonus = 0;
+            double kpiWithProgress = kpiValue + averageProgress;
 
-
+            // Tính toán lương bonus
+            if (kpiWithProgress >= 0.7)
+            {
+                bonus = (decimal)kpiWithProgress * (decimal)DEFAULT_BASIC_SALARY;
+            }
+            return bonus;
+        }
     }
 }

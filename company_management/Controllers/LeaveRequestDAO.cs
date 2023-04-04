@@ -11,10 +11,7 @@ namespace company_management.Controllers
     {
         private readonly company_managementEntities dbContext;
 
-        public LeaveRequestDAO()
-        {
-            dbContext = new company_managementEntities();
-        }     
+        public LeaveRequestDAO() => dbContext = new company_managementEntities();
 
         public List<LeaveRequestDTO> GetAllLeaveRequests()
         {

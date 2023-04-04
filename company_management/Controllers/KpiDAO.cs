@@ -1,36 +1,26 @@
-﻿using company_management.Models;
-using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using company_management.DTO;
+using company_management.Entities;
+using company_management.Models;
 
 namespace company_management.Controllers
 {
     public class KpiDAO
     {
-        private readonly DBConnection dBConnection;
+        private readonly company_managementEntities dbContext;
 
-        public KpiDAO() => dBConnection = new DBConnection();
+        public KpiDAO() => dbContext = new company_managementEntities();
 
-        //public void loadKpi(DataGridView dataGridView) => dBConnection.loadData(dataGridView, "kpi");
-
-        public void addKpi(KPI kpi)
+        public double calculateKPI(SalaryDTO salary)
         {
-            string sqlStr = string.Format("INSERT INTO kpi(idUser, kpiName, description, progress)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}')",
-                   kpi.IdUser, kpi.KpiName, kpi.Description, kpi.Progress);
-            dBConnection.executeQuery(sqlStr);
+            double totalWorkHours = salary.TotalHours + salary.OvertimeHours;
+            double kpiValue = totalWorkHours / (totalWorkHours + salary.LeaveHours);
+            return kpiValue;
         }
 
-        public void updateKpi(KPI kpi)
-        {
-            string sqlStr = string.Format("UPDATE kpi SET " +
-                   "idUser = '{0}', kpiName = '{1}', description = '{2}', progress = '{3}' WHERE id = '{4}'",
-                   kpi.IdUser, kpi.KpiName, kpi.Description, kpi.Progress, kpi.Id);
-            dBConnection.executeQuery(sqlStr);
-        }
+        
 
-        public void deleteKpi(int id)
-        {
-            string sqlStr = string.Format("DELETE FROM kpi WHERE id = '{0}'", id);
-            dBConnection.executeQuery(sqlStr);
-        }
     }
 }
