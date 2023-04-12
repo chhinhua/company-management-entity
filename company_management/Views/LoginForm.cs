@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using company_management.Models;
+using company_management.DTO;
 
 namespace company_management.Views
 {

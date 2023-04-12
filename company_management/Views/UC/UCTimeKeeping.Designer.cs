@@ -62,7 +62,7 @@
             // 
             this.panelFields.BackColor = System.Drawing.Color.Transparent;
             this.panelFields.BorderColor = System.Drawing.Color.White;
-            this.panelFields.BorderRadius = 25;
+            this.panelFields.BorderRadius = 20;
             this.panelFields.BorderThickness = 1;
             this.panelFields.Controls.Add(this.label3);
             this.panelFields.Controls.Add(this.toggle_checkout);
@@ -205,7 +205,7 @@
             // 
             this.panelData.BackColor = System.Drawing.Color.Transparent;
             this.panelData.BorderColor = System.Drawing.Color.White;
-            this.panelData.BorderRadius = 25;
+            this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
             this.panelData.Controls.Add(this.groupBox_fillter);
             this.panelData.Controls.Add(this.txtSearch);
@@ -438,6 +438,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(46, 42);
             this.buttonAdd.TabIndex = 94;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label4
             // 

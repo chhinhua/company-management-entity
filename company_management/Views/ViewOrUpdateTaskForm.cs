@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using company_management.Controllers;
-using company_management.Models;
+using company_management.DAO;
+using company_management.DTO;
 using company_management.Views.UC;
 
 namespace company_management.Views
@@ -50,7 +50,7 @@ namespace company_management.Views
         public void bindingTaskToFields()
         {
             int id = UCTask.viewTask.IdUser;
-            User user = userDAO.getUserById(id);           
+            User user = userDAO.GetUserById(id);           
            
             txtbox_Taskname.Text = UCTask.viewTask.TaskName;
             txtbox_Desciption.Text = UCTask.viewTask.Description;

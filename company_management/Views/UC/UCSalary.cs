@@ -1,5 +1,5 @@
 ﻿using System;
-using company_management.Controllers;
+using company_management.DAO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

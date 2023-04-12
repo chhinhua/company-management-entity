@@ -31,8 +31,8 @@ namespace company_management.Entities
         public string email { get; set; }
         public string phoneNumber { get; set; }
         public string address { get; set; }
-        public string role { get; set; }
         public byte[] avatar { get; set; }
+        public Nullable<int> idRole { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<checkin_checkout> checkin_checkout { get; set; }
@@ -40,6 +40,7 @@ namespace company_management.Entities
         public virtual ICollection<kpi> kpis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<leave_request> leave_request { get; set; }
+        public virtual role role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<salary> salaries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

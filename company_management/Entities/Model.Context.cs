@@ -30,10 +30,14 @@ namespace company_management.Entities
         public virtual DbSet<checkin_checkout> checkin_checkout { get; set; }
         public virtual DbSet<kpi> kpis { get; set; }
         public virtual DbSet<leave_request> leave_request { get; set; }
+        public virtual DbSet<role> roles { get; set; }
         public virtual DbSet<salary> salaries { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<task> tasks { get; set; }
+        public virtual DbSet<team> teams { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<position> positions { get; set; }
+        public virtual DbSet<user_position> user_position { get; set; }
     
         [DbFunction("company_managementEntities", "GetTaskStatusPercentage")]
         public virtual IQueryable<GetTaskStatusPercentage_Result> GetTaskStatusPercentage()

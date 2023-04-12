@@ -43,14 +43,6 @@
             this.btnLeaveRequest = new Guna.UI2.WinForms.Guna2Button();
             this.btnTask = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.guna2ProgressBar3 = new Guna.UI2.WinForms.Guna2ProgressBar();
-            this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
-            this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel_tabbar = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_main = new System.Windows.Forms.Panel();
             this.guna2Panel3.SuspendLayout();
@@ -59,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             this.lb_menu_active.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
             this.panel_tabbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -344,108 +335,9 @@
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.Controls.Add(this.label4);
-            this.guna2Panel5.Controls.Add(this.guna2ProgressBar3);
-            this.guna2Panel5.Controls.Add(this.guna2ProgressBar2);
-            this.guna2Panel5.Controls.Add(this.guna2ProgressBar1);
-            this.guna2Panel5.Controls.Add(this.label3);
-            this.guna2Panel5.Controls.Add(this.label1);
-            this.guna2Panel5.Controls.Add(this.label2);
-            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel5.Location = new System.Drawing.Point(0, 460);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(230, 328);
-            this.guna2Panel5.TabIndex = 2;
-            this.guna2Panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel5_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(9, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "CPA";
-            // 
-            // guna2ProgressBar3
-            // 
-            this.guna2ProgressBar3.Location = new System.Drawing.Point(66, 177);
-            this.guna2ProgressBar3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ProgressBar3.Name = "guna2ProgressBar3";
-            this.guna2ProgressBar3.ProgressColor = System.Drawing.Color.Yellow;
-            this.guna2ProgressBar3.ProgressColor2 = System.Drawing.Color.RoyalBlue;
-            this.guna2ProgressBar3.Size = new System.Drawing.Size(140, 2);
-            this.guna2ProgressBar3.TabIndex = 6;
-            this.guna2ProgressBar3.Text = "guna2ProgressBar3";
-            this.guna2ProgressBar3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2ProgressBar3.Value = 60;
-            // 
-            // guna2ProgressBar2
-            // 
-            this.guna2ProgressBar2.Location = new System.Drawing.Point(66, 126);
-            this.guna2ProgressBar2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ProgressBar2.Name = "guna2ProgressBar2";
-            this.guna2ProgressBar2.ProgressColor = System.Drawing.Color.Red;
-            this.guna2ProgressBar2.Size = new System.Drawing.Size(140, 2);
-            this.guna2ProgressBar2.TabIndex = 4;
-            this.guna2ProgressBar2.Text = "guna2ProgressBar2";
-            this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2ProgressBar2.Value = 20;
-            // 
-            // guna2ProgressBar1
-            // 
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(66, 76);
-            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ProgressBar1.Name = "guna2ProgressBar1";
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(140, 2);
-            this.guna2ProgressBar1.TabIndex = 2;
-            this.guna2ProgressBar1.Text = "guna2ProgressBar1";
-            this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2ProgressBar1.Value = 90;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "TASK";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = " PERFORMANVE REPORT";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "KPI";
-            // 
             // panel_tabbar
             // 
             this.panel_tabbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.panel_tabbar.Controls.Add(this.guna2Panel5);
             this.panel_tabbar.Controls.Add(this.guna2Panel4);
             this.panel_tabbar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel_tabbar.Location = new System.Drawing.Point(0, 53);
@@ -481,8 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.lb_menu_active.ResumeLayout(false);
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
             this.panel_tabbar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -499,14 +389,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLeaveRequest;
         private Guna.UI2.WinForms.Guna2Button btnTask;
         private Guna.UI2.WinForms.Guna2Button btnHome;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar3;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar2;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel panel_tabbar;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

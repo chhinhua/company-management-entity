@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using company_management.Controllers;
-using company_management.Models;
+using company_management.DAO;
+using company_management.DTO;
 
 namespace company_management.Views
 {

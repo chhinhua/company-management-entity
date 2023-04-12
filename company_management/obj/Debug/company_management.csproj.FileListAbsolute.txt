@@ -270,4 +270,3 @@ E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\b
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.ValueTuple.xml
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddRequestForm.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequest.resources
-E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UserControl1.resources

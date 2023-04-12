@@ -1,4 +1,4 @@
-﻿using company_management.Models;
+﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,30 +16,48 @@ namespace company_management
 
         public DBConnection() => connection = new SqlConnection(Properties.Settings.Default.connStr);
 
-        public void loadData(DataGridView dataGridView, string tableName)
+        public DataTable LoadData(string tableName)
         {
             string query = string.Format("SELECT * FROM {0}", tableName);
+            DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                dataGridView.DataSource = dataTable;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                connection.Close();
-            }
+            return dataTable;
         }
 
-        public T GetObjectById<T>(string query) where T : new()
+        public DataTable SearchData(string query)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dataTable;
+        }
+
+        public T GetObjectByQuery<T>(string query) where T : new()
         {
             T obj = default(T);
             connection.Open();
@@ -101,7 +119,6 @@ namespace company_management
             }
         }
 
-
         public void load(DataGridView dataGridView, string tableName, string query)
         {
             try
@@ -136,7 +153,7 @@ namespace company_management
                     MessageBox.Show("Successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -145,8 +162,6 @@ namespace company_management
                 connection.Close();
             }
         }
-
-
     }
 
 }

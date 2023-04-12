@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace company_management.Models
+namespace company_management.DTO
 {
     public class TaskStatusPercentage
     {
