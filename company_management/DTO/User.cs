@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace company_management.Models
+namespace company_management.DTO
 {
     public class User
     {
@@ -16,8 +16,9 @@ namespace company_management.Models
         private string email;
         private string phoneNumber;
         private string address;
-        private string role;
         private byte[] avatar;
+        private int idRole;
+        private int idPosition;
 
         public int Id { get => id; set => id = value; }
         public string Username { get => username; set => username = value; }
@@ -26,13 +27,15 @@ namespace company_management.Models
         public string Email { get => email; set => email = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Address { get => address; set => address = value; }
-        public string Role { get => role; set => role = value; }
         public byte[] Avatar { get => avatar; set => avatar = value; }
+        public int IdRole { get => idRole; set => idRole = value; }
+        public int IdPosition { get => idPosition; set => idPosition = value; }
 
         public User() { }
 
+        // Dành cho User cập nhật thông tin tài khoản
         public User(string username, string password, string fullName, 
-                    string email, string phoneNumber, string address, string role)
+            string email, string phoneNumber, string address, byte[] avatar, int idRole)
         {
             Username = username;
             Password = password;
@@ -40,25 +43,13 @@ namespace company_management.Models
             Email = email;
             PhoneNumber = phoneNumber;
             Address = address;
-            Role = role;
-        }
-
-        public User(int id, string username, string password, string fullName,
-                    string email, string phoneNumber, string address, string role, byte[] avatar)
-        {
-            Id = id;
-            Username = username;
-            Password = password;
-            FullName = fullName;
-            Email = email;
-            PhoneNumber = phoneNumber;
-            Address = address;
-            Role = role;
             Avatar = avatar;
+            IdRole = idRole;
         }
 
-        public User(string username, string password, string fullName, 
-                    string email, string phoneNumber, string address, string role, byte[] avatar)
+        // Dành cho Admin tài khoản thêm
+        public User(string username, string password, string fullName,
+           string email, string phoneNumber, string address, int idRole)
         {
             Username = username;
             Password = password;
@@ -66,14 +57,16 @@ namespace company_management.Models
             Email = email;
             PhoneNumber = phoneNumber;
             Address = address;
-            Role = role;
-            Avatar = avatar;
+            IdRole = idRole;
         }
 
-        public override string ToString() 
-            => $"Username: {Username}\nFullName: {FullName}" +
-               $"\nEmail: {Email}\nPhone: {PhoneNumber}" +
-               $"\nAddress: {Address}\nRole: {Role}";
-
+        // Signup 
+        public User(string username, string password, string fullName, string email)
+        {
+            Username = username;
+            Password = password;
+            FullName = fullName;
+            Email = email;
+        }
     }
 }

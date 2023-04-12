@@ -377,14 +377,17 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CheckinCheckoutDAO.cs" />
-    <Compile Include="Controllers\KpiDAO.cs" />
-    <Compile Include="Controllers\LeaveRequestDAO.cs" />
-    <Compile Include="Controllers\SalaryDAO.cs" />
-    <Compile Include="Controllers\TaskDAO.cs" />
-    <Compile Include="Controllers\UserDAO.cs" />
+    <Compile Include="BUS\TaskBUS.cs" />
+    <Compile Include="DAO\CheckinCheckoutDAO.cs" />
+    <Compile Include="DAO\KpiDAO.cs" />
+    <Compile Include="DAO\LeaveRequestDAO.cs" />
+    <Compile Include="DAO\SalaryDAO.cs" />
+    <Compile Include="DAO\TaskDAO.cs" />
+    <Compile Include="DAO\TeamDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DTO\MappingExtensions.cs" />
+    <Compile Include="DTO\Team.cs" />
     <Compile Include="DTO\TimeKeepingDTO.cs" />
     <Compile Include="DTO\CheckinCheckoutDTO.cs" />
     <Compile Include="DTO\Company.cs" />
@@ -421,13 +424,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\position.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\role.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\salary.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\task.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\team.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\user.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\user_position.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

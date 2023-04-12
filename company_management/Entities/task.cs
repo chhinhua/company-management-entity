@@ -20,7 +20,9 @@ namespace company_management.Entities
         public string description { get; set; }
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<int> progress { get; set; }
+        public Nullable<int> idTeam { get; set; }
     
+        public virtual team team { get; set; }
         public virtual user user { get; set; }
     }
 }

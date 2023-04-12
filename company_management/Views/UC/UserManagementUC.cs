@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using company_management.Models;
-using company_management.Controllers;
+using company_management.DTO;
+using company_management.DAO;
 using company_management.Views;
 using System.Text.RegularExpressions;
 using System.Linq;
@@ -15,8 +15,7 @@ namespace company_management.Views
     {
         UserDAO userDAO = new UserDAO();
         public static string DEFAULT_INIT_PASSWORD = "123";
-        public static string DEFAULT_USER_ROLE = "Employee";
-        static int id = -1;
+        public static int DEFAULT_USER_ROLE_ID = 2; //Employee
         private User user;
 
         public UserManagementUC()
@@ -25,22 +24,25 @@ namespace company_management.Views
         }
 
         private void UserManagementUC_Load(object sender, EventArgs e)
-        {          
-            userDAO.loadUsers(dataGridView);
-        }       
-
-        private User getUserFromTextBox(User user)
         {
-
-            user = new User(id, txtbox_username.Text, DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
-                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, DEFAULT_USER_ROLE, null);
-            
-            return user;
+            LoadData();
         }
 
-        private bool checkDataInput()
+        private void LoadData()
         {
-            if (checkEmptyInput())
+            List<User> listUser = userDAO.GetAllUser();
+            userDAO.loadData(dataGridView_User, listUser);
+        }
+
+        private User GetUserFromTextBox()
+        {
+            return new User(txtbox_username.Text, DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
+                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, DEFAULT_USER_ROLE_ID);
+        }
+
+        private bool CheckDataInput()
+        {
+            if (CheckEmptyInput())
             {
                 if (IsValidEmail(txtbox_email.Text))
                 {
@@ -88,7 +90,7 @@ namespace company_management.Views
             }
         }
 
-        private bool checkEmptyInput()
+        private bool CheckEmptyInput()
         {
             if (string.IsNullOrEmpty(txtbox_username.Text) || string.IsNullOrEmpty(txtbox_fullname.Text) ||
                 string.IsNullOrEmpty(txtbox_email.Text) || string.IsNullOrEmpty(txtbox_phoneNumber.Text) ||
@@ -99,92 +101,70 @@ namespace company_management.Views
             return true;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {           
-           if (checkDataInput())
-           {
-                userDAO.addUser(getUserFromTextBox(user));
-                userDAO.loadUsers(dataGridView);
-           }
+        private void dataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1) // Kiểm tra nếu vị trí được nhấp chuột là tên cột
+            {
+                dataGridView_User.ClearSelection(); // Xóa bất kỳ lựa chọn nào trong DataGridView
+            }
         }
 
-        private void btnUpdatee_Click_1(object sender, EventArgs e)
-        {
-            if (checkDataInput())
-            {
-                userDAO.updateUser(getUserFromTextBox(user));
-                userDAO.loadUsers(dataGridView);
-            }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput())
+            {
+                userDAO.updateUser(GetUserFromTextBox());
+                LoadData();
+            }
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            if (CheckDataInput())
+            {
+                userDAO.AddUser(GetUserFromTextBox());
+                LoadData();
+            }
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                User user = userDAO.GetUserByUsername(GetUserFromTextBox().Username);
+                userDAO.DeleteUser(user.Id);
+                LoadData();
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text;
 
-            // Tạo một chuỗi điều kiện để lọc dữ liệu
-            StringBuilder filterExpression = new StringBuilder();
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                // Chỉ áp dụng lọc cho các cột chứa dữ liệu
-                if (column.DataPropertyName != null && column.Visible)
-                {
-                    if (filterExpression.Length > 0)
-                    {
-                        filterExpression.Append(" OR ");
-                    }
-                    filterExpression.Append($"[{column.DataPropertyName}] LIKE '%{keyword}%'");
-                }
-            }
-
-            // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
-            (dataGridView.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
+            List<User> listUser = userDAO.SearchUsers(keyword);
+            userDAO.loadData(dataGridView_User, listUser);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {            
-            DialogResult result = MessageBox.Show("Delete user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
-            if (result == DialogResult.Yes)
-            {
-                userDAO.deleteUser(id);
-                userDAO.loadUsers(dataGridView);
-            }         
-        }
-
-        private void dataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex == -1) // Kiểm tra nếu vị trí được nhấp chuột là tên cột
-            {
-                dataGridView.ClearSelection(); // Xóa bất kỳ lựa chọn nào trong DataGridView
-            }
-        }
-
-        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_User_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                object value = dataGridView.Rows[e.RowIndex].Cells[0].Value;
+                object value = dataGridView_User.Rows[e.RowIndex].Cells[0].Value;
                 if (value != DBNull.Value)
                 {
-                    id = Convert.ToInt32(value);
-                    DataGridViewRow row = dataGridView.Rows[e.RowIndex];
+                    DataGridViewRow row = dataGridView_User.Rows[e.RowIndex];
 
                     // Hiển thị dữ liệu lên các đối tượng TextBox
-                    txtbox_username.Text = row.Cells[1].Value.ToString();
-                    txtbox_fullname.Text = row.Cells[3].Value.ToString();
-                    txtbox_email.Text = row.Cells[4].Value.ToString();
-                    txtbox_phoneNumber.Text = row.Cells[5].Value.ToString();
-                    txtbox_address.Text = row.Cells[6].Value.ToString();
-
-                    string selectedValue = row.Cells[7].Value.ToString();
+                    txtbox_username.Text = row.Cells[0].Value.ToString();
+                    txtbox_fullname.Text = row.Cells[1].Value.ToString();
+                    txtbox_email.Text = row.Cells[2].Value.ToString();
+                    txtbox_phoneNumber.Text = row.Cells[3].Value.ToString();
+                    txtbox_address.Text = row.Cells[4].Value.ToString();
                 }
             }
-        }
-
-        private void groupInfo_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
