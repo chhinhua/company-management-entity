@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using company_management.Views;
 
 namespace company_management.DAO
 {
@@ -13,6 +14,7 @@ namespace company_management.DAO
         private readonly DBConnection dBConnection;
         private List<Task> listTask;
         private TeamDAO teamDAO;
+        private UserDAO userDAO;
 
         private SqlConnection connection = new DBConnection().connection;
 
@@ -21,39 +23,53 @@ namespace company_management.DAO
             dBConnection = new DBConnection();
             listTask = new List<Task>();
             teamDAO = new TeamDAO();
+            userDAO = new UserDAO();
         }
 
-        public List<Task> GetListTasks(DataGridView dataGridView)
+        public void LoadUserToCombobox(ComboBox comboBox)
         {
+            List<User> items = new List<User>();
 
-            // dBConnection.loadData(dataGridView, "task");
-            /*
-                        dataGridView.Columns["id"].Visible = false;
-                        dataGridView.Columns["idUser"].Visible = false;
-                        dataGridView.Columns["description"].Visible = false;*/
+            if (UserSession.LoggedInUser != null)
+            {
+                if (UserSession.LoggedInUser.IdPosition == 1) // idRole = 1 (manager)
+                {
+                    // Hiển thị danh sách leader
+                    items.AddRange(userDAO.GetAllLeader());
+                }
+                else if (UserSession.LoggedInUser.IdPosition == 2) // idRole = 2 (leader)
+                {
+                    // Hiển thị danh sách employee
+                    items.AddRange(userDAO.GetAllEmployee()); 
+                }
+                else // idRole = 3 (employee)
+                { 
+                    // Không có quyền truy cập
+                    comboBox.Enabled = false;
+                    return;
+                }
+            }
 
-            return listTask;
-        }
-
-        public void loadUserToCombobox(ComboBox comboBox)
-        {
-            string query = string.Format("SELECT * FROM users WHERE role <> 'admin'");
-            dBConnection.loadDataControl<ComboBox>(comboBox, query);
+            // Đưa danh sách vào ComboBox
+            comboBox.Items.AddRange(items.ToArray());
+            comboBox.SelectedIndex = 0;
+            comboBox.DisplayMember = "fullName";
+            comboBox.ValueMember = "id";
         }
 
         public void addTask(Task task)
         {
-            string sqlStr = string.Format("INSERT INTO task(idUser, taskName, description, deadline, progress)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
-                   task.IdUser, task.TaskName, task.Description, task.Deadline, task.Progress);
-            dBConnection.executeQuery(sqlStr);
+            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam)" +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
+                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam);
+            dBConnection.executeQuery(query);
         }
 
         public void updateTask(Task updateTask)
         {
             string sqlStr = string.Format("UPDATE task SET " +
-                   "idUser = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}' WHERE id = '{5}'",
-                   updateTask.IdUser, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.Id);
+                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}' WHERE id = '{6}'",
+                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Id);
             dBConnection.executeQuery(sqlStr);
         }
 
@@ -103,13 +119,19 @@ namespace company_management.DAO
 
         //===============================================
 
-        public List<Task> GetAllTask()
+     /*   public List<Task> GetAllTask()
         {
             DataTable dataTable = dBConnection.LoadData("task");
             return MapToListTask(dataTable);
+        }*/
+
+        public List<Task> GetAllTask()
+        {
+            string query = string.Format("SELECT * FROM task");
+            return dBConnection.GetListObjectsByQuery<Task>(query);
         }
 
-        public void loadData(DataGridView dataGridView, List<Task> tasks)
+        public void LoadData(DataGridView dataGridView)
         {
             dataGridView.ColumnCount = 5;
 
@@ -117,17 +139,19 @@ namespace company_management.DAO
             dataGridView.Columns[0].Width = 40;
 
             dataGridView.Columns[1].Name = "Tên";
+            dataGridView.Columns[1].Width = 300;
             dataGridView.Columns[2].Name = "Deadline";
             dataGridView.Columns[3].Name = "Tiến độ";
             dataGridView.Columns[4].Name = "Team được giao";
             dataGridView.Rows.Clear();
 
             // sử lý tên team
+            listTask = GetAllTask();
 
-            foreach (var t in tasks)
+            foreach (var t in listTask)
             {
                 dataGridView.Rows.Add(t.Id, t.TaskName, t.Deadline, 
-                                t.Progress + " %", teamDAO.GetTeamById(t.IdTeam).Name);
+                                t.Progress + " %", teamDAO.GetTeamByTask(t).Name);
             }
         }
 
@@ -147,7 +171,8 @@ namespace company_management.DAO
                             .Select(row => new Task
                             {
                                 Id = row.Field<int>("id"),
-                                IdUser = row.Field<int>("idUser"),
+                                IdCreator = row.Field<int>("idCreator"),
+                                IdAssignee = row.Field<int>("idAssignee"),
                                 TaskName = row.Field<string>("taskName"),
                                 Description = row.Field<string>("description"),
                                 Deadline = row.Field<DateTime>("deadline"),

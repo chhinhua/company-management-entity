@@ -27,5 +27,24 @@ namespace company_management.DAO
             string query = string.Format("SELECT * FROM teams WHERE id = {0}", id);
             return dBConnection.GetObjectByQuery<Team>(query);
         }
+
+        public Team GetTeamByLeaderId(int id)
+        {
+            string query = string.Format("SELECT * FROM teams WHERE idLeader = {0}", id);
+            return dBConnection.GetObjectByQuery<Team>(query);
+        }
+
+        public Team GetTeamByTask(Task task)
+        {
+            Team team = GetTeamById(task.IdTeam);
+            if (team != null)
+            {
+                return team;
+            } 
+            else
+            {
+                return GetTeamByLeaderId(task.IdAssignee);
+            }
+        }
     }
 }

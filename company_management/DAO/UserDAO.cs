@@ -28,17 +28,19 @@ namespace company_management.DAO
 
         public void loadData(DataGridView dataGridView, List<User> users) 
         {
-            dataGridView.ColumnCount = 5;
-            dataGridView.Columns[0].Name = "Tên tài khoản";
-            dataGridView.Columns[1].Name = "Họ và tên";
-            dataGridView.Columns[2].Name = "Email";
-            dataGridView.Columns[3].Name = "Số điện thoại";
-            dataGridView.Columns[4].Name = "Địa chỉ";
+            dataGridView.ColumnCount = 6;
+            dataGridView.Columns[0].Name = "Mã";
+            dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[1].Name = "Tên tài khoản";
+            dataGridView.Columns[2].Name = "Họ và tên";
+            dataGridView.Columns[3].Name = "Email";
+            dataGridView.Columns[4].Name = "Số điện thoại";
+            dataGridView.Columns[5].Name = "Địa chỉ";
             dataGridView.Rows.Clear();
 
             foreach (var x in users)
             {
-                dataGridView.Rows.Add(x.Username, x.FullName, x.Email, x.PhoneNumber, x.Address);
+                dataGridView.Rows.Add(x.Id, x.Username, x.FullName, x.Email, x.PhoneNumber, x.Address);
             }
         }
 
@@ -71,6 +73,19 @@ namespace company_management.DAO
             return listUser;
         }
 
+        public List<User> GetAllLeader()
+        {
+            string query = string.Format("SELECT * FROM users WHERE users.idPosition = 2");
+            listUser = dBConnection.GetListObjectsByQuery<User>(query);
+            return listUser.ToList();
+        }
+
+        public List<User> GetAllEmployee()
+        {
+            string query = string.Format("SELECT * FROM users WHERE users.idPosition = 3");
+            return dBConnection.GetListObjectsByQuery<User>(query).ToList();
+        }
+
         public void AddUser(User user)
         {         
             string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, phoneNumber, address, idRole)" +
@@ -93,15 +108,15 @@ namespace company_management.DAO
             dBConnection.executeQuery(sqlStr);
         }
 
-        public User GetUserByUsername(string username)
+        public User GetUserById(int id)
         {
-            string query = string.Format("SELECT * FROM users WHERE users.username = {0}", username);
+            string query = string.Format("SELECT * FROM users WHERE users.id = {0}", id);
             return dBConnection.GetObjectByQuery<User>(query);
         }
 
-        public User GetUserById(int id)
+        public User GetUserByUsername(string username)
         {
-            string query = string.Format("SELECT * FROM users WHERE users.username = {0}", id);
+            string query = string.Format("SELECT * FROM users WHERE users.username = '{0}'", username);
             return dBConnection.GetObjectByQuery<User>(query);
         }
 

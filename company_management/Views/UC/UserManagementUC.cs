@@ -13,7 +13,7 @@ namespace company_management.Views
 {
     public partial class UserManagementUC : UserControl
     {
-        UserDAO userDAO = new UserDAO();
+        private UserDAO userDAO;
         public static string DEFAULT_INIT_PASSWORD = "123";
         public static int DEFAULT_USER_ROLE_ID = 2; //Employee
         private User user;
@@ -21,6 +21,7 @@ namespace company_management.Views
         public UserManagementUC()
         {
             InitializeComponent();
+            userDAO = new UserDAO(); 
         }
 
         private void UserManagementUC_Load(object sender, EventArgs e)
@@ -134,7 +135,7 @@ namespace company_management.Views
 
             if (result == DialogResult.Yes)
             {
-                User user = userDAO.GetUserByUsername(GetUserFromTextBox().Username);
+                User user = userDAO.GetUserById(GetUserFromTextBox().Id);
                 userDAO.DeleteUser(user.Id);
                 LoadData();
             }
@@ -158,11 +159,11 @@ namespace company_management.Views
                     DataGridViewRow row = dataGridView_User.Rows[e.RowIndex];
 
                     // Hiển thị dữ liệu lên các đối tượng TextBox
-                    txtbox_username.Text = row.Cells[0].Value.ToString();
-                    txtbox_fullname.Text = row.Cells[1].Value.ToString();
-                    txtbox_email.Text = row.Cells[2].Value.ToString();
-                    txtbox_phoneNumber.Text = row.Cells[3].Value.ToString();
-                    txtbox_address.Text = row.Cells[4].Value.ToString();
+                    txtbox_username.Text = row.Cells[1].Value.ToString();
+                    txtbox_fullname.Text = row.Cells[2].Value.ToString();
+                    txtbox_email.Text = row.Cells[3].Value.ToString();
+                    txtbox_phoneNumber.Text = row.Cells[4].Value.ToString();
+                    txtbox_address.Text = row.Cells[5].Value.ToString();
                 }
             }
         }

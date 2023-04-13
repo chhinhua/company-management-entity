@@ -38,7 +38,6 @@ namespace company_management.Views
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewTask = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
@@ -129,24 +128,6 @@ namespace company_management.Views
             this.btnAdd.Size = new System.Drawing.Size(46, 42);
             this.btnAdd.TabIndex = 105;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
-            // 
-            // btnViewTask
-            // 
-            this.btnViewTask.AutoRoundedCorners = true;
-            this.btnViewTask.BorderRadius = 19;
-            this.btnViewTask.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewTask.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewTask.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewTask.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewTask.FillColor = System.Drawing.Color.Transparent;
-            this.btnViewTask.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnViewTask.ForeColor = System.Drawing.Color.White;
-            this.btnViewTask.Image = global::company_management.Properties.Resources.icons8_eye_25;
-            this.btnViewTask.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnViewTask.Location = new System.Drawing.Point(1067, 270);
-            this.btnViewTask.Name = "btnViewTask";
-            this.btnViewTask.Size = new System.Drawing.Size(45, 40);
-            this.btnViewTask.TabIndex = 111;
             // 
             // btnEdit
             // 
@@ -472,7 +453,6 @@ namespace company_management.Views
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnViewTask);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelData);
@@ -493,7 +473,6 @@ namespace company_management.Views
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnViewTask;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Label label1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;

@@ -43,10 +43,10 @@
             this.chart_taskProgress = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.button_ViewOrEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.button_Edit = new Guna.UI2.WinForms.Guna2Button();
             this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewTask = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.label = new System.Windows.Forms.Label();
             this.label_todoTask = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -173,7 +173,7 @@
             this.dataGridView_Task.ThemeStyle.RowsStyle.Height = 30;
             this.dataGridView_Task.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView_Task.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridView_Task.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTask_CellContentClick);
+            this.dataGridView_Task.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Task_CellClick);
             // 
             // panelFields
             // 
@@ -220,26 +220,26 @@
             this.label1.Text = "Task Board";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button_ViewOrEdit
+            // button_Edit
             // 
-            this.button_ViewOrEdit.AutoRoundedCorners = true;
-            this.button_ViewOrEdit.BackColor = System.Drawing.Color.Transparent;
-            this.button_ViewOrEdit.BorderRadius = 19;
-            this.button_ViewOrEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_ViewOrEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_ViewOrEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_ViewOrEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_ViewOrEdit.FillColor = System.Drawing.Color.Transparent;
-            this.button_ViewOrEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button_ViewOrEdit.ForeColor = System.Drawing.Color.White;
-            this.button_ViewOrEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.button_ViewOrEdit.Image = global::company_management.Properties.Resources.edit;
-            this.button_ViewOrEdit.ImageSize = new System.Drawing.Size(24, 24);
-            this.button_ViewOrEdit.Location = new System.Drawing.Point(1170, 268);
-            this.button_ViewOrEdit.Name = "button_ViewOrEdit";
-            this.button_ViewOrEdit.Size = new System.Drawing.Size(49, 40);
-            this.button_ViewOrEdit.TabIndex = 98;
-            this.button_ViewOrEdit.Click += new System.EventHandler(this.button_ViewOrEdit_Click);
+            this.button_Edit.AutoRoundedCorners = true;
+            this.button_Edit.BackColor = System.Drawing.Color.Transparent;
+            this.button_Edit.BorderRadius = 19;
+            this.button_Edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_Edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_Edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_Edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_Edit.FillColor = System.Drawing.Color.Transparent;
+            this.button_Edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button_Edit.ForeColor = System.Drawing.Color.White;
+            this.button_Edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.button_Edit.Image = global::company_management.Properties.Resources.edit;
+            this.button_Edit.ImageSize = new System.Drawing.Size(24, 24);
+            this.button_Edit.Location = new System.Drawing.Point(1170, 268);
+            this.button_Edit.Name = "button_Edit";
+            this.button_Edit.Size = new System.Drawing.Size(49, 40);
+            this.button_Edit.TabIndex = 98;
+            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
             // 
             // buttonRemove
             // 
@@ -283,23 +283,24 @@
             this.buttonAdd.TabIndex = 97;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // btnViewTask
+            // btnViewOrUpdate
             // 
-            this.btnViewTask.AutoRoundedCorners = true;
-            this.btnViewTask.BorderRadius = 19;
-            this.btnViewTask.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewTask.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewTask.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewTask.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewTask.FillColor = System.Drawing.Color.Transparent;
-            this.btnViewTask.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnViewTask.ForeColor = System.Drawing.Color.White;
-            this.btnViewTask.Image = global::company_management.Properties.Resources.icons8_eye_25;
-            this.btnViewTask.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnViewTask.Location = new System.Drawing.Point(1067, 270);
-            this.btnViewTask.Name = "btnViewTask";
-            this.btnViewTask.Size = new System.Drawing.Size(45, 40);
-            this.btnViewTask.TabIndex = 101;
+            this.btnViewOrUpdate.AutoRoundedCorners = true;
+            this.btnViewOrUpdate.BorderRadius = 19;
+            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnViewOrUpdate.Image = global::company_management.Properties.Resources.icons8_eye_25;
+            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnViewOrUpdate.Location = new System.Drawing.Point(1067, 270);
+            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
+            this.btnViewOrUpdate.Size = new System.Drawing.Size(45, 40);
+            this.btnViewOrUpdate.TabIndex = 101;
+            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
             // 
             // label
             // 
@@ -481,11 +482,11 @@
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.guna2Panel3);
-            this.Controls.Add(this.btnViewTask);
+            this.Controls.Add(this.btnViewOrUpdate);
             this.Controls.Add(this.panelData);
             this.Controls.Add(this.panelFields);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button_ViewOrEdit);
+            this.Controls.Add(this.button_Edit);
             this.Controls.Add(this.buttonRemove);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCTask";
@@ -512,10 +513,10 @@
         private Guna.UI2.WinForms.Guna2Panel panelFields;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button button_ViewOrEdit;
+        private Guna.UI2.WinForms.Guna2Button button_Edit;
         private Guna.UI2.WinForms.Guna2Button buttonRemove;
         private Guna.UI2.WinForms.Guna2Button buttonAdd;
-        private Guna.UI2.WinForms.Guna2Button btnViewTask;
+        private Guna.UI2.WinForms.Guna2Button btnViewOrUpdate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_taskProgress;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label_todoTask;

@@ -36,18 +36,21 @@ namespace company_management.Views
         }
 
         private Task getTaskFromTextBox()
-        {
-            int idUser = Convert.ToInt32(combbox_Assignee.SelectedValue);
+        {        
+            User selectesUser = (User)combbox_Assignee.SelectedItem;
+
+            int idCreator = UserSession.LoggedInUser.Id;
+            int idAssignee = selectesUser.Id;
             DateTime selectedDate = dateTime_deadline.Value;
 
-            Task task = new Task(idUser, txtbox_Username.Text, 
+            Task task = new Task(idCreator, idAssignee, txtbox_taskName.Text, 
                             txtbox_Desciption.Text, selectedDate, DEFAULT_INIT_PROGRESS);
             return task;
         }
 
         private bool checkDataInput()
         {
-            if (string.IsNullOrEmpty(txtbox_Username.Text) || string.IsNullOrEmpty(txtbox_Desciption.Text))
+            if (string.IsNullOrEmpty(txtbox_taskName.Text) || string.IsNullOrEmpty(txtbox_Desciption.Text))
             {
                 MessageBox.Show("Required fields Empty. Please fill in all fields!");
                 return false;
@@ -57,7 +60,18 @@ namespace company_management.Views
 
         private void AddTaskForm_Load(object sender, EventArgs e)
         {
-            taskDAO.loadUserToCombobox(combbox_Assignee);
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            taskDAO.LoadUserToCombobox(combbox_Assignee);
+        }
+
+        private void combbox_Assignee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idAssignee = Convert.ToInt32(combbox_Assignee.SelectedValue);
+            MessageBox.Show(idAssignee.ToString());
         }
     }
 }
