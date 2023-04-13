@@ -25,7 +25,8 @@ namespace company_management.Views
 
         private void UCTimeKeeping_Load(object sender, EventArgs e)
         {
-            taskDAO.loadUserToCombobox(combbox_employee);
+            // load nhân viên lên
+            taskDAO.LoadUserToCombobox(combbox_employee);
             loadGridview();
             loadTimeNow();
         }

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using company_management.DTO;
 
 namespace company_management.Views.UC
 {
     public partial class UCHome : UserControl
     {
+
         public UCHome()
         {
             InitializeComponent();

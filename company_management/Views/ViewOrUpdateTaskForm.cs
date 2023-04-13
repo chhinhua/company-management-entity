@@ -18,7 +18,12 @@ namespace company_management.Views
 
         private void ViewOrUpdateTaskForm_Load(object sender, EventArgs e)
         {
-            taskDAO.loadUserToCombobox(combbox_Assignee);
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            taskDAO.LoadUserToCombobox(combbox_Assignee);
             bindingTaskToFields();
         }
 
@@ -49,12 +54,12 @@ namespace company_management.Views
 
         public void bindingTaskToFields()
         {
-            int id = UCTask.viewTask.IdUser;
+            int id = UCTask.viewTask.IdAssignee;
             User user = userDAO.GetUserById(id);           
            
             txtbox_Taskname.Text = UCTask.viewTask.TaskName;
             txtbox_Desciption.Text = UCTask.viewTask.Description;
-            combbox_Assignee.SelectedValue = UCTask.viewTask.IdUser;
+            combbox_Assignee.SelectedValue = user.Id;
             assigned_value.Text = user.FullName;
             userDAO.DisplayImage(user.Avatar, picturebox_Avatar);
 
@@ -69,7 +74,6 @@ namespace company_management.Views
             {
                 Console.WriteLine(e.ToString());
             }
-
         }
 
         private bool checkDataInput()

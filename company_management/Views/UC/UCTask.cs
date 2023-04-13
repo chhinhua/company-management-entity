@@ -13,22 +13,24 @@ namespace company_management.Views.UC
 {
     public partial class UCTask : UserControl
     {
-        TaskDAO taskDAO = new TaskDAO();
-        public static Task viewTask = new Task();
+        private TaskDAO taskDAO;
+        public static Task viewTask;
         public static bool dataChanged = false;
 
         public UCTask()
         {
             InitializeComponent();
+            taskDAO = new TaskDAO();
+            viewTask = new Task();
         }
 
         private void UCTask_Load(object sender, EventArgs e)
         {
             LoadData();
-            loadProgressChart();
+            LoadProgressChart();
         }
 
-        private void loadProgressChart()
+        private void LoadProgressChart()
         {
             TaskStatusPercentage taskStatus = taskDAO.getTaskStatusPercentage();
 
@@ -61,9 +63,8 @@ namespace company_management.Views.UC
         }
 
         private void LoadData()
-        {
-            List<Task> listTask = taskDAO.GetAllTask();
-            taskDAO.loadData(dataGridView_Task, listTask);
+        {         
+            taskDAO.LoadData(dataGridView_Task);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -129,7 +130,27 @@ namespace company_management.Views.UC
             (dataGridView_Task.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
         }
 
-        private void dgvTask_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnViewOrUpdate_Click(object sender, EventArgs e)
+        {
+            if (viewTask.Id != 0)
+            {
+                ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
+                viewOrUpdate.Show();
+            }
+            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void button_Edit_Click(object sender, EventArgs e)
+        {
+            if (viewTask.Id != 0)
+            {
+                ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
+                viewOrUpdate.Show();
+            }
+            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void dataGridView_Task_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView_Task.CurrentRow.Selected = true;
 
@@ -142,16 +163,6 @@ namespace company_management.Views.UC
                     viewTask = taskDAO.GetTaskById(id);
                 }
             }
-        }
-
-        private void button_ViewOrEdit_Click(object sender, EventArgs e)
-        {
-            if (viewTask.Id != 0)
-            {
-                ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
-                viewOrUpdate.Show();
-            }
-            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

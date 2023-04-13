@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
+using NLog.Fluent;
 
 namespace company_management
 {
     public class DBConnection
     {
         public SqlConnection connection;
+        private string connString = Properties.Settings.Default.connStr;
 
-        public DBConnection() => connection = new SqlConnection(Properties.Settings.Default.connStr);
+        public DBConnection() => connection = new SqlConnection(connString);
 
         public DataTable LoadData(string tableName)
         {
@@ -37,6 +40,35 @@ namespace company_management
             return dataTable;
         }
 
+        public List<T> GetListObjectsByQuery<T>(string query) where T : class
+        {
+            List<T> objects = new List<T>();
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                try
+                {
+                    connection.Open();
+                    objects = connection.Query<T>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không lấy được dữ liệu");
+                    Console.WriteLine(ex.ToString());
+                    throw; 
+                }
+                finally
+                {
+                    if (connection.State != ConnectionState.Closed)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
+            return objects;
+        }
+
         public DataTable SearchData(string query)
         {
             DataTable dataTable = new DataTable();
@@ -57,36 +89,17 @@ namespace company_management
             return dataTable;
         }
 
-        public T GetObjectByQuery<T>(string query) where T : new()
+        public T GetObjectByQuery<T>(string query) where T : class
         {
-            T obj = default(T);
-            connection.Open();
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlConnection connection = new SqlConnection(connString)) 
             {
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    obj = new T();
-                    foreach (var prop in typeof(T).GetProperties())
-                    {
-                        if (reader[prop.Name] != DBNull.Value)
-                        {
-                            Type propType = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
-                            object propValue = Convert.ChangeType(reader[prop.Name], propType);
-                            prop.SetValue(obj, propValue);
-                        }
-                    }
-                }
-                reader.Close();
+                connection.Open();
+                var result = connection.QueryFirstOrDefault<T>(query);
+                return result;
             }
-            connection.Close();
-
-            return obj;
         }
 
-
-        public void loadDataControl<T>(T control, string query) where T : Control
+        public void loadUserToCombobox<T>(T control, string query) where T : Control
         {
             try
             {
@@ -153,9 +166,10 @@ namespace company_management
                     MessageBox.Show("Successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

@@ -130,9 +130,6 @@ namespace company_management.Views
             this.combbox_Assignee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combbox_Assignee.ForeColor = System.Drawing.Color.Black;
             this.combbox_Assignee.ItemHeight = 30;
-            this.combbox_Assignee.Items.AddRange(new object[] {
-            "Admin",
-            "Employee"});
             this.combbox_Assignee.Location = new System.Drawing.Point(265, 410);
             this.combbox_Assignee.Name = "combbox_Assignee";
             this.combbox_Assignee.Size = new System.Drawing.Size(478, 36);
