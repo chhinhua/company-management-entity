@@ -108,5 +108,13 @@ namespace company_management.Views
         {
 
         }
+
+        public void LoadUserControl()
+        {
+            this.lb_menu_active.Location = new Point(btnTask.Location.X, btnTask.Location.Y);
+            UCTask uCTask = new UCTask();
+            AddUC(uCTask);
+        }
+
     }
 }

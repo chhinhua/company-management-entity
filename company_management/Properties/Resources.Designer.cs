@@ -513,6 +513,16 @@ namespace company_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_team_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-team-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_uninstalling_updates_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-uninstalling-updates-32", resourceCulture);

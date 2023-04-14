@@ -12,6 +12,7 @@ namespace company_management.DAO
     public class TeamDAO
     {
         private readonly DBConnection dBConnection;
+        private UserDAO userDAO;
         private List<Team> listTeam;
 
         private SqlConnection connection = new DBConnection().connection;
@@ -19,6 +20,7 @@ namespace company_management.DAO
         public TeamDAO()
         {
             dBConnection = new DBConnection();
+            userDAO = new UserDAO();
             listTeam = new List<Team>();
         }
 
@@ -44,6 +46,34 @@ namespace company_management.DAO
             else
             {
                 return GetTeamByLeaderId(task.IdAssignee);
+            }
+        }
+
+        public List<Team> GetAllTeam()
+        {
+            string query = string.Format("SELECT * FROM teams");
+            return dBConnection.GetListObjectsByQuery<Team>(query);
+        }
+
+        public void LoadData(DataGridView dataGridView)
+        {
+            dataGridView.ColumnCount = 4;
+
+            dataGridView.Columns[0].Name = "Mã nhóm";
+            dataGridView.Columns[0].Width = 40;
+
+            dataGridView.Columns[1].Name = "Tên nhóm";
+            dataGridView.Columns[1].Width = 300;
+            dataGridView.Columns[2].Name = "Mô tả nhóm";
+            dataGridView.Columns[3].Name = "Trưởng nhóm";
+            dataGridView.Rows.Clear();
+
+            // sử lý tên team
+            listTeam = GetAllTeam();
+
+            foreach (var t in listTeam)
+            {
+                dataGridView.Rows.Add(t.Id, t.Name, t.Description, userDAO.GetLeaderByTeam(t).FullName);
             }
         }
     }

@@ -7,27 +7,38 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using company_management.BUS;
 using company_management.DTO;
 
 namespace company_management.Views.UC
 {
     public partial class UCTask : UserControl
     {
+        private TaskBUS taskBUS;
         private TaskDAO taskDAO;
+        
         public static Task viewTask;
         public static bool dataChanged = false;
 
         public UCTask()
         {
             InitializeComponent();
+            taskBUS = new TaskBUS();
             taskDAO = new TaskDAO();
             viewTask = new Task();
         }
 
         private void UCTask_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadDataGridview();
             LoadProgressChart();
+            CheckAddButtonStatus();
+        }
+
+        private void CheckAddButtonStatus()
+        {
+            taskBUS.CheckAddButtonStatus(buttonAdd);
+            taskBUS.CheckAddButtonStatus(buttonRemove);
         }
 
         private void LoadProgressChart()
@@ -62,9 +73,9 @@ namespace company_management.Views.UC
             label_doneTask.Text = donePercent + "%";
         }
 
-        private void LoadData()
+        private void LoadDataGridview()
         {         
-            taskDAO.LoadData(dataGridView_Task);
+            taskBUS.LoadDataGridview(dataGridView_Task);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -101,7 +112,7 @@ namespace company_management.Views.UC
                 if (result == DialogResult.Yes)
                 {
                     taskDAO.deleteTask(viewTask.Id);
-                    LoadData();
+                    LoadDataGridview();
                 }
             }
             else MessageBox.Show("Task not selected!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);

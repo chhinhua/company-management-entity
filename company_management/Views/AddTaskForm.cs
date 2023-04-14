@@ -9,24 +9,32 @@ using System.Windows.Forms;
 
 using company_management.DAO;
 using company_management.DTO;
+using company_management.BUS;
 
 namespace company_management.Views
 {
     public partial class AddTaskForm : Form
     {
-        TaskDAO taskDAO= new TaskDAO();
+        private TaskDAO taskDAO;
+        private TeamDAO teamDAO;
+        private TaskBUS taskBUS;
         public static int DEFAULT_INIT_PROGRESS = 0;
 
         public AddTaskForm()
         {
             InitializeComponent();
+            taskDAO = new TaskDAO();
+            teamDAO = new TeamDAO();
+            taskBUS = new TaskBUS();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (checkDataInput())
             {
-                taskDAO.addTask(getTaskFromTextBox());
+                Task task = taskBUS.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
+                                              dateTime_deadline, combbox_Assignee);
+                taskDAO.addTask(task);
             }
         }
 
@@ -35,26 +43,13 @@ namespace company_management.Views
             this.Hide();
         }
 
-        private Task getTaskFromTextBox()
-        {        
-            User selectesUser = (User)combbox_Assignee.SelectedItem;
-
-            int idCreator = UserSession.LoggedInUser.Id;
-            int idAssignee = selectesUser.Id;
-            DateTime selectedDate = dateTime_deadline.Value;
-
-            Task task = new Task(idCreator, idAssignee, txtbox_taskName.Text, 
-                            txtbox_Desciption.Text, selectedDate, DEFAULT_INIT_PROGRESS);
-            return task;
-        }
-
         private bool checkDataInput()
         {
             if (string.IsNullOrEmpty(txtbox_taskName.Text) || string.IsNullOrEmpty(txtbox_Desciption.Text))
             {
                 MessageBox.Show("Required fields Empty. Please fill in all fields!");
                 return false;
-            }          
+            }
             return true;
         }
 
@@ -70,8 +65,6 @@ namespace company_management.Views
 
         private void combbox_Assignee_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idAssignee = Convert.ToInt32(combbox_Assignee.SelectedValue);
-            MessageBox.Show(idAssignee.ToString());
         }
     }
 }

@@ -8,12 +8,14 @@ namespace company_management.Views
 {
     public partial class ViewOrUpdateTaskForm : Form
     {
-        TaskDAO taskDAO = new TaskDAO();
-        UserDAO userDAO = new UserDAO();
+        private TaskDAO taskDAO;
+        private UserDAO userDAO;
 
         public ViewOrUpdateTaskForm()
         {
             InitializeComponent();
+            taskDAO = new TaskDAO();
+            userDAO = new UserDAO();
         }
 
         private void ViewOrUpdateTaskForm_Load(object sender, EventArgs e)
@@ -109,9 +111,5 @@ namespace company_management.Views
 
         }
 
-        private void ViewOrUpdateTaskForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            UCTask.dataChanged = true;
-        }
     }
 }

@@ -272,3 +272,4 @@ E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\o
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequest.resources
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Dapper.xml
 E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\NLog.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_Team.resources

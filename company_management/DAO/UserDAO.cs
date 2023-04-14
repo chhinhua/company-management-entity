@@ -120,6 +120,12 @@ namespace company_management.DAO
             return dBConnection.GetObjectByQuery<User>(query);
         }
 
+        public User GetLeaderByTeam(Team team)
+        {
+            string query = string.Format("SELECT * FROM users WHERE users.id = '{0}'", team.IdLeader);
+            return dBConnection.GetObjectByQuery<User>(query);
+        }
+
         public List<User> GetListLeader()
         {
              List<User> users = GetAllUser();
