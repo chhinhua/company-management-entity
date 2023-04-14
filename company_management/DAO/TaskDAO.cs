@@ -28,33 +28,40 @@ namespace company_management.DAO
 
         public void LoadUserToCombobox(ComboBox comboBox)
         {
-            List<User> items = new List<User>();
+            List<Team> teams;
+            List<User> users;
 
             if (UserSession.LoggedInUser != null)
             {
-                if (UserSession.LoggedInUser.IdPosition == 1) // idRole = 1 (manager)
+                if (UserSession.LoggedInUser.IdPosition == 1) // IdPosition = 1 (manager)
                 {
-                    // Hiển thị danh sách leader
-                    items.AddRange(userDAO.GetAllLeader());
+                    // Hiển thị danh sách team cho quản lý chọn
+                    teams = new List<Team>();
+                    teams.AddRange(teamDAO.GetAllTeam());
+
+                    comboBox.Items.AddRange(teams.ToArray());
+                    comboBox.DisplayMember = "name";
                 }
-                else if (UserSession.LoggedInUser.IdPosition == 2) // idRole = 2 (leader)
+                else if (UserSession.LoggedInUser.IdPosition == 2) // IdPosition = 2 (leader)
                 {
-                    // Hiển thị danh sách employee
-                    items.AddRange(userDAO.GetAllEmployee()); 
+                    // Hiển thị danh sách nhân viên trong team cho leader chọn
+                    users = new List<User>();
+                    users.AddRange(userDAO.GetAllEmployee());
+
+                    comboBox.Items.AddRange(users.ToArray());
+                    comboBox.DisplayMember = "fullName";
                 }
-                else // idRole = 3 (employee)
+                else // (employee)
                 { 
                     // Không có quyền truy cập
                     comboBox.Enabled = false;
                     return;
                 }
+
+                comboBox.ValueMember = "id";
+                comboBox.SelectedIndex = 0;             
             }
 
-            // Đưa danh sách vào ComboBox
-            comboBox.Items.AddRange(items.ToArray());
-            comboBox.SelectedIndex = 0;
-            comboBox.DisplayMember = "fullName";
-            comboBox.ValueMember = "id";
         }
 
         public void addTask(Task task)
@@ -107,7 +114,7 @@ namespace company_management.DAO
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                Console.WriteLine(e.ToString());
             }
             finally
             {
@@ -131,28 +138,16 @@ namespace company_management.DAO
             return dBConnection.GetListObjectsByQuery<Task>(query);
         }
 
-        public void LoadData(DataGridView dataGridView)
+        public List<Task> GetTasksCreatedByCurrentUser(int idCreator)
         {
-            dataGridView.ColumnCount = 5;
+            string query = string.Format("SELECT * FROM task WHERE idCreator = {0}", idCreator);
+            return dBConnection.GetListObjectsByQuery<Task>(query);
+        }
 
-            dataGridView.Columns[0].Name = "Mã";
-            dataGridView.Columns[0].Width = 40;
-
-            dataGridView.Columns[1].Name = "Tên";
-            dataGridView.Columns[1].Width = 300;
-            dataGridView.Columns[2].Name = "Deadline";
-            dataGridView.Columns[3].Name = "Tiến độ";
-            dataGridView.Columns[4].Name = "Team được giao";
-            dataGridView.Rows.Clear();
-
-            // sử lý tên team
-            listTask = GetAllTask();
-
-            foreach (var t in listTask)
-            {
-                dataGridView.Rows.Add(t.Id, t.TaskName, t.Deadline, 
-                                t.Progress + " %", teamDAO.GetTeamByTask(t).Name);
-            }
+        public List<Task> GetTasksAssignedByCurrentUser(int idAssignee)
+        {
+            string query = string.Format("SELECT * FROM task WHERE idAssignee = {0}", idAssignee);
+            return dBConnection.GetListObjectsByQuery<Task>(query);
         }
 
         /*public List<Task> SearchTasks(string txtSearch)

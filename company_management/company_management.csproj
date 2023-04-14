@@ -385,6 +385,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\TaskBUS.cs" />
+    <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DAO\CheckinCheckoutDAO.cs" />
     <Compile Include="DAO\KpiDAO.cs" />
     <Compile Include="DAO\LeaveRequestDAO.cs" />
@@ -542,6 +543,12 @@
     <Compile Include="Views\UC\UC_KPI.Designer.cs">
       <DependentUpon>UC_KPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UC\UC_Team.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UC_Team.Designer.cs">
+      <DependentUpon>UC_Team.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UC\UpdateCPInfoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -621,6 +628,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UC_KPI.resx">
       <DependentUpon>UC_KPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UC_Team.resx">
+      <DependentUpon>UC_Team.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UpdateCPInfoUC.resx">
       <DependentUpon>UpdateCPInfoUC.cs</DependentUpon>
@@ -714,6 +724,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-team-48.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\trash.png" />
     <None Include="Resources\icons8-search-482.png" />
