@@ -46,6 +46,7 @@ namespace company_management.Views
             this.circleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.progressValue = new System.Windows.Forms.Label();
             this.combobox_progress = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Avatar)).BeginInit();
             this.circleProgressBar.SuspendLayout();
             this.SuspendLayout();
@@ -317,11 +318,29 @@ namespace company_management.Views
             this.combobox_progress.TabIndex = 120;
             this.combobox_progress.SelectedIndexChanged += new System.EventHandler(this.combobox_progress_SelectedIndexChanged);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = global::company_management.Properties.Resources.device_floppy;
+            this.guna2Button1.Location = new System.Drawing.Point(56, 236);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(130, 50);
+            this.guna2Button1.TabIndex = 121;
+            this.guna2Button1.Text = "Save";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // ViewOrUpdateTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 576);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.combobox_progress);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.circleProgressBar);
@@ -367,5 +386,6 @@ namespace company_management.Views
         private Guna.UI2.WinForms.Guna2CircleProgressBar circleProgressBar;
         private System.Windows.Forms.Label progressValue;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_progress;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

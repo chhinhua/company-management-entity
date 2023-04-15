@@ -43,7 +43,7 @@ namespace company_management.Views.UC
 
         private void LoadProgressChart()
         {
-            TaskStatusPercentage taskStatus = taskDAO.getTaskStatusPercentage();
+            TaskStatusPercentage taskStatus = taskDAO.GetTaskStatusPercentage(taskBUS.GetListTaskByPosition());
 
             double todoPercent = taskStatus.TodoPercent;
             double inprogressPercent = taskStatus.InprogressPercent;
@@ -51,11 +51,7 @@ namespace company_management.Views.UC
 
             // Thêm các phần tử vào danh sách
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
-            //chart_taskProgress.Series["SeriesProgress"].Points[0].LegendText = "Todo";
-
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
-            //chart_taskProgress.Series["SeriesProgress"].Points[1].LegendText = "Inprogress";
-
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", donePercent);
             // chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
 
@@ -175,5 +171,6 @@ namespace company_management.Views.UC
                 }
             }
         }
+
     }
 }

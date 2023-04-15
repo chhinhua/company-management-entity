@@ -387,6 +387,7 @@
     <Compile Include="BUS\TaskBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DAO\CheckinCheckoutDAO.cs" />
+    <Compile Include="DAO\ImageDAO.cs" />
     <Compile Include="DAO\KpiDAO.cs" />
     <Compile Include="DAO\LeaveRequestDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />

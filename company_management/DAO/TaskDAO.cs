@@ -92,33 +92,52 @@ namespace company_management.DAO
             return dBConnection.GetObjectByQuery<Task>(query);
         }
 
-        public TaskStatusPercentage getTaskStatusPercentage()
+        /*   public TaskStatusPercentage getTaskStatusPercentage()
+           {
+               TaskStatusPercentage taskStatus = new TaskStatusPercentage(0, 0, 0);
+
+               try
+               {
+                   SqlCommand command = new SqlCommand("SELECT * FROM GetTaskStatusPercentage()", connection);
+                   connection.Open();
+
+                   SqlDataReader reader = command.ExecuteReader();
+                   if (reader.Read())
+                   {
+                       taskStatus.TodoPercent = (double)reader["todoPercent"];
+                       taskStatus.InprogressPercent = (double)reader["inprogressPercent"];
+                       taskStatus.DonePercent = (double)reader["donePercent"];
+                   }
+                   reader.Close();
+
+                   return taskStatus;
+               }
+               catch (Exception e)
+               {
+                   Console.WriteLine(e.ToString());
+               }
+               finally
+               {
+                   connection.Close();
+               }
+
+               return taskStatus;
+           }*/
+
+        public TaskStatusPercentage GetTaskStatusPercentage(List<Task> tasks)
         {
             TaskStatusPercentage taskStatus = new TaskStatusPercentage(0, 0, 0);
 
-            try
+            if (tasks.Count > 0)
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM GetTaskStatusPercentage()", connection);
-                connection.Open();
+                double totalTasks = tasks.Count;
+                double todoCount = tasks.Count(task => task.Progress == 0);
+                double inprogressCount = tasks.Count(task => task.Progress > 0 && task.Progress < 100);
+                double doneCount = tasks.Count(task => task.Progress == 100);
 
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    taskStatus.TodoPercent = (double)reader["todoPercent"];
-                    taskStatus.InprogressPercent = (double)reader["inprogressPercent"];
-                    taskStatus.DonePercent = (double)reader["donePercent"];
-                }
-                reader.Close();
-
-                return taskStatus;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            finally
-            {
-                connection.Close();
+                taskStatus.TodoPercent = (todoCount / totalTasks) * 100;
+                taskStatus.InprogressPercent = (inprogressCount / totalTasks) * 100;
+                taskStatus.DonePercent = (doneCount / totalTasks) * 100;
             }
 
             return taskStatus;
@@ -126,11 +145,11 @@ namespace company_management.DAO
 
         //===============================================
 
-     /*   public List<Task> GetAllTask()
-        {
-            DataTable dataTable = dBConnection.LoadData("task");
-            return MapToListTask(dataTable);
-        }*/
+        /*   public List<Task> GetAllTask()
+           {
+               DataTable dataTable = dBConnection.LoadData("task");
+               return MapToListTask(dataTable);
+           }*/
 
         public List<Task> GetAllTask()
         {

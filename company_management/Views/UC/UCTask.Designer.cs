@@ -37,6 +37,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
+            this.combobox_taskStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView_Task = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
@@ -77,6 +78,7 @@
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
+            this.panelData.Controls.Add(this.combobox_taskStatusFilter);
             this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.dataGridView_Task);
             this.panelData.FillColor = System.Drawing.Color.White;
@@ -88,6 +90,28 @@
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 455);
             this.panelData.TabIndex = 96;
+            // 
+            // combobox_taskStatusFilter
+            // 
+            this.combobox_taskStatusFilter.BackColor = System.Drawing.Color.Transparent;
+            this.combobox_taskStatusFilter.BorderRadius = 5;
+            this.combobox_taskStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combobox_taskStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_taskStatusFilter.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.combobox_taskStatusFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_taskStatusFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_taskStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.combobox_taskStatusFilter.ForeColor = System.Drawing.Color.Black;
+            this.combobox_taskStatusFilter.ItemHeight = 30;
+            this.combobox_taskStatusFilter.Items.AddRange(new object[] {
+            "Tất cả",
+            "Đã tạo\t",
+            "Được giao"});
+            this.combobox_taskStatusFilter.Location = new System.Drawing.Point(1071, 18);
+            this.combobox_taskStatusFilter.Name = "combobox_taskStatusFilter";
+            this.combobox_taskStatusFilter.Size = new System.Drawing.Size(164, 36);
+            this.combobox_taskStatusFilter.StartIndex = 0;
+            this.combobox_taskStatusFilter.TabIndex = 71;
             // 
             // txtSearch
             // 
@@ -234,10 +258,10 @@
             this.button_Edit.ForeColor = System.Drawing.Color.White;
             this.button_Edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             this.button_Edit.Image = global::company_management.Properties.Resources.edit;
-            this.button_Edit.ImageSize = new System.Drawing.Size(24, 24);
-            this.button_Edit.Location = new System.Drawing.Point(1170, 268);
+            this.button_Edit.ImageSize = new System.Drawing.Size(28, 28);
+            this.button_Edit.Location = new System.Drawing.Point(1170, 272);
             this.button_Edit.Name = "button_Edit";
-            this.button_Edit.Size = new System.Drawing.Size(49, 40);
+            this.button_Edit.Size = new System.Drawing.Size(40, 40);
             this.button_Edit.TabIndex = 98;
             this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
             // 
@@ -256,10 +280,10 @@
             this.buttonRemove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
             this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
-            this.buttonRemove.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonRemove.Location = new System.Drawing.Point(1225, 268);
+            this.buttonRemove.ImageSize = new System.Drawing.Size(28, 28);
+            this.buttonRemove.Location = new System.Drawing.Point(1226, 272);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(50, 40);
+            this.buttonRemove.Size = new System.Drawing.Size(40, 40);
             this.buttonRemove.TabIndex = 99;
             this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
@@ -267,7 +291,7 @@
             // 
             this.buttonAdd.AutoRoundedCorners = true;
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.BorderRadius = 20;
+            this.buttonAdd.BorderRadius = 19;
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -276,10 +300,10 @@
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
             this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
-            this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAdd.Location = new System.Drawing.Point(1118, 266);
+            this.buttonAdd.ImageSize = new System.Drawing.Size(28, 28);
+            this.buttonAdd.Location = new System.Drawing.Point(1114, 272);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(46, 42);
+            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
             this.buttonAdd.TabIndex = 97;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -295,10 +319,10 @@
             this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
             this.btnViewOrUpdate.Image = global::company_management.Properties.Resources.icons8_eye_25;
-            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnViewOrUpdate.Location = new System.Drawing.Point(1067, 270);
+            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrUpdate.Location = new System.Drawing.Point(1058, 272);
             this.btnViewOrUpdate.Name = "btnViewOrUpdate";
-            this.btnViewOrUpdate.Size = new System.Drawing.Size(45, 40);
+            this.btnViewOrUpdate.Size = new System.Drawing.Size(40, 40);
             this.btnViewOrUpdate.TabIndex = 101;
             this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
             // 
@@ -530,5 +554,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_taskStatusFilter;
     }
 }
