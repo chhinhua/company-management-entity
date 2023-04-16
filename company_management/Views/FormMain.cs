@@ -8,14 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using company_management.DAO;
+using company_management.DTO;
 
 namespace company_management.Views
 {
     public partial class FormMain : Form
     {
+        private ImageDAO imageDA0;
+
         public FormMain()
         {
             InitializeComponent();
+            imageDA0 = new ImageDAO();
         }
 
         private void AddUC(UserControl Uc)
@@ -27,7 +32,6 @@ namespace company_management.Views
 
             Uc.BringToFront();
         }
-
 
         private void btnTask_Click(object sender, EventArgs e)
         {
@@ -73,6 +77,7 @@ namespace company_management.Views
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            imageDA0.ShowImageInPictureBox(UserSession.LoggedInUser.Avatar, picturebox_avatar);
             UCHome uCHome = new UCHome();
             AddUC(uCHome);
         }
@@ -96,7 +101,6 @@ namespace company_management.Views
         {
 
         }
-
 
         public void LoadUserControl()
         {

@@ -34,7 +34,7 @@ namespace company_management.Views
             {
                 Task task = taskBUS.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
                                               dateTime_deadline, combbox_Assignee);
-                taskDAO.addTask(task);
+                taskDAO.AddTask(task);
             }
         }
 

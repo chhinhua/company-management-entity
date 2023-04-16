@@ -135,22 +135,6 @@ namespace company_management.DAO
             return listLeaderUsers;
         }
 
-        //=================================================
-
-        /*public byte[] ConvertImageToByteArray(PictureBox pictureBox)
-        {
-            byte[] imageBytes = null;
-            if (pictureBox.Image != null)
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    pictureBox.Image.Save(ms, pictureBox.Image.RawFormat);
-                    imageBytes = ms.ToArray();
-                }
-            }
-            return imageBytes;
-        }*/
-
         public void DisplayImage(byte[] avatarBytes, PictureBox pictureBox)
         {
             if (avatarBytes == null || avatarBytes.Length == 0)

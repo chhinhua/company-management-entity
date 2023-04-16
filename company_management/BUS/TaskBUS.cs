@@ -30,7 +30,7 @@ namespace company_management.BUS
             listTask = new List<Task>();
         }
 
-        public void LoadDataGridview(DataGridView dataGridView)
+        public void LoadDataGridview(List<Task> listTask, DataGridView dataGridView)
         {
             dataGridView.ColumnCount = 7;
             dataGridView.Columns[0].Name = "Mã";
@@ -43,8 +43,6 @@ namespace company_management.BUS
             dataGridView.Columns[5].Name = "Người được giao";
             dataGridView.Columns[6].Name = "Team được giao";
             dataGridView.Rows.Clear();
-
-            listTask = GetListTaskByPosition();
 
             // sort theo deadline tăng dần
             listTask.Sort((x, y) => DateTime.Compare(x.Deadline, y.Deadline));
@@ -80,28 +78,17 @@ namespace company_management.BUS
             return listTask;
         }
 
-        /*  public void LoadUserToCombobox(ComboBox comboBox)
-          {
-              List<User> items = taskDAO.LoadUserToCombobox(comboBox);
-
-              // Đưa danh sách vào ComboBox
-              comboBox.Items.AddRange(items.ToArray());
-              comboBox.SelectedIndex = 0;
-              comboBox.DisplayMember = "fullName";
-              comboBox.ValueMember = "id";
-          }*/
-
         public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, ComboBox combbox_Assignee)
         {
             Team selectesTeam;
             User selectesUser;
-            Task task = null;   
+            Task task = null;
             int idAssignee;
             int idCreator = UserSession.LoggedInUser.Id;
 
             string position = userBUS.GetUserPosition();
 
-            if (position.Equals("Manager")) 
+            if (position.Equals("Manager"))
             {
                 selectesTeam = (Team)combbox_Assignee.SelectedItem;
                 idAssignee = selectesTeam.IdLeader;
@@ -114,14 +101,15 @@ namespace company_management.BUS
                 idAssignee = selectesUser.Id;
                 task = new Task(idCreator, idAssignee, taskName,
                             description, dateTime.Value, 0, teamDAO.GetTeamByLeaderId(idCreator).Id);
-            } else
+            }
+            else
             {
                 MessageBox.Show("Bạn không có quyền lưu thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return task;
         }
 
-        public void CheckAddButtonStatus(Guna2Button addButton)
+        public void CheckButtonStatus(Guna2Button addButton)
         {
             if (userBUS.IsEmployee())
             {
@@ -132,5 +120,37 @@ namespace company_management.BUS
                 addButton.Enabled = true;
             }
         }
+
+        public List<Task> SearchTasks(string txtSearch)
+        {
+            return taskDAO.SearchTasks(txtSearch);
+        }
+
+        public List<Task> SearchTasksByKeyword(Guna2DataGridView gridView, string keyword, 
+                        int clmnCreator, int clmnTaskName, int clmnAssignee, int clmnTeam)
+        {
+            List<Task> searchResults = new List<Task>();
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                bool found = false;
+                foreach (int i in new int[] { clmnCreator, clmnTaskName, clmnAssignee, clmnTeam })
+                {
+                    if (row.Cells[i].Value != null && row.Cells[i].Value.ToString().ToLower().Contains(keyword))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found)
+                {
+                    int taskId = Convert.ToInt32(row.Cells[0].Value);
+                    Task task = taskDAO.GetTaskById(taskId);
+                    searchResults.Add(task);
+                }
+            }
+            return searchResults;
+        }
+
     }
 }

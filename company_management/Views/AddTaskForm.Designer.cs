@@ -204,7 +204,7 @@ namespace company_management.Views
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(217, 50);
             this.btnCancel.TabIndex = 88;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
@@ -214,14 +214,14 @@ namespace company_management.Views
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::company_management.Properties.Resources.device_floppy;
             this.btnSave.Location = new System.Drawing.Point(35, 568);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(215, 50);
             this.btnSave.TabIndex = 87;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AddTaskForm
