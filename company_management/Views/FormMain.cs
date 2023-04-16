@@ -8,14 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using company_management.DAO;
+using company_management.DTO;
 
 namespace company_management.Views
 {
     public partial class FormMain : Form
     {
+        private ImageDAO imageDA0;
+
         public FormMain()
         {
             InitializeComponent();
+            imageDA0 = new ImageDAO();
         }
 
         private void AddUC(UserControl Uc)
@@ -26,14 +31,6 @@ namespace company_management.Views
             pn_main.Controls.Add(Uc);
 
             Uc.BringToFront();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            btnHome.BackColor = Color.Teal;
-            this.lb_menu_active.Location = new Point(btnHome.Location.X, btnHome.Location.Y);
-            UCHome uCHome = new UCHome();
-            AddUC(uCHome);
         }
 
         private void btnTask_Click(object sender, EventArgs e)
@@ -80,6 +77,7 @@ namespace company_management.Views
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            imageDA0.ShowImageInPictureBox(UserSession.LoggedInUser.Avatar, picturebox_avatar);
             UCHome uCHome = new UCHome();
             AddUC(uCHome);
         }
@@ -104,17 +102,26 @@ namespace company_management.Views
 
         }
 
-        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void LoadUserControl()
         {
-            this.lb_menu_active.Location = new Point(btnTask.Location.X, btnTask.Location.Y);
+            this.lb_menu_active.Location = new Point(btnUser.Location.X, btnUser.Location.Y);
             UCTask uCTask = new UCTask();
             AddUC(uCTask);
         }
 
+        private void btnTeam_Click(object sender, EventArgs e)
+        {
+            this.lb_menu_active.Location = new Point(btnTeam.Location.X, btnTeam.Location.Y);
+            UC_Team uC_Team = new UC_Team();
+            AddUC(uC_Team);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            btnHome.BackColor = Color.Teal;
+            this.lb_menu_active.Location = new Point(btnHome.Location.X, btnHome.Location.Y);
+            UCHome uCHome = new UCHome();
+            AddUC(uCHome);
+        }
     }
 }

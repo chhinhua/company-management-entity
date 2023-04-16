@@ -384,9 +384,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CheckinCheckoutBUS.cs" />
     <Compile Include="BUS\TaskBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DAO\CheckinCheckoutDAO.cs" />
+    <Compile Include="DAO\ImageDAO.cs" />
     <Compile Include="DAO\KpiDAO.cs" />
     <Compile Include="DAO\LeaveRequestDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />
@@ -397,7 +399,7 @@
     <Compile Include="DTO\MappingExtensions.cs" />
     <Compile Include="DTO\Team.cs" />
     <Compile Include="DTO\TimeKeepingDTO.cs" />
-    <Compile Include="DTO\CheckinCheckoutDTO.cs" />
+    <Compile Include="DTO\CheckinCheckout.cs" />
     <Compile Include="DTO\Company.cs" />
     <Compile Include="DTO\KpiDTO.cs" />
     <Compile Include="DTO\LeaveRequestDTO.cs" />

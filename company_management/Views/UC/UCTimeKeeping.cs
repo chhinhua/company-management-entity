@@ -8,42 +8,40 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using company_management.DTO;
-using company_management.DTO;
+using company_management.BUS;
 
 namespace company_management.Views
 {
     public partial class UCTimeKeeping : UserControl
     {
-        CheckinCheckoutDAO checkin_coDAO = new CheckinCheckoutDAO();
-        public static CheckinCheckoutDTO timeKeeping = new CheckinCheckoutDTO();
-        private TaskDAO taskDAO = new TaskDAO();
+        private CheckinCheckoutDAO checkinCheckoutDAO;      
+        private CheckinCheckoutBUS checkinCheckoutBUS;      
+        private TaskDAO taskDAO;
 
         public UCTimeKeeping()
         {
             InitializeComponent();
+            taskDAO = new TaskDAO();
+            checkinCheckoutDAO = new CheckinCheckoutDAO();
+            checkinCheckoutBUS = new CheckinCheckoutBUS();
         }
 
         private void UCTimeKeeping_Load(object sender, EventArgs e)
         {
-            // load nhân viên lên
-            taskDAO.LoadUserToCombobox(combbox_employee);
-            loadGridview();
-            loadTimeNow();
+            LoadDataGridview();
+            LoadTimeNow();
         }
 
-        public void loadTimeNow()
+        public void LoadTimeNow()
         {
-            datetime_Checkin.ShowUpDown = true;
             datetime_Checkin.Value = DateTime.Now;
-
-            datetime_Checkout.ShowUpDown = true;
             datetime_Checkout.Value = DateTime.Now;
         }
 
-        public void loadGridview()
+        public void LoadDataGridview()
         {
-            List<TimeKeepingDTO> data = checkin_coDAO.GetAllCheckinCheckouts();
-            datagridview_timeKeeping.DataSource = data;
+            List<CheckinCheckout> data = checkinCheckoutDAO.GetAllCheckinCO();
+            checkinCheckoutBUS.LoadDataGridview(data, datagridview_timeKeeping);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -69,24 +67,67 @@ namespace company_management.Views
             (datagridview_timeKeeping.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
         }
 
-        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            checkin_coDAO.InitData();
+            
         }
+
+        private void toggle_checkin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (toggle_checkin.Checked == true)
+            {
+                DialogResult result = MessageBox.Show("Bạn xác nhận checkin? Nếu bạn nhấn Yes, một dữ liệu chấm công mới sẽ được tạo và bạn sẽ không thể trở lại.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Thêm code để tạo checkin checkout
+
+                    toggle_checkin.Enabled = false;
+                } 
+                else
+                {
+                    toggle_checkin.Checked = false;
+                }
+            }
+        }
+
+        private void toggle_checkout_CheckedChanged(object sender, EventArgs e)
+        {
+            if (toggle_checkout.Checked == true)
+            {
+                DialogResult result = MessageBox.Show("Bạn xác nhận checkout? Nếu bạn nhấn Yes, dữ liệu sẽ được lưu và không thể trở lại.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Thêm code để set giá trị checkout cho người đang đăng nhập
+
+                    toggle_checkout.Enabled = false;
+                }
+                else
+                {
+                    toggle_checkout.Checked = false;
+                }
+            }
+        }
+
+
+        /*private void toggleButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (toggleButton.Checked == false)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn tắt tính năng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    toggleButton.Checked = true;
+                }
+                else
+                {
+                    isDisabled = true;
+                }
+            }
+            else if (isDisabled)
+            {
+                MessageBox.Show("Tính năng đã được kích hoạt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                isDisabled = false;
+            }
+        }*/
     }
 }

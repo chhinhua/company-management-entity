@@ -16,8 +16,6 @@ namespace company_management.DAO
         private TeamDAO teamDAO;
         private UserDAO userDAO;
 
-        private SqlConnection connection = new DBConnection().connection;
-
         public TaskDAO()
         {
             dBConnection = new DBConnection();
@@ -64,7 +62,7 @@ namespace company_management.DAO
 
         }
 
-        public void addTask(Task task)
+        public void AddTask(Task task)
         {
             string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
@@ -72,7 +70,7 @@ namespace company_management.DAO
             dBConnection.executeQuery(query);
         }
 
-        public void updateTask(Task updateTask)
+        public void UpdateTask(Task updateTask)
         {
             string sqlStr = string.Format("UPDATE task SET " +
                    "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}' WHERE id = '{6}'",
@@ -80,7 +78,7 @@ namespace company_management.DAO
             dBConnection.executeQuery(sqlStr);
         }
 
-        public void deleteTask(int id)
+        public void DeleteTask(int id)
         {
             string sqlStr = string.Format("DELETE FROM task WHERE id = '{0}'", id);
             dBConnection.executeQuery(sqlStr);
@@ -92,45 +90,24 @@ namespace company_management.DAO
             return dBConnection.GetObjectByQuery<Task>(query);
         }
 
-        public TaskStatusPercentage getTaskStatusPercentage()
+        public TaskStatusPercentage GetTaskStatusPercentage(List<Task> tasks)
         {
             TaskStatusPercentage taskStatus = new TaskStatusPercentage(0, 0, 0);
 
-            try
+            if (tasks.Count > 0)
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM GetTaskStatusPercentage()", connection);
-                connection.Open();
+                double totalTasks = tasks.Count;
+                double todoCount = tasks.Count(task => task.Progress == 0);
+                double inprogressCount = tasks.Count(task => task.Progress > 0 && task.Progress < 100);
+                double doneCount = tasks.Count(task => task.Progress == 100);
 
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    taskStatus.TodoPercent = (double)reader["todoPercent"];
-                    taskStatus.InprogressPercent = (double)reader["inprogressPercent"];
-                    taskStatus.DonePercent = (double)reader["donePercent"];
-                }
-                reader.Close();
-
-                return taskStatus;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            finally
-            {
-                connection.Close();
+                taskStatus.TodoPercent = (todoCount / totalTasks) * 100;
+                taskStatus.InprogressPercent = (inprogressCount / totalTasks) * 100;
+                taskStatus.DonePercent = (doneCount / totalTasks) * 100;
             }
 
             return taskStatus;
         }
-
-        //===============================================
-
-     /*   public List<Task> GetAllTask()
-        {
-            DataTable dataTable = dBConnection.LoadData("task");
-            return MapToListTask(dataTable);
-        }*/
 
         public List<Task> GetAllTask()
         {
@@ -140,25 +117,25 @@ namespace company_management.DAO
 
         public List<Task> GetTasksCreatedByCurrentUser(int idCreator)
         {
-            string query = string.Format("SELECT * FROM task WHERE idCreator = {0}", idCreator);
-            return dBConnection.GetListObjectsByQuery<Task>(query);
+            return GetAllTask().Where(t => t.IdCreator == idCreator).ToList();
         }
 
         public List<Task> GetTasksAssignedByCurrentUser(int idAssignee)
         {
-            string query = string.Format("SELECT * FROM task WHERE idAssignee = {0}", idAssignee);
-            return dBConnection.GetListObjectsByQuery<Task>(query);
+            return GetAllTask().Where(t => t.IdAssignee == idAssignee).ToList();
         }
 
-        /*public List<Task> SearchTasks(string txtSearch)
+        public List<Task> SearchTasks(string txtSearch)
         {
-            string query = string.Format("SELECT * FROM users WHERE username like '%{0}%' OR fullName like '%{0}%' " +
-                "OR email like '%{0}%' OR address like '%{0}%' OR phoneNumber like '%{0}%'", txtSearch);
-
-            DataTable dataTable = dBConnection.SearchData(query);
-
-            return MapToListTask(dataTable);
-        }*/
+            string query = string.Format("SELECT t.* FROM task t " +
+                "INNER JOIN teams tm ON t.idTeam = tm.id " +
+                "INNER JOIN users u ON(t.idCreator = u.id OR t.idAssignee = u.id) " +
+                "WHERE t.taskName LIKE '%{0}%' " +
+                "OR t.description LIKE '%{0}%' " +
+                "OR tm.name LIKE '%{0}%' " +
+                "OR u.username LIKE '%{0}%' ", txtSearch);
+            return dBConnection.GetListObjectsByQuery<Task>(query);
+        }
 
         private List<Task> MapToListTask(DataTable dataTable)
         {
@@ -176,8 +153,6 @@ namespace company_management.DAO
                             }).ToList();
 
             return listTask;
-        }
-
-      
+        } 
     }
 }

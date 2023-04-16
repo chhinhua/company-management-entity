@@ -14,15 +14,15 @@ namespace company_management.Views.UC
 {
     public partial class UCTask : UserControl
     {
+        private List<Task> listTask;
         private TaskBUS taskBUS;
-        private TaskDAO taskDAO;
-        
+        private TaskDAO taskDAO; 
         public static Task viewTask;
-        public static bool dataChanged = false;
 
         public UCTask()
         {
             InitializeComponent();
+            listTask = new List<Task>();
             taskBUS = new TaskBUS();
             taskDAO = new TaskDAO();
             viewTask = new Task();
@@ -37,13 +37,13 @@ namespace company_management.Views.UC
 
         private void CheckAddButtonStatus()
         {
-            taskBUS.CheckAddButtonStatus(buttonAdd);
-            taskBUS.CheckAddButtonStatus(buttonRemove);
+            taskBUS.CheckButtonStatus(buttonAdd);
+            taskBUS.CheckButtonStatus(buttonRemove);
         }
 
         private void LoadProgressChart()
         {
-            TaskStatusPercentage taskStatus = taskDAO.getTaskStatusPercentage();
+            TaskStatusPercentage taskStatus = taskDAO.GetTaskStatusPercentage(taskBUS.GetListTaskByPosition());
 
             double todoPercent = taskStatus.TodoPercent;
             double inprogressPercent = taskStatus.InprogressPercent;
@@ -51,11 +51,7 @@ namespace company_management.Views.UC
 
             // Thêm các phần tử vào danh sách
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
-            //chart_taskProgress.Series["SeriesProgress"].Points[0].LegendText = "Todo";
-
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
-            //chart_taskProgress.Series["SeriesProgress"].Points[1].LegendText = "Inprogress";
-
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", donePercent);
             // chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
 
@@ -74,8 +70,9 @@ namespace company_management.Views.UC
         }
 
         private void LoadDataGridview()
-        {         
-            taskBUS.LoadDataGridview(dataGridView_Task);
+        {
+            listTask = taskBUS.GetListTaskByPosition();
+            taskBUS.LoadDataGridview(listTask, dataGridView_Task);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -111,7 +108,7 @@ namespace company_management.Views.UC
 
                 if (result == DialogResult.Yes)
                 {
-                    taskDAO.deleteTask(viewTask.Id);
+                    taskDAO.DeleteTask(viewTask.Id);
                     LoadDataGridview();
                 }
             }
@@ -121,24 +118,13 @@ namespace company_management.Views.UC
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text;
+            int clmnCreator = 1;
+            int clmnTaskName = 2;
+            int clmnAssignee = 3;
+            int clmnTeam = 4;
 
-            // Tạo một chuỗi điều kiện để lọc dữ liệu
-            StringBuilder filterExpression = new StringBuilder();
-            foreach (DataGridViewColumn column in dataGridView_Task.Columns)
-            {
-                // Chỉ áp dụng lọc cho các cột chứa dữ liệu và không phải cột deadline
-                if (column.DataPropertyName != null && column.Visible && column.Name != "deadline" && column.Name != "progress")
-                {
-                    if (filterExpression.Length > 0)
-                    {
-                        filterExpression.Append(" OR ");
-                    }
-                    filterExpression.Append($"[{column.DataPropertyName}] LIKE '%{keyword}%'");
-                }
-            }
-
-            // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
-            (dataGridView_Task.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
+            listTask = taskBUS.SearchTasksByKeyword(dataGridView_Task, keyword, clmnCreator, clmnTaskName, clmnAssignee, clmnTeam);
+            taskBUS.LoadDataGridview(listTask, dataGridView_Task);
         }
 
         private void btnViewOrUpdate_Click(object sender, EventArgs e)
@@ -175,5 +161,6 @@ namespace company_management.Views.UC
                 }
             }
         }
+
     }
 }
