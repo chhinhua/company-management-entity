@@ -40,7 +40,12 @@ namespace company_management.DTO
         public double TotalHours { get => totalHours; set => totalHours = value; }
         public DateTime Date { get => date; set => date = value; }
 
-        public void CalculateTotalHours() => TotalHours = (checkoutTime - checkinTime).TotalHours;
+        public double CalculateTotalHours()
+        {
+            TotalHours = (checkoutTime - checkinTime).TotalHours;
+            return Math.Round(TotalHours, 2);
+        }
+
 
         public override string ToString() 
             => $"IdUser: {IdUser}\nCheckinTime: {CheckinTime}" +

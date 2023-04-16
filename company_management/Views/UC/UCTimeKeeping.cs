@@ -9,13 +9,15 @@ using System.Text;
 using System.Windows.Forms;
 using company_management.DTO;
 using company_management.BUS;
+using System.Globalization;
 
 namespace company_management.Views
 {
     public partial class UCTimeKeeping : UserControl
     {
-        private CheckinCheckoutDAO checkinCheckoutDAO;      
-        private CheckinCheckoutBUS checkinCheckoutBUS;      
+        public static int lastCheckinCheckoutId;
+        private CheckinCheckoutDAO checkinCheckoutDAO;
+        private CheckinCheckoutBUS checkinCheckoutBUS;
         private TaskDAO taskDAO;
 
         public UCTimeKeeping()
@@ -34,8 +36,11 @@ namespace company_management.Views
 
         public void LoadTimeNow()
         {
+            datetime_date.Value = DateTime.Now.Date;
             datetime_Checkin.Value = DateTime.Now;
             datetime_Checkout.Value = DateTime.Now;
+
+            toggle_checkout.Checked = false;
         }
 
         public void LoadDataGridview()
@@ -69,20 +74,22 @@ namespace company_management.Views
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void toggle_checkin_CheckedChanged(object sender, EventArgs e)
+        private void toggle_checkin_Click(object sender, EventArgs e)
         {
             if (toggle_checkin.Checked == true)
             {
-                DialogResult result = MessageBox.Show("Bạn xác nhận checkin? Nếu bạn nhấn Yes, một dữ liệu chấm công mới sẽ được tạo và bạn sẽ không thể trở lại.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Dữ liệu sẽ được tạo sau khi bạn bấm yes.", "Xác nhận Checkin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    // Thêm code để tạo checkin checkout
-
+                    DateTime checkinTime = datetime_Checkin.Value;
+                    DateTime date = datetime_date.Value.Date;
+                    checkinCheckoutBUS.Checkin(checkinTime, date);
+                    LoadDataGridview();
                     toggle_checkin.Enabled = false;
-                } 
+                }
                 else
                 {
                     toggle_checkin.Checked = false;
@@ -90,14 +97,24 @@ namespace company_management.Views
             }
         }
 
-        private void toggle_checkout_CheckedChanged(object sender, EventArgs e)
+        private void toggle_checkout_Click(object sender, EventArgs e)
         {
-            if (toggle_checkout.Checked == true)
+
+            // Kiểm tra xem toggle switch "checkin" đã được chọn hay chưa
+            if (toggle_checkin.Checked == false)
             {
-                DialogResult result = MessageBox.Show("Bạn xác nhận checkout? Nếu bạn nhấn Yes, dữ liệu sẽ được lưu và không thể trở lại.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show("Bạn phải checkin trước khi checkout.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                toggle_checkout.Checked = false;
+                return;
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Dữ liệu sẽ được lưu sau khi bạn bấm yes.", "Xác nhận Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    // Thêm code để set giá trị checkout cho người đang đăng nhập
+                    DateTime checkoutTime = datetime_Checkout.Value;
+                    checkinCheckoutBUS.Checkout(checkoutTime);
+                    LoadDataGridview();
 
                     toggle_checkout.Enabled = false;
                 }
@@ -106,28 +123,56 @@ namespace company_management.Views
                     toggle_checkout.Checked = false;
                 }
             }
+
         }
 
-
-        /*private void toggleButton_CheckedChanged(object sender, EventArgs e)
+        private void datagridview_timeKeeping_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (toggleButton.Checked == false)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn tắt tính năng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.No)
+                DataGridViewRow selectedRow = datagridview_timeKeeping.Rows[e.RowIndex];
+                UCTimeKeeping.lastCheckinCheckoutId = (int)selectedRow.Cells[0].Value;
+                string checkoutTimeValue = selectedRow.Cells["Giờ checkout"].Value.ToString();
+
+                if (string.IsNullOrEmpty(checkoutTimeValue))
                 {
-                    toggleButton.Checked = true;
+                    toggle_checkout.Checked = false;
+                    toggle_checkout.Enabled = true;
                 }
                 else
                 {
-                    isDisabled = true;
+                    // Giá trị của ô "Giờ checkout" khác rỗng, cần chuyển đổi giá trị sang kiểu DateTime và set giá trị cho datetime_checkout.
+                    DateTime checkoutDateTime;
+                    if (DateTime.TryParseExact(checkoutTimeValue, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out checkoutDateTime))
+                    {
+                        datetime_Checkout.Value = checkoutDateTime;
+                        toggle_checkout.Checked = true;
+                        toggle_checkout.Enabled = false;
+                    }
                 }
             }
-            else if (isDisabled)
+
+
+            /*private void toggleButton_CheckedChanged(object sender, EventArgs e)
             {
-                MessageBox.Show("Tính năng đã được kích hoạt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                isDisabled = false;
-            }
-        }*/
+                if (toggleButton.Checked == false)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn tắt tính năng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.No)
+                    {
+                        toggleButton.Checked = true;
+                    }
+                    else
+                    {
+                        isDisabled = true;
+                    }
+                }
+                else if (isDisabled)
+                {
+                    MessageBox.Show("Tính năng đã được kích hoạt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    isDisabled = false;
+                }
+            }*/
+        }
     }
 }

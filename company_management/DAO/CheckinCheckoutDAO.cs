@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using company_management.Views;
+using company_management.BUS;
 
 namespace company_management.DAO
 {
@@ -26,52 +27,25 @@ namespace company_management.DAO
             userDAO = new UserDAO();
         }
 
-        /*public List<CheckinCheckout> GetAllCheckinCheckouts()
+        public void AddCheckinCO(CheckinCheckout cico)
         {
-            var data = from cico in dbContext.checkin_checkout
-                       select new TimeKeepingDTO
-                       {
-                           Employee = cico.user.fullName,
-                           CheckinTime = cico.checkinTime,
-                           CheckoutTime = (DateTime)cico.checkoutTime,
-                           TotalHours = (double)cico.totalHours,
-                           Date = (System.DateTime)cico.date
-                       };
-            return data.ToList();
-        }*/
-
-     /*   public void InitData()
-        {
-            // Tạo 5 đối tượng CheckinCheckoutDTO với fake data và lưu vào database
-            for (int i = 1; i <= 5; i++)
-            {
-                var checkinCheckoutDTO = new CheckinCheckout(i, DateTime.Now, DateTime.Today);
-                var checkin_checkout = MappingExtensions.ToEntity<CheckinCheckout, checkin_checkout>(checkinCheckoutDTO);
-                dbContext.checkin_checkout.Add(checkin_checkout);
-            }
-            dbContext.SaveChanges();
-        }*/
-
-        public void AddCheckinCO(Task task)
-        {
-            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
-                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam);
-            dBConnection.executeQuery(query);
+            string query = string.Format("INSERT INTO checkin_checkout(idUser, checkinTime, date) VALUES ('{0}', '{1}', '{2}'); SELECT SCOPE_IDENTITY();",
+                                      cico.IdUser, cico.CheckinTime, cico.Date);
+            int id = Convert.ToInt32(dBConnection.ExecuteScalar(query)); // lấy giá trị ID từ cơ sở dữ liệu
+            UCTimeKeeping.lastCheckinCheckoutId = id;
         }
 
-        public void UpdateCheckinCO(Task updateTask)
+        public void UpdateCheckinCO(CheckinCheckout cico)
         {
-            string sqlStr = string.Format("UPDATE task SET " +
-                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}' WHERE id = '{6}'",
-                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Id);
-            dBConnection.executeQuery(sqlStr);
+            string sqlStr = string.Format("UPDATE checkin_checkout SET checkoutTime = '{0}', totalHours = '{1}' WHERE id = '{2}'",
+                   cico.CheckoutTime, cico.CalculateTotalHours(), cico.Id);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public void DeleteCheckinCO(int id)
         {
             string sqlStr = string.Format("DELETE FROM task WHERE id = '{0}'", id);
-            dBConnection.executeQuery(sqlStr);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public CheckinCheckout GetCheckinCOById(int id)
@@ -140,6 +114,20 @@ namespace company_management.DAO
                 "OR tm.name LIKE '%{0}%' " +
                 "OR u.username LIKE '%{0}%' ", txtSearch);
             return dBConnection.GetListObjectsByQuery<Task>(query);
+        }
+
+        public void SetTotalHours(CheckinCheckout checkin)
+        {
+            double totalHours = (checkin.CheckoutTime - checkin.CheckinTime).TotalHours;
+            string sqlStr = string.Format("UPDATE checkin_checkout SET totalHours = '{0}' WHERE idUser = '{1}' AND date = '{2}'",
+                   totalHours, checkin.IdUser, checkin.Date);
+            dBConnection.ExecuteQuery(sqlStr);
+        }
+
+        public CheckinCheckout GetCheckinById(int id)
+        {
+            string query = string.Format("SELECT * FROM checkin_checkout WHERE id = {0}", id);
+            return dBConnection.GetObjectByQuery<CheckinCheckout>(query);
         }
 
     }

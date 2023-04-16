@@ -19,6 +19,27 @@ namespace company_management
 
         public DBConnection() => connection = new SqlConnection(connString);
 
+        public object ExecuteScalar(string query)
+        {
+            try
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.CommandType = CommandType.Text;
+                object result = cmd.ExecuteScalar();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public DataTable LoadData(string tableName)
         {
             string query = string.Format("SELECT * FROM {0}", tableName);
@@ -97,64 +118,9 @@ namespace company_management
                 var result = connection.QueryFirstOrDefault<T>(query);
                 return result;
             }
-        }
+        }  
 
-        public void loadUserToCombobox<T>(T control, string query) where T : Control
-        {
-            try
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                if (control is DataGridView dataGridView)
-                {
-                    dataGridView.DataSource = dataTable;
-                }
-                else if (control is ComboBox comboBox)
-                {
-                    comboBox.DataSource = dataTable;
-                    comboBox.DisplayMember = "fullName";
-                    comboBox.ValueMember = "id";
-                }
-                // Add additional else if statements for other types of controls as needed
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
-
-        public void load(DataGridView dataGridView, string tableName, string query)
-        {
-            try
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                dataGridView.DataSource = dataTable;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
-
-        public void executeQuery(string sqlStr)
+        public void ExecuteQuery(string sqlStr)
         {
             try
             {

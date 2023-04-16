@@ -47,7 +47,7 @@ namespace company_management.Views
         {
             if (string.IsNullOrEmpty(txtbox_taskName.Text) || string.IsNullOrEmpty(txtbox_Desciption.Text))
             {
-                MessageBox.Show("Required fields Empty. Please fill in all fields!");
+                MessageBox.Show("Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
                 return false;
             }
             return true;
