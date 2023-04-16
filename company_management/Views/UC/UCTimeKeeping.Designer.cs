@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtBox_totalHours = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.datetime_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.txtBox_fullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.toggle_checkout = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,9 +68,11 @@
             this.panelFields.BorderColor = System.Drawing.Color.White;
             this.panelFields.BorderRadius = 20;
             this.panelFields.BorderThickness = 1;
+            this.panelFields.Controls.Add(this.txtBox_totalHours);
+            this.panelFields.Controls.Add(this.label6);
             this.panelFields.Controls.Add(this.label5);
-            this.panelFields.Controls.Add(this.guna2DateTimePicker1);
-            this.panelFields.Controls.Add(this.guna2TextBox1);
+            this.panelFields.Controls.Add(this.datetime_date);
+            this.panelFields.Controls.Add(this.txtBox_fullName);
             this.panelFields.Controls.Add(this.label3);
             this.panelFields.Controls.Add(this.toggle_checkout);
             this.panelFields.Controls.Add(this.label1);
@@ -86,62 +90,95 @@
             this.panelFields.Size = new System.Drawing.Size(1258, 129);
             this.panelFields.TabIndex = 0;
             // 
+            // txtBox_totalHours
+            // 
+            this.txtBox_totalHours.BorderRadius = 10;
+            this.txtBox_totalHours.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_totalHours.DefaultText = "";
+            this.txtBox_totalHours.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBox_totalHours.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBox_totalHours.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_totalHours.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_totalHours.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_totalHours.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBox_totalHours.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_totalHours.Location = new System.Drawing.Point(1083, 59);
+            this.txtBox_totalHours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBox_totalHours.Name = "txtBox_totalHours";
+            this.txtBox_totalHours.PasswordChar = '\0';
+            this.txtBox_totalHours.PlaceholderText = "";
+            this.txtBox_totalHours.SelectedText = "";
+            this.txtBox_totalHours.Size = new System.Drawing.Size(155, 40);
+            this.txtBox_totalHours.TabIndex = 115;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(1079, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 36);
+            this.label6.TabIndex = 114;
+            this.label6.Text = "Tổng thời gian";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(478, 21);
+            this.label5.Location = new System.Drawing.Point(333, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 25);
             this.label5.TabIndex = 113;
             this.label5.Text = "Ngày";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2DateTimePicker1
+            // datetime_date
             // 
-            this.guna2DateTimePicker1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2DateTimePicker1.BorderRadius = 10;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(482, 61);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 39);
-            this.guna2DateTimePicker1.TabIndex = 111;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 4, 2, 19, 31, 33, 0);
+            this.datetime_date.BackColor = System.Drawing.Color.Transparent;
+            this.datetime_date.BorderRadius = 10;
+            this.datetime_date.Checked = true;
+            this.datetime_date.CustomFormat = "dd/MM/yyyy";
+            this.datetime_date.FillColor = System.Drawing.Color.White;
+            this.datetime_date.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.datetime_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datetime_date.Location = new System.Drawing.Point(337, 60);
+            this.datetime_date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.datetime_date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.datetime_date.Name = "datetime_date";
+            this.datetime_date.Size = new System.Drawing.Size(200, 39);
+            this.datetime_date.TabIndex = 111;
+            this.datetime_date.Value = new System.DateTime(2023, 4, 2, 19, 31, 33, 0);
             // 
-            // guna2TextBox1
+            // txtBox_fullName
             // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(55, 60);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(346, 40);
-            this.guna2TextBox1.TabIndex = 110;
+            this.txtBox_fullName.BorderRadius = 10;
+            this.txtBox_fullName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_fullName.DefaultText = "";
+            this.txtBox_fullName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBox_fullName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBox_fullName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_fullName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_fullName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_fullName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBox_fullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_fullName.Location = new System.Drawing.Point(16, 59);
+            this.txtBox_fullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBox_fullName.Name = "txtBox_fullName";
+            this.txtBox_fullName.PasswordChar = '\0';
+            this.txtBox_fullName.PlaceholderText = "";
+            this.txtBox_fullName.SelectedText = "";
+            this.txtBox_fullName.Size = new System.Drawing.Size(265, 40);
+            this.txtBox_fullName.TabIndex = 110;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1016, 21);
+            this.label3.Location = new System.Drawing.Point(831, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 25);
             this.label3.TabIndex = 109;
@@ -154,7 +191,7 @@
             this.toggle_checkout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.toggle_checkout.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.toggle_checkout.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.toggle_checkout.Location = new System.Drawing.Point(1133, 24);
+            this.toggle_checkout.Location = new System.Drawing.Point(948, 23);
             this.toggle_checkout.Name = "toggle_checkout";
             this.toggle_checkout.Size = new System.Drawing.Size(55, 22);
             this.toggle_checkout.TabIndex = 108;
@@ -162,14 +199,14 @@
             this.toggle_checkout.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.toggle_checkout.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.toggle_checkout.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.toggle_checkout.CheckedChanged += new System.EventHandler(this.toggle_checkout_CheckedChanged);
+            this.toggle_checkout.Click += new System.EventHandler(this.toggle_checkout_Click);
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(751, 21);
+            this.label1.Location = new System.Drawing.Point(583, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 107;
@@ -182,7 +219,7 @@
             this.toggle_checkin.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.toggle_checkin.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.toggle_checkin.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.toggle_checkin.Location = new System.Drawing.Point(853, 24);
+            this.toggle_checkin.Location = new System.Drawing.Point(685, 23);
             this.toggle_checkin.Name = "toggle_checkin";
             this.toggle_checkin.Size = new System.Drawing.Size(55, 22);
             this.toggle_checkin.TabIndex = 106;
@@ -190,7 +227,7 @@
             this.toggle_checkin.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.toggle_checkin.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.toggle_checkin.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.toggle_checkin.CheckedChanged += new System.EventHandler(this.toggle_checkin_CheckedChanged);
+            this.toggle_checkin.Click += new System.EventHandler(this.toggle_checkin_Click);
             // 
             // datetime_Checkout
             // 
@@ -200,7 +237,7 @@
             this.datetime_Checkout.FillColor = System.Drawing.Color.White;
             this.datetime_Checkout.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_Checkout.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.datetime_Checkout.Location = new System.Drawing.Point(1020, 61);
+            this.datetime_Checkout.Location = new System.Drawing.Point(835, 60);
             this.datetime_Checkout.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_Checkout.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetime_Checkout.Name = "datetime_Checkout";
@@ -217,7 +254,7 @@
             this.datetime_Checkin.FillColor = System.Drawing.Color.White;
             this.datetime_Checkin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.datetime_Checkin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.datetime_Checkin.Location = new System.Drawing.Point(755, 61);
+            this.datetime_Checkin.Location = new System.Drawing.Point(587, 60);
             this.datetime_Checkin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_Checkin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetime_Checkin.Name = "datetime_Checkin";
@@ -231,11 +268,11 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(51, 20);
+            this.label2.Location = new System.Drawing.Point(12, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 36);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Tên nhân viên";
+            this.label2.Text = "Tên ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelData
@@ -361,35 +398,35 @@
             // 
             // datagridview_timeKeeping
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagridview_timeKeeping.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.datagridview_timeKeeping.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridview_timeKeeping.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview_timeKeeping.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview_timeKeeping.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridview_timeKeeping.ColumnHeadersHeight = 30;
             this.datagridview_timeKeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview_timeKeeping.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview_timeKeeping.DefaultCellStyle = dataGridViewCellStyle7;
             this.datagridview_timeKeeping.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.datagridview_timeKeeping.Location = new System.Drawing.Point(16, 87);
             this.datagridview_timeKeeping.Name = "datagridview_timeKeeping";
             this.datagridview_timeKeeping.RowHeadersVisible = false;
             this.datagridview_timeKeeping.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.datagridview_timeKeeping.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.datagridview_timeKeeping.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.datagridview_timeKeeping.RowTemplate.Height = 24;
             this.datagridview_timeKeeping.Size = new System.Drawing.Size(1222, 389);
             this.datagridview_timeKeeping.TabIndex = 0;
@@ -414,6 +451,7 @@
             this.datagridview_timeKeeping.ThemeStyle.RowsStyle.Height = 24;
             this.datagridview_timeKeeping.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagridview_timeKeeping.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.datagridview_timeKeeping.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridview_timeKeeping_CellClick);
             // 
             // buttonEdit
             // 
@@ -430,7 +468,7 @@
             this.buttonEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             this.buttonEdit.Image = global::company_management.Properties.Resources.edit;
             this.buttonEdit.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonEdit.Location = new System.Drawing.Point(1168, 234);
+            this.buttonEdit.Location = new System.Drawing.Point(1169, 234);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(49, 40);
             this.buttonEdit.TabIndex = 95;
@@ -451,7 +489,7 @@
             this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
             this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
             this.buttonRemove.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonRemove.Location = new System.Drawing.Point(1223, 234);
+            this.buttonRemove.Location = new System.Drawing.Point(1224, 234);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(50, 40);
             this.buttonRemove.TabIndex = 96;
@@ -470,7 +508,7 @@
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
             this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
             this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAdd.Location = new System.Drawing.Point(1116, 232);
+            this.buttonAdd.Location = new System.Drawing.Point(1117, 232);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(46, 42);
             this.buttonAdd.TabIndex = 94;
@@ -530,8 +568,10 @@
         private Guna.UI2.WinForms.Guna2Button buttonRemove;
         private Guna.UI2.WinForms.Guna2Button buttonAdd;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtBox_fullName;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker datetime_date;
+        private Guna.UI2.WinForms.Guna2TextBox txtBox_totalHours;
+        private System.Windows.Forms.Label label6;
     }
 }

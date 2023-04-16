@@ -67,7 +67,7 @@ namespace company_management.DAO
             string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
                    task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam);
-            dBConnection.executeQuery(query);
+            dBConnection.ExecuteQuery(query);
         }
 
         public void UpdateTask(Task updateTask)
@@ -75,13 +75,13 @@ namespace company_management.DAO
             string sqlStr = string.Format("UPDATE task SET " +
                    "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}' WHERE id = '{6}'",
                    updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Id);
-            dBConnection.executeQuery(sqlStr);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public void DeleteTask(int id)
         {
             string sqlStr = string.Format("DELETE FROM task WHERE id = '{0}'", id);
-            dBConnection.executeQuery(sqlStr);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public Task GetTaskById(int id)

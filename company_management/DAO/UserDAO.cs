@@ -91,7 +91,7 @@ namespace company_management.DAO
             string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, phoneNumber, address, idRole)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
                    user.Username, user.Password, user.FullName, user.Email, user.PhoneNumber, user.Address, user.IdRole);
-            dBConnection.executeQuery(sqlStr);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public void updateUser(User user)
@@ -99,13 +99,13 @@ namespace company_management.DAO
             string sqlStr = string.Format("UPDATE users SET " +
                    "username = '{0}', fullname = '{1}', email = '{2}', phoneNumber = '{3}', address = '{4}' WHERE id = '{5}'",
                    user.Username, user.FullName, user.Email, user.PhoneNumber, user.Address, user.Id);
-            dBConnection.executeQuery(sqlStr);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public void DeleteUser(int id)
         {
             string sqlStr = string.Format("DELETE FROM users WHERE id = '{0}'", id);
-            dBConnection.executeQuery(sqlStr);
+            dBConnection.ExecuteQuery(sqlStr);
         }
 
         public User GetUserById(int id)
