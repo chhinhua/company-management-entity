@@ -25,8 +25,8 @@ namespace company_management.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
 
             // Kiểm tra thông tin đăng nhập
             if (ValidateLogin(username, password))
@@ -35,7 +35,7 @@ namespace company_management.Views
                 //User loginUser = userDAO.GetUserByUsername("edalziell1"); // manager
                 //User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
                 //User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
-                User loginUser = userDAO.GetUserByUsername("wdionisi7"); // employee
+                User loginUser = userDAO.GetUserByUsername(username); // employee
 
                 // Lưu thông tin người dùng đăng nhập và chuyển sang form chính
                 UserSession.LoginUser(loginUser);
@@ -47,6 +47,9 @@ namespace company_management.Views
             else
             {
                 MessageBox.Show("Đăng nhập không thành công!");
+                lbCannotLogin.Visible = true;
+                tbUsername.Clear();
+                tbPassword.Clear();
             }        
         }
 
@@ -54,8 +57,15 @@ namespace company_management.Views
         {
             // Kiểm tra thông tin đăng nhập ở đây
             // ...
-
-            return true;
+            User loginUser = userDAO.GetUserByUsername(username);
+            if (loginUser == null)
+                return false;
+            else if (password == loginUser.Password)
+                return true;
+            else
+                return false;
         }
+
+
     }
 }
