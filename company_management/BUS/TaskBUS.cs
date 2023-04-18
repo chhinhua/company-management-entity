@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
 using company_management.Views;
+using company_management.Views.UC;
 
 namespace company_management.BUS
 {
@@ -80,14 +81,18 @@ namespace company_management.BUS
             return listTask;
         }
 
-        public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, ComboBox combbox_Assignee, string bonus)
+        public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, ComboBox combbox_Assignee, int progress, string bonus)
         {
             Team selectesTeam;
-            User selectesUser;
+            User selectedUser;
             Task task = null;
             int idAssignee;
             int idCreator = UserSession.LoggedInUser.Id;
-            decimal bonusVaue = decimal.Parse(bonus);
+            decimal bonusVaue = 0;
+            if (bonus != "")
+            {
+                bonusVaue = decimal.Parse(bonus);
+            }
 
             string position = userBUS.GetUserPosition();
 
@@ -96,18 +101,19 @@ namespace company_management.BUS
                 selectesTeam = (Team)combbox_Assignee.SelectedItem;
                 idAssignee = selectesTeam.IdLeader;
                 task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, 0, selectesTeam.Id, bonusVaue);
+                            description, dateTime.Value, progress, selectesTeam.Id, bonusVaue);
             }
             else if (position.Equals("Leader"))
             {
-                selectesUser = (User)combbox_Assignee.SelectedItem;
-                idAssignee = selectesUser.Id;
+                selectedUser = (User)combbox_Assignee.SelectedItem;
+                idAssignee = selectedUser.Id;
                 task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, 0, teamDAO.GetTeamByLeaderId(idCreator).Id, bonusVaue);
+                            description, dateTime.Value, progress, teamDAO.GetTeamByLeaderId(idCreator).Id, bonusVaue);
             }
             else
             {
-                MessageBox.Show("Bạn không có quyền lưu thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                task = new Task(UCTask.viewTask.IdCreator, UCTask.viewTask.IdAssignee, taskName, description, dateTime.Value, progress, 
+                                        teamDAO.GetTeamByLeaderId(UCTask.viewTask.IdCreator).Id, UCTask.viewTask.Bonus);
             }
             return task;
         }
@@ -153,6 +159,16 @@ namespace company_management.BUS
                 }
             }
             return searchResults;
+        }
+
+        public void SelectComboBoxItemByValue(Guna2ComboBox comboBox, int value)
+        {
+            string valueString = value.ToString();
+            int index = comboBox.FindStringExact(valueString);
+            if (index != -1)
+            {
+                comboBox.SelectedIndex = index;
+            }
         }
 
     }

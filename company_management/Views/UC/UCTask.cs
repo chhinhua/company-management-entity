@@ -30,15 +30,20 @@ namespace company_management.Views.UC
 
         private void UCTask_Load(object sender, EventArgs e)
         {
-            LoadDataGridview();
-            LoadProgressChart();
-            CheckAddButtonStatus();
+            LoadData();
         }
 
         private void CheckAddButtonStatus()
         {
             taskBUS.CheckButtonStatus(buttonAdd);
             taskBUS.CheckButtonStatus(buttonRemove);
+        }
+
+        private void LoadData()
+        {
+            LoadDataGridview();
+            LoadProgressChart();
+            CheckAddButtonStatus();
         }
 
         private void LoadProgressChart()
@@ -53,6 +58,8 @@ namespace company_management.Views.UC
             string todoPercentFormatted = todoPercent.ToString("0.00");
             string inprogressPercentFormatted = inprogressPercent.ToString("0.00");
             string donePercentFormatted = donePercent.ToString("0.00");
+
+            chart_taskProgress.Series["SeriesProgress"].Points.Clear();
 
             // Thêm các phần tử vào danh sách
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
@@ -167,5 +174,9 @@ namespace company_management.Views.UC
             }
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

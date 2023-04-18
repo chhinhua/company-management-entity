@@ -70,7 +70,6 @@ namespace company_management.Views
         {
             int id = UCTask.viewTask.IdAssignee;
             User user = userDAO.GetUserById(id);
-
             imageDAO.ShowImageInPictureBox(user.Avatar, picturebox_Avatar);
 
             txtbox_Taskname.Text = UCTask.viewTask.TaskName;
@@ -78,12 +77,10 @@ namespace company_management.Views
             combbox_Assignee.SelectedValue = user.Id;
             assigned_value.Text = user.FullName;
             txtBox_teamName.Text = teamDAO.GetTeamByTask(UCTask.viewTask).Name;
-            textBox_Bonus.Text = UCTask.viewTask.Bonus.ToString() + " $";
-            userDAO.DisplayImage(user.Avatar, picturebox_Avatar);
-
+            textBox_Bonus.Text = UCTask.viewTask.Bonus.ToString();
             circleProgressBar.Value = UCTask.viewTask.Progress;
             progressValue.Text = UCTask.viewTask.Progress.ToString() + "%";
-            combobox_progress.SelectedText = UCTask.viewTask.Progress.ToString();
+            taskBUS.SelectComboBoxItemByValue(combobox_progress, UCTask.viewTask.Progress);
 
             try
             {
@@ -137,21 +134,25 @@ namespace company_management.Views
             this.Hide();
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            if (checkDataInput())
-            {
-                Task task = taskBUS.GetTaskFromTextBox(txtbox_Taskname.Text, txtbox_Desciption.Text,
-                                              dateTime_deadline, combbox_Assignee, textBox_Bonus.Text);
-                taskDAO.UpdateTask(task);
-            }
-        }
+ 
 
         private void combobox_progress_SelectedIndexChanged(object sender, EventArgs e)
         {
             int progress = Convert.ToInt32(combobox_progress.SelectedItem);
             circleProgressBar.Value = progress;
             progressValue.Text = progress.ToString() + "%";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (checkDataInput())
+            {
+                int progress = int.Parse(combobox_progress.SelectedItem.ToString());
+                Task task = taskBUS.GetTaskFromTextBox(txtbox_Taskname.Text, txtbox_Desciption.Text,
+                                              dateTime_deadline, combbox_Assignee, progress, textBox_Bonus.Text);
+                task.Id = UCTask.viewTask.Id;
+                taskDAO.UpdateTask(task);
+            }
         }
     }
 }

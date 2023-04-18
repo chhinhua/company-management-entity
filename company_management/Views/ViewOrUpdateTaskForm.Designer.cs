@@ -30,6 +30,8 @@ namespace company_management.Views
         private void InitializeComponent()
         {
             this.GroupBox_TaskDetail = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtBox_teamName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_Bonus = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -49,8 +51,6 @@ namespace company_management.Views
             this.assigned_value = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picturebox_Avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBox_teamName = new Guna.UI2.WinForms.Guna2TextBox();
             this.GroupBox_TaskDetail.SuspendLayout();
             this.circleProgressBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_Avatar)).BeginInit();
@@ -91,6 +91,43 @@ namespace company_management.Views
             this.GroupBox_TaskDetail.Size = new System.Drawing.Size(897, 736);
             this.GroupBox_TaskDetail.TabIndex = 113;
             // 
+            // txtBox_teamName
+            // 
+            this.txtBox_teamName.BorderColor = System.Drawing.Color.Black;
+            this.txtBox_teamName.BorderRadius = 5;
+            this.txtBox_teamName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_teamName.DefaultText = "";
+            this.txtBox_teamName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBox_teamName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBox_teamName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_teamName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_teamName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_teamName.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtBox_teamName.ForeColor = System.Drawing.Color.Black;
+            this.txtBox_teamName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_teamName.Location = new System.Drawing.Point(595, 313);
+            this.txtBox_teamName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBox_teamName.Name = "txtBox_teamName";
+            this.txtBox_teamName.PasswordChar = '\0';
+            this.txtBox_teamName.PlaceholderText = "";
+            this.txtBox_teamName.SelectedText = "";
+            this.txtBox_teamName.Size = new System.Drawing.Size(227, 32);
+            this.txtBox_teamName.TabIndex = 185;
+            this.txtBox_teamName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Location = new System.Drawing.Point(636, 277);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 23);
+            this.label6.TabIndex = 184;
+            this.label6.Text = "Team được giao";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -100,9 +137,9 @@ namespace company_management.Views
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Location = new System.Drawing.Point(26, 544);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 24);
+            this.label4.Size = new System.Drawing.Size(91, 24);
             this.label4.TabIndex = 182;
-            this.label4.Text = "Bonus";
+            this.label4.Text = "Bonus ($)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox_Bonus
@@ -166,7 +203,7 @@ namespace company_management.Views
             this.btnSave.Size = new System.Drawing.Size(127, 50);
             this.btnSave.TabIndex = 180;
             this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // combbox_Assignee
             // 
@@ -318,6 +355,7 @@ namespace company_management.Views
             this.combobox_progress.Location = new System.Drawing.Point(714, 432);
             this.combobox_progress.Name = "combobox_progress";
             this.combobox_progress.Size = new System.Drawing.Size(95, 36);
+            this.combobox_progress.StartIndex = 0;
             this.combobox_progress.TabIndex = 165;
             this.combobox_progress.SelectedIndexChanged += new System.EventHandler(this.combobox_progress_SelectedIndexChanged);
             // 
@@ -381,12 +419,12 @@ namespace company_management.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(641, 38);
+            this.label1.Location = new System.Drawing.Point(630, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 23);
+            this.label1.Size = new System.Drawing.Size(147, 23);
             this.label1.TabIndex = 161;
             this.label1.Text = "Người được giao";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -403,43 +441,6 @@ namespace company_management.Views
             this.picturebox_Avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturebox_Avatar.TabIndex = 152;
             this.picturebox_Avatar.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(643, 277);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 23);
-            this.label6.TabIndex = 184;
-            this.label6.Text = "Team được giao";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBox_teamName
-            // 
-            this.txtBox_teamName.BorderColor = System.Drawing.Color.Black;
-            this.txtBox_teamName.BorderRadius = 5;
-            this.txtBox_teamName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_teamName.DefaultText = "";
-            this.txtBox_teamName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBox_teamName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBox_teamName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_teamName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_teamName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_teamName.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtBox_teamName.ForeColor = System.Drawing.Color.Black;
-            this.txtBox_teamName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_teamName.Location = new System.Drawing.Point(605, 313);
-            this.txtBox_teamName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBox_teamName.Name = "txtBox_teamName";
-            this.txtBox_teamName.PasswordChar = '\0';
-            this.txtBox_teamName.PlaceholderText = "";
-            this.txtBox_teamName.SelectedText = "";
-            this.txtBox_teamName.Size = new System.Drawing.Size(204, 32);
-            this.txtBox_teamName.TabIndex = 185;
-            this.txtBox_teamName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ViewOrUpdateTaskForm
             // 

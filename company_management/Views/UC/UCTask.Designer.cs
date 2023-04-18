@@ -29,25 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.combobox_taskStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView_Task = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.chart_taskProgress = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.button_Edit = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.label = new System.Windows.Forms.Label();
             this.label_todoTask = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -60,6 +55,12 @@
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label_doneTask = new System.Windows.Forms.Label();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button_Edit = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Task)).BeginInit();
             this.panelFields.SuspendLayout();
@@ -78,6 +79,7 @@
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
+            this.panelData.Controls.Add(this.btnRefresh);
             this.panelData.Controls.Add(this.combobox_taskStatusFilter);
             this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.dataGridView_Task);
@@ -107,71 +109,43 @@
             "Tất cả",
             "Đã tạo\t",
             "Được giao"});
-            this.combobox_taskStatusFilter.Location = new System.Drawing.Point(1071, 18);
+            this.combobox_taskStatusFilter.Location = new System.Drawing.Point(533, 25);
             this.combobox_taskStatusFilter.Name = "combobox_taskStatusFilter";
             this.combobox_taskStatusFilter.Size = new System.Drawing.Size(164, 36);
             this.combobox_taskStatusFilter.StartIndex = 0;
             this.combobox_taskStatusFilter.TabIndex = 71;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_483;
-            this.txtSearch.Location = new System.Drawing.Point(16, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.PlaceholderText = "Search ...";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(472, 41);
-            this.txtSearch.TabIndex = 70;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // dataGridView_Task
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView_Task.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dataGridView_Task.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_Task.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Task.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Task.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_Task.ColumnHeadersHeight = 30;
             this.dataGridView_Task.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Task.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Task.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_Task.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView_Task.Location = new System.Drawing.Point(16, 87);
             this.dataGridView_Task.Name = "dataGridView_Task";
             this.dataGridView_Task.RowHeadersVisible = false;
             this.dataGridView_Task.RowHeadersWidth = 20;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView_Task.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView_Task.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_Task.RowTemplate.Height = 30;
             this.dataGridView_Task.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_Task.Size = new System.Drawing.Size(1222, 352);
@@ -218,18 +192,18 @@
             // 
             // chart_taskProgress
             // 
-            chartArea1.Name = "ChartArea";
-            this.chart_taskProgress.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend_progress";
-            this.chart_taskProgress.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea";
+            this.chart_taskProgress.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend_progress";
+            this.chart_taskProgress.Legends.Add(legend2);
             this.chart_taskProgress.Location = new System.Drawing.Point(16, 3);
             this.chart_taskProgress.Name = "chart_taskProgress";
             this.chart_taskProgress.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend_progress";
-            series1.Name = "SeriesProgress";
-            this.chart_taskProgress.Series.Add(series1);
+            series2.ChartArea = "ChartArea";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend_progress";
+            series2.Name = "SeriesProgress";
+            this.chart_taskProgress.Series.Add(series2);
             this.chart_taskProgress.Size = new System.Drawing.Size(250, 187);
             this.chart_taskProgress.TabIndex = 18;
             this.chart_taskProgress.Text = " ";
@@ -243,88 +217,6 @@
             this.label1.TabIndex = 100;
             this.label1.Text = "Task Board";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button_Edit
-            // 
-            this.button_Edit.AutoRoundedCorners = true;
-            this.button_Edit.BackColor = System.Drawing.Color.Transparent;
-            this.button_Edit.BorderRadius = 19;
-            this.button_Edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_Edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_Edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_Edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_Edit.FillColor = System.Drawing.Color.Transparent;
-            this.button_Edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button_Edit.ForeColor = System.Drawing.Color.White;
-            this.button_Edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.button_Edit.Image = global::company_management.Properties.Resources.edit;
-            this.button_Edit.ImageSize = new System.Drawing.Size(28, 28);
-            this.button_Edit.Location = new System.Drawing.Point(1170, 272);
-            this.button_Edit.Name = "button_Edit";
-            this.button_Edit.Size = new System.Drawing.Size(40, 40);
-            this.button_Edit.TabIndex = 98;
-            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
-            // 
-            // buttonRemove
-            // 
-            this.buttonRemove.AutoRoundedCorners = true;
-            this.buttonRemove.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemove.BorderRadius = 19;
-            this.buttonRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonRemove.FillColor = System.Drawing.Color.Transparent;
-            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.buttonRemove.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
-            this.buttonRemove.ImageSize = new System.Drawing.Size(28, 28);
-            this.buttonRemove.Location = new System.Drawing.Point(1226, 272);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(40, 40);
-            this.buttonRemove.TabIndex = 99;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.AutoRoundedCorners = true;
-            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.BorderRadius = 19;
-            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
-            this.buttonAdd.ImageSize = new System.Drawing.Size(28, 28);
-            this.buttonAdd.Location = new System.Drawing.Point(1114, 272);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
-            this.buttonAdd.TabIndex = 97;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // btnViewOrUpdate
-            // 
-            this.btnViewOrUpdate.AutoRoundedCorners = true;
-            this.btnViewOrUpdate.BorderRadius = 19;
-            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
-            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnViewOrUpdate.Image = global::company_management.Properties.Resources.icons8_eye_25;
-            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnViewOrUpdate.Location = new System.Drawing.Point(1058, 272);
-            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
-            this.btnViewOrUpdate.Size = new System.Drawing.Size(40, 40);
-            this.btnViewOrUpdate.TabIndex = 101;
-            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
             // 
             // label
             // 
@@ -497,6 +389,135 @@
             this.label_doneTask.Text = "36 %";
             this.label_doneTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.AutoRoundedCorners = true;
+            this.btnRefresh.BorderRadius = 19;
+            this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.Image = global::company_management.Properties.Resources.icons8_refresh_32;
+            this.btnRefresh.Location = new System.Drawing.Point(1131, 25);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(104, 40);
+            this.btnRefresh.TabIndex = 102;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.AutoRoundedCorners = true;
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.BorderRadius = 19;
+            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
+            this.buttonAdd.ImageSize = new System.Drawing.Size(28, 28);
+            this.buttonAdd.Location = new System.Drawing.Point(1114, 272);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
+            this.buttonAdd.TabIndex = 97;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // btnViewOrUpdate
+            // 
+            this.btnViewOrUpdate.AutoRoundedCorners = true;
+            this.btnViewOrUpdate.BorderRadius = 19;
+            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnViewOrUpdate.Image = global::company_management.Properties.Resources.icons8_eye_25;
+            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrUpdate.Location = new System.Drawing.Point(1058, 272);
+            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
+            this.btnViewOrUpdate.Size = new System.Drawing.Size(40, 40);
+            this.btnViewOrUpdate.TabIndex = 101;
+            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_483;
+            this.txtSearch.Location = new System.Drawing.Point(16, 20);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.PlaceholderText = "Search ...";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(472, 41);
+            this.txtSearch.TabIndex = 70;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // button_Edit
+            // 
+            this.button_Edit.AutoRoundedCorners = true;
+            this.button_Edit.BackColor = System.Drawing.Color.Transparent;
+            this.button_Edit.BorderRadius = 19;
+            this.button_Edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_Edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_Edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_Edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_Edit.FillColor = System.Drawing.Color.Transparent;
+            this.button_Edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button_Edit.ForeColor = System.Drawing.Color.White;
+            this.button_Edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.button_Edit.Image = global::company_management.Properties.Resources.edit;
+            this.button_Edit.ImageSize = new System.Drawing.Size(28, 28);
+            this.button_Edit.Location = new System.Drawing.Point(1170, 272);
+            this.button_Edit.Name = "button_Edit";
+            this.button_Edit.Size = new System.Drawing.Size(40, 40);
+            this.button_Edit.TabIndex = 98;
+            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.AutoRoundedCorners = true;
+            this.buttonRemove.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRemove.BorderRadius = 19;
+            this.buttonRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonRemove.FillColor = System.Drawing.Color.Transparent;
+            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.buttonRemove.ForeColor = System.Drawing.Color.White;
+            this.buttonRemove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
+            this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
+            this.buttonRemove.ImageSize = new System.Drawing.Size(28, 28);
+            this.buttonRemove.Location = new System.Drawing.Point(1226, 272);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(40, 40);
+            this.buttonRemove.TabIndex = 99;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
             // UCTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -555,5 +576,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_taskStatusFilter;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

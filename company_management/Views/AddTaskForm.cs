@@ -59,7 +59,7 @@ namespace company_management.Views
             if (checkDataInput())
             {
                 Task task = taskBUS.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
-                                              dateTime_deadline, combbox_Assignee, textBox_Bonus.Text);
+                                              dateTime_deadline, combbox_Assignee, 0, textBox_Bonus.Text);
                 taskDAO.AddTask(task);
             }
         }
