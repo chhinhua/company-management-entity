@@ -15,7 +15,7 @@ namespace company_management
     public class DBConnection
     {
         public SqlConnection connection;
-        private string connString = Properties.Settings.Default.connStr;
+        public static string connString = Properties.Settings.Default.connStr;
 
         public DBConnection() => connection = new SqlConnection(connString);
 

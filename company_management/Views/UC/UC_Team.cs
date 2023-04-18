@@ -14,12 +14,14 @@ namespace company_management.Views.UC
 {
     public partial class UC_Team : UserControl
     {
-        private TeamBUS teamBUS = new TeamBUS();
-        private TaskBUS taskBUS;
-        private UserBUS userBUS = new UserBUS();
+        private TeamBUS teamBUS;
+        private List<Team> listTeam;
+
         public UC_Team()
         {
             InitializeComponent();
+            teamBUS = new TeamBUS();
+            listTeam = new List<Team>();
         }
 
         private void UC_Team_Load(object sender, EventArgs e)
@@ -29,18 +31,8 @@ namespace company_management.Views.UC
 
         private void LoadDataGridview()
         {
-            string position = userBUS.GetUserPosition();
-
-            if (position == "Manager")
-            {
-                List<Team> listTeam = teamBUS.GetListTeamByManager();
-                teamBUS.LoadDataGridview(listTeam, dataGridView_Team, position);
-            }
-            else
-            {
-                List<User> listTeam = teamBUS.GetListUserInTeam(UserSession.LoggedInUser.Id);
-                teamBUS.LoadDataGridview(listTeam, dataGridView_Team, position);
-            }
+            listTeam = teamBUS.GetListTeamByPosition();
+            teamBUS.LoadDataGridview(listTeam, dataGridView_Team);
         }
     }
 }

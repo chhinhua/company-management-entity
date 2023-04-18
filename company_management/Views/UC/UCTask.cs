@@ -49,6 +49,11 @@ namespace company_management.Views.UC
             double inprogressPercent = taskStatus.InprogressPercent;
             double donePercent = taskStatus.DonePercent;
 
+            // Định dạng giá trị với 2 chữ số sau dấu thập phân
+            string todoPercentFormatted = todoPercent.ToString("0.00");
+            string inprogressPercentFormatted = inprogressPercent.ToString("0.00");
+            string donePercentFormatted = donePercent.ToString("0.00");
+
             // Thêm các phần tử vào danh sách
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
             chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
@@ -64,9 +69,9 @@ namespace company_management.Views.UC
             chart_taskProgress.Series["SeriesProgress"].Points[1].Color = Color.FromArgb(0, 255, 0);
             chart_taskProgress.Series["SeriesProgress"].Points[2].Color = Color.FromArgb(67, 97, 238);
 
-            label_todoTask.Text = todoPercent + "%";
-            label_inprogressTask.Text = inprogressPercent + "%";
-            label_doneTask.Text = donePercent + "%";
+            label_todoTask.Text = todoPercentFormatted + "%";
+            label_inprogressTask.Text = inprogressPercentFormatted + "%";
+            label_doneTask.Text = donePercentFormatted + "%";
         }
 
         private void LoadDataGridview()

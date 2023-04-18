@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using company_management.DTO;
 using company_management.DAO;
+using company_management.BUS;
 using company_management.Views;
 using System.Text.RegularExpressions;
 using System.Linq;
@@ -14,14 +15,18 @@ namespace company_management.Views
     public partial class UserManagementUC : UserControl
     {
         private UserDAO userDAO;
+        private UserBUS userBUS;
         public static string DEFAULT_INIT_PASSWORD = "123";
         public static int DEFAULT_USER_ROLE_ID = 2; //Employee
+        public int selectedUserId;
         private User user;
 
         public UserManagementUC()
         {
             InitializeComponent();
-            userDAO = new UserDAO(); 
+            userDAO = new UserDAO();
+            userBUS = new UserBUS();
+            user = new User();
         }
 
         private void UserManagementUC_Load(object sender, EventArgs e)
@@ -39,6 +44,17 @@ namespace company_management.Views
         {
             return new User(txtbox_username.Text, DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
                             txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, DEFAULT_USER_ROLE_ID);
+        }
+
+        private User GetUserEditedUser()
+        {
+            user.Username = txtbox_username.Text;
+            user.FullName = txtbox_fullname.Text;
+            user.Email = txtbox_email.Text;
+            user.PhoneNumber = txtbox_phoneNumber.Text;
+            user.Address = txtbox_address.Text;
+
+            return user;
         }
 
         private bool CheckDataInput()
@@ -110,23 +126,22 @@ namespace company_management.Views
             }
         }
 
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (CheckDataInput())
-            {
-                userDAO.updateUser(GetUserFromTextBox());
-                LoadData();
-            }
-        }
-
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            if (CheckDataInput())
-            {
-                userDAO.AddUser(GetUserFromTextBox());
-                LoadData();
-            }
+            ClearAll();
+        }
+
+        private void ClearAll()
+        {
+            user = null;
+
+            txtbox_username.Clear();
+            txtbox_fullname.Clear();
+            txtbox_email.Clear();
+            txtbox_phoneNumber.Clear();
+            txtbox_address.Clear();
+
+            btn_Save.Enabled = false;
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
@@ -153,6 +168,11 @@ namespace company_management.Views
         {
             if (e.RowIndex != -1)
             {
+                DataGridViewRow selectedRow = dataGridView_User.Rows[e.RowIndex];
+                selectedUserId = (int)selectedRow.Cells[0].Value;
+                user = userDAO.GetUserById(selectedUserId);
+                btn_Save.Enabled = false;
+
                 object value = dataGridView_User.Rows[e.RowIndex].Cells[0].Value;
                 if (value != DBNull.Value)
                 {
@@ -167,5 +187,82 @@ namespace company_management.Views
                 }
             }
         }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput())
+            {
+                if (user == null)
+                {
+                    userDAO.AddUser(GetUserFromTextBox());
+                }
+                else
+                {
+                    userDAO.UpdateUser(GetUserEditedUser());
+                }
+                LoadData();
+            }
+        }
+
+        private void CheckSaveButton()
+        {
+            if (user != null)
+            {
+                if (user.Id != 0)
+                {
+                    // Và đã có sự thay đổi so với dữ liệu ban đầu thì enable nút Lưu
+                    if (txtbox_username.Text != user.Username
+                        || txtbox_email.Text != user.Email
+                        || txtbox_phoneNumber.Text != user.PhoneNumber
+                        || txtbox_fullname.Text != user.FullName
+                        || txtbox_address.Text != user.Address)
+                    {
+                        btn_Save.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_Save.Enabled = false;
+                    }
+                }
+                else if (txtbox_username.Text != ""
+                    || txtbox_email.Text != ""
+                    || txtbox_phoneNumber.Text != ""
+                    || txtbox_fullname.Text != ""
+                    || txtbox_address.Text != "")
+                {
+                    btn_Save.Enabled = true;
+                }
+                else
+                {
+                    btn_Save.Enabled = false;
+                }
+            }         
+            else
+            {
+                if (txtbox_username.Text != ""
+                    || txtbox_email.Text != ""
+                    || txtbox_phoneNumber.Text != ""
+                    || txtbox_fullname.Text != ""
+                    || txtbox_address.Text != "")
+                {
+                    btn_Save.Enabled = true;
+                }
+                else
+                {
+                    btn_Save.Enabled = false;
+                }
+            }
+        }
+
+        // TextBox changed and leaved event
+        private void txtbox_email_TextChanged(object sender, EventArgs e) => CheckSaveButton();
+
+        private void txtbox_username_TextChanged(object sender, EventArgs e) => CheckSaveButton();
+
+        private void txtbox_fullname_TextChanged(object sender, EventArgs e) => CheckSaveButton();
+
+        private void txtbox_phoneNumber_TextChanged(object sender, EventArgs e) => CheckSaveButton();
+
+        private void txtbox_address_TextChanged(object sender, EventArgs e) => CheckSaveButton();
     }
 }

@@ -9,63 +9,38 @@ namespace company_management.BUS
     {
         private TeamDAO teamDAO;
         private UserBUS userBUS;
+        private UserDAO userDAO;
         private List<Team> listTeam;
 
         public TeamBUS()
         {
             teamDAO = new TeamDAO();
             userBUS = new UserBUS();
+            userDAO = new UserDAO();
             listTeam = new List<Team>();
         }
 
-        public void LoadDataGridview(dynamic listTeam, DataGridView dataGridView, string position)
+        public void LoadDataGridview(List<Team> listTeam, DataGridView dataGridView)
         {
-            if (position.Equals("Manager"))
+            dataGridView.ColumnCount = 5;
+            dataGridView.Columns[0].Name = "Mã";
+            dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[1].Name = "Tên team";
+            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].Name = "Mô tả";
+            dataGridView.Columns[3].Name = "Trưởng nhóm";
+            dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[4].Name = "Số thành viên";
+            dataGridView.Columns[4].Width = 120;
+            dataGridView.Rows.Clear();
+
+            foreach (var t in listTeam)
             {
-                dataGridView.ColumnCount = 4;
-                dataGridView.Columns[0].Name = "Mã";
-                dataGridView.Columns[0].Visible = false;
-                dataGridView.Columns[1].Name = "Người tạo";
-                dataGridView.Columns[2].Name = "Mô tả";
-                dataGridView.Columns[2].Width = 275;
-                dataGridView.Columns[3].Name = "Trưởng nhóm";
-                dataGridView.Rows.Clear();
+                string leader = userDAO.GetUserById(t.IdLeader).FullName;
+                int countMembers = teamDAO.CountMembers(t.Id);
 
-                foreach (var t in listTeam)
-                {
-                    //string creator = userDAO.GetUserById(t.IdCreator).FullName;
-                    //string assignee = userDAO.GetUserById(t.IdAssignee).FullName;
-                    //string team = teamDAO.GetTeamByTask(t).Name;
-
-                    dataGridView.Rows.Add(t.Id, t.Name, t.Description, t.IdLeader);
-                }
+                dataGridView.Rows.Add(t.Id, t.Name, t.Description, leader, countMembers);
             }
-            else
-            {
-                dataGridView.ColumnCount = 5;
-                dataGridView.Columns[0].Name = "Mã";
-                dataGridView.Columns[0].Visible = false;
-                dataGridView.Columns[1].Name = "Họ tên";
-                dataGridView.Columns[2].Name = "Email";
-                dataGridView.Columns[3].Name = "Số điện thoại";
-                dataGridView.Columns[4].Name = "Địa chỉ";
-                dataGridView.Rows.Clear();
-
-                // sort theo deadline tăng dần
-                //listTeam.Sort((x, y) => DateTime.Compare(x.Deadline, y.Deadline));
-
-                foreach (var t in listTeam)
-                {
-                    //string creator = userDAO.GetUserById(t.IdCreator).FullName;
-                    //string assignee = userDAO.GetUserById(t.IdAssignee).FullName;
-                    //string team = teamDAO.GetTeamByTask(t).Name;
-
-                    dataGridView.Rows.Add(t.Id, t.FullName, t.Email, t.PhoneNumber, t.Address);
-                }
-            }
-
-
-            
         }
 
         public List<Team> GetListTeamByManager()
@@ -78,6 +53,22 @@ namespace company_management.BUS
         {
             List<User> listUser = teamDAO.GetUserInTeam(leaderID);
             return listUser;
+        }
+
+        public List<Team> GetListTeamByPosition()
+        {
+            string position = userBUS.GetUserPosition();
+
+            if (position.Equals("Manager"))
+            {
+                listTeam = teamDAO.GetAllTeam();
+            }
+            else
+            {
+                listTeam = teamDAO.GetTeamsByCurrentUser(UserSession.LoggedInUser.Id);
+            }
+
+            return listTeam;
         }
     }
 }

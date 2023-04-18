@@ -117,9 +117,9 @@ namespace company_management.Views
             // dateTime_deadline
             // 
             this.dateTime_deadline.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime_deadline.Location = new System.Drawing.Point(330, 434);
+            this.dateTime_deadline.Location = new System.Drawing.Point(305, 434);
             this.dateTime_deadline.Name = "dateTime_deadline";
-            this.dateTime_deadline.Size = new System.Drawing.Size(276, 30);
+            this.dateTime_deadline.Size = new System.Drawing.Size(303, 30);
             this.dateTime_deadline.TabIndex = 101;
             // 
             // label2
@@ -189,7 +189,7 @@ namespace company_management.Views
             this.combbox_Assignee.ItemHeight = 30;
             this.combbox_Assignee.Location = new System.Drawing.Point(24, 434);
             this.combbox_Assignee.Name = "combbox_Assignee";
-            this.combbox_Assignee.Size = new System.Drawing.Size(276, 36);
+            this.combbox_Assignee.Size = new System.Drawing.Size(249, 36);
             this.combbox_Assignee.TabIndex = 97;
             // 
             // label_taskName
@@ -213,7 +213,7 @@ namespace company_management.Views
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(326, 407);
+            this.label3.Location = new System.Drawing.Point(301, 407);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 93;
