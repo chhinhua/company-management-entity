@@ -386,6 +386,7 @@
   <ItemGroup>
     <Compile Include="BUS\CheckinCheckoutBUS.cs" />
     <Compile Include="BUS\TaskBUS.cs" />
+    <Compile Include="BUS\TeamBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DAO\CheckinCheckoutDAO.cs" />
     <Compile Include="DAO\ImageDAO.cs" />
