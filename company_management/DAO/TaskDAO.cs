@@ -153,6 +153,34 @@ namespace company_management.DAO
                             }).ToList();
 
             return listTask;
-        } 
+        }
+
+        public decimal CalculateBonusForEmployee(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            decimal totalBonus = 0;
+
+            using (SqlConnection connection = new SqlConnection(DBConnection.connString))
+            {
+                connection.Open();
+
+                // Tìm tất cả các task được giao cho nhân viên đó với deadline trong khoảng thời gian từ fromDate đến toDate
+                string query = "SELECT SUM(bonus) FROM Task WHERE idAssignee = @idUser AND deadline >= @fromDate AND deadline <= @toDate";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idUser", idUser);
+                    command.Parameters.AddWithValue("@fromDate", fromDate);
+                    command.Parameters.AddWithValue("@toDate", toDate);
+
+                    // Tính tổng tiền bonus của tất cả các task được giao cho nhân viên đó
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalBonus = Convert.ToDecimal(result);
+                    }
+                }
+            }
+
+            return totalBonus;
+        }
     }
 }

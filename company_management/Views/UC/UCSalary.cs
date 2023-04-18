@@ -90,16 +90,23 @@ namespace company_management.Views.UC
 
         private void loadGridview()
         {
-            List<SalaryDTO> data = salaryDAO.GetAllSalaries();
+            List<Salary> data = salaryDAO.GetAllSalaries();
             datagridview_salary.DataSource = data;
         }
 
         private void UCSalary_Load(object sender, EventArgs e)
         {
-            AddActionColumn();
+            //AddActionColumn();
             //salaryDAO.InitData();
-            loadGridview();
-            CustomGridColumn();
+            //loadGridview();
+            //CustomGridColumn();
+        }
+
+        private void btn_caculateSalary_Click(object sender, EventArgs e)
+        {
+            DateTime from = new DateTime(2023, 3, 1);
+            DateTime to = new DateTime(2023, 5, 30);
+            salaryDAO.CalculateAndSaveSalaryForAllEmployees(from, to);
         }
     }
 }

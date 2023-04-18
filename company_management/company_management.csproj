@@ -397,14 +397,15 @@
     <Compile Include="DAO\TeamDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="DTO\Constants.cs" />
     <Compile Include="DTO\MappingExtensions.cs" />
     <Compile Include="DTO\Team.cs" />
     <Compile Include="DTO\TimeKeepingDTO.cs" />
     <Compile Include="DTO\CheckinCheckout.cs" />
     <Compile Include="DTO\Company.cs" />
     <Compile Include="DTO\KpiDTO.cs" />
-    <Compile Include="DTO\LeaveRequestDTO.cs" />
-    <Compile Include="DTO\SalaryDTO.cs" />
+    <Compile Include="DTO\LeaveRequest.cs" />
+    <Compile Include="DTO\Salary.cs" />
     <Compile Include="DTO\Task.cs" />
     <Compile Include="DTO\TaskStatusPercentage.cs" />
     <Compile Include="DTO\User.cs" />
@@ -727,6 +728,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-money-yours-24.png" />
     <None Include="Resources\icons8-refresh-32.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\x1.png" />

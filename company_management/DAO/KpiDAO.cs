@@ -13,7 +13,7 @@ namespace company_management.DAO
 
         public KpiDAO() => dbContext = new company_managementEntities();
 
-        public double calculateKPI(SalaryDTO salary)
+        public double calculateKPI(Salary salary)
         {
             double totalWorkHours = salary.TotalHours + salary.OvertimeHours;
             double kpiValue = totalWorkHours / (totalWorkHours + salary.LeaveHours);

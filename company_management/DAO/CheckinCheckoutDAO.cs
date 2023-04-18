@@ -130,5 +130,46 @@ namespace company_management.DAO
             return dBConnection.GetObjectByQuery<CheckinCheckout>(query);
         }
 
+        // tổng số giờ làm việc của mỗi nhân viên trong một ngày
+        public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        {
+            string query = "SELECT SUM(totalHours) AS totalHours " +
+                "FROM checkin_checkout WHERE idUser = @idUser " +
+                "AND date BETWEEN @fromDate AND @toDate";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@idUser", idUser);
+            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+            command.Parameters.AddWithValue("@toDate", toDate.Date);
+
+            object result = command.ExecuteScalar();
+            return Convert.ToDouble(result);
+        }
+
+        // số giờ tăng ca của mỗi nhân viên trong một ngày
+        public double GetOvertimeHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        {
+            string query = "SELECT SUM(CASE WHEN totalHours > 8 THEN totalHours - 8 ELSE 0 END) AS overtimeHours FROM checkin_checkout WHERE idUser = @idUser AND date BETWEEN @fromDate AND @toDate";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@idUser", idUser);
+            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+            command.Parameters.AddWithValue("@toDate", toDate.Date);
+
+            object result = command.ExecuteScalar();
+            return Convert.ToDouble(result);
+        }
+
+        //  số giờ nghỉ phép của mỗi nhân viên trong một ngày
+        public double GetLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        {
+            string query = "SELECT SUM(8 - totalHours) AS leaveHours FROM checkin_checkout WHERE idUser = @idUser AND date BETWEEN @fromDate AND @toDate";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@idUser", idUser);
+            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+            command.Parameters.AddWithValue("@toDate", toDate.Date);
+
+            object result = command.ExecuteScalar();
+            return Convert.ToDouble(result);
+        }
+
     }
 }
