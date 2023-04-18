@@ -73,8 +73,8 @@ namespace company_management.Views.UC
             this.txtbox_address.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_address.ForeColor = System.Drawing.Color.Black;
             this.txtbox_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_address.Location = new System.Drawing.Point(710, 89);
-            this.txtbox_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_address.Location = new System.Drawing.Point(799, 111);
+            this.txtbox_address.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbox_address.Multiline = true;
             this.txtbox_address.Name = "txtbox_address";
             this.txtbox_address.PasswordChar = '\0';
@@ -82,7 +82,7 @@ namespace company_management.Views.UC
             this.txtbox_address.PlaceholderText = "Enter your address";
             this.txtbox_address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_address.SelectedText = "";
-            this.txtbox_address.Size = new System.Drawing.Size(517, 113);
+            this.txtbox_address.Size = new System.Drawing.Size(582, 141);
             this.txtbox_address.TabIndex = 74;
             // 
             // label4
@@ -90,9 +90,9 @@ namespace company_management.Views.UC
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(706, 68);
+            this.label4.Location = new System.Drawing.Point(794, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(98, 25);
             this.label4.TabIndex = 73;
             this.label4.Text = "Address";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,14 +111,14 @@ namespace company_management.Views.UC
             this.txtbox_phoneNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_phoneNumber.ForeColor = System.Drawing.Color.Black;
             this.txtbox_phoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_phoneNumber.Location = new System.Drawing.Point(381, 168);
-            this.txtbox_phoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_phoneNumber.Location = new System.Drawing.Point(429, 210);
+            this.txtbox_phoneNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbox_phoneNumber.Name = "txtbox_phoneNumber";
             this.txtbox_phoneNumber.PasswordChar = '\0';
             this.txtbox_phoneNumber.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_phoneNumber.PlaceholderText = "(+84) 0326474610";
             this.txtbox_phoneNumber.SelectedText = "";
-            this.txtbox_phoneNumber.Size = new System.Drawing.Size(280, 32);
+            this.txtbox_phoneNumber.Size = new System.Drawing.Size(315, 40);
             this.txtbox_phoneNumber.TabIndex = 72;
             // 
             // label5
@@ -126,9 +126,9 @@ namespace company_management.Views.UC
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(378, 147);
+            this.label5.Location = new System.Drawing.Point(425, 184);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 20);
+            this.label5.Size = new System.Drawing.Size(164, 25);
             this.label5.TabIndex = 71;
             this.label5.Text = "Phone number";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,14 +147,14 @@ namespace company_management.Views.UC
             this.txtbox_email.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtbox_email.ForeColor = System.Drawing.Color.Black;
             this.txtbox_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_email.Location = new System.Drawing.Point(381, 89);
-            this.txtbox_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_email.Location = new System.Drawing.Point(429, 111);
+            this.txtbox_email.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbox_email.Name = "txtbox_email";
             this.txtbox_email.PasswordChar = '\0';
             this.txtbox_email.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_email.PlaceholderText = "johndoe@gmail.com";
             this.txtbox_email.SelectedText = "";
-            this.txtbox_email.Size = new System.Drawing.Size(280, 32);
+            this.txtbox_email.Size = new System.Drawing.Size(315, 40);
             this.txtbox_email.TabIndex = 70;
             // 
             // label3
@@ -162,9 +162,9 @@ namespace company_management.Views.UC
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(378, 68);
+            this.label3.Location = new System.Drawing.Point(425, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.Size = new System.Drawing.Size(70, 25);
             this.label3.TabIndex = 69;
             this.label3.Text = "Email";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,14 +183,14 @@ namespace company_management.Views.UC
             this.txtbox_fullname.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtbox_fullname.ForeColor = System.Drawing.Color.Black;
             this.txtbox_fullname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_fullname.Location = new System.Drawing.Point(72, 170);
-            this.txtbox_fullname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_fullname.Location = new System.Drawing.Point(81, 212);
+            this.txtbox_fullname.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbox_fullname.Name = "txtbox_fullname";
             this.txtbox_fullname.PasswordChar = '\0';
             this.txtbox_fullname.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_fullname.PlaceholderText = "John Doe Ramesh";
             this.txtbox_fullname.SelectedText = "";
-            this.txtbox_fullname.Size = new System.Drawing.Size(258, 32);
+            this.txtbox_fullname.Size = new System.Drawing.Size(290, 40);
             this.txtbox_fullname.TabIndex = 68;
             // 
             // label2
@@ -198,9 +198,9 @@ namespace company_management.Views.UC
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(69, 149);
+            this.label2.Location = new System.Drawing.Point(78, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(115, 25);
             this.label2.TabIndex = 67;
             this.label2.Text = "Full name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,14 +219,14 @@ namespace company_management.Views.UC
             this.txtbox_username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_username.ForeColor = System.Drawing.Color.Black;
             this.txtbox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_username.Location = new System.Drawing.Point(72, 89);
-            this.txtbox_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_username.Location = new System.Drawing.Point(81, 111);
+            this.txtbox_username.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbox_username.Name = "txtbox_username";
             this.txtbox_username.PasswordChar = '\0';
             this.txtbox_username.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_username.PlaceholderText = "johndoe";
             this.txtbox_username.SelectedText = "";
-            this.txtbox_username.Size = new System.Drawing.Size(258, 32);
+            this.txtbox_username.Size = new System.Drawing.Size(290, 40);
             this.txtbox_username.TabIndex = 66;
             // 
             // label6
@@ -234,9 +234,9 @@ namespace company_management.Views.UC
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(69, 68);
+            this.label6.Location = new System.Drawing.Point(78, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 20);
+            this.label6.Size = new System.Drawing.Size(125, 25);
             this.label6.TabIndex = 65;
             this.label6.Text = "User name";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,13 +250,14 @@ namespace company_management.Views.UC
             this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.dataGridView_Team);
             this.panelData.FillColor = System.Drawing.Color.White;
-            this.panelData.Location = new System.Drawing.Point(17, 314);
+            this.panelData.Location = new System.Drawing.Point(19, 392);
+            this.panelData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
-            this.panelData.Size = new System.Drawing.Size(1258, 455);
+            this.panelData.Size = new System.Drawing.Size(1415, 569);
             this.panelData.TabIndex = 114;
             // 
             // txtSearch
@@ -276,14 +277,14 @@ namespace company_management.Views.UC
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_483;
-            this.txtSearch.Location = new System.Drawing.Point(16, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Location = new System.Drawing.Point(18, 22);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Search ...";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(472, 41);
+            this.txtSearch.Size = new System.Drawing.Size(531, 51);
             this.txtSearch.TabIndex = 70;
             // 
             // dataGridView_Team
@@ -310,7 +311,8 @@ namespace company_management.Views.UC
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Team.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_Team.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView_Team.Location = new System.Drawing.Point(16, 87);
+            this.dataGridView_Team.Location = new System.Drawing.Point(18, 109);
+            this.dataGridView_Team.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView_Team.Name = "dataGridView_Team";
             this.dataGridView_Team.RowHeadersVisible = false;
             this.dataGridView_Team.RowHeadersWidth = 51;
@@ -318,7 +320,7 @@ namespace company_management.Views.UC
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataGridView_Team.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_Team.RowTemplate.Height = 30;
-            this.dataGridView_Team.Size = new System.Drawing.Size(1222, 352);
+            this.dataGridView_Team.Size = new System.Drawing.Size(1375, 440);
             this.dataGridView_Team.TabIndex = 0;
             this.dataGridView_Team.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView_Team.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -345,9 +347,9 @@ namespace company_management.Views.UC
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 272);
+            this.label1.Location = new System.Drawing.Point(42, 340);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 33);
+            this.label1.Size = new System.Drawing.Size(255, 41);
             this.label1.TabIndex = 118;
             this.label1.Text = "Team Board";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -369,13 +371,14 @@ namespace company_management.Views.UC
             this.GroupBox_Team.Controls.Add(this.label6);
             this.GroupBox_Team.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox_Team.ForeColor = System.Drawing.Color.DarkRed;
-            this.GroupBox_Team.Location = new System.Drawing.Point(17, 20);
+            this.GroupBox_Team.Location = new System.Drawing.Point(19, 25);
+            this.GroupBox_Team.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupBox_Team.Name = "GroupBox_Team";
             this.GroupBox_Team.ShadowDecoration.BorderRadius = 25;
             this.GroupBox_Team.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GroupBox_Team.ShadowDecoration.Enabled = true;
             this.GroupBox_Team.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
-            this.GroupBox_Team.Size = new System.Drawing.Size(1258, 222);
+            this.GroupBox_Team.Size = new System.Drawing.Size(1415, 278);
             this.GroupBox_Team.TabIndex = 119;
             this.GroupBox_Team.Text = "Thông tin nhóm";
             // 
@@ -383,7 +386,7 @@ namespace company_management.Views.UC
             // 
             this.btnAdd.AutoRoundedCorners = true;
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 20;
+            this.btnAdd.BorderRadius = 25;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -393,16 +396,17 @@ namespace company_management.Views.UC
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::company_management.Properties.Resources.plus;
             this.btnAdd.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnAdd.Location = new System.Drawing.Point(1118, 266);
+            this.btnAdd.Location = new System.Drawing.Point(1258, 332);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(46, 42);
+            this.btnAdd.Size = new System.Drawing.Size(52, 52);
             this.btnAdd.TabIndex = 115;
             // 
             // btnEdit
             // 
             this.btnEdit.AutoRoundedCorners = true;
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BorderRadius = 19;
+            this.btnEdit.BorderRadius = 24;
             this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -413,16 +417,17 @@ namespace company_management.Views.UC
             this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             this.btnEdit.Image = global::company_management.Properties.Resources.edit;
             this.btnEdit.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEdit.Location = new System.Drawing.Point(1170, 268);
+            this.btnEdit.Location = new System.Drawing.Point(1316, 335);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(49, 40);
+            this.btnEdit.Size = new System.Drawing.Size(55, 50);
             this.btnEdit.TabIndex = 116;
             // 
             // btnDelete
             // 
             this.btnDelete.AutoRoundedCorners = true;
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BorderRadius = 19;
+            this.btnDelete.BorderRadius = 24;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -434,14 +439,15 @@ namespace company_management.Views.UC
             this.btnDelete.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::company_management.Properties.Resources.trash;
             this.btnDelete.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnDelete.Location = new System.Drawing.Point(1225, 268);
+            this.btnDelete.Location = new System.Drawing.Point(1378, 335);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(50, 40);
+            this.btnDelete.Size = new System.Drawing.Size(56, 50);
             this.btnDelete.TabIndex = 117;
             // 
             // UC_Team
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.panelData);
@@ -450,8 +456,10 @@ namespace company_management.Views.UC
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GroupBox_Team);
             this.Controls.Add(this.btnDelete);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_Team";
-            this.Size = new System.Drawing.Size(1292, 788);
+            this.Size = new System.Drawing.Size(1454, 985);
+            this.Load += new System.EventHandler(this.UC_Team_Load);
             this.panelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Team)).EndInit();
             this.GroupBox_Team.ResumeLayout(false);

@@ -43,10 +43,20 @@ namespace company_management.DAO
             {
                 return team;
             } 
-            else
-            {
-                return GetTeamByLeaderId(task.IdAssignee);
-            }
+            return null;
+            //else
+            //{
+            //    return GetTeamByLeaderId(task.IdAssignee);
+            //}
+        }
+
+        public List<User> GetUserInTeam(int idTeam)
+        {
+            string query = string.Format("select id, fullname, email, phoneNumber, address from users " +
+                "where id in (select idUser from user_team " +
+                            "where idTeam in (select id from teams " +
+                            "                   where idLeader = {0}))", idTeam);
+            return dBConnection.GetListObjectsByQuery<User>(query);
         }
 
         public List<Team> GetAllTeam()

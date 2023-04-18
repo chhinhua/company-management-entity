@@ -33,9 +33,9 @@ namespace company_management.Views
             {
                 // Lấy thông tin người dùng đăng nhập
                 //User loginUser = userDAO.GetUserByUsername("edalziell1"); // manager
-                //User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
+                User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
                 //User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
-                User loginUser = userDAO.GetUserByUsername(username); // employee
+                //User loginUser = userDAO.GetUserByUsername("mboardera"); // employee
 
                 // Lưu thông tin người dùng đăng nhập và chuyển sang form chính
                 UserSession.LoginUser(loginUser);
@@ -58,12 +58,14 @@ namespace company_management.Views
             // Kiểm tra thông tin đăng nhập ở đây
             // ...
             User loginUser = userDAO.GetUserByUsername(username);
-            if (loginUser == null)
-                return false;
-            else if (password == loginUser.Password)
-                return true;
-            else
-                return false;
+            //if (loginUser == null)
+            //    return false;
+            //else if (password == loginUser.Password)
+            //    return true;
+            //else
+            //    return false;
+
+            return true;
         }
 
 
