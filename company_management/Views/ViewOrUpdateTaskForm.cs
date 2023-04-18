@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.Views.UC;
+using Guna.UI2.WinForms;
 
 namespace company_management.Views
 {
@@ -17,10 +18,24 @@ namespace company_management.Views
 
         public ViewOrUpdateTaskForm()
         {
-            InitializeComponent();
+            InitializeComponent();         
             taskDAO = new TaskDAO();
             userDAO = new UserDAO();
             imageDAO = new ImageDAO();
+            SetFormShadow(this);
+        }
+
+        public static void SetFormShadow(Form form)
+        {
+            Guna2ShadowForm shadowForm = new Guna2ShadowForm();
+
+            // Set the shadow properties
+            shadowForm.SetShadowForm(form);
+            shadowForm.ShadowColor = Color.Gray;
+            shadowForm.BorderRadius = 20;
+
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
 
         private void ViewOrUpdateTaskForm_Load(object sender, EventArgs e)
@@ -66,7 +81,8 @@ namespace company_management.Views
             try
             {
                 dateTime_deadline.Value = UCTask.viewTask.Deadline;
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
@@ -89,7 +105,7 @@ namespace company_management.Views
 
         private void circleProgressBar_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -128,6 +144,11 @@ namespace company_management.Views
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             imageDAO.ChooseImageToPictureBox(picturebox_Avatar);
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

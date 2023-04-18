@@ -10,12 +10,14 @@ namespace company_management.BUS
         private TeamDAO teamDAO;
         private UserBUS userBUS;
         private List<Team> listTeam;
+
         public TeamBUS()
         {
             teamDAO = new TeamDAO();
             userBUS = new UserBUS();
             listTeam = new List<Team>();
         }
+
         public void LoadDataGridview(dynamic listTeam, DataGridView dataGridView, string position)
         {
             if (position.Equals("Manager"))
@@ -28,9 +30,6 @@ namespace company_management.BUS
                 dataGridView.Columns[2].Width = 275;
                 dataGridView.Columns[3].Name = "Trưởng nhóm";
                 dataGridView.Rows.Clear();
-
-                // sort theo deadline tăng dần
-                //listTeam.Sort((x, y) => DateTime.Compare(x.Deadline, y.Deadline));
 
                 foreach (var t in listTeam)
                 {
