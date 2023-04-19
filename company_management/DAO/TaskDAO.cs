@@ -6,11 +6,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using company_management.Views;
+using company_management.Views.UC;
 
 namespace company_management.DAO
 {
     public class TaskDAO
     {
+        public string connString = Properties.Settings.Default.connStr;
         private readonly DBConnection dBConnection;
         private List<Task> listTask;
         private TeamDAO teamDAO;
@@ -57,24 +59,24 @@ namespace company_management.DAO
                 }
 
                 comboBox.ValueMember = "id";
-                comboBox.SelectedIndex = 0;             
+                comboBox.SelectedValue = UCTask.viewTask.IdAssignee;       
             }
 
         }
 
         public void AddTask(Task task)
         {
-            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
-                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam, task.Bonus);
+            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus, idProject)" +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
+                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam, task.Bonus, task.IdProject);
             dBConnection.ExecuteQuery(query);
         }
 
         public void UpdateTask(Task updateTask)
         {
             string sqlStr = string.Format("UPDATE task SET " +
-                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}' WHERE id = '{7}'",
-                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.Id);
+                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}', idProject = '{7}' WHERE id = '{8}'",
+                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.IdProject, updateTask.Id);
             dBConnection.ExecuteQuery(sqlStr);
         }
 
@@ -159,7 +161,7 @@ namespace company_management.DAO
         {
             decimal totalBonus = 0;
 
-            using (SqlConnection connection = new SqlConnection(DBConnection.connString))
+            using (SqlConnection connection = new SqlConnection(connString))
             {
                 connection.Open();
 

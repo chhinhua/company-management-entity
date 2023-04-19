@@ -11,7 +11,7 @@ namespace company_management.DTO
         private int id;
         private int idCreator;
         private int idAssignee;
-        private string taskName;
+        private string name;
         private string description;
         private DateTime startDate;
         private DateTime endDate;
@@ -21,12 +21,12 @@ namespace company_management.DTO
 
         public Project() { }
 
-        public Project(int idCreator, int idAssignee, string taskName, string description, 
+        public Project(int idCreator, int idAssignee, string name, string description, 
             DateTime startDate, DateTime endDate, int progress, int idTeam, decimal bonus)
         {
             IdCreator = idCreator;
             IdAssignee = idAssignee;
-            TaskName = taskName;
+            Name = name;
             Description = description;
             StartDate = startDate;
             EndDate = endDate;
@@ -38,7 +38,7 @@ namespace company_management.DTO
         public int Id { get => id; set => id = value; }
         public int IdCreator { get => idCreator; set => idCreator = value; }
         public int IdAssignee { get => idAssignee; set => idAssignee = value; }
-        public string TaskName { get => taskName; set => taskName = value; }
+        public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
         public DateTime StartDate { get => startDate; set => startDate = value; }
         public DateTime EndDate { get => endDate; set => endDate = value; }

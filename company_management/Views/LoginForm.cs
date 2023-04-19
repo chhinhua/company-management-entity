@@ -33,7 +33,7 @@ namespace company_management.Views
             {
                 // Lấy thông tin người dùng đăng nhập
                 //User loginUser = userDAO.GetUserByUsername("edalziell1"); // manager
-                User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
+                User loginUser = userDAO.GetUserByUsername("abaldacchinob"); // leader
                // User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
                 //User loginUser = userDAO.GetUserByUsername("dsillyh"); // employee
                 //User loginUser = userDAO.GetUserByUsername("wdionisi7"); // leader

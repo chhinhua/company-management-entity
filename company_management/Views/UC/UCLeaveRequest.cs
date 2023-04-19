@@ -8,15 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using company_management.DTO;
-using company_management.DTO;
 
 namespace company_management.Views
 {
     public partial class UCLeaveRequest : UserControl
     {
-        LeaveRequestDAO requestDAO = new LeaveRequestDAO();
-        public static LeaveRequest requestDTO = new LeaveRequest();
-        private TaskDAO taskDAO = new TaskDAO();
+        LeaveRequestDAO requestDAO;
+        public LeaveRequest requestDTO;
+        private TaskDAO taskDAO;
 
         public UCLeaveRequest()
         {
@@ -25,8 +24,8 @@ namespace company_management.Views
 
         private void UCLeaveRequest_Load(object sender, EventArgs e)
         {
-            loadGridview();
-            CustomeGridColumn();
+            //loadGridview();
+            //CustomeGridColumn();
         }
 
         private void btnLR_Click(object sender, EventArgs e)
@@ -109,8 +108,6 @@ namespace company_management.Views
         private void btnSave_Click(object sender, EventArgs e)
         {
             loadGridview();
-        }
-
-      
+        }    
     }
 }

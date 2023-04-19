@@ -17,6 +17,7 @@ namespace company_management.Views
     {
         private TaskDAO taskDAO;
         private TeamDAO teamDAO;
+        private ProjectDAO projectDAO;
         private TaskBUS taskBUS;
 
         public AddTaskForm()
@@ -24,6 +25,7 @@ namespace company_management.Views
             InitializeComponent();
             taskDAO = new TaskDAO();
             teamDAO = new TeamDAO();
+            projectDAO = new ProjectDAO();
             taskBUS = new TaskBUS();
             ViewOrUpdateTaskForm.SetFormShadow(this);
         }
@@ -46,6 +48,7 @@ namespace company_management.Views
         private void LoadData()
         {
             taskDAO.LoadUserToCombobox(combbox_Assignee);
+            projectDAO.LoadProjectToCombobox(combbox_Project);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -58,15 +61,16 @@ namespace company_management.Views
             if (checkDataInput())
             {
                 Task task = taskBUS.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
-                                              dateTime_deadline, combbox_Assignee, 0, textBox_Bonus.Text);
+                                              dateTime_deadline, combbox_Assignee, 0, textBox_Bonus.Text, combbox_Project);
                 taskDAO.AddTask(task);
+                ClearFields();
             }
         }
 
-        private void button_close_Click(object sender, EventArgs e)
+        public void ClearFields()
         {
-            this.Hide();
+            txtbox_taskName.Clear();
+            txtbox_Desciption.Clear();
         }
-
     }
 }

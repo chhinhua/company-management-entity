@@ -11,6 +11,7 @@ namespace company_management.DAO
 {
     public class TeamDAO
     {
+        public string connString = Properties.Settings.Default.connStr;
         private readonly DBConnection dBConnection;
         private UserDAO userDAO;
         private List<Team> listTeam;
@@ -104,7 +105,7 @@ namespace company_management.DAO
         
             string query = string.Format("SELECT COUNT(*) FROM user_team WHERE idTeam='{0}'", idTeam);
 
-            using (SqlConnection connection = new SqlConnection(DBConnection.connString))
+            using (SqlConnection connection = new SqlConnection(connString))
             {
                 connection.Open();
 

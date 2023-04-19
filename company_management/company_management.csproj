@@ -592,6 +592,12 @@
     <Compile Include="Views\VerifyEmailForm.Designer.cs">
       <DependentUpon>VerifyEmailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewOrUpdateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewOrUpdateProject.Designer.cs">
+      <DependentUpon>ViewOrUpdateProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewOrUpdateTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -668,6 +674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VerifyEmailForm.resx">
       <DependentUpon>VerifyEmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewOrUpdateProject.resx">
+      <DependentUpon>ViewOrUpdateProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewOrUpdateTaskForm.resx">
       <DependentUpon>ViewOrUpdateTaskForm.cs</DependentUpon>
@@ -749,11 +758,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
-<<<<<<< HEAD
-    <None Include="Resources\icons8-money-yours-24.png" />
-=======
+    <None Include="Resources\icons8-project-501.png" />
     <None Include="Resources\icons8-project-50.png" />
->>>>>>> hua2
     <None Include="Resources\icons8-refresh-32.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\x1.png" />

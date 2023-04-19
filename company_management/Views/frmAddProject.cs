@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.BUS;
+using System.Data.SqlClient;
 
 namespace company_management.Views
 {
@@ -35,6 +36,7 @@ namespace company_management.Views
                 Project project = projectBUS.GetProjectFromTextBox(txtbox_projectName.Text, txtbox_Desciption.Text,
                                   dateTime_startDate, dateTime_endDate, combbox_AssigneeTeam, 0, textBox_Bonus.Text);
                 projectDAO.AddProject(project);
+                ClearFields();
             }
         }
 
@@ -61,6 +63,12 @@ namespace company_management.Views
         private void frmAddProject_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        public void ClearFields()
+        {
+            txtbox_projectName.Clear();
+            txtbox_Desciption.Clear();
         }
     }
 }

@@ -15,12 +15,12 @@ namespace company_management
     public class DBConnection
     {
         
-        public static string connString = Properties.Settings.Default.connStr;
+        public string connString = Properties.Settings.Default.connStr;
         public SqlConnection connection;
 
         public DBConnection()
         {
-
+            connection = new SqlConnection(connString);
         }
 
         public object ExecuteScalar(string query)
@@ -143,8 +143,8 @@ namespace company_management
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
-                //MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(e.ToString());
+                MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
