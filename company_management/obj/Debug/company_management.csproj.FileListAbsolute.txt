@@ -372,3 +372,5 @@ D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\co
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.exe
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.pdb
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_Project.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.frmAddProject.resources

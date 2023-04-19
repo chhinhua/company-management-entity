@@ -5,8 +5,6 @@ using System.Data.SqlClient;
 using Guna.UI2.WinForms;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
-
 using company_management.DTO;
 using company_management.DAO;
 using company_management.Views;

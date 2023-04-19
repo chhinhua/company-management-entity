@@ -385,6 +385,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\CheckinCheckoutBUS.cs" />
+    <Compile Include="BUS\ProjectBUS.cs" />
     <Compile Include="BUS\TaskBUS.cs" />
     <Compile Include="BUS\TeamBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
@@ -392,12 +393,14 @@
     <Compile Include="DAO\ImageDAO.cs" />
     <Compile Include="DAO\KpiDAO.cs" />
     <Compile Include="DAO\LeaveRequestDAO.cs" />
+    <Compile Include="DAO\ProjectDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
     <Compile Include="DAO\TeamDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DTO\MappingExtensions.cs" />
+    <Compile Include="DTO\Project.cs" />
     <Compile Include="DTO\Team.cs" />
     <Compile Include="DTO\TimeKeepingDTO.cs" />
     <Compile Include="DTO\CheckinCheckout.cs" />
@@ -498,6 +501,12 @@
     <Compile Include="Views\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmAddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmAddProject.Designer.cs">
+      <DependentUpon>frmAddProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -545,6 +554,12 @@
     </Compile>
     <Compile Include="Views\UC\UC_KPI.Designer.cs">
       <DependentUpon>UC_KPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UC\UC_Project.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UC\UC_Project.Designer.cs">
+      <DependentUpon>UC_Project.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UC\UC_Team.cs">
       <SubType>UserControl</SubType>
@@ -608,6 +623,9 @@
     <EmbeddedResource Include="Views\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmAddProject.resx">
+      <DependentUpon>frmAddProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -631,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UC_KPI.resx">
       <DependentUpon>UC_KPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UC\UC_Project.resx">
+      <DependentUpon>UC_Project.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UC\UC_Team.resx">
       <DependentUpon>UC_Team.cs</DependentUpon>
@@ -727,6 +748,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-project-50.png" />
     <None Include="Resources\icons8-refresh-32.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\x1.png" />
