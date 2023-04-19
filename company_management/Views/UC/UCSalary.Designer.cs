@@ -385,7 +385,6 @@
             this.btn_caculateSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_caculateSalary.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_caculateSalary.ForeColor = System.Drawing.Color.Black;
-            this.btn_caculateSalary.Image = global::company_management.Properties.Resources.icons8_money_yours_24;
             this.btn_caculateSalary.ImageSize = new System.Drawing.Size(28, 28);
             this.btn_caculateSalary.Location = new System.Drawing.Point(529, 162);
             this.btn_caculateSalary.Name = "btn_caculateSalary";

@@ -48,7 +48,7 @@ namespace company_management.Views.UC
 
         private void LoadProgressChart()
         {
-            TaskStatusPercentage taskStatus = taskDAO.GetTaskStatusPercentage(taskBUS.GetListTaskByPosition());
+            TaskStatusPercentage taskStatus = taskDAO.GetTaskStatusPercentage(listTask);
 
             double todoPercent = taskStatus.TodoPercent;
             double inprogressPercent = taskStatus.InprogressPercent;

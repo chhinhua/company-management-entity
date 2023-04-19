@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.combobox_user_action = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_menu_active = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel_tabbar = new Guna.UI2.WinForms.Guna2Panel();
-            this.pn_main = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.picturebox_avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.combobox_user_action = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnProject = new Guna.UI2.WinForms.Guna2Button();
             this.btnTeam = new Guna.UI2.WinForms.Guna2Button();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
+            this.lb_menu_active = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTimekeeping = new Guna.UI2.WinForms.Guna2Button();
             this.btnSalary = new Guna.UI2.WinForms.Guna2Button();
             this.btnKPI = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeaveRequest = new Guna.UI2.WinForms.Guna2Button();
             this.btnTask = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_tabbar = new Guna.UI2.WinForms.Guna2Panel();
+            this.pn_main = new System.Windows.Forms.Panel();
             this.guna2Panel3.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            this.panel_tabbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
+            this.guna2Panel4.SuspendLayout();
+            this.panel_tabbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -67,6 +67,34 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1522, 65);
             this.guna2Panel3.TabIndex = 1;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.Image = global::company_management.Properties.Resources.brand_apple;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(36, 4);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(50, 46);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox2.TabIndex = 25;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // picturebox_avatar
+            // 
+            this.picturebox_avatar.BackColor = System.Drawing.Color.Transparent;
+            this.picturebox_avatar.FillColor = System.Drawing.Color.Transparent;
+            this.picturebox_avatar.Image = global::company_management.Properties.Resources.user_circle__1_;
+            this.picturebox_avatar.ImageRotate = 0F;
+            this.picturebox_avatar.Location = new System.Drawing.Point(1427, 12);
+            this.picturebox_avatar.Name = "picturebox_avatar";
+            this.picturebox_avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picturebox_avatar.Size = new System.Drawing.Size(50, 46);
+            this.picturebox_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_avatar.TabIndex = 24;
+            this.picturebox_avatar.TabStop = false;
             // 
             // combobox_user_action
             // 
@@ -98,6 +126,20 @@
             this.combobox_user_action.Size = new System.Drawing.Size(70, 36);
             this.combobox_user_action.TabIndex = 24;
             // 
+            // guna2PictureBox9
+            // 
+            this.guna2PictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2PictureBox9.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox9.Image = global::company_management.Properties.Resources.bell_filled;
+            this.guna2PictureBox9.ImageRotate = 0F;
+            this.guna2PictureBox9.Location = new System.Drawing.Point(1368, 20);
+            this.guna2PictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox9.Name = "guna2PictureBox9";
+            this.guna2PictureBox9.Size = new System.Drawing.Size(30, 30);
+            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox9.TabIndex = 14;
+            this.guna2PictureBox9.TabStop = false;
+            // 
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.btnProject);
@@ -117,78 +159,6 @@
             this.guna2Panel4.Size = new System.Drawing.Size(230, 788);
             this.guna2Panel4.TabIndex = 2;
             // 
-            // lb_menu_active
-            // 
-            this.lb_menu_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lb_menu_active.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lb_menu_active.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lb_menu_active.Location = new System.Drawing.Point(0, 2);
-            this.lb_menu_active.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lb_menu_active.Name = "lb_menu_active";
-            this.lb_menu_active.Size = new System.Drawing.Size(6, 60);
-            this.lb_menu_active.TabIndex = 3;
-            // 
-            // panel_tabbar
-            // 
-            this.panel_tabbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.panel_tabbar.Controls.Add(this.guna2Panel4);
-            this.panel_tabbar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel_tabbar.Location = new System.Drawing.Point(0, 65);
-            this.panel_tabbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel_tabbar.Name = "panel_tabbar";
-            this.panel_tabbar.Size = new System.Drawing.Size(230, 788);
-            this.panel_tabbar.TabIndex = 0;
-            // 
-            // pn_main
-            // 
-            this.pn_main.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pn_main.Location = new System.Drawing.Point(230, 65);
-            this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1292, 788);
-            this.pn_main.TabIndex = 2;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox2.Image = global::company_management.Properties.Resources.brand_apple;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(36, 4);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(50, 46);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox2.TabIndex = 25;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
-            // picturebox_avatar
-            // 
-            this.picturebox_avatar.BackColor = System.Drawing.Color.Transparent;
-            this.picturebox_avatar.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_avatar.Image = global::company_management.Properties.Resources.user_circle__1_;
-            this.picturebox_avatar.ImageRotate = 0F;
-            this.picturebox_avatar.Location = new System.Drawing.Point(1427, 12);
-            this.picturebox_avatar.Name = "picturebox_avatar";
-            this.picturebox_avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picturebox_avatar.Size = new System.Drawing.Size(50, 46);
-            this.picturebox_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_avatar.TabIndex = 24;
-            this.picturebox_avatar.TabStop = false;
-            // 
-            // guna2PictureBox9
-            // 
-            this.guna2PictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2PictureBox9.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox9.Image = global::company_management.Properties.Resources.bell_filled;
-            this.guna2PictureBox9.ImageRotate = 0F;
-            this.guna2PictureBox9.Location = new System.Drawing.Point(1368, 20);
-            this.guna2PictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox9.TabIndex = 14;
-            this.guna2PictureBox9.TabStop = false;
-            // 
             // btnProject
             // 
             this.btnProject.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -200,7 +170,7 @@
             this.btnProject.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.btnProject.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnProject.ForeColor = System.Drawing.Color.White;
-            this.btnProject.Image = global::company_management.Properties.Resources.icons8_project_50;
+            this.btnProject.Image = global::company_management.Properties.Resources.icons8_project_501;
             this.btnProject.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProject.ImageSize = new System.Drawing.Size(38, 38);
             this.btnProject.Location = new System.Drawing.Point(0, 480);
@@ -260,6 +230,17 @@
             this.btnUser.Text = "User";
             this.btnUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            // 
+            // lb_menu_active
+            // 
+            this.lb_menu_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lb_menu_active.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lb_menu_active.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lb_menu_active.Location = new System.Drawing.Point(0, 2);
+            this.lb_menu_active.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lb_menu_active.Name = "lb_menu_active";
+            this.lb_menu_active.Size = new System.Drawing.Size(6, 60);
+            this.lb_menu_active.TabIndex = 3;
             // 
             // btnTimekeeping
             // 
@@ -394,6 +375,25 @@
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panel_tabbar
+            // 
+            this.panel_tabbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
+            this.panel_tabbar.Controls.Add(this.guna2Panel4);
+            this.panel_tabbar.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel_tabbar.Location = new System.Drawing.Point(0, 65);
+            this.panel_tabbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_tabbar.Name = "panel_tabbar";
+            this.panel_tabbar.Size = new System.Drawing.Size(230, 788);
+            this.panel_tabbar.TabIndex = 0;
+            // 
+            // pn_main
+            // 
+            this.pn_main.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pn_main.Location = new System.Drawing.Point(230, 65);
+            this.pn_main.Name = "pn_main";
+            this.pn_main.Size = new System.Drawing.Size(1292, 788);
+            this.pn_main.TabIndex = 2;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -408,11 +408,11 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            this.panel_tabbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_avatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
+            this.guna2Panel4.ResumeLayout(false);
+            this.panel_tabbar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
