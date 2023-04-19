@@ -14,15 +14,20 @@ namespace company_management
 {
     public class DBConnection
     {
-        public SqlConnection connection;
+        
         public static string connString = Properties.Settings.Default.connStr;
+        public SqlConnection connection;
 
-        public DBConnection() => connection = new SqlConnection(connString);
+        public DBConnection()
+        {
+
+        }
 
         public object ExecuteScalar(string query)
         {
             try
             {
+                connection = new SqlConnection(connString);
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.CommandType = CommandType.Text;
@@ -46,6 +51,7 @@ namespace company_management
             DataTable dataTable = new DataTable();
             try
             {
+                connection = new SqlConnection(connString);
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -118,18 +124,21 @@ namespace company_management
                 var result = connection.QueryFirstOrDefault<T>(query);
                 return result;
             }
-        }  
+        }
 
         public void ExecuteQuery(string sqlStr)
         {
             try
             {
-                connection.Open();
-                SqlCommand cmd = new SqlCommand(sqlStr, connection);
-
-                if (cmd.ExecuteNonQuery() > 0)
+                using (SqlConnection connection = new SqlConnection(connString))
                 {
-                    MessageBox.Show("Successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(sqlStr, connection);
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception e)
@@ -137,11 +146,8 @@ namespace company_management
                 MessageBox.Show(e.ToString());
                 //MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                connection.Close();
-            }
         }
+
     }
 
 }

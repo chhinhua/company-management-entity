@@ -131,7 +131,7 @@ namespace company_management.DAO
         }
 
         // tổng số giờ làm việc của mỗi nhân viên trong một ngày
-        public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+       /* public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
             string query = "SELECT SUM(totalHours) AS totalHours " +
                 "FROM checkin_checkout WHERE idUser = @idUser " +
@@ -169,7 +169,7 @@ namespace company_management.DAO
 
             object result = command.ExecuteScalar();
             return Convert.ToDouble(result);
-        }
+        }*/
 
     }
 }

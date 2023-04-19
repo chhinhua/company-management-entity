@@ -106,7 +106,7 @@ namespace company_management.Views.UC
         {
             DateTime from = new DateTime(2023, 3, 1);
             DateTime to = new DateTime(2023, 5, 30);
-            salaryDAO.CalculateAndSaveSalaryForAllEmployees(from, to);
+            //salaryDAO.CalculateAndSaveSalaryForAllEmployees(from, to);
         }
     }
 }

@@ -98,7 +98,7 @@ namespace company_management.DAO
             return MappingExtensions.ToDto<user, User>(userEntity);
         }
 
-        public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+       /* public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
             double leaveHours = 0;
 
@@ -122,7 +122,7 @@ namespace company_management.DAO
             }
 
             return leaveHours;
-        }
+        }*/
 
     }
 

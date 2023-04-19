@@ -57,7 +57,7 @@ namespace company_management.DAO
             dbContext.SaveChanges();
         }
 
-        public decimal CalculateBonus(double kpiValue, double averageProgress)
+       /* public decimal CalculateBonus(double kpiValue, double averageProgress)
         {
             decimal bonus = 0;
             double kpiWithProgress = kpiValue + averageProgress;
@@ -127,6 +127,6 @@ namespace company_management.DAO
                 }
                 reader.Close();
             }
-        }
+        }*/
     }
 }
