@@ -18,7 +18,6 @@ namespace company_management.Views
         private TaskDAO taskDAO;
         private TeamDAO teamDAO;
         private TaskBUS taskBUS;
-        public static int DEFAULT_INIT_PROGRESS = 0;
 
         public AddTaskForm()
         {
