@@ -1,0 +1,376 @@
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\company_management.exe.config
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\company_management.exe
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Properties.Resources.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.exe
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.pdb
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\company_management.exe.config
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\company_management.exe
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\company_management.pdb
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.SuggestedBindingRedirects.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.exe
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.pdb
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.MainForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Guna.UI2.dll
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.LoginForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.MainForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.csproj.CopyComplete
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+D:\LTWin\project\company-management-project\company_management\bin\Debug\company_management.exe.config
+D:\LTWin\project\company-management-project\company_management\bin\Debug\company_management.exe
+D:\LTWin\project\company-management-project\company_management\bin\Debug\company_management.pdb
+D:\LTWin\project\company-management-project\company_management\bin\Debug\Guna.UI2.dll
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.MainForm.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.exe
+D:\LTWin\project\company-management-project\company_management\obj\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Database.mdf
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\bin\Debug\Database_log.ldf
+E:\Study\HKII - 3th\LTWD\Project\company_management\company_management\obj\Debug\company_management.Views.AddUserForm.resources
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Database.mdf
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Database_log.ldf
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.AddUserForm.resources
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.FormMain.resources
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Microsoft.Win32.SystemEvents.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\Newtonsoft.Json.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\RestSharp.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Buffers.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.CodeDom.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Data.Odbc.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Data.OleDb.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Data.SqlClient.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Diagnostics.EventLog.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Drawing.Common.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.IO.Packaging.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.IO.Ports.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Memory.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Numerics.Vectors.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.AccessControl.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.Permissions.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Security.Principal.Windows.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.ServiceModel.Syndication.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.ServiceProcess.ServiceController.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\Winform\Final_project\company-management-project\company_management\bin\Debug\System.Threading.AccessControl.xml
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.exe.licenses
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.csproj.Fody.CopyLocal.cache
+D:\Winform\Final_project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.FormMain.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.exe.licenses
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.exe
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Database.mdf
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Database_log.ldf
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.exe.config
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.exe
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Win32.SystemEvents.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Newtonsoft.Json.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\RestSharp.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Buffers.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.CodeDom.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Data.Odbc.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Data.OleDb.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Data.SqlClient.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.EventLog.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Drawing.Common.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.IO.FileSystem.AccessControl.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.IO.Packaging.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.IO.Ports.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Memory.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Numerics.Vectors.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.AccessControl.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Cng.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Pkcs.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Xml.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Permissions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Principal.Windows.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.ServiceModel.Syndication.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.ServiceProcess.ServiceController.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Text.Encoding.CodePages.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Threading.AccessControl.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.Fody.CopyLocal.cache
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddTaskForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UserProfileForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.ViewOrUpdateTaskForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\Database.mdf
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\Database_log.ldf
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\company_management.exe.config
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\company_management.exe
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\company_management.pdb
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\Microsoft.Win32.SystemEvents.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\RestSharp.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Buffers.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.CodeDom.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Data.Odbc.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Data.OleDb.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Diagnostics.EventLog.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Drawing.Common.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.IO.Packaging.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.IO.Ports.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Memory.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.Permissions.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.ServiceModel.Syndication.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.ServiceProcess.ServiceController.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\bin\Debug\System.Threading.AccessControl.xml
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.SuggestedBindingRedirects.cache
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.AddTaskForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.FormMain.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequestManagement.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.UserProfileForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.Views.ViewOrUpdateTaskForm.resources
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.exe.licenses
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.Fody.CopyLocal.cache
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.exe
+C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.pdb
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.HashCode.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Logging.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Options.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Collections.Immutable.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Data.SqlClient.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Identity.Client.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Logging.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.SqlServer.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\AutoMapper.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\System.ValueTuple.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddRequestForm.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequest.resources
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\Dapper.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\bin\Debug\NLog.xml
+E:\Study\HKII - 3th\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_Team.resources
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Database.mdf
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Database_log.ldf
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.exe.config
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.exe
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.pdb
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\AutoMapper.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Dapper.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Identity.Client.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Win32.SystemEvents.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Newtonsoft.Json.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\NLog.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\RestSharp.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Buffers.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.CodeDom.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Collections.Immutable.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Data.Odbc.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Data.OleDb.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Data.SqlClient.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.EventLog.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Drawing.Common.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.IO.Packaging.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.IO.Ports.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Memory.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Numerics.Vectors.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.AccessControl.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Permissions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Security.Principal.Windows.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.ServiceModel.Syndication.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.ServiceProcess.ServiceController.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Threading.AccessControl.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\System.ValueTuple.xml
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.AssemblyReference.cache
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Properties.Resources.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddRequestForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.AddTaskForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.CompanyInfoForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.FormLeaveQuest.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.FormMain.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.LoginForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.PasswordChangeForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCHome.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCLeaveRequest.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCSalary.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UCTask.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UCTimeKeeping.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_KPI.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_Team.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UpdateCPInfoUC.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UserManagementUC.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UserProfileForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.VerifyEmailForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.ViewOrUpdateTaskForm.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.GenerateResource.cache
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.exe.licenses
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CoreCompileInputs.cache
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.Fody.CopyLocal.cache
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.exe
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.pdb
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.UC.UC_Project.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.Views.frmAddProject.resources

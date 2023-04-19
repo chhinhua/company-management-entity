@@ -15,7 +15,7 @@ namespace company_management.Views
     public partial class UCLeaveRequest : UserControl
     {
         LeaveRequestDAO requestDAO = new LeaveRequestDAO();
-        public static LeaveRequestDTO requestDTO = new LeaveRequestDTO();
+        public static LeaveRequest requestDTO = new LeaveRequest();
         private TaskDAO taskDAO = new TaskDAO();
 
         public UCLeaveRequest()
@@ -95,9 +95,9 @@ namespace company_management.Views
 
         private void loadGridview()
         {
-            List<LeaveRequestDTO> data = requestDAO.GetAllLeaveRequests();
+            List<LeaveRequest> data = requestDAO.GetAllLeaveRequests();
 
-            foreach (LeaveRequestDTO request in data)
+            foreach (LeaveRequest request in data)
             {
                 User user = requestDAO.GetUserById(request.IdUser);
                 request.Employee = user.FullName;

@@ -15,8 +15,6 @@ namespace company_management.DAO
         private UserDAO userDAO;
         private List<Team> listTeam;
 
-        private SqlConnection connection = new DBConnection().connection;
-
         public TeamDAO()
         {
             dBConnection = new DBConnection();
@@ -85,6 +83,39 @@ namespace company_management.DAO
             {
                 dataGridView.Rows.Add(t.Id, t.Name, t.Description, userDAO.GetLeaderByTeam(t).FullName);
             }
+        }
+
+        public List<Team> GetTeamsForLeader(int idLeader)
+        {
+            return GetAllTeam().Where(t => t.IdLeader == idLeader).ToList();
+        }
+
+        public List<Team> GetTeamsByCurrentUser(int idUser)
+        {
+            string query = string.Format("SELECT t.* FROM teams t " +
+                 "JOIN user_team ut ON t.id = ut.idTeam " +
+                 "WHERE ut.idUser = '{0}'", idUser);
+            return dBConnection.GetListObjectsByQuery<Team>(query);
+        }
+
+        public int CountMembers(int idTeam)
+        {
+            int result = 0;
+        
+            string query = string.Format("SELECT COUNT(*) FROM user_team WHERE idTeam='{0}'", idTeam);
+
+            using (SqlConnection connection = new SqlConnection(DBConnection.connString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    result = (int)command.ExecuteScalar();
+                }
+                connection.Close();
+            }
+
+            return result;
         }
     }
 }

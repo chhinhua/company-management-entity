@@ -64,17 +64,17 @@ namespace company_management.DAO
 
         public void AddTask(Task task)
         {
-            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
-                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam);
+            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus)" +
+                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
+                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam, task.Bonus);
             dBConnection.ExecuteQuery(query);
         }
 
         public void UpdateTask(Task updateTask)
         {
             string sqlStr = string.Format("UPDATE task SET " +
-                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}' WHERE id = '{6}'",
-                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Id);
+                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}' WHERE id = '{7}'",
+                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.Id);
             dBConnection.ExecuteQuery(sqlStr);
         }
 
@@ -153,6 +153,34 @@ namespace company_management.DAO
                             }).ToList();
 
             return listTask;
-        } 
+        }
+
+        public decimal CalculateBonusForEmployee(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            decimal totalBonus = 0;
+
+            using (SqlConnection connection = new SqlConnection(DBConnection.connString))
+            {
+                connection.Open();
+
+                // Tìm tất cả các task được giao cho nhân viên đó với deadline trong khoảng thời gian từ fromDate đến toDate
+                string query = "SELECT SUM(bonus) FROM Task WHERE idAssignee = @idUser AND deadline >= @fromDate AND deadline <= @toDate";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idUser", idUser);
+                    command.Parameters.AddWithValue("@fromDate", fromDate);
+                    command.Parameters.AddWithValue("@toDate", toDate);
+
+                    // Tính tổng tiền bonus của tất cả các task được giao cho nhân viên đó
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        totalBonus = Convert.ToDecimal(result);
+                    }
+                }
+            }
+
+            return totalBonus;
+        }
     }
 }

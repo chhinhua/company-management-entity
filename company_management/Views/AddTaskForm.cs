@@ -18,7 +18,6 @@ namespace company_management.Views
         private TaskDAO taskDAO;
         private TeamDAO teamDAO;
         private TaskBUS taskBUS;
-        public static int DEFAULT_INIT_PROGRESS = 0;
 
         public AddTaskForm()
         {
@@ -26,21 +25,7 @@ namespace company_management.Views
             taskDAO = new TaskDAO();
             teamDAO = new TeamDAO();
             taskBUS = new TaskBUS();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (checkDataInput())
-            {
-                Task task = taskBUS.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
-                                              dateTime_deadline, combbox_Assignee);
-                taskDAO.AddTask(task);
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+            ViewOrUpdateTaskForm.SetFormShadow(this);
         }
 
         private bool checkDataInput()
@@ -63,8 +48,25 @@ namespace company_management.Views
             taskDAO.LoadUserToCombobox(combbox_Assignee);
         }
 
-        private void combbox_Assignee_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.Hide();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (checkDataInput())
+            {
+                Task task = taskBUS.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
+                                              dateTime_deadline, combbox_Assignee, 0, textBox_Bonus.Text);
+                taskDAO.AddTask(task);
+            }
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
     }
 }

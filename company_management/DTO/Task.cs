@@ -15,6 +15,8 @@ namespace company_management.DTO
         private DateTime deadline;
         private int progress;
         private int idTeam;
+        private decimal bonus;
+        private int idProject;
 
         public Task() { }
 
@@ -51,6 +53,33 @@ namespace company_management.DTO
             IdTeam = idTeam;
         }
 
+        public Task(int idCreator, int idAssignee, string taskName,
+         string description, DateTime deadline, int progress, int idTeam, decimal bonus)
+        {
+            IdCreator = idCreator;
+            IdAssignee = idAssignee;
+            TaskName = taskName;
+            Description = description;
+            Deadline = deadline;
+            Progress = progress;
+            IdTeam = idTeam;
+            Bonus = bonus;
+        }
+
+        public Task(int idCreator, int idAssignee, string taskName, string description, 
+            DateTime deadline, int progress, int idTeam, decimal bonus, int idProject)
+        {
+            IdCreator = idCreator;
+            IdAssignee = idAssignee;
+            TaskName = taskName;
+            Description = description;
+            Deadline = deadline;
+            Progress = progress;
+            IdTeam = idTeam;
+            Bonus = bonus;
+            IdProject = idProject;
+        }
+
         public int Id { get => id; set => id = value; }
         public int IdCreator { get => idCreator; set => idCreator = value; }
         public int IdAssignee { get => idAssignee; set => idAssignee = value; }
@@ -59,5 +88,7 @@ namespace company_management.DTO
         public DateTime Deadline { get => deadline; set => deadline = value; }
         public int Progress { get => progress; set => progress = value; }
         public int IdTeam { get => idTeam; set => idTeam = value; }
+        public decimal Bonus { get => bonus; set => bonus = value; }
+        public int IdProject { get => idProject; set => idProject = value; }
     }
 }

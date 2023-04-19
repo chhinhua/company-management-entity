@@ -123,5 +123,12 @@ namespace company_management.Views
             UCHome uCHome = new UCHome();
             AddUC(uCHome);
         }
+
+        private void btnProject_Click(object sender, EventArgs e)
+        {
+            this.lb_menu_active.Location = new Point(btnProject.Location.X, btnProject.Location.Y);
+            UC_Project uC_Project = new UC_Project();
+            AddUC(uC_Project);
+        }
     }
 }
