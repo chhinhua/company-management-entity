@@ -14,22 +14,22 @@ namespace company_management.BUS
 {
     public class ProjectBUS
     {
-        private TaskDAO taskDAO;
-        private TeamDAO teamDAO;
-        private UserDAO userDAO;
-        private UserBUS userBUS;
-        private List<Project> listProject;
+        private Lazy<TaskDAO> taskDAO;
+        private Lazy<TeamDAO> teamDAO;
+        private Lazy<UserDAO> userDAO;
+        private Lazy<UserBUS> userBUS;
+        private Lazy<List<Project>> listProject;
 
         public ProjectBUS()
         {
-            taskDAO = new TaskDAO();
-            teamDAO = new TeamDAO();
-            userDAO = new UserDAO();
-            userBUS = new UserBUS();
-            listProject = new List<Project>();
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
+            teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
+            userBUS = new Lazy<UserBUS>(() => new UserBUS());
+            listProject = new Lazy<List<Project>>(() => new List<Project>());
         }
 
-        public Project GetProjectFromTextBox(string taskName, string description, DateTimePicker startDate, 
+        public Project GetProjectFromTextBox(string taskName, string description, DateTimePicker startDate,
             DateTimePicker endDate, ComboBox combbox_Assignee, int progress, string bonus)
         {
             Project project = null;

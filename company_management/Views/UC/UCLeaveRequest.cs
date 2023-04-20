@@ -13,8 +13,8 @@ namespace company_management.Views
 {
     public partial class UCLeaveRequest : UserControl
     {
-        LeaveRequestDAO requestDAO;
-        public LeaveRequest requestDTO;
+        private LeaveRequestDAO requestDAO;
+        private LeaveRequest requestDTO;
         private TaskDAO taskDAO;
 
         public UCLeaveRequest()
@@ -94,7 +94,7 @@ namespace company_management.Views
 
         private void loadGridview()
         {
-            List<LeaveRequest> data = requestDAO.GetAllLeaveRequests();
+            /*List<LeaveRequest> data = requestDAO.GetAllLeaveRequests();
 
             foreach (LeaveRequest request in data)
             {
@@ -102,7 +102,7 @@ namespace company_management.Views
                 request.Employee = user.FullName;
             }
 
-            datagridview_leaveRequest.DataSource = data;
+            datagridview_leaveRequest.DataSource = data;*/
         }
 
         private void btnSave_Click(object sender, EventArgs e)

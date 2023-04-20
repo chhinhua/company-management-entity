@@ -12,21 +12,21 @@ namespace company_management.DAO
     public class UserDAO
     {
         private readonly DBConnection dBConnection;
-        private List<User> listUser;
+        private Lazy<List<User>> listUser;
 
         public UserDAO()
         {
             dBConnection = new DBConnection();
-            listUser = new List<User>();
+            listUser = new Lazy<List<User>>(() => new List<User>());
         }
 
         public List<User> GetAllUser()
         {
-            DataTable dataTable = dBConnection.LoadData("users");
-            return MapToListUser(dataTable);
+            string query = string.Format("SELECT * FROM users");
+            return dBConnection.GetListObjectsByQuery<User>(query);
         }
 
-        public void loadData(DataGridView dataGridView, List<User> users) 
+        public void loadData(DataGridView dataGridView, List<User> users)
         {
             dataGridView.ColumnCount = 6;
             dataGridView.Columns[0].Name = "Mã";
@@ -48,36 +48,13 @@ namespace company_management.DAO
         {
             string query = string.Format("SELECT * FROM users WHERE username like '%{0}%' OR fullName like '%{0}%' " +
                 "OR email like '%{0}%' OR address like '%{0}%' OR phoneNumber like '%{0}%'", txtSearch);
-
-            DataTable dataTable = dBConnection.SearchData(query);       
-            
-            return MapToListUser(dataTable);
-        }
-
-        private List<User> MapToListUser(DataTable dataTable)
-        {
-            listUser = dataTable.AsEnumerable()
-                            .Select(row => new User
-                            {
-                                Id = row.Field<int>("id"),
-                                Username = row.Field<string>("username"),
-                                Password = row.Field<string>("password"),
-                                FullName = row.Field<string>("fullName"),
-                                Email = row.Field<string>("email"),
-                                PhoneNumber = row.Field<string>("phoneNumber"),
-                                Address = row.Field<string>("address"),
-                                Avatar = row.Field<byte[]>("avatar"),
-                                IdRole = row.Field<int>("idRole")
-                            }).ToList();
-
-            return listUser;
+            return dBConnection.GetListObjectsByQuery<User>(query);
         }
 
         public List<User> GetAllLeader()
         {
             string query = string.Format("SELECT * FROM users WHERE users.idPosition = 2");
-            listUser = dBConnection.GetListObjectsByQuery<User>(query);
-            return listUser.ToList();
+            return dBConnection.GetListObjectsByQuery<User>(query);
         }
 
         public List<User> GetAllEmployee()
@@ -86,8 +63,14 @@ namespace company_management.DAO
             return dBConnection.GetListObjectsByQuery<User>(query).ToList();
         }
 
+        public List<User> GetEmployeesByTeam(int teamId)
+        {
+            string query = string.Format("SELECT u.* FROM users u JOIN user_team ut ON u.id=ut.idUser WHERE ut.idTeam={0} AND u.idPosition=3", teamId);
+            return dBConnection.GetListObjectsByQuery<User>(query).ToList();
+        }
+
         public void AddUser(User user)
-        {         
+        {
             string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, phoneNumber, address, idRole)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
                    user.Username, user.Password, user.FullName, user.Email, user.PhoneNumber, user.Address, user.IdRole);
@@ -128,10 +111,8 @@ namespace company_management.DAO
 
         public List<User> GetListLeader()
         {
-             List<User> users = GetAllUser();
-             var listLeaderUsers = users.Where(u => u.IdPosition == 2)
-                              .Distinct()
-                              .ToList();
+            List<User> users = GetAllUser();
+            var listLeaderUsers = users.Where(u => u.IdPosition == 2).Distinct().ToList();
             return listLeaderUsers;
         }
 

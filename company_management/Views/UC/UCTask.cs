@@ -14,18 +14,17 @@ namespace company_management.Views.UC
 {
     public partial class UCTask : UserControl
     {
-        private List<Task> listTask;
-        private TaskBUS taskBUS;
-        private TaskDAO taskDAO; 
         public static Task viewTask;
+        private Lazy<TaskBUS> taskBUS;
+        private Lazy<TaskDAO> taskDAO;
+        private Lazy<List<Task>> listTask;
 
         public UCTask()
         {
             InitializeComponent();
-            listTask = new List<Task>();
-            taskBUS = new TaskBUS();
-            taskDAO = new TaskDAO();
-            viewTask = new Task();
+            listTask = new Lazy<List<Task>>(() => new List<Task>());
+            taskBUS = new Lazy<TaskBUS>(() => new TaskBUS());
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
         }
 
         private void UCTask_Load(object sender, EventArgs e)
@@ -35,8 +34,9 @@ namespace company_management.Views.UC
 
         private void CheckAddButtonStatus()
         {
-            taskBUS.CheckButtonStatus(buttonAdd);
-            taskBUS.CheckButtonStatus(buttonRemove);
+            var taskBus = taskBUS.Value;
+            taskBus.CheckControlStatus(buttonAdd);
+            taskBus.CheckControlStatus(buttonRemove);
         }
 
         private void LoadData()
@@ -48,7 +48,9 @@ namespace company_management.Views.UC
 
         private void LoadProgressChart()
         {
-            TaskStatusPercentage taskStatus = taskDAO.GetTaskStatusPercentage(listTask);
+            var taskDao = taskDAO.Value;
+            var tasks = listTask.Value;
+            TaskStatusPercentage taskStatus = taskDao.GetTaskStatusPercentage(tasks);
 
             double todoPercent = taskStatus.TodoPercent;
             double inprogressPercent = taskStatus.InprogressPercent;
@@ -83,8 +85,10 @@ namespace company_management.Views.UC
 
         private void LoadDataGridview()
         {
-            listTask = taskBUS.GetListTaskByPosition();
-            taskBUS.LoadDataGridview(listTask, dataGridView_Task);
+            var taskBus = taskBUS.Value;
+            var tasks = listTask.Value;
+            tasks = taskBus.GetListTaskByPosition();
+            taskBus.LoadDataGridview(tasks, dataGridView_Task);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -120,7 +124,8 @@ namespace company_management.Views.UC
 
                 if (result == DialogResult.Yes)
                 {
-                    taskDAO.DeleteTask(viewTask.Id);
+                    var taskDao = taskDAO.Value;
+                    taskDao.DeleteTask(viewTask.Id);
                     LoadDataGridview();
                 }
             }
@@ -135,8 +140,10 @@ namespace company_management.Views.UC
             int clmnAssignee = 3;
             int clmnTeam = 4;
 
-            listTask = taskBUS.SearchTasksByKeyword(dataGridView_Task, keyword, clmnCreator, clmnTaskName, clmnAssignee, clmnTeam);
-            taskBUS.LoadDataGridview(listTask, dataGridView_Task);
+            var taskBus = taskBUS.Value;
+            var tasks = listTask.Value;
+            tasks = taskBus.SearchTasksByKeyword(dataGridView_Task, keyword, clmnCreator, clmnTaskName, clmnAssignee, clmnTeam);
+            taskBus.LoadDataGridview(tasks, dataGridView_Task);
         }
 
         private void btnViewOrUpdate_Click(object sender, EventArgs e)
@@ -168,8 +175,9 @@ namespace company_management.Views.UC
                 object value = dataGridView_Task.Rows[e.RowIndex].Cells[0].Value;
                 if (value != DBNull.Value)
                 {
+                    var taskDao = taskDAO.Value;
                     int id = Convert.ToInt32(value);
-                    viewTask = taskDAO.GetTaskById(id);
+                    viewTask = taskDao.GetTaskById(id);
                 }
             }
         }

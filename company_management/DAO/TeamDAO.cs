@@ -11,16 +11,17 @@ namespace company_management.DAO
 {
     public class TeamDAO
     {
-        public string connString = Properties.Settings.Default.connStr;
         private readonly DBConnection dBConnection;
-        private UserDAO userDAO;
-        private List<Team> listTeam;
+        public Lazy<string> connString;
+        private Lazy<UserDAO> userDAO;
+        private Lazy<List<Team>> listTeam;
 
         public TeamDAO()
         {
             dBConnection = new DBConnection();
-            userDAO = new UserDAO();
-            listTeam = new List<Team>();
+            connString = new Lazy<string>(() => Properties.Settings.Default.connStr);
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
+            listTeam = new Lazy<List<Team>>(() => new List<Team>());
         }
 
         public Team GetTeamById(int id)
@@ -29,7 +30,7 @@ namespace company_management.DAO
             return dBConnection.GetObjectByQuery<Team>(query);
         }
 
-        public Team GetTeamByLeaderId(int id)
+        public Team GetTeamByLeader(int id)
         {
             string query = string.Format("SELECT * FROM teams WHERE idLeader = {0}", id);
             return dBConnection.GetObjectByQuery<Team>(query);
@@ -78,11 +79,13 @@ namespace company_management.DAO
             dataGridView.Rows.Clear();
 
             // sử lý tên team
-            listTeam = GetAllTeam();
+            var listTeams = listTeam.Value;
+            var userDao = userDAO.Value;
+            listTeams = GetAllTeam();
 
-            foreach (var t in listTeam)
+            foreach (var t in listTeams)
             {
-                dataGridView.Rows.Add(t.Id, t.Name, t.Description, userDAO.GetLeaderByTeam(t).FullName);
+                dataGridView.Rows.Add(t.Id, t.Name, t.Description, userDao.GetLeaderByTeam(t).FullName);
             }
         }
 
@@ -91,7 +94,7 @@ namespace company_management.DAO
             return GetAllTeam().Where(t => t.IdLeader == idLeader).ToList();
         }
 
-        public List<Team> GetTeamsByCurrentUser(int idUser)
+        public List<Team> GetTeamsByUser(int idUser)
         {
             string query = string.Format("SELECT t.* FROM teams t " +
                  "JOIN user_team ut ON t.id = ut.idTeam " +
@@ -105,7 +108,8 @@ namespace company_management.DAO
         
             string query = string.Format("SELECT COUNT(*) FROM user_team WHERE idTeam='{0}'", idTeam);
 
-            using (SqlConnection connection = new SqlConnection(connString))
+            var cnnString = connString.Value;
+            using (SqlConnection connection = new SqlConnection(cnnString))
             {
                 connection.Open();
 

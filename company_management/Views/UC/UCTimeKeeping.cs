@@ -16,16 +16,16 @@ namespace company_management.Views
     public partial class UCTimeKeeping : UserControl
     {
         public static int lastCheckinCheckoutId;
-        private CheckinCheckoutDAO checkinCheckoutDAO;
-        private CheckinCheckoutBUS checkinCheckoutBUS;
-        private TaskDAO taskDAO;
+        private Lazy<CheckinCheckoutDAO> cicoDAO;
+        private Lazy<CheckinCheckoutBUS> cicoBUS;
+        private Lazy<TaskDAO> taskDAO;
 
         public UCTimeKeeping()
         {
             InitializeComponent();
-            taskDAO = new TaskDAO();
-            checkinCheckoutDAO = new CheckinCheckoutDAO();
-            checkinCheckoutBUS = new CheckinCheckoutBUS();
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
+            cicoDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
+            cicoBUS = new Lazy<CheckinCheckoutBUS>(() => new CheckinCheckoutBUS());
         }
 
         private void UCTimeKeeping_Load(object sender, EventArgs e)
@@ -45,8 +45,10 @@ namespace company_management.Views
 
         public void LoadDataGridview()
         {
-            List<CheckinCheckout> data = checkinCheckoutDAO.GetAllCheckinCO();
-            checkinCheckoutBUS.LoadDataGridview(data, datagridview_timeKeeping);
+            var cicoBus = cicoBUS.Value;
+            var cicoDao = cicoDAO.Value;
+            List<CheckinCheckout> data = cicoDao.GetAllCheckinCO();
+            cicoBus.LoadDataGridview(data, datagridview_timeKeeping);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -84,9 +86,10 @@ namespace company_management.Views
                 DialogResult result = MessageBox.Show("Dữ liệu sẽ được tạo sau khi bạn bấm yes.", "Xác nhận Checkin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    var cicoBus = cicoBUS.Value;
                     DateTime checkinTime = datetime_Checkin.Value;
                     DateTime date = datetime_date.Value.Date;
-                    checkinCheckoutBUS.Checkin(checkinTime, date);
+                    cicoBus.Checkin(checkinTime, date);
                     LoadDataGridview();
                     toggle_checkin.Enabled = false;
                 }
@@ -112,8 +115,9 @@ namespace company_management.Views
                 DialogResult result = MessageBox.Show("Dữ liệu sẽ được lưu sau khi bạn bấm yes.", "Xác nhận Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    var cicoBus = cicoBUS.Value;
                     DateTime checkoutTime = datetime_Checkout.Value;
-                    checkinCheckoutBUS.Checkout(checkoutTime);
+                    cicoBus.Checkout(checkoutTime);
                     LoadDataGridview();
 
                     toggle_checkout.Enabled = false;
@@ -123,7 +127,6 @@ namespace company_management.Views
                     toggle_checkout.Checked = false;
                 }
             }
-
         }
 
         private void datagridview_timeKeeping_CellClick(object sender, DataGridViewCellEventArgs e)

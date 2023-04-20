@@ -16,18 +16,18 @@ namespace company_management.Views.UC
 {
     public partial class UC_Project : UserControl
     {
-        private List<Task> listTask;
-        private TaskBUS taskBUS;
-        private TaskDAO taskDAO;
         public static Task viewTask;
+        private Lazy<TaskBUS> taskBUS;
+        private Lazy<TaskDAO> taskDAO;
+        private Lazy<List<Task>> listTask;
 
         public UC_Project()
         {
             InitializeComponent();
-            listTask = new List<Task>();
-            taskBUS = new TaskBUS();
-            taskDAO = new TaskDAO();
             viewTask = new Task();
+            listTask = new Lazy<List<Task>>(() => new List<Task>());
+            taskBUS = new Lazy<TaskBUS>(() => new TaskBUS());
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());          
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

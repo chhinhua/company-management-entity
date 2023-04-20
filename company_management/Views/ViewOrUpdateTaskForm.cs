@@ -148,6 +148,18 @@ namespace company_management.Views
             byte[] imageBytes = imageDAO.ImageToByte(picturebox_teamAvatar);
             imageDAO.SaveTeamAvatar(imageBytes, UCTask.viewTask.IdTeam);
             imageDAO.ShowImageInPictureBox(imageBytes, picturebox_teamAvatar);
-        } 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            imageDAO.ChooseImageToPictureBox(picturebox_teamAvatar);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            byte[] imageBytes = imageDAO.ImageToByte(picturebox_teamAvatar);
+            imageDAO.SaveUserAvatar(imageBytes, 1);
+            imageDAO.ShowImageInPictureBox(imageBytes, picturebox_teamAvatar);
+        }
     }
 }

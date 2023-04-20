@@ -12,41 +12,43 @@ namespace company_management.DAO
 {
     public class TaskDAO
     {
-        public string connString = Properties.Settings.Default.connStr;
         private readonly DBConnection dBConnection;
-        private List<Task> listTask;
-        private TeamDAO teamDAO;
-        private UserDAO userDAO;
+        public Lazy<string> connString;
+        private Lazy<List<Task>> listTask;
+        private Lazy<TeamDAO> teamDAO;
+        private Lazy<UserDAO> userDAO;
 
         public TaskDAO()
         {
             dBConnection = new DBConnection();
-            listTask = new List<Task>();
-            teamDAO = new TeamDAO();
-            userDAO = new UserDAO();
+            connString = new Lazy<string>(() => Properties.Settings.Default.connStr);         
+            listTask = new Lazy<List<Task>>(() => new List<Task>());
+            teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
         }
 
         public void LoadUserToCombobox(ComboBox comboBox)
         {
             List<Team> teams;
             List<User> users;
+            var teamDao = teamDAO.Value;
+            var userDao = userDAO.Value;
 
             if (UserSession.LoggedInUser != null)
             {
                 if (UserSession.LoggedInUser.IdPosition == 1) // IdPosition = 1 (manager)
                 {
-                    // Hiển thị danh sách team cho quản lý chọn
                     teams = new List<Team>();
-                    teams.AddRange(teamDAO.GetAllTeam());
+                    teams.AddRange(teamDao.GetAllTeam());
 
                     comboBox.Items.AddRange(teams.ToArray());
                     comboBox.DisplayMember = "name";
                 }
                 else if (UserSession.LoggedInUser.IdPosition == 2) // IdPosition = 2 (leader)
                 {
-                    // Hiển thị danh sách nhân viên trong team cho leader chọn
+                    int idTeam = teamDao.GetTeamByLeader(UserSession.LoggedInUser.Id).Id;
                     users = new List<User>();
-                    users.AddRange(userDAO.GetAllEmployee());
+                    users.AddRange(userDao.GetEmployeesByTeam(idTeam));
 
                     comboBox.Items.AddRange(users.ToArray());
                     comboBox.DisplayMember = "fullName";
@@ -139,29 +141,12 @@ namespace company_management.DAO
             return dBConnection.GetListObjectsByQuery<Task>(query);
         }
 
-        private List<Task> MapToListTask(DataTable dataTable)
-        {
-            listTask = dataTable.AsEnumerable()
-                            .Select(row => new Task
-                            {
-                                Id = row.Field<int>("id"),
-                                IdCreator = row.Field<int>("idCreator"),
-                                IdAssignee = row.Field<int>("idAssignee"),
-                                TaskName = row.Field<string>("taskName"),
-                                Description = row.Field<string>("description"),
-                                Deadline = row.Field<DateTime>("deadline"),
-                                Progress = row.Field<int>("progress"),
-                                IdTeam = row.Field<int>("idTeam")
-                            }).ToList();
-
-            return listTask;
-        }
-
         public decimal CalculateBonusForEmployee(int idUser, DateTime fromDate, DateTime toDate)
         {
             decimal totalBonus = 0;
 
-            using (SqlConnection connection = new SqlConnection(connString))
+            var cnnString = connString.Value;
+            using (SqlConnection connection = new SqlConnection(cnnString))
             {
                 connection.Open();
 

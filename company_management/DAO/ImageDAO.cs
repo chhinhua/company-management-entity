@@ -24,12 +24,6 @@ namespace company_management.DAO
             dBConnection = new DBConnection();
         }
 
-        /*public void SaveImageToDatabase(byte[] imageBytes, int userId)
-        {
-            string sqlStr = string.Format("UPDATE user SET avatar={0} WHERE id={1}", imageBytes, userId);
-            dBConnection.executeQuery(sqlStr);            
-        }*/
-
         public void ChooseImageToPictureBox(Guna2CirclePictureBox pictureBox)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
