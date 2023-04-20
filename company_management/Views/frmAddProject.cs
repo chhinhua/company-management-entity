@@ -16,16 +16,14 @@ namespace company_management.Views
 {
     public partial class frmAddProject : Form
     {
-        /*  private TaskDAO taskDAO;
-          private TeamDAO teamDAO;*/
-        private ProjectBUS projectBUS;
-        private ProjectDAO projectDAO;
+        private Lazy<ProjectBUS> projectBUS;
+        private Lazy<ProjectDAO> projectDAO;
 
         public frmAddProject()
         {
             InitializeComponent();
-            projectBUS = new ProjectBUS();
-            projectDAO = new ProjectDAO();
+            projectBUS = new Lazy<ProjectBUS>(() => new ProjectBUS());
+            projectDAO = new Lazy<ProjectDAO>(() => new ProjectDAO());
             ViewOrUpdateTaskForm.SetFormShadow(this);
         }
 
@@ -33,9 +31,12 @@ namespace company_management.Views
         {
             if (checkDataInput())
             {
-                Project project = projectBUS.GetProjectFromTextBox(txtbox_projectName.Text, txtbox_Desciption.Text,
+                var projectBus = projectBUS.Value;
+                var projectDao = projectDAO.Value;
+
+                Project project = projectBus.GetProjectFromTextBox(txtbox_projectName.Text, txtbox_Desciption.Text,
                                   dateTime_startDate, dateTime_endDate, combbox_AssigneeTeam, 0, textBox_Bonus.Text);
-                projectDAO.AddProject(project);
+                projectDao.AddProject(project);
                 ClearFields();
             }
         }
@@ -57,7 +58,8 @@ namespace company_management.Views
 
         private void LoadData()
         {
-            projectDAO.LoadTeamToCombobox(combbox_AssigneeTeam);
+            var projectDao = projectDAO.Value;
+            projectDao.LoadTeamToCombobox(combbox_AssigneeTeam);
         }
 
         private void frmAddProject_Load(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace company_management.DAO
         private Lazy<TeamDAO> teamDAO;
         private Lazy<UserDAO> userDAO;
         private Lazy<TaskBUS> taskBUS;
+        private Lazy<List<Project>> listProject;
 
         public ProjectDAO()
         {
@@ -24,6 +25,7 @@ namespace company_management.DAO
             teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
             taskBUS = new Lazy<TaskBUS>(() => new TaskBUS());
+            listProject = new Lazy<List<Project>>(() => new List<Project>());
         }
 
         public void AddProject(Project project)
@@ -55,16 +57,19 @@ namespace company_management.DAO
         public void LoadProjectToCombobox(ComboBox comboBox)
         {
             var taskBus = taskBUS.Value;
-            List<Project> projects;
+            var projects = listProject.Value;
 
-            // Hiển thị danh sách team cho quản lý chọn
-            projects = new List<Project>();
+            // Hiển thị danh sách team
             projects.AddRange(GetAllProject());
 
             comboBox.Items.AddRange(projects.ToArray());
             comboBox.DisplayMember = "name";
             comboBox.ValueMember = "id";
-            comboBox.SelectedValue = UCTask.viewTask.IdProject;
+            
+            if (UCTask.viewTask != null)
+            {
+                comboBox.SelectedValue = UCTask.viewTask.IdProject;
+            }
 
             taskBus.CheckControlStatus(comboBox);
         }

@@ -61,7 +61,10 @@ namespace company_management.DAO
                 }
 
                 comboBox.ValueMember = "id";
-                comboBox.SelectedValue = UCTask.viewTask.IdAssignee;       
+                if (UCTask.viewTask != null)
+                {
+                    comboBox.SelectedValue = UCTask.viewTask.IdAssignee;
+                }              
             }
 
         }

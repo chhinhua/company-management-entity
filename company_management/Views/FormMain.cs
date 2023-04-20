@@ -97,11 +97,6 @@ namespace company_management.Views
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void LoadUserControl()
         {
             this.lb_menu_active.Location = new Point(btnUser.Location.X, btnUser.Location.Y);

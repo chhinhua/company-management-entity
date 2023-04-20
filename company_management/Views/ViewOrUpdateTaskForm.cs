@@ -13,22 +13,20 @@ namespace company_management.Views
 {
     public partial class ViewOrUpdateTaskForm : Form
     {
-        private TaskDAO taskDAO;
-        private UserDAO userDAO;
-        private TeamDAO teamDAO;
-        private ImageDAO imageDAO;
-        private ProjectDAO projectDAO;
-        private TaskBUS taskBUS;
+        private Lazy<TaskDAO> taskDAO;
+        private Lazy<UserDAO> userDAO;
+        private Lazy<TeamDAO> teamDAO;
+        private Lazy<ImageDAO> imageDAO;
+        private Lazy<TaskBUS> taskBUS;
 
         public ViewOrUpdateTaskForm()
         {
-            InitializeComponent();         
-            taskDAO = new TaskDAO();
-            userDAO = new UserDAO();
-            teamDAO = new TeamDAO();
-            imageDAO = new ImageDAO();
-            projectDAO = new ProjectDAO();
-            taskBUS = new TaskBUS();
+            InitializeComponent();
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
+            teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
+            imageDAO = new Lazy<ImageDAO>(() => new ImageDAO());
+            taskBUS = new Lazy<TaskBUS>(() => new TaskBUS());
             SetFormShadow(this);
         }
 
@@ -52,42 +50,36 @@ namespace company_management.Views
 
         private void LoadData()
         {
-            taskBUS.GetDataToCombobox(combbox_Assignee, combbox_Project);
+            var taskBus = taskBUS.Value;
+            taskBus.GetDataToCombobox(combbox_Assignee, combbox_Project);
             bindingTaskToFields();
-        }
-
-        private Task getTaskFromFields()
-        {
-            int idUser = Convert.ToInt32(combbox_Assignee.SelectedValue);
-            DateTime selectedDate = dateTime_deadline.Value;
-
-            Task task = new Task(idUser, txtbox_Taskname.Text,
-                            txtbox_Desciption.Text, selectedDate, circleProgressBar.Value);
-            task.Id = UCTask.viewTask.Id;
-
-            return task;
         }
 
         public void bindingTaskToFields()
         {
+            var taskBus = taskBUS.Value;
+            var userDao = userDAO.Value;
+            var teamDao = teamDAO.Value;
+            var imageDao = imageDAO.Value;
+
             int id = UCTask.viewTask.IdAssignee;
             int idProject = UCTask.viewTask.IdProject;
-            User user = userDAO.GetUserById(id);
-            Team team = teamDAO.GetTeamById(UCTask.viewTask.IdTeam);
+            User user = userDao.GetUserById(id);
+            Team team = teamDao.GetTeamById(UCTask.viewTask.IdTeam);
 
-            imageDAO.ShowImageInPictureBox(user.Avatar, picturebox_userAvatar);
-            imageDAO.ShowImageInPictureBox(team.Avatar, picturebox_teamAvatar);
+            imageDao.ShowImageInPictureBox(user.Avatar, picturebox_userAvatar);
+            imageDao.ShowImageInPictureBox(team.Avatar, picturebox_teamAvatar);
             txtbox_Taskname.Text = UCTask.viewTask.TaskName;
             txtbox_Desciption.Text = UCTask.viewTask.Description;
-            label_assigneedTeam.Text = teamDAO.GetTeamByTask(UCTask.viewTask).Name;
+            label_assigneedTeam.Text = teamDao.GetTeamByTask(UCTask.viewTask).Name;
             textBox_Bonus.Text = UCTask.viewTask.Bonus.ToString();
             label_assigneedPerson.Text = user.FullName;
-            combbox_Assignee.SelectedValue = user.Id;            
+            combbox_Assignee.SelectedValue = user.Id;
             circleProgressBar.Value = UCTask.viewTask.Progress;
             progressValue.Text = UCTask.viewTask.Progress.ToString() + "%";
-            taskBUS.SelectComboBoxItemByValue(combobox_progress, UCTask.viewTask.Progress);
-            taskBUS.SelectComboboxItemById<User>(combbox_Assignee, user.Id);
-            taskBUS.SelectComboboxItemById<Project>(combbox_Project, idProject);
+            taskBus.SelectComboBoxItemByValue(combobox_progress, UCTask.viewTask.Progress);
+            taskBus.SelectComboboxItemById<User>(combbox_Assignee, user.Id);
+            taskBus.SelectComboboxItemById<Project>(combbox_Project, idProject);
 
             try
             {
@@ -122,14 +114,17 @@ namespace company_management.Views
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
-        {
+        { 
             if (checkDataInput())
             {
+                var taskBus = taskBUS.Value;
+                var taskDao = taskDAO.Value;
+
                 int progress = int.Parse(combobox_progress.SelectedItem.ToString());
-                Task task = taskBUS.GetTaskFromTextBox(txtbox_Taskname.Text, txtbox_Desciption.Text,
+                Task task = taskBus.GetTaskFromTextBox(txtbox_Taskname.Text, txtbox_Desciption.Text,
                                               dateTime_deadline, combbox_Assignee, progress, textBox_Bonus.Text, combbox_Project);
                 task.Id = UCTask.viewTask.Id;
-                taskDAO.UpdateTask(task);
+                taskDao.UpdateTask(task);
             }
         }
 
@@ -140,26 +135,16 @@ namespace company_management.Views
 
         private void chooseImage_Click(object sender, EventArgs e)
         {
-            imageDAO.ChooseImageToPictureBox(picturebox_teamAvatar);
+            var imageDao = imageDAO.Value;
+            imageDao.ChooseImageToPictureBox(picturebox_teamAvatar);
         }
 
         private void saveImage_Click(object sender, EventArgs e)
         {
-            byte[] imageBytes = imageDAO.ImageToByte(picturebox_teamAvatar);
-            imageDAO.SaveTeamAvatar(imageBytes, UCTask.viewTask.IdTeam);
-            imageDAO.ShowImageInPictureBox(imageBytes, picturebox_teamAvatar);
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            imageDAO.ChooseImageToPictureBox(picturebox_teamAvatar);
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            byte[] imageBytes = imageDAO.ImageToByte(picturebox_teamAvatar);
-            imageDAO.SaveUserAvatar(imageBytes, 1);
-            imageDAO.ShowImageInPictureBox(imageBytes, picturebox_teamAvatar);
+            var imageDao = imageDAO.Value;
+            byte[] imageBytes = imageDao.ImageToByte(picturebox_teamAvatar);
+            imageDao.SaveTeamAvatar(imageBytes, UCTask.viewTask.IdTeam);
+            imageDao.ShowImageInPictureBox(imageBytes, picturebox_teamAvatar);
         }
     }
 }
