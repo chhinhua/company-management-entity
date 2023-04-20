@@ -49,7 +49,10 @@ namespace company_management.Views.UC
         private void LoadProgressChart()
         {
             var taskDao = taskDAO.Value;
+            var taskBus = taskBUS.Value;
             var tasks = listTask.Value;
+
+            tasks = taskBus.GetListTaskByPosition();
             TaskStatusPercentage taskStatus = taskDao.GetTaskStatusPercentage(tasks);
 
             double todoPercent = taskStatus.TodoPercent;
@@ -148,7 +151,7 @@ namespace company_management.Views.UC
 
         private void btnViewOrUpdate_Click(object sender, EventArgs e)
         {
-            if (viewTask.Id != 0)
+            if (viewTask != null)
             {
                 ViewOrUpdateTaskForm viewOrUpdate = new ViewOrUpdateTaskForm();
                 viewOrUpdate.Show();

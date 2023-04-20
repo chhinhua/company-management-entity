@@ -36,13 +36,13 @@ namespace company_management.Views
                 //User loginUser = userDAO.GetUserByUsername("chhinhua"); // manager
 
                 //User loginUser = userDAO.GetUserByUsername("abaldacchinob"); // leader
-                //User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
+                User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
                 //User loginUser = userDAO.GetUserByUsername("abrilleman6"); // leader
                 //User loginUser = userDAO.GetUserByUsername("wdionisi7"); // leader
                 //User loginUser = userDAO.GetUserByUsername("dlaven9"); // leader
                 //User loginUser = userDAO.GetUserByUsername("linglishc"); // leader
 
-                User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
+                //User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
                 //User loginUser = userDAO.GetUserByUsername("esparsholtf"); // employee
                 //User loginUser = userDAO.GetUserByUsername("econstablee"); // employee
                 //User loginUser = userDAO.GetUserByUsername("walimand"); // employee
