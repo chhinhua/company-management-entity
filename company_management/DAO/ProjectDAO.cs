@@ -68,6 +68,16 @@ namespace company_management.DAO
             string query = string.Format("SELECT * FROM project");
             return dBConnection.GetListObjectsByQuery<Project>(query);
         }
+
+        public List<Project> GetProjectsCreatedByCurrentUser(int idCreator)
+        {
+            return GetAllProject().Where(t => t.IdCreator == idCreator).ToList();
+        }
+
+        public List<Project> GetProjectsAssignedByCurrentUser(int idAssignee)
+        {
+            return GetAllProject().Where(t => t.IdAssignee == idAssignee).ToList();
+        }
     }
 }
 

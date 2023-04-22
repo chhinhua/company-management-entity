@@ -11,23 +11,24 @@ using company_management.BUS;
 using company_management.DTO;
 using company_management.Views;
 using company_management.Views.UC;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace company_management.Views.UC
 {
     public partial class UC_Project : UserControl
     {
-        private List<Task> listTask;
-        private TaskBUS taskBUS;
-        private TaskDAO taskDAO;
-        public static Task viewTask;
+        private List<Project> listProject;
+        private ProjectBUS projectBUS;
+        private ProjectDAO projectDAO;
+        public static Project viewProject;
 
         public UC_Project()
         {
             InitializeComponent();
-            listTask = new List<Task>();
-            taskBUS = new TaskBUS();
-            taskDAO = new TaskDAO();
-            viewTask = new Task();
+            listProject = new List<Project>();
+            projectBUS = new ProjectBUS();
+            projectDAO = new ProjectDAO();
+            viewProject = new Project();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -38,6 +39,13 @@ namespace company_management.Views.UC
 
         private void UC_Project_Load(object sender, EventArgs e)
         {
+            LoadDataGridview();
+        }
+
+        private void LoadDataGridview()
+        {
+            listProject = projectBUS.GetListProjectByPosition();
+            projectBUS.LoadDataGridview(listProject, dataGridView_Project);
         }
     }
 }
