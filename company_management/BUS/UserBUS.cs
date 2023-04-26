@@ -34,6 +34,5 @@ namespace company_management.BUS
             int positionId = UserSession.LoggedInUser.IdPosition;
             return positionId != 1 && positionId != 2;
         }
-
     }
 }

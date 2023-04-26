@@ -122,28 +122,29 @@ namespace company_management.BUS
                 selectedUser = (User)combbox_Assignee.SelectedItem;
                 idAssignee = selectedUser.Id;
                 task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, progress, teamDao.GetTeamByLeaderId(idCreator).Id, bonusVaue, selectedProject.Id);
+                            description, dateTime.Value, progress, teamDao.GetTeamByLeader(idCreator).Id, bonusVaue, selectedProject.Id);
             }
             else
             {
                 task = new Task(UCTask.viewTask.IdCreator, UCTask.viewTask.IdAssignee, taskName, description, dateTime.Value, progress, 
-                                        teamDao.GetTeamByLeaderId(UCTask.viewTask.IdCreator).Id, UCTask.viewTask.Bonus, selectedProject.Id);
+                                        teamDao.GetTeamByLeader(UCTask.viewTask.IdCreator).Id, UCTask.viewTask.Bonus, selectedProject.Id);
             }
             return task;
         }
 
-        public void CheckButtonStatus(Guna2Button addButton)
+        public void CheckControlStatus<T>(T control) where T : Control
         {
             var userBus = userBUS.Value;
             if (userBus.IsEmployee())
             {
-                addButton.Enabled = false;
+                control.Enabled = false;
             }
             else
             {
-                addButton.Enabled = true;
+                control.Enabled = true;
             }
         }
+
 
         public List<Task> SearchTasks(string txtSearch)
         {
@@ -203,11 +204,11 @@ namespace company_management.BUS
         }
 
 
-        public void GetDataToCombobox(ComboBox team, ComboBox project)
+        public void GetDataToCombobox(ComboBox assignees, ComboBox project)
         {
             var taskDao = taskDAO.Value;
             var projectDao = projectDAO.Value;
-            taskDao.LoadUserToCombobox(team);
+            taskDao.LoadUserToCombobox(assignees);
             projectDao.LoadProjectToCombobox(project);
         }
 

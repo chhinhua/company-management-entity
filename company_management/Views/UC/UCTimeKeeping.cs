@@ -16,16 +16,20 @@ namespace company_management.Views
     public partial class UCTimeKeeping : UserControl
     {
         public static int lastCheckinCheckoutId;
-        private CheckinCheckoutDAO checkinCheckoutDAO;
-        private CheckinCheckoutBUS checkinCheckoutBUS;
-        private TaskDAO taskDAO;
+        private Lazy<TaskDAO> taskDAO;
+        private Lazy<UserDAO> userDAO;
+        private Lazy<CheckinCheckoutDAO> cicoDAO;
+        private Lazy<CheckinCheckoutBUS> cicoBUS;
+
+        
 
         public UCTimeKeeping()
         {
             InitializeComponent();
-            taskDAO = new TaskDAO();
-            checkinCheckoutDAO = new CheckinCheckoutDAO();
-            checkinCheckoutBUS = new CheckinCheckoutBUS();
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
+            cicoDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
+            cicoBUS = new Lazy<CheckinCheckoutBUS>(() => new CheckinCheckoutBUS());
         }
 
         private void UCTimeKeeping_Load(object sender, EventArgs e)
@@ -45,8 +49,10 @@ namespace company_management.Views
 
         public void LoadDataGridview()
         {
-            List<CheckinCheckout> data = checkinCheckoutDAO.GetAllCheckinCO();
-            checkinCheckoutBUS.LoadDataGridview(data, datagridview_timeKeeping);
+            var cicoBus = cicoBUS.Value;
+            var cicoDao = cicoDAO.Value;
+            List<CheckinCheckout> data = cicoDao.GetAllCheckinCO();
+            cicoBus.LoadDataGridview(data, datagridview_timeKeeping);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -84,9 +90,10 @@ namespace company_management.Views
                 DialogResult result = MessageBox.Show("Dữ liệu sẽ được tạo sau khi bạn bấm yes.", "Xác nhận Checkin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    var cicoBus = cicoBUS.Value;
                     DateTime checkinTime = datetime_Checkin.Value;
                     DateTime date = datetime_date.Value.Date;
-                    checkinCheckoutBUS.Checkin(checkinTime, date);
+                    cicoBus.Checkin(checkinTime, date);
                     LoadDataGridview();
                     toggle_checkin.Enabled = false;
                 }
@@ -112,8 +119,9 @@ namespace company_management.Views
                 DialogResult result = MessageBox.Show("Dữ liệu sẽ được lưu sau khi bạn bấm yes.", "Xác nhận Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    var cicoBus = cicoBUS.Value;
                     DateTime checkoutTime = datetime_Checkout.Value;
-                    checkinCheckoutBUS.Checkout(checkoutTime);
+                    cicoBus.Checkout(checkoutTime);
                     LoadDataGridview();
 
                     toggle_checkout.Enabled = false;
@@ -123,7 +131,6 @@ namespace company_management.Views
                     toggle_checkout.Checked = false;
                 }
             }
-
         }
 
         private void datagridview_timeKeeping_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -131,48 +138,34 @@ namespace company_management.Views
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow selectedRow = datagridview_timeKeeping.Rows[e.RowIndex];
-                UCTimeKeeping.lastCheckinCheckoutId = (int)selectedRow.Cells[0].Value;
-                string checkoutTimeValue = selectedRow.Cells["Giờ checkout"].Value.ToString();
+                lastCheckinCheckoutId = (int)selectedRow.Cells[0].Value;
 
-                if (string.IsNullOrEmpty(checkoutTimeValue))
+                var cicoDao = cicoDAO.Value;
+                CheckinCheckout cico = cicoDao.GetCheckinCOById(lastCheckinCheckoutId);
+
+                var userDao = userDAO.Value;
+                txtBox_fullName.Text = userDao.GetUserById(cico.IdUser).FullName;
+                txtBox_totalHours.Text = cico.TotalHours.ToString();
+                datetime_date.Value = cico.Date;
+                datetime_Checkin.Value = cico.CheckinTime;
+
+                // Bấm vào một hàng là mặc định giờ checkin được chọn
+                toggle_checkin.Checked = true;
+                toggle_checkin.Enabled = false;
+                                
+                // Check xem có checkout hay chưa (giá trị mặc định là DateTime.MinVal)
+                if (cico.CheckoutTime == DateTime.MinValue)
                 {
                     toggle_checkout.Checked = false;
                     toggle_checkout.Enabled = true;
                 }
                 else
                 {
-                    // Giá trị của ô "Giờ checkout" khác rỗng, cần chuyển đổi giá trị sang kiểu DateTime và set giá trị cho datetime_checkout.
-                    DateTime checkoutDateTime;
-                    if (DateTime.TryParseExact(checkoutTimeValue, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out checkoutDateTime))
-                    {
-                        datetime_Checkout.Value = checkoutDateTime;
-                        toggle_checkout.Checked = true;
-                        toggle_checkout.Enabled = false;
-                    }
+                    datetime_Checkout.Value = cico.CheckoutTime;
+                    toggle_checkout.Checked = true;
+                    toggle_checkout.Enabled = false;                
                 }
             }
-
-
-            /*private void toggleButton_CheckedChanged(object sender, EventArgs e)
-            {
-                if (toggleButton.Checked == false)
-                {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn tắt tính năng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.No)
-                    {
-                        toggleButton.Checked = true;
-                    }
-                    else
-                    {
-                        isDisabled = true;
-                    }
-                }
-                else if (isDisabled)
-                {
-                    MessageBox.Show("Tính năng đã được kích hoạt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    isDisabled = false;
-                }
-            }*/
-        }
+        }     
     }
 }

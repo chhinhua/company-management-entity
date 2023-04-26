@@ -47,6 +47,7 @@ namespace company_management.Views
 
         private void LoadData()
         {
+            txtBox_cretor.Text = UserSession.LoggedInUser.FullName;
             taskDAO.LoadUserToCombobox(combbox_Assignee);
             projectDAO.LoadProjectToCombobox(combbox_Project);
         }

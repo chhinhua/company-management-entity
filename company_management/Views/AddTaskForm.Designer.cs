@@ -32,22 +32,22 @@ namespace company_management.Views
             this.components = new System.ComponentModel.Container();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.groupBox_newTask = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBox_cretor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.combbox_Project = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Bonus = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTime_deadline = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.combbox_Assignee = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label_taskName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtbox_Desciption = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbox_taskName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.combbox_Project = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBox_cretor = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox_newTask.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,74 @@ namespace company_management.Views
             this.groupBox_newTask.Name = "groupBox_newTask";
             this.groupBox_newTask.Size = new System.Drawing.Size(979, 597);
             this.groupBox_newTask.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Location = new System.Drawing.Point(648, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 24);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "Creator";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtBox_cretor
+            // 
+            this.txtBox_cretor.BorderColor = System.Drawing.Color.Black;
+            this.txtBox_cretor.BorderRadius = 5;
+            this.txtBox_cretor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_cretor.DefaultText = "";
+            this.txtBox_cretor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBox_cretor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBox_cretor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_cretor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_cretor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_cretor.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_cretor.ForeColor = System.Drawing.Color.Black;
+            this.txtBox_cretor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_cretor.Location = new System.Drawing.Point(652, 66);
+            this.txtBox_cretor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBox_cretor.Name = "txtBox_cretor";
+            this.txtBox_cretor.PasswordChar = '\0';
+            this.txtBox_cretor.PlaceholderText = "";
+            this.txtBox_cretor.ReadOnly = true;
+            this.txtBox_cretor.SelectedText = "";
+            this.txtBox_cretor.Size = new System.Drawing.Size(300, 32);
+            this.txtBox_cretor.TabIndex = 108;
+            // 
+            // combbox_Project
+            // 
+            this.combbox_Project.BackColor = System.Drawing.Color.Transparent;
+            this.combbox_Project.BorderRadius = 5;
+            this.combbox_Project.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combbox_Project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combbox_Project.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combbox_Project.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combbox_Project.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.combbox_Project.ForeColor = System.Drawing.Color.Black;
+            this.combbox_Project.ItemHeight = 30;
+            this.combbox_Project.Location = new System.Drawing.Point(652, 232);
+            this.combbox_Project.Name = "combbox_Project";
+            this.combbox_Project.Size = new System.Drawing.Size(300, 36);
+            this.combbox_Project.TabIndex = 106;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(648, 205);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 24);
+            this.label4.TabIndex = 105;
+            this.label4.Text = "Project";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -143,6 +211,46 @@ namespace company_management.Views
             this.label2.TabIndex = 100;
             this.label2.Text = "Description";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoRoundedCorners = true;
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BorderRadius = 24;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnCancel.Image = global::company_management.Properties.Resources.arrow_back_up;
+            this.btnCancel.Location = new System.Drawing.Point(652, 517);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(129, 50);
+            this.btnCancel.TabIndex = 99;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.BorderRadius = 24;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::company_management.Properties.Resources.device_floppy;
+            this.btnSave.Location = new System.Drawing.Point(803, 517);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(127, 50);
+            this.btnSave.TabIndex = 98;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // combbox_Assignee
             // 
@@ -249,114 +357,6 @@ namespace company_management.Views
             this.txtbox_taskName.SelectedText = "";
             this.txtbox_taskName.Size = new System.Drawing.Size(584, 32);
             this.txtbox_taskName.TabIndex = 94;
-            // 
-            // combbox_Project
-            // 
-            this.combbox_Project.BackColor = System.Drawing.Color.Transparent;
-            this.combbox_Project.BorderRadius = 5;
-            this.combbox_Project.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.combbox_Project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combbox_Project.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.combbox_Project.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.combbox_Project.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.combbox_Project.ForeColor = System.Drawing.Color.Black;
-            this.combbox_Project.ItemHeight = 30;
-            this.combbox_Project.Location = new System.Drawing.Point(652, 232);
-            this.combbox_Project.Name = "combbox_Project";
-            this.combbox_Project.Size = new System.Drawing.Size(300, 36);
-            this.combbox_Project.TabIndex = 106;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(648, 205);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 24);
-            this.label4.TabIndex = 105;
-            this.label4.Text = "Project";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(648, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 24);
-            this.label5.TabIndex = 107;
-            this.label5.Text = "Creator";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBox_cretor
-            // 
-            this.txtBox_cretor.BorderColor = System.Drawing.Color.Black;
-            this.txtBox_cretor.BorderRadius = 5;
-            this.txtBox_cretor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_cretor.DefaultText = "";
-            this.txtBox_cretor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBox_cretor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBox_cretor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_cretor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_cretor.Enabled = false;
-            this.txtBox_cretor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_cretor.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_cretor.ForeColor = System.Drawing.Color.Black;
-            this.txtBox_cretor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_cretor.Location = new System.Drawing.Point(652, 66);
-            this.txtBox_cretor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBox_cretor.Name = "txtBox_cretor";
-            this.txtBox_cretor.PasswordChar = '\0';
-            this.txtBox_cretor.PlaceholderText = "";
-            this.txtBox_cretor.SelectedText = "";
-            this.txtBox_cretor.Size = new System.Drawing.Size(300, 32);
-            this.txtBox_cretor.TabIndex = 108;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.AutoRoundedCorners = true;
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BorderRadius = 24;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.Gainsboro;
-            this.btnCancel.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnCancel.Image = global::company_management.Properties.Resources.arrow_back_up;
-            this.btnCancel.Location = new System.Drawing.Point(652, 517);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(129, 50);
-            this.btnCancel.TabIndex = 99;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoRoundedCorners = true;
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.BorderRadius = 24;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::company_management.Properties.Resources.device_floppy;
-            this.btnSave.Location = new System.Drawing.Point(803, 517);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(127, 50);
-            this.btnSave.TabIndex = 98;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AddTaskForm
             // 

@@ -13,8 +13,8 @@ namespace company_management.Views.UC
 {
     public partial class UCSalary : UserControl
     {
-        private SalaryDAO salaryDAO = new SalaryDAO();
-        private TaskDAO taskDAO = new TaskDAO();
+        private SalaryDAO salaryDAO;
+        private TaskDAO taskDAO;
 
         public UCSalary()
         {
@@ -90,16 +90,16 @@ namespace company_management.Views.UC
 
         private void loadGridview()
         {
-            List<Salary> data = salaryDAO.GetAllSalaries();
-            datagridview_salary.DataSource = data;
+            /*List<Salary> data = salaryDAO.GetAllSalaries();
+            datagridview_salary.DataSource = data;*/
         }
 
         private void UCSalary_Load(object sender, EventArgs e)
         {
-            //AddActionColumn();
-            //salaryDAO.InitData();
-            //loadGridview();
-            //CustomGridColumn();
+        //    //AddActionColumn();
+        //    //salaryDAO.InitData();
+        //    //loadGridview();
+        //    //CustomGridColumn();
         }
 
         private void btn_caculateSalary_Click(object sender, EventArgs e)

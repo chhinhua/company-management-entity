@@ -16,8 +16,6 @@ namespace company_management.Views
     {
         private UserDAO userDAO;
         private UserBUS userBUS;
-        public static string DEFAULT_INIT_PASSWORD = "123";
-        public static int DEFAULT_USER_ROLE_ID = 2; //Employee
         public int selectedUserId;
         private User user;
 
@@ -42,8 +40,8 @@ namespace company_management.Views
 
         private User GetUserFromTextBox()
         {
-            return new User(txtbox_username.Text, DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
-                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, DEFAULT_USER_ROLE_ID);
+            return new User(txtbox_username.Text, Constants.DEFAULT_INIT_PASSWORD, txtbox_fullname.Text,
+                            txtbox_email.Text, txtbox_phoneNumber.Text, txtbox_address.Text, Constants.DEFAULT_USER_ROLE_ID);
         }
 
         private User GetUserEditedUser()

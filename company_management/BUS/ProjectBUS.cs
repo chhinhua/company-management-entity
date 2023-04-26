@@ -17,8 +17,8 @@ namespace company_management.BUS
         private Lazy<TaskDAO> taskDAO;
         private Lazy<TeamDAO> teamDAO;
         private Lazy<UserDAO> userDAO;
-        private Lazy<ProjectDAO> projectDAO;
         private Lazy<UserBUS> userBUS;
+        private Lazy<ProjectDAO> projectDAO;
         private List<Project> listProject;
 
         public ProjectBUS()
@@ -26,12 +26,12 @@ namespace company_management.BUS
             taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
             teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
-            projectDAO = new Lazy<ProjectDAO>(() => new ProjectDAO());
             userBUS = new Lazy<UserBUS>(() => new UserBUS());
+            projectDAO = new Lazy<ProjectDAO>(() => new ProjectDAO());
             listProject = new List<Project>();
         }
 
-        public Project GetProjectFromTextBox(string taskName, string description, DateTimePicker startDate, 
+        public Project GetProjectFromTextBox(string taskName, string description, DateTimePicker startDate,
             DateTimePicker endDate, ComboBox combbox_Assignee, int progress, string bonus)
         {
             Project project = null;

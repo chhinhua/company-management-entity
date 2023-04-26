@@ -17,18 +17,20 @@ namespace company_management.Views.UC
 {
     public partial class UC_Project : UserControl
     {
-        private List<Project> listProject;
+        public static Task viewTask;
+        private TaskBUS taskBUS;
+        private TaskDAO taskDAO;
         private ProjectBUS projectBUS;
-        private ProjectDAO projectDAO;
-        public static Project viewProject;
+        private List<Project> listProject;
 
         public UC_Project()
         {
             InitializeComponent();
             listProject = new List<Project>();
+            taskBUS = new TaskBUS();
+            taskDAO = new TaskDAO();
+            viewTask = new Task();
             projectBUS = new ProjectBUS();
-            projectDAO = new ProjectDAO();
-            viewProject = new Project();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

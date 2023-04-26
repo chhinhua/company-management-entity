@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using company_management.DTO;
 using company_management.Entities;
-using company_management.DTO;
 
 namespace company_management.DAO
 {
