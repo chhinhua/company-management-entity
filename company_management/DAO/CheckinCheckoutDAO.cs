@@ -5,14 +5,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
-using company_management.Views;
+using company_management.View;
 using company_management.BUS;
 
 namespace company_management.DAO
 {
-    public class CheckinCheckoutDAO
+    public class CheckinCheckoutDAO : IDisposable
     {
-        //private readonly company_managementEntities dbContext;
+        private bool disposed = false;
         private DBConnection dBConnection;
         private Lazy<TeamDAO> teamDAO;
         private Lazy<UserDAO> userDAO;
@@ -29,7 +29,7 @@ namespace company_management.DAO
             string query = string.Format("INSERT INTO checkin_checkout(idUser, checkinTime, date) VALUES ('{0}', '{1}', '{2}'); SELECT SCOPE_IDENTITY();",
                                       cico.IdUser, cico.CheckinTime, cico.Date);
             int id = Convert.ToInt32(dBConnection.ExecuteScalar(query)); // lấy giá trị ID từ cơ sở dữ liệu
-            UCTimeKeeping.lastCheckinCheckoutId = id;
+            UC_TimeKeeping.lastCheckinCheckoutId = id;
         }
 
         public void UpdateCheckinCO(CheckinCheckout cico)
@@ -128,45 +128,102 @@ namespace company_management.DAO
         }
 
         // tổng số giờ làm việc của mỗi nhân viên trong một ngày
-       /* public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
             string query = "SELECT SUM(totalHours) AS totalHours " +
-                "FROM checkin_checkout WHERE idUser = @idUser " +
-                "AND date BETWEEN @fromDate AND @toDate";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@idUser", idUser);
-            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-            command.Parameters.AddWithValue("@toDate", toDate.Date);
+                           "FROM checkin_checkout WHERE idUser = @idUser " +
+                           "AND date BETWEEN @fromDate AND @toDate";
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idUser", idUser);
+                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+                command.Parameters.AddWithValue("@toDate", toDate.Date);
 
-            object result = command.ExecuteScalar();
-            return Convert.ToDouble(result);
+                object result = command.ExecuteScalar();
+                if (result == DBNull.Value)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return Convert.ToDouble(result);
+                }
+            }
         }
 
         // số giờ tăng ca của mỗi nhân viên trong một ngày
         public double GetOvertimeHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
             string query = "SELECT SUM(CASE WHEN totalHours > 8 THEN totalHours - 8 ELSE 0 END) AS overtimeHours FROM checkin_checkout WHERE idUser = @idUser AND date BETWEEN @fromDate AND @toDate";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@idUser", idUser);
-            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-            command.Parameters.AddWithValue("@toDate", toDate.Date);
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idUser", idUser);
+                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+                command.Parameters.AddWithValue("@toDate", toDate.Date);
 
-            object result = command.ExecuteScalar();
-            return Convert.ToDouble(result);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read() && !reader.IsDBNull(0))
+                    {
+                        return Convert.ToDouble(reader[0]);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
         }
 
         //  số giờ nghỉ phép của mỗi nhân viên trong một ngày
         public double GetLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
-            string query = "SELECT SUM(8 - totalHours) AS leaveHours FROM checkin_checkout WHERE idUser = @idUser AND date BETWEEN @fromDate AND @toDate";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@idUser", idUser);
-            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-            command.Parameters.AddWithValue("@toDate", toDate.Date);
+            string query = "SELECT SUM(CASE WHEN totalHours < 8 THEN (8 - totalHours) ELSE 0 END) " +
+                           "AS leaveHours " +
+                           "FROM checkin_checkout WHERE idUser = @idUser " +
+                           "AND date BETWEEN @fromDate AND @toDate";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idUser", idUser);
+                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+                command.Parameters.AddWithValue("@toDate", toDate.Date);
 
-            object result = command.ExecuteScalar();
-            return Convert.ToDouble(result);
-        }*/
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read() && !reader.IsDBNull(0))
+                    {
+                        return Convert.ToDouble(reader[0]);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+        }
 
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing)
+            {
+                dBConnection.Dispose();
+            }
+
+            disposed = true;
+        }
+
+        ~CheckinCheckoutDAO()
+        {
+            Dispose(false);
+        }
     }
 }

@@ -7,122 +7,67 @@ using company_management.Entities;
 
 namespace company_management.DAO
 {
-    public class LeaveRequestDAO
+    public class LeaveRequestDAO : IDisposable
     {
-        //private readonly company_managementEntities dbContext;
-        private Lazy<SalaryDAO> salaryDAO;
-        private Lazy<CheckinCheckoutDAO> checkinCheckoutDAO;
+        private DBConnection dBConnection;
 
         public LeaveRequestDAO()
         {
-            //dbContext = new company_managementEntities();
-            salaryDAO = new Lazy<SalaryDAO>(() => new SalaryDAO());
-            checkinCheckoutDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
+            
         }
 
-        /*public List<LeaveRequest> GetAllLeaveRequests()
-        {
-            var listLeaveRequests = dbContext.leave_request.ToList();
+        /* public User GetUserById(int userId)
+         {
+             var userEntity = dbContext.users.FirstOrDefault(u => u.id == userId);
 
-            return listLeaveRequests.Select(lr => MappingExtensions.ToDto<leave_request, LeaveRequest>(lr)).ToList();
-        }*/
+             return MappingExtensions.ToDto<user, User>(userEntity);
+         }*/
 
-        public void InitData()
-        {
-            using (var db = new company_managementEntities())
-            {
-                var leaveRequestsDto = new List<LeaveRequest>
-                {
-                    new LeaveRequest
-                    {
-                        IdUser = 1,
-                        StartDate = new DateTime(2023, 5, 1),
-                        EndDate = new DateTime(2023, 5, 5),
-                        NumberDay = 5,
-                        Reason = "Về quê",
-                        Status = "pending"
-                    },
-                    new LeaveRequest
-                    {
-                        IdUser = 2,
-                        StartDate = new DateTime(2023, 7, 1),
-                        EndDate = new DateTime(2023, 7, 2),
-                        NumberDay = 2,
-                        Reason = "Đi khám bệnh",
-                        Status = "approved"
-                    },
-                    new LeaveRequest
-                    {
-                        IdUser = 14,
-                        StartDate = new DateTime(2023, 6, 10),
-                        EndDate = new DateTime(2023, 6, 14),
-                        NumberDay = 4,
-                        Reason = "Tham gia hội thảo",
-                        Status = "rejected"
-                    },
-                    new LeaveRequest
-                    {
-                        IdUser = 3,
-                        StartDate = new DateTime(2023, 8, 20),
-                        EndDate = new DateTime(2023, 8, 22),
-                        NumberDay = 3,
-                        Reason = "Cưới bạn thân",
-                        Status = "cancelled"
-                    },
-                    new LeaveRequest
-                    {
-                        IdUser = 1,
-                        StartDate = new DateTime(2023, 9, 1),
-                        EndDate = new DateTime(2023, 9, 5),
-                        NumberDay = 5,
-                        Reason = "Du lịch",
-                        Status = "pending"
-                    }
-                };
-
-                foreach (var leaveRequestDto in leaveRequestsDto)
-                {
-                    var leaveRequest = MappingExtensions.ToEntity<LeaveRequest, leave_request>(leaveRequestDto);
-                    db.leave_request.Add(leaveRequest);
-                }
-
-                db.SaveChanges();
-            }
-
-        }
-
-       /* public User GetUserById(int userId)
-        {
-            var userEntity = dbContext.users.FirstOrDefault(u => u.id == userId);
-
-            return MappingExtensions.ToDto<user, User>(userEntity);
-        }*/
-
-       /* public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
             double leaveHours = 0;
 
-            // Tính tổng số giờ nghỉ trong các ngày làm việc
-            leaveHours += checkinCheckoutDAO.GetLeaveHours(idUser, fromDate, toDate, connection);
-
-            // Tính tổng số giờ nghỉ trong các ngày đã được đăng ký trong bảng đơn xin nghỉ
+            // Tìm tất cả các đơn xin nghỉ được chấp thuận trong khoảng thời gian fromDate - toDate
             string query = "SELECT SUM(numberDay * 8) AS leaveHours " +
-                "FROM leave_request WHERE idUser = @idUser " +
-                "AND startDate <= @toDate AND endDate >= @fromDate AND status = 'Approved'";
+                           "FROM leave_request WHERE idUser = @idUser " +
+                           "AND startDate <= @toDate AND endDate >= @fromDate AND status = 'Approved'";
 
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@idUser", idUser);
-            command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-            command.Parameters.AddWithValue("@toDate", toDate.Date);
-
-            object result = command.ExecuteScalar();
-            if (result != null && result != DBNull.Value)
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                leaveHours += Convert.ToDouble(result);
+                command.Parameters.AddWithValue("@idUser", idUser);
+                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
+                command.Parameters.AddWithValue("@toDate", toDate.Date);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read() && !reader.IsDBNull(0))
+                    {
+                        leaveHours += Convert.ToDouble(reader["leaveHours"]);
+                    }
+                }
             }
 
-            return leaveHours;
-        }*/
+            return Math.Max(0, leaveHours); // Return non-negative leave hours
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                // Giải phóng các tài nguyên quản lý ở đây.
+                if (dBConnection != null)
+                {
+                    dBConnection.Dispose(); // Giải phóng đối tượng DBConnection
+                    dBConnection = null;
+                }
+            }
+        }
 
     }
 

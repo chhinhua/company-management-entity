@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 using company_management.DTO;
 using company_management.DAO;
-using company_management.Views;
+using company_management.View;
 
 namespace company_management.BUS
 {
@@ -33,6 +33,12 @@ namespace company_management.BUS
         {
             int positionId = UserSession.LoggedInUser.IdPosition;
             return positionId != 1 && positionId != 2;
+        }
+
+        public bool IsManager()
+        {
+            int positionId = UserSession.LoggedInUser.IdPosition;
+            return positionId != 2 && positionId != 3;
         }
     }
 }

@@ -5,8 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
-using company_management.Views;
-using company_management.Views.UC;
+using company_management.View;
+using company_management.View.UC;
 using company_management.BUS;
 
 namespace company_management.DAO
@@ -66,9 +66,9 @@ namespace company_management.DAO
             comboBox.DisplayMember = "name";
             comboBox.ValueMember = "id";
             
-            if (UCTask.viewTask != null)
+            if (UC_Task.viewTask != null)
             {
-                comboBox.SelectedValue = UCTask.viewTask.IdProject;
+                comboBox.SelectedValue = UC_Task.viewTask.IdProject;
             }
 
             taskBus.CheckControlStatus(comboBox);
@@ -89,6 +89,7 @@ namespace company_management.DAO
         {
             return GetAllProject().Where(t => t.IdAssignee == idAssignee).ToList();
         }
+
     }
 }
 
