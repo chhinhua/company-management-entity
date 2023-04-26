@@ -33,10 +33,26 @@ namespace company_management.Views
             {
                 // Lấy thông tin người dùng đăng nhập
                 //User loginUser = userDAO.GetUserByUsername("edalziell2"); // manager
+                //User loginUser = userDAO.GetUserByUsername("chhinhua"); // manager
+
                 //User loginUser = userDAO.GetUserByUsername("abaldacchinob"); // leader
-               // User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
-                User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
+                //User loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
+                //User loginUser = userDAO.GetUserByUsername("abrilleman6"); // leader
                 //User loginUser = userDAO.GetUserByUsername("wdionisi7"); // leader
+                //User loginUser = userDAO.GetUserByUsername("dlaven9"); // leader
+                User loginUser = userDAO.GetUserByUsername("linglishc"); // leader
+
+                //User loginUser = userDAO.GetUserByUsername("ntute3"); // employee
+                //User loginUser = userDAO.GetUserByUsername("esparsholtf"); // employee
+                //User loginUser = userDAO.GetUserByUsername("econstablee"); // employee
+                //User loginUser = userDAO.GetUserByUsername("walimand"); // employee
+                //User loginUser = userDAO.GetUserByUsername("mboardera"); // employee
+                //User loginUser = userDAO.GetUserByUsername("pbartulj"); // employee
+                //User loginUser = userDAO.GetUserByUsername("taulti"); // employee
+                //User loginUser = userDAO.GetUserByUsername("dsillyh"); // employee
+                //User loginUser = userDAO.GetUserByUsername("ipedlerg"); // employee
+
+
 
                 // Lưu thông tin người dùng đăng nhập và chuyển sang form chính
                 UserSession.LoginUser(loginUser);

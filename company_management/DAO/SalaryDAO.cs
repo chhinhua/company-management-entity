@@ -9,12 +9,12 @@ namespace company_management.DAO
 {
     public class SalaryDAO
     {
+        //private readonly company_managementEntities dbContext;
         private readonly DBConnection dBConnection;
-        private readonly company_managementEntities dbContext;
-        private CheckinCheckoutDAO checkinCheckoutDAO;
-        private LeaveRequestDAO leaveRequestDAO;
-        private SalaryDAO salaryDAO;
-        private TaskDAO taskDAO;
+        private Lazy<CheckinCheckoutDAO> checkinCheckoutDAO;
+        private Lazy<LeaveRequestDAO> leaveRequestDAO;
+        private Lazy<SalaryDAO> salaryDAO;
+        private Lazy<TaskDAO> taskDAO;
         public static readonly decimal DEFAULT_BASIC_SALARY = 500; // 500$ 
         
 
@@ -22,20 +22,20 @@ namespace company_management.DAO
         {
             //dbContext = new company_managementEntities();
             dBConnection = new DBConnection();
-            checkinCheckoutDAO = new CheckinCheckoutDAO();
-            leaveRequestDAO = new LeaveRequestDAO();
-            salaryDAO = new SalaryDAO();
-            taskDAO = new TaskDAO();
+            checkinCheckoutDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
+            leaveRequestDAO = new Lazy<LeaveRequestDAO>(() => new LeaveRequestDAO());
+            salaryDAO = new Lazy<SalaryDAO>(() => new SalaryDAO());
+            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
         }
 
-        public List<Salary> GetAllSalaries()
+       /* public List<Salary> GetAllSalaries()
         {
             var listSalary = dbContext.salaries.ToList();
 
             return listSalary.Select(salary => MappingExtensions.ToDto<salary, Salary>(salary)).ToList();
-        }
+        }*/
 
-        public void InitData()
+       /* public void InitData()
         {
             var listSalaryDTO = new List<Salary>
                 {
@@ -55,7 +55,7 @@ namespace company_management.DAO
             }
 
             dbContext.SaveChanges();
-        }
+        }*/
 
        /* public decimal CalculateBonus(double kpiValue, double averageProgress)
         {

@@ -13,18 +13,15 @@ namespace company_management.DAO
     public class CheckinCheckoutDAO
     {
         //private readonly company_managementEntities dbContext;
-        private readonly DBConnection dBConnection;
-        private List<Task> listTask;
-        private TeamDAO teamDAO;
-        private UserDAO userDAO;
+        private DBConnection dBConnection;
+        private Lazy<TeamDAO> teamDAO;
+        private Lazy<UserDAO> userDAO;
 
         public CheckinCheckoutDAO()
         {
-            //dbContext = new company_managementEntities();
             dBConnection = new DBConnection();
-            listTask = new List<Task>();
-            teamDAO = new TeamDAO();
-            userDAO = new UserDAO();
+            teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
         }
 
         public void AddCheckinCO(CheckinCheckout cico)

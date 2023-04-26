@@ -13,13 +13,13 @@ namespace company_management.BUS
 {
     public class CheckinCheckoutBUS
     {
-        public CheckinCheckoutDAO checkinCheckoutDAO;
-        private UserDAO userDAO;
+        private Lazy<CheckinCheckoutDAO> cicoDAO;
+        private Lazy<UserDAO> userDAO;
 
         public CheckinCheckoutBUS()
         {
-            checkinCheckoutDAO = new CheckinCheckoutDAO();
-            userDAO = new UserDAO();
+            cicoDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
+            userDAO = new Lazy<UserDAO>(() => new UserDAO());
         }
 
         public void LoadDataGridview(List<CheckinCheckout> listCiCo, DataGridView dataGridView)
@@ -36,9 +36,10 @@ namespace company_management.BUS
             dataGridView.Rows.Clear();
 
             string checkoutTime = "";
+            var userDao = userDAO.Value;
             foreach (var c in listCiCo)
             {
-                string fullName = userDAO.GetUserById(c.IdUser).FullName;
+                string fullName = userDao.GetUserById(c.IdUser).FullName;
 
                 if (c.CheckoutTime != null && c.CheckoutTime != default(DateTime))
                 {
@@ -55,18 +56,20 @@ namespace company_management.BUS
 
         public void Checkin(DateTime checkinTime, DateTime date)
         {
+            var cicoDao = cicoDAO.Value;
             CheckinCheckout checkinCheckout = new CheckinCheckout();
             checkinCheckout.IdUser = UserSession.LoggedInUser.Id;
             checkinCheckout.CheckinTime = checkinTime;
             checkinCheckout.Date = date;
-            checkinCheckoutDAO.AddCheckinCO(checkinCheckout);
+            cicoDao.AddCheckinCO(checkinCheckout);
         }
 
         public void Checkout(DateTime checkoutTime)
         {
-            CheckinCheckout checkinCheckout = checkinCheckoutDAO.GetCheckinById(UCTimeKeeping.lastCheckinCheckoutId);
+            var cicoDao = cicoDAO.Value;
+            CheckinCheckout checkinCheckout = cicoDao.GetCheckinById(UCTimeKeeping.lastCheckinCheckoutId);
             checkinCheckout.CheckoutTime = checkoutTime;
-            checkinCheckoutDAO.UpdateCheckinCO(checkinCheckout);
+            cicoDao.UpdateCheckinCO(checkinCheckout);
         }
     }
 }

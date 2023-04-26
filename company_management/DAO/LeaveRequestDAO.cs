@@ -9,23 +9,23 @@ namespace company_management.DAO
 {
     public class LeaveRequestDAO
     {
-        private readonly company_managementEntities dbContext;
-        private SalaryDAO salaryDAO;
-        private CheckinCheckoutDAO checkinCheckoutDAO;
+        //private readonly company_managementEntities dbContext;
+        private Lazy<SalaryDAO> salaryDAO;
+        private Lazy<CheckinCheckoutDAO> checkinCheckoutDAO;
 
         public LeaveRequestDAO()
         {
             //dbContext = new company_managementEntities();
-            salaryDAO = new SalaryDAO();
-            checkinCheckoutDAO = new CheckinCheckoutDAO();
+            salaryDAO = new Lazy<SalaryDAO>(() => new SalaryDAO());
+            checkinCheckoutDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
         }
 
-        public List<LeaveRequest> GetAllLeaveRequests()
+        /*public List<LeaveRequest> GetAllLeaveRequests()
         {
             var listLeaveRequests = dbContext.leave_request.ToList();
 
             return listLeaveRequests.Select(lr => MappingExtensions.ToDto<leave_request, LeaveRequest>(lr)).ToList();
-        }
+        }*/
 
         public void InitData()
         {
@@ -91,12 +91,12 @@ namespace company_management.DAO
 
         }
 
-        public User GetUserById(int userId)
+       /* public User GetUserById(int userId)
         {
             var userEntity = dbContext.users.FirstOrDefault(u => u.id == userId);
 
             return MappingExtensions.ToDto<user, User>(userEntity);
-        }
+        }*/
 
        /* public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {

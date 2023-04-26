@@ -14,14 +14,14 @@ namespace company_management.Views.UC
 {
     public partial class UC_Team : UserControl
     {
-        private TeamBUS teamBUS;
-        private List<Team> listTeam;
+        private Lazy<TeamBUS> teamBUS;
+        private Lazy<List<Team>> listTeam;
 
         public UC_Team()
         {
             InitializeComponent();
-            teamBUS = new TeamBUS();
-            listTeam = new List<Team>();
+            teamBUS = new Lazy<TeamBUS>(() => new TeamBUS());
+            listTeam = new Lazy<List<Team>>(() => new List<Team>());
         }
 
         private void UC_Team_Load(object sender, EventArgs e)
@@ -31,8 +31,10 @@ namespace company_management.Views.UC
 
         private void LoadDataGridview()
         {
-            listTeam = teamBUS.GetListTeamByPosition();
-            teamBUS.LoadDataGridview(listTeam, dataGridView_Team);
+            var teams = listTeam.Value;
+            var teamBus = teamBUS.Value;
+            teams = teamBus.GetListTeamByPosition();
+            teamBus.LoadDataGridview(teams, dataGridView_Team);
         }
     }
 }
