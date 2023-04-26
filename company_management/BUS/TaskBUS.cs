@@ -7,8 +7,8 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
-using company_management.Views;
-using company_management.Views.UC;
+using company_management.View;
+using company_management.View.UC;
 
 namespace company_management.BUS
 {
@@ -19,6 +19,7 @@ namespace company_management.BUS
         private Lazy<UserDAO> userDAO;
         private Lazy<ProjectDAO> projectDAO;
         private Lazy<UserBUS> userBUS;
+        private Lazy<ProjectBUS> projectBUS;
         private List<Task> listTask;
 
         public TaskBUS()
@@ -28,6 +29,7 @@ namespace company_management.BUS
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
             projectDAO = new Lazy<ProjectDAO>(() => new ProjectDAO());
             userBUS = new Lazy<UserBUS>(() => new UserBUS());
+            projectBUS = new Lazy<ProjectBUS>(() => new ProjectBUS());
             listTask = new List<Task>();
         }
 
@@ -126,8 +128,8 @@ namespace company_management.BUS
             }
             else
             {
-                task = new Task(UCTask.viewTask.IdCreator, UCTask.viewTask.IdAssignee, taskName, description, dateTime.Value, progress, 
-                                        teamDao.GetTeamByLeader(UCTask.viewTask.IdCreator).Id, UCTask.viewTask.Bonus, selectedProject.Id);
+                task = new Task(UC_Task.viewTask.IdCreator, UC_Task.viewTask.IdAssignee, taskName, description, dateTime.Value, progress, 
+                                        teamDao.GetTeamByLeader(UC_Task.viewTask.IdCreator).Id, UC_Task.viewTask.Bonus, selectedProject.Id);
             }
             return task;
         }
@@ -144,7 +146,6 @@ namespace company_management.BUS
                 control.Enabled = true;
             }
         }
-
 
         public List<Task> SearchTasks(string txtSearch)
         {
@@ -203,13 +204,12 @@ namespace company_management.BUS
             }
         }
 
-
         public void GetDataToCombobox(ComboBox assignees, ComboBox project)
         {
             var taskDao = taskDAO.Value;
-            var projectDao = projectDAO.Value;
+            var projectBus = projectBUS.Value;
             taskDao.LoadUserToCombobox(assignees);
-            projectDao.LoadProjectToCombobox(project);
+            projectBus.LoadProjectToCombobox(project);
         }
 
         public void ClearListTask(List<Task> listTask)

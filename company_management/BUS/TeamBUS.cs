@@ -22,20 +22,20 @@ namespace company_management.BUS
             userBUS = new Lazy<UserBUS>(() => new UserBUS());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
             listTeam = new Lazy<List<Team>>(() => new List<Team>());
-            
-        }
-    
 
-    public void LoadDataGridview(List<Team> listTeam, DataGridView dataGridView)
+        }
+
+
+        public void LoadDataGridview(List<Team> listTeam, DataGridView dataGridView)
         {
             dataGridView.ColumnCount = 5;
             dataGridView.Columns[0].Name = "Mã";
             dataGridView.Columns[0].Visible = false;
-            dataGridView.Columns[1].Name = "Tên team";
+            dataGridView.Columns[1].Name = "Tên nhóm";
             dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[2].Name = "Mô tả";
-            dataGridView.Columns[3].Name = "Trưởng nhóm";
-            dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].Name = "Trưởng nhóm";
+            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[3].Name = "Mô tả nhóm";
             dataGridView.Columns[4].Name = "Số thành viên";
             dataGridView.Columns[4].Width = 120;
             dataGridView.Rows.Clear();
@@ -47,7 +47,7 @@ namespace company_management.BUS
                 string leader = userDao.GetUserById(t.IdLeader).FullName;
                 int countMembers = teamDao.CountMembers(t.Id);
 
-                dataGridView.Rows.Add(t.Id, t.Name, t.Description, leader, countMembers);
+                dataGridView.Rows.Add(t.Id, t.Name, leader, t.Description, countMembers);
             }
         }
 

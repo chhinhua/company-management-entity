@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
-using company_management.Views;
+using company_management.View;
 
 namespace company_management.BUS
 {
@@ -67,7 +67,7 @@ namespace company_management.BUS
         public void Checkout(DateTime checkoutTime)
         {
             var cicoDao = cicoDAO.Value;
-            CheckinCheckout checkinCheckout = cicoDao.GetCheckinById(UCTimeKeeping.lastCheckinCheckoutId);
+            CheckinCheckout checkinCheckout = cicoDao.GetCheckinById(UC_TimeKeeping.lastCheckinCheckoutId);
             checkinCheckout.CheckoutTime = checkoutTime;
             cicoDao.UpdateCheckinCO(checkinCheckout);
         }

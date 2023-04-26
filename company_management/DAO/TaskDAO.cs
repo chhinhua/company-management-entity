@@ -5,14 +5,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
-using company_management.Views;
-using company_management.Views.UC;
+using company_management.View;
+using company_management.View.UC;
 
 namespace company_management.DAO
 {
-    public class TaskDAO
+    public class TaskDAO : IDisposable
     {
         private readonly DBConnection dBConnection;
+        private bool disposed = false;
         public Lazy<string> connString;
         private Lazy<List<Task>> listTask;
         private Lazy<TeamDAO> teamDAO;
@@ -46,9 +47,9 @@ namespace company_management.DAO
                 }
                 else if (UserSession.LoggedInUser.IdPosition == 2) // IdPosition = 2 (leader)
                 {
-                    int idTeam = teamDao.GetTeamByLeader(UserSession.LoggedInUser.Id).Id;
+                    Team team = teamDao.GetTeamByLeader(UserSession.LoggedInUser.Id);
                     users = new List<User>();
-                    users.AddRange(userDao.GetEmployeesByTeam(idTeam));
+                    users.AddRange(userDao.GetEmployeesByTeam(team.Id));
 
                     comboBox.Items.AddRange(users.ToArray());
                     comboBox.DisplayMember = "fullName";
@@ -61,9 +62,9 @@ namespace company_management.DAO
                 }
 
                 comboBox.ValueMember = "id";
-                if (UCTask.viewTask != null)
+                if (UC_Task.viewTask != null)
                 {
-                    comboBox.SelectedValue = UCTask.viewTask.IdAssignee;
+                    comboBox.SelectedValue = UC_Task.viewTask.IdAssignee;
                 }              
             }
 
@@ -154,7 +155,7 @@ namespace company_management.DAO
                 connection.Open();
 
                 // Tìm tất cả các task được giao cho nhân viên đó với deadline trong khoảng thời gian từ fromDate đến toDate
-                string query = "SELECT SUM(bonus) FROM Task WHERE idAssignee = @idUser AND deadline >= @fromDate AND deadline <= @toDate";
+                string query = "SELECT SUM(bonus) FROM task WHERE idAssignee = @idUser AND deadline >= @fromDate AND deadline <= @toDate";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@idUser", idUser);
@@ -171,6 +172,31 @@ namespace company_management.DAO
             }
 
             return totalBonus;
+        }
+
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing)
+            {
+                dBConnection.Dispose();
+            }
+
+            disposed = true;
+        }
+
+        ~TaskDAO()
+        {
+            Dispose(false);
         }
     }
 }

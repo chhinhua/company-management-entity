@@ -9,10 +9,11 @@ using System.Linq;
 
 namespace company_management.DAO
 {
-    public class UserDAO
+    public class UserDAO : IDisposable
     {
         private readonly DBConnection dBConnection;
         private Lazy<List<User>> listUser;
+        private bool _disposed = false;
 
         public UserDAO()
         {
@@ -141,5 +142,24 @@ namespace company_management.DAO
             }
         }
 
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    // Giải phóng tài nguyên được sử dụng trong class
+                    dBConnection.Dispose();
+                }
+
+                _disposed = true;
+            }
+        }
     }
 }
