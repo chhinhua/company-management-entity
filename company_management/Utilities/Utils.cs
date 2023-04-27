@@ -1,14 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using Guna.UI2.WinForms;
+using System.Windows.Forms;
+using company_management.BUS;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace company_management.Utilities
 {
     public class Utils
     {
+        private readonly Lazy<UserBus> _userBus;
+
+        public Utils()
+        {
+            _userBus = new Lazy<UserBus>(() => new UserBus());
+        }
 
         public bool IsPhoneNumber(string number)
         {
@@ -40,6 +49,45 @@ namespace company_management.Utilities
             {
                 return false;
             }
+        }
+
+        public void CheckEmployeeStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            if (userBus.IsEmployee())
+            {
+                control.Enabled = false;
+            }
+            else
+            {
+                control.Enabled = true;
+            }
+        }
+
+        public void CheckManagerStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            if (userBus.IsManager())
+            {
+                control.Enabled = true;
+            }
+            else
+            {
+                control.Enabled = false;
+            }
+        }
+        
+        public void SetFormShadow(Form form)
+        {
+            Guna2ShadowForm shadowForm = new Guna2ShadowForm();
+
+            // Set the shadow properties
+            shadowForm.SetShadowForm(form);
+            shadowForm.ShadowColor = Color.Gray;
+            shadowForm.BorderRadius = 20;
+
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
     }
 }

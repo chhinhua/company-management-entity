@@ -23,9 +23,9 @@ namespace company_management
             connection = new SqlConnection(connString);
         }
 
-        public void Alert(string msg, Form_Alert.enmType type)
+        public void Alert(string msg, FormAlert.enmType type)
         {
-            Form_Alert frm = new Form_Alert();
+            FormAlert frm = new FormAlert();
             frm.showAlert(msg, type);
         }
 
@@ -109,7 +109,7 @@ namespace company_management
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                this.Alert("Acction faild!", Form_Alert.enmType.Warning);
+                this.Alert("Acction faild!", FormAlert.enmType.Warning);
                 //MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
