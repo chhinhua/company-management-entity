@@ -22,9 +22,7 @@ namespace company_management.BUS
             userBUS = new Lazy<UserBUS>(() => new UserBUS());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
             listTeam = new Lazy<List<Team>>(() => new List<Team>());
-
         }
-
 
         public void LoadDataGridview(List<Team> listTeam, DataGridView dataGridView)
         {

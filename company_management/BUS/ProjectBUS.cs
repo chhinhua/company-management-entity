@@ -9,12 +9,13 @@ using company_management.DTO;
 using company_management.DAO;
 using company_management.View;
 using company_management.View.UC;
+using company_management.Utilities;
 
 namespace company_management.BUS
 {
     public class ProjectBUS
     {
-        private Lazy<TaskDAO> taskDAO;
+        private Lazy<Utils> utils;
         private Lazy<TeamDAO> teamDAO;
         private Lazy<UserDAO> userDAO;
         private Lazy<UserBUS> userBUS;
@@ -24,7 +25,7 @@ namespace company_management.BUS
 
         public ProjectBUS()
         {
-            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
+            utils = new Lazy<Utils>(() => new Utils());
             teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
             userBUS = new Lazy<UserBUS>(() => new UserBUS());
@@ -119,24 +120,11 @@ namespace company_management.BUS
             listProject.TrimExcess();
         }
 
-        public void CheckControlStatus<T>(T control) where T : Control
-        {
-            var userBus = userBUS.Value;
-            if (userBus.IsManager())
-            {
-                control.Enabled = true;
-            }
-            else
-            {
-                control.Enabled = false;
-            }
-        }
-
         public void LoadProjectToCombobox(ComboBox comboBox)
         {
-            var projectDao = projectDAO.Value;
             var projects = listProject.Value;
             var taskBus = taskBUS.Value;
+            var util = utils.Value;
 
             // Hiển thị danh sách team
             projects = GetListProjectByPosition();
@@ -150,7 +138,7 @@ namespace company_management.BUS
                 comboBox.SelectedValue = UC_Task.viewTask.IdProject;
             }
 
-            taskBus.CheckControlStatus(comboBox);
+            util.CheckEmployeeStatus(comboBox);
         }
     }
 }

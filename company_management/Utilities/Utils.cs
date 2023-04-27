@@ -1,14 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using Guna.UI2.WinForms;
+using System.Windows.Forms;
+using company_management.BUS;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace company_management.Utilities
 {
     public class Utils
     {
+        private Lazy<UserBUS> userBUS;
+
+        public Utils()
+        {
+            userBUS = new Lazy<UserBUS>(() => new UserBUS());
+        }
 
         public bool IsPhoneNumber(string number)
         {
@@ -39,6 +47,32 @@ namespace company_management.Utilities
             catch
             {
                 return false;
+            }
+        }
+
+        public void CheckEmployeeStatus<T>(T control) where T : Control
+        {
+            var userBus = userBUS.Value;
+            if (userBus.IsEmployee())
+            {
+                control.Enabled = false;
+            }
+            else
+            {
+                control.Enabled = true;
+            }
+        }
+
+        public void CheckManagerStatus<T>(T control) where T : Control
+        {
+            var userBus = userBUS.Value;
+            if (userBus.IsManager())
+            {
+                control.Enabled = true;
+            }
+            else
+            {
+                control.Enabled = false;
             }
         }
     }

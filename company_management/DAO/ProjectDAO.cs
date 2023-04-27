@@ -54,26 +54,6 @@ namespace company_management.DAO
             comboBox.SelectedIndex = 0;
         }
 
-        public void LoadProjectToCombobox(ComboBox comboBox)
-        {
-            var taskBus = taskBUS.Value;
-            var projects = listProject.Value;
-
-            // Hiển thị danh sách team
-            projects.AddRange(GetAllProject());
-
-            comboBox.Items.AddRange(projects.ToArray());
-            comboBox.DisplayMember = "name";
-            comboBox.ValueMember = "id";
-            
-            if (UC_Task.viewTask != null)
-            {
-                comboBox.SelectedValue = UC_Task.viewTask.IdProject;
-            }
-
-            taskBus.CheckControlStatus(comboBox);
-        }
-
         public List<Project> GetAllProject()
         {
             string query = string.Format("SELECT * FROM project");

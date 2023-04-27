@@ -1,30 +1,24 @@
-﻿using company_management.DAO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using company_management.DAO;
 using company_management.DTO;
 using company_management.BUS;
-using System.Globalization;
 
 namespace company_management.View
 {
     public partial class UC_TimeKeeping : UserControl
     {
-        public static int lastCheckinCheckoutId;
-        private Lazy<TaskDAO> taskDAO;
         private Lazy<UserDAO> userDAO;
         private Lazy<CheckinCheckoutDAO> cicoDAO;
         private Lazy<CheckinCheckoutBUS> cicoBUS;
+        public static int lastCheckinCheckoutId;
 
         public UC_TimeKeeping()
         {
             InitializeComponent();
-            taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
             cicoDAO = new Lazy<CheckinCheckoutDAO>(() => new CheckinCheckoutDAO());
             cicoBUS = new Lazy<CheckinCheckoutBUS>(() => new CheckinCheckoutBUS());
@@ -36,13 +30,13 @@ namespace company_management.View
             LoadTimeNow();
         }
 
-        public void Alert(string msg, Form_Alert.enmType type)
+        private void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
         }
 
-        public void LoadTimeNow()
+        private void LoadTimeNow()
         {
             datetime_date.Value = DateTime.Now.Date;
             datetime_Checkin.Value = DateTime.Now;
@@ -51,7 +45,7 @@ namespace company_management.View
             toggle_checkout.Checked = false;
         }
 
-        public void LoadDataGridview()
+        private void LoadDataGridview()
         {
             var cicoBus = cicoBUS.Value;
             var cicoDao = cicoDAO.Value;
@@ -82,9 +76,21 @@ namespace company_management.View
             (datagridview_timeKeeping.DataSource as DataTable).DefaultView.RowFilter = filterExpression.ToString();
         }
 
+        private void ClearAll()
+        {
+            lastCheckinCheckoutId = 0;
+            txtBox_fullName.Clear();
+            txtBox_totalHours.Clear();
+            toggle_checkin.Checked = false;
+            toggle_checkout.Checked = false;
+            toggle_checkin.Enabled = true;
+            toggle_checkout.Enabled = true;
+            LoadTimeNow();
+        }
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            ClearAll();
         }
 
         private void toggle_checkin_Click(object sender, EventArgs e)
@@ -152,7 +158,7 @@ namespace company_management.View
 
                 var userDao = userDAO.Value;
                 txtBox_fullName.Text = userDao.GetUserById(cico.IdUser).FullName;
-                txtBox_totalHours.Text = cico.TotalHours.ToString();
+                txtBox_totalHours.Text = cico.TotalHours.ToString() + " h";
                 datetime_date.Value = cico.Date;
                 datetime_Checkin.Value = cico.CheckinTime;
 
@@ -173,11 +179,6 @@ namespace company_management.View
                     toggle_checkout.Enabled = false;                
                 }
             }
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

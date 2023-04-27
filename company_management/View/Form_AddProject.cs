@@ -35,7 +35,7 @@ namespace company_management.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkDataInput())
+            if (CheckDataInput())
             {
                 var projectBus = projectBUS.Value;
                 var projectDao = projectDAO.Value;
@@ -48,7 +48,7 @@ namespace company_management.View
             }
         }
 
-        private bool checkDataInput()
+        private bool CheckDataInput()
         {
             if (string.IsNullOrEmpty(txtbox_projectName.Text) || string.IsNullOrEmpty(txtbox_Desciption.Text))
             {

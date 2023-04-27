@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using company_management.BUS;
 using company_management.DTO;
+using company_management.Utilities;
 
 namespace company_management.View.UC
 {
@@ -18,6 +19,7 @@ namespace company_management.View.UC
         private Lazy<TaskBUS> taskBUS;
         private Lazy<TaskDAO> taskDAO;
         private Lazy<List<Task>> listTask;
+        private Lazy<Utils> utils;
 
         public UC_Task()
         {
@@ -25,6 +27,7 @@ namespace company_management.View.UC
             listTask = new Lazy<List<Task>>(() => new List<Task>());
             taskBUS = new Lazy<TaskBUS>(() => new TaskBUS());
             taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
+            utils = new Lazy<Utils>(() => new Utils());
         }
 
         public void Alert(string msg, Form_Alert.enmType type)
@@ -35,9 +38,9 @@ namespace company_management.View.UC
 
         private void CheckAddButtonStatus()
         {
-            var taskBus = taskBUS.Value;
-            taskBus.CheckControlStatus(buttonAdd);
-            taskBus.CheckControlStatus(buttonRemove);
+            var util = utils.Value;
+            util.CheckEmployeeStatus(buttonAdd);
+            util.CheckEmployeeStatus(buttonRemove);
         }
 
         private void LoadData()

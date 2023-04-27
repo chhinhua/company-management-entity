@@ -34,16 +34,16 @@ namespace company_management.View
 
                 // Lấy thông tin người dùng đăng nhập
                 // loginUser = userDAO.GetUserByUsername("edalziell2"); // manager
-                loginUser = userDAO.GetUserByUsername("chhinhua"); // manager
+                //loginUser = userDAO.GetUserByUsername("chhinhua"); // manager
 
-                //User loginUser = userDAO.GetUserByUsername("abaldacchinob"); // leader
-               // loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
+                // User loginUser = userDAO.GetUserByUsername("abaldacchinob"); // leader
+                loginUser = userDAO.GetUserByUsername("tmccoish4"); // leader
                 // loginUser = userDAO.GetUserByUsername("abrilleman6"); // leader
                 // loginUser = userDAO.GetUserByUsername("wdionisi7"); // leader
                 // loginUser = userDAO.GetUserByUsername("dlaven9"); // leader
                 // loginUser = userDAO.GetUserByUsername("linglishc"); // leader
 
-                // loginUser = userDAO.GetUserByUsername("ntute3"); // employee
+                //loginUser = userDAO.GetUserByUsername("ntute3"); // employee
                 // loginUser = userDAO.GetUserByUsername("esparsholtf"); // employee
                 // loginUser = userDAO.GetUserByUsername("econstablee"); // employee
                 // loginUser = userDAO.GetUserByUsername("walimand"); // employee

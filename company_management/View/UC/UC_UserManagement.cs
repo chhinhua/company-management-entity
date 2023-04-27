@@ -30,7 +30,7 @@ namespace company_management.View
             user = new User();
         }
 
-        public void Alert(string msg, Form_Alert.enmType type)
+        private void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
@@ -81,12 +81,24 @@ namespace company_management.View
                     {
                         return true;
                     }
-                    else MessageBox.Show("Invalid phone number!");
+                    else
+                    {
+                        this.Alert("Invalid phoneNumber!", Form_Alert.enmType.Warning);
+                        MessageBox.Show("Invalid phone number!");
+                    }
                 }
-                else MessageBox.Show("Invalid email!");
+                else
+                {
+                    this.Alert("Invalid email!", Form_Alert.enmType.Warning);
+                    MessageBox.Show("Invalid email!");
+                }
             }
-            else MessageBox.Show("Required fields Empty. Please fill in all fields!");
-            return false;
+            else
+            {
+                this.Alert("Field required!", Form_Alert.enmType.Warning);
+                MessageBox.Show("Required fields Empty. Please fill in all fields!");
+            }
+                return false;
         }
 
         private bool CheckEmptyInput()

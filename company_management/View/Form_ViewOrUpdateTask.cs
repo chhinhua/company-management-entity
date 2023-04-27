@@ -108,10 +108,11 @@ namespace company_management.View
             }
         }
 
-        private bool checkDataInput()
+        private bool CheckDataInput()
         {
             if (string.IsNullOrEmpty(txtbox_Taskname.Text))
             {
+                this.Alert("Field required", Form_Alert.enmType.Warning);
                 MessageBox.Show("Required fields Empty. Please fill in all fields!");
                 return false;
             }
@@ -132,7 +133,7 @@ namespace company_management.View
 
         private void btnSave_Click_1(object sender, EventArgs e)
         { 
-            if (checkDataInput())
+            if (CheckDataInput())
             {
                 var taskBus = taskBUS.Value;
                 var taskDao = taskDAO.Value;

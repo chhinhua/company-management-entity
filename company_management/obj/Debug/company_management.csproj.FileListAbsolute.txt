@@ -204,3 +204,4 @@ D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\co
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.Form_ViewOrUpdateProject.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.Form_ViewOrUpdateTask.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.Form_Alert.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.SuggestedBindingRedirects.cache

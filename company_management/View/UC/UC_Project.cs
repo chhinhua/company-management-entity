@@ -11,13 +11,14 @@ using company_management.BUS;
 using company_management.DTO;
 using company_management.View;
 using company_management.View.UC;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using company_management.Utilities;
 
 namespace company_management.View.UC
 {
     public partial class UC_Project : UserControl
     {
-       // public static Task viewTask;
+        // public static Task viewTask;
+        private Lazy<Utils> utils;
         private Lazy<ProjectBUS> projectBUS;
         private Lazy<TaskBUS> taskBUS;
         private Lazy<TaskDAO> taskDAO;
@@ -27,6 +28,7 @@ namespace company_management.View.UC
         {
             InitializeComponent();
             //viewTask = new Task();
+            utils = new Lazy<Utils>(() => new Utils());
             listProject = new Lazy<List<Project>>(() => new List<Project>());
             taskBUS = new Lazy<TaskBUS>(() => new TaskBUS());
             taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
@@ -62,12 +64,10 @@ namespace company_management.View.UC
 
         private void CheckAddButtonStatus()
         {
-            var projectBus = projectBUS.Value;
-            var taskBus = taskBUS.Value;
-            projectBus.CheckControlStatus(buttonAdd);
-            projectBus.CheckControlStatus(buttonRemove);
-            taskBus.CheckControlStatus(button_Edit);
-
+            var util = utils.Value;
+            util.CheckManagerStatus(buttonAdd);
+            util.CheckManagerStatus(buttonRemove);
+            util.CheckEmployeeStatus(button_Edit);
         }
 
         private void button_Edit_Click(object sender, EventArgs e)

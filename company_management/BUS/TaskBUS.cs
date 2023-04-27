@@ -17,20 +17,18 @@ namespace company_management.BUS
         private Lazy<TaskDAO> taskDAO;
         private Lazy<TeamDAO> teamDAO;
         private Lazy<UserDAO> userDAO;
-        private Lazy<ProjectDAO> projectDAO;
         private Lazy<UserBUS> userBUS;
         private Lazy<ProjectBUS> projectBUS;
-        private List<Task> listTask;
+        private Lazy<List<Task>> listTask;
 
         public TaskBUS()
         {
             taskDAO = new Lazy<TaskDAO>(() => new TaskDAO());
             teamDAO = new Lazy<TeamDAO>(() => new TeamDAO());
             userDAO = new Lazy<UserDAO>(() => new UserDAO());
-            projectDAO = new Lazy<ProjectDAO>(() => new ProjectDAO());
             userBUS = new Lazy<UserBUS>(() => new UserBUS());
             projectBUS = new Lazy<ProjectBUS>(() => new ProjectBUS());
-            listTask = new List<Task>();
+            listTask = new Lazy<List<Task>>(() => new List<Task>());
         }
 
         public void LoadDataGridview(List<Task> listTask, DataGridView dataGridView)
@@ -67,31 +65,33 @@ namespace company_management.BUS
 
         public List<Task> GetListTaskByPosition()
         {
+            var tasks = listTask.Value;
             var taskDao = taskDAO.Value;
             var userBus = userBUS.Value;
 
             string position = userBus.GetUserPosition();
 
-            ClearListTask(listTask);
+            ClearListTask(tasks);
 
             if (position.Equals("Manager"))
             {
-                listTask = taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id);
+                tasks = taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id);
             }
             else if (position.Equals("Leader"))
             {
-                listTask.AddRange(taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id));
-                listTask.AddRange(taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id));
+                tasks.AddRange(taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id));
+                tasks.AddRange(taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id));
             }
             else
             {
-                listTask = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id);
+                tasks = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id);
             }
 
-            return listTask;
+            return tasks;
         }
 
-        public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, ComboBox combbox_Assignee, int progress, string bonus, ComboBox combobox_Project)
+        public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, 
+                ComboBox combbox_Assignee, int progress, string bonus, ComboBox combobox_Project)
         {
             var userBus = userBUS.Value;
             var teamDao = teamDAO.Value;
@@ -134,19 +134,6 @@ namespace company_management.BUS
             return task;
         }
 
-        public void CheckControlStatus<T>(T control) where T : Control
-        {
-            var userBus = userBUS.Value;
-            if (userBus.IsEmployee())
-            {
-                control.Enabled = false;
-            }
-            else
-            {
-                control.Enabled = true;
-            }
-        }
-
         public List<Task> SearchTasks(string txtSearch)
         {
             var taskDao = taskDAO.Value;
@@ -156,8 +143,9 @@ namespace company_management.BUS
         public List<Task> SearchTasksByKeyword(Guna2DataGridView gridView, string keyword, 
                         int clmnCreator, int clmnTaskName, int clmnAssignee, int clmnTeam)
         {
+            var tasks = listTask.Value;
             var taskDao = taskDAO.Value;
-            ClearListTask(listTask);
+            ClearListTask(tasks);
 
             foreach (DataGridViewRow row in gridView.Rows)
             {
@@ -175,10 +163,10 @@ namespace company_management.BUS
                 {
                     int taskId = Convert.ToInt32(row.Cells[0].Value);
                     Task task = taskDao.GetTaskById(taskId);
-                    listTask.Add(task);
+                    tasks.Add(task);
                 }
             }
-            return listTask;
+            return tasks;
         }
 
         public void SelectComboBoxItemByValue(Guna2ComboBox comboBox, int value)

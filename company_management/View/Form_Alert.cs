@@ -122,7 +122,6 @@ namespace company_management.View
                     break;
             }
 
-
             this.label_message.Text = msg;
 
             this.Show();
