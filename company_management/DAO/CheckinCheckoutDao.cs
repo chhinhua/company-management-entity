@@ -46,19 +46,19 @@ namespace company_management.DAO
             _dBConnection.ExecuteQuery(sqlStr);
         }
 
-        public CheckinCheckout GetCheckinCoById(int id)
+        public CheckinCheckout GetCheckinCheckoutById(int id)
         {
             string query = $"SELECT * FROM checkin_checkout WHERE id = {id}";
             return _dBConnection.GetObjectByQuery<CheckinCheckout>(query);
         }
 
-        public List<CheckinCheckout> GetAllCheckinCo()
+        public List<CheckinCheckout> GetAllCheckinCheckouts()
         {
             string query = string.Format("SELECT * FROM checkin_checkout");
             return _dBConnection.GetListObjectsByQuery<CheckinCheckout>(query);
         }
 
-        public List<CheckinCheckout> SearchCheckinCo(string txtSearch)
+        public List<CheckinCheckout> SearchCheckinCheckouts(string txtSearch)
         {
             string query = string.Format("SELECT t.* FROM task t " +
                 "INNER JOIN teams tm ON t.idTeam = tm.id " +
@@ -71,57 +71,37 @@ namespace company_management.DAO
         }
 
         // Danh sách cico của người đăng nhập
-        public List<CheckinCheckout> GetMyCheckinCo(int idUser)
+        public List<CheckinCheckout> GetMyCheckinCoCheckouts(int idUser)
         {
-            return GetAllCheckinCo().Where(c => c.IdUser == idUser).ToList();
+            return GetAllCheckinCheckouts().Where(c => c.IdUser == idUser).ToList();
         }
 
         // Checkin mà chưa checkout
-        public List<CheckinCheckout> GetIncompleteCheckinCo(int idUser)
+        public List<CheckinCheckout> GetIncompleteCheckinCheckouts(int idUser)
         {
             DateTime defaultDateTime = new DateTime();
-            return GetAllCheckinCo()     
+            return GetAllCheckinCheckouts()     
                 .Where(c => c.IdUser == idUser && c.CheckoutTime == defaultDateTime)
                 .ToList();
         }
 
         // Hoàn thành checkin checkout
-        public List<CheckinCheckout> GetCompleteCheckinCo(int idUser)
+        public List<CheckinCheckout> GetCompleteCheckinCheckouts(int idUser)
         {
             DateTime defaultDateTime = new DateTime();
-            return GetAllCheckinCo()
+            return GetAllCheckinCheckouts()
                 .Where(c => c.IdUser == idUser && c.CheckoutTime != defaultDateTime)
                 .ToList();
         }
 
         // Lọc theo ngày
-        public List<CheckinCheckout> GetCheckinCoByDate(DateTime selectedDate)
+        public List<CheckinCheckout> GetCheckinCheckoutByDate(DateTime selectedDate)
         {
-            return GetAllCheckinCo()
+            return GetAllCheckinCheckouts()
                 .Where(c => c.Date.Date == selectedDate.Date)
                 .ToList();
         }
-
-        public List<Task> SearchTasks(string txtSearch)
-        {
-            string query = string.Format("SELECT t.* FROM task t " +
-                "INNER JOIN teams tm ON t.idTeam = tm.id " +
-                "INNER JOIN users u ON(t.idCreator = u.id OR t.idAssignee = u.id) " +
-                "WHERE t.taskName LIKE '%{0}%' " +
-                "OR t.description LIKE '%{0}%' " +
-                "OR tm.name LIKE '%{0}%' " +
-                "OR u.username LIKE '%{0}%' ", txtSearch);
-            return _dBConnection.GetListObjectsByQuery<Task>(query);
-        }
-
-        public void SetTotalHours(CheckinCheckout checkin)
-        {
-            double totalHours = (checkin.CheckoutTime - checkin.CheckinTime).TotalHours;
-            string sqlStr = string.Format("UPDATE checkin_checkout SET totalHours = '{0}' WHERE idUser = '{1}' AND date = '{2}'",
-                   totalHours, checkin.IdUser, checkin.Date);
-            _dBConnection.ExecuteQuery(sqlStr);
-        }
-
+        
         public CheckinCheckout GetCheckinById(int id)
         {
             string query = string.Format("SELECT * FROM checkin_checkout WHERE id = {0}", id);

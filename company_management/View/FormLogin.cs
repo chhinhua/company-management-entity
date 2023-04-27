@@ -33,25 +33,25 @@ namespace company_management.View
                 User loginUser;
 
                 // Lấy thông tin người dùng đăng nhập
-                // loginUser = userDAO.GetUserByUsername("edalziell2"); // manager
-                //loginUser = userDAO.GetUserByUsername("chhinhua"); // manager
+                loginUser = _userDao.GetUserByUsername("edalziell2"); // manager
+                //loginUser = _userDao_userDao.GetUserByUsername("chhinhua"); // manager
 
-                // User loginUser = userDAO.GetUserByUsername("abaldacchinob"); // leader
-                loginUser = _userDao.GetUserByUsername("tmccoish4"); // leader
-                // loginUser = userDAO.GetUserByUsername("abrilleman6"); // leader
-                // loginUser = userDAO.GetUserByUsername("wdionisi7"); // leader
-                // loginUser = userDAO.GetUserByUsername("dlaven9"); // leader
-                // loginUser = userDAO.GetUserByUsername("linglishc"); // leader
+                // User loginUser = _userDao.GetUserByUsername("abaldacchinob"); // leader
+                // loginUser = _userDao.GetUserByUsername("tmccoish4"); // leader
+                // loginUser = _userDao.GetUserByUsername("abrilleman6"); // leader
+                // loginUser = _userDao.GetUserByUsername("wdionisi7"); // leader
+                // loginUser = _userDao.GetUserByUsername("dlaven9"); // leader
+                // loginUser = _userDao.GetUserByUsername("linglishc"); // leader
 
-                //loginUser = userDAO.GetUserByUsername("ntute3"); // employee
-                // loginUser = userDAO.GetUserByUsername("esparsholtf"); // employee
-                // loginUser = userDAO.GetUserByUsername("econstablee"); // employee
-                // loginUser = userDAO.GetUserByUsername("walimand"); // employee
-                // loginUser = userDAO.GetUserByUsername("mboardera"); // employee
-                // loginUser = userDAO.GetUserByUsername("pbartulj"); // employee
-                // loginUser = userDAO.GetUserByUsername("taulti"); // employee
-                // loginUser = userDAO.GetUserByUsername("dsillyh"); // employee
-                // loginUser = userDAO.GetUserByUsername("ipedlerg"); // employee
+                // loginUser = _userDao.GetUserByUsername("ntute3"); // employee
+                // loginUser = _userDao.GetUserByUsername("esparsholtf"); // employee
+                // loginUser = _userDao.GetUserByUsername("econstablee"); // employee
+                // loginUser = _userDao.GetUserByUsername("walimand"); // employee
+                // loginUser = _userDao.GetUserByUsername("mboardera"); // employee
+                // loginUser = _userDao.GetUserByUsername("pbartulj"); // employee
+                // loginUser = _userDao.GetUserByUsername("taulti"); // employee
+                // loginUser = _userDao.GetUserByUsername("dsillyh"); // employee
+                // loginUser = _userDao.GetUserByUsername("ipedlerg"); // employee
 
 
 

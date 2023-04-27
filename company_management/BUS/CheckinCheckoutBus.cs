@@ -16,13 +16,37 @@ namespace company_management.BUS
     {
         private readonly Lazy<CheckinCheckoutDao> _cicoDao;
         private readonly Lazy<UserDao> _userDao;
+        private readonly Lazy<UserBus> _userBus;
+        private readonly Lazy<List<CheckinCheckout>> _listCiCo;
 
         public CheckinCheckoutBus()
         {
             _cicoDao = new Lazy<CheckinCheckoutDao>(() => new CheckinCheckoutDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
+            _userBus = new Lazy<UserBus>(() => new UserBus());
+            _listCiCo = new Lazy<List<CheckinCheckout>>(() => new List<CheckinCheckout>());
         }
 
+        public List<CheckinCheckout> GetListCheckinCheckoutsByPosition()
+        {
+            var cicos = _listCiCo.Value;
+            var cicoDao = _cicoDao.Value;
+            var userBus = _userBus.Value;
+
+            ClearListCiCo(cicos);
+            
+            string position = userBus.GetUserPosition();
+            cicos = position.Equals("Manager") ? cicoDao.GetAllCheckinCheckouts() : cicoDao.GetMyCheckinCoCheckouts(UserSession.LoggedInUser.Id);
+            
+            return cicos;
+        }
+        
+        private void ClearListCiCo(List<CheckinCheckout> listCiCo)
+        {
+            listCiCo.Clear();
+            listCiCo.TrimExcess();
+        }
+        
         public void LoadDataGridview(List<CheckinCheckout> listCiCo, DataGridView dataGridView)
         {
             dataGridView.ColumnCount = 6;

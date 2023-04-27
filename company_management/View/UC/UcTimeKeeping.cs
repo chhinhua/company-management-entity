@@ -48,8 +48,7 @@ namespace company_management.View.UC
         private void LoadDataGridview()
         {
             var cicoBus = _cicoBus.Value;
-            var cicoDao = _cicoDao.Value;
-            List<CheckinCheckout> data = cicoDao.GetAllCheckinCo();
+            List<CheckinCheckout> data = cicoBus.GetListCheckinCheckoutsByPosition();
             cicoBus.LoadDataGridview(data, datagridview_timeKeeping);
         }
 
@@ -154,7 +153,7 @@ namespace company_management.View.UC
                 LastCheckinCheckoutId = (int)selectedRow.Cells[0].Value;
 
                 var cicoDao = _cicoDao.Value;
-                CheckinCheckout cico = cicoDao.GetCheckinCoById(LastCheckinCheckoutId);
+                CheckinCheckout cico = cicoDao.GetCheckinCheckoutById(LastCheckinCheckoutId);
 
                 var userDao = _userDao.Value;
                 txtBox_fullName.Text = userDao.GetUserById(cico.IdUser).FullName;

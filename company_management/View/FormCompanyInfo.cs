@@ -16,6 +16,5 @@ namespace company_management.View
         {
             InitializeComponent();
         }
-
     }
 }

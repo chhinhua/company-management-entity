@@ -7,10 +7,6 @@ namespace company_management.View.UC
 {
     public partial class UcLeaveRequest : UserControl
     {
-        private LeaveRequestDao requestDAO;
-        private LeaveRequest requestDTO;
-        private TaskDao taskDAO;
-
         public UcLeaveRequest()
         {
             InitializeComponent();
@@ -28,7 +24,7 @@ namespace company_management.View.UC
             formLR.ShowDialog();
         }
 
-        private void CustomeGridColumn()
+        private void CustomGridColumn()
         {
             datagridview_leaveRequest.Columns["Id"].Visible = false;
             datagridview_leaveRequest.Columns["IdUser"].Visible = false;
@@ -86,7 +82,7 @@ namespace company_management.View.UC
 
         }   
 
-        private void loadGridview()
+        private void LoadGridview()
         {
             /*List<LeaveRequest> data = requestDAO.GetAllLeaveRequests();
 
@@ -101,7 +97,7 @@ namespace company_management.View.UC
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            loadGridview();
+            LoadGridview();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
