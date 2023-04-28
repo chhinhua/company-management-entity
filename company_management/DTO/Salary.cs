@@ -19,6 +19,8 @@ namespace company_management.DTO
         public decimal Tax { get; set; }
         public decimal Insurance { get; set; }
         public decimal FinalSalary { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
         
         public Salary() { }
         

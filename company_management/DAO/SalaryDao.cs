@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using company_management.DTO;
+using company_management.Utilities;
+using company_management.View;
 
 namespace company_management.DAO
 {
@@ -12,6 +14,7 @@ namespace company_management.DAO
         private readonly Lazy<CheckinCheckoutDao> _cicoDao;
         private readonly Lazy<TaskDao> _taskDao;
         private readonly Lazy<UserDao> _userDao;
+        private Lazy<Utils> _utils;
 
         public SalaryDao()
         {
@@ -19,6 +22,7 @@ namespace company_management.DAO
             _cicoDao = new Lazy<CheckinCheckoutDao>(() => new CheckinCheckoutDao());
             _taskDao = new Lazy<TaskDao>(() => new TaskDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
+            _utils = new Lazy<Utils>(() => new Utils());
         }
 
         public List<Salary> GetAllSalary()
@@ -104,6 +108,8 @@ namespace company_management.DAO
                 salary.TotalHours = totalHours;
                 salary.OvertimeHours = overtimeHours;
                 salary.LeaveHours = leaveHours;
+                salary.FromDate = fromDate;
+                salary.ToDate = toDate;
                 salary.FinalSalary = finalSalary;
             }
 
@@ -123,31 +129,46 @@ namespace company_management.DAO
         public void CalculateAndSaveSalaryForAllEmployees(DateTime fromDate, DateTime toDate)
         {
             List<int> userIds = GetUserIdList();
-
+            var util = _utils.Value;
+            
             using (SqlConnection connection = new SqlConnection(_dBConnection.connString))
             {
                 connection.Open();
-                foreach (int idUser in userIds)
+                try
                 {
-                    Salary salary = CalculateSalaryForEmployee(idUser, fromDate, toDate);
+                    foreach (int idUser in userIds)
+                    {
+                        Salary salary = CalculateSalaryForEmployee(idUser, fromDate, toDate);
 
-                    // Lưu thông tin lương vào bảng salary
-                    string query =
-                        "INSERT INTO salary (idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus, allowance, tax, insurance, finalSalary) " +
-                        "VALUES (@idUser, @basicSalary, @totalHours, @overtimeHours, @leaveHours, @bonus, @allowance, @tax, @insurance, @finalSalary)";
-                    SqlCommand insertCommand = new SqlCommand(query, connection);
-                    insertCommand.Parameters.AddWithValue("@idUser", salary.IdUser);
-                    insertCommand.Parameters.AddWithValue("@basicSalary", salary.BasicSalary);
-                    insertCommand.Parameters.AddWithValue("@totalHours", (decimal)salary.TotalHours);
-                    insertCommand.Parameters.AddWithValue("@overtimeHours", (decimal)salary.OvertimeHours);
-                    insertCommand.Parameters.AddWithValue("@leaveHours", (decimal)salary.LeaveHours);
-                    insertCommand.Parameters.AddWithValue("@bonus", salary.Bonus);
-                    insertCommand.Parameters.AddWithValue("@allowance", salary.Allowance);
-                    insertCommand.Parameters.AddWithValue("@tax", salary.Tax);
-                    insertCommand.Parameters.AddWithValue("@insurance", salary.Insurance);
-                    insertCommand.Parameters.AddWithValue("@finalSalary", salary.FinalSalary);
-                    insertCommand.ExecuteNonQuery();
+                        // Lưu thông tin lương vào bảng salary
+                        string query =
+                            "INSERT INTO salary (idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus, allowance, tax, insurance, finalSalary, fromDate, toDate) " +
+                            "VALUES (@idUser, @basicSalary, @totalHours, @overtimeHours, @leaveHours, @bonus, @allowance, @tax, @insurance, @finalSalary, @fromDate, @toDate)";
+                        SqlCommand insertCommand = new SqlCommand(query, connection);
+                        insertCommand.Parameters.AddWithValue("@idUser", salary.IdUser);
+                        insertCommand.Parameters.AddWithValue("@basicSalary", salary.BasicSalary);
+                        insertCommand.Parameters.AddWithValue("@totalHours", (decimal)salary.TotalHours);
+                        insertCommand.Parameters.AddWithValue("@overtimeHours", (decimal)salary.OvertimeHours);
+                        insertCommand.Parameters.AddWithValue("@leaveHours", (decimal)salary.LeaveHours);
+                        insertCommand.Parameters.AddWithValue("@bonus", salary.Bonus);
+                        insertCommand.Parameters.AddWithValue("@allowance", salary.Allowance);
+                        insertCommand.Parameters.AddWithValue("@tax", salary.Tax);
+                        insertCommand.Parameters.AddWithValue("@insurance", salary.Insurance);
+                        insertCommand.Parameters.AddWithValue("@finalSalary", salary.FinalSalary);
+                        insertCommand.Parameters.AddWithValue("@fromDate", salary.FromDate);
+                        insertCommand.Parameters.AddWithValue("@toDate", salary.ToDate);
+                        insertCommand.ExecuteNonQuery();
+                    }
+                    
+                    util.Alert("Calculate successful", FormAlert.enmType.Success);
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    util.Alert("Action failed", FormAlert.enmType.Error);
+                    throw;
+                }
+
             }
         }
 

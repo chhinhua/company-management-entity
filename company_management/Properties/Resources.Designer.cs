@@ -193,6 +193,16 @@ namespace company_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap caculate_salary {
+            get {
+                object obj = ResourceManager.GetObject("caculate-salary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap company_background {
             get {
                 object obj = ResourceManager.GetObject("company-background", resourceCulture);
@@ -316,6 +326,16 @@ namespace company_management.Properties {
         internal static System.Drawing.Bitmap icons8_bell_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bell-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calculate_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calculate-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,6 +506,16 @@ namespace company_management.Properties {
         internal static System.Drawing.Bitmap icons8_receive_euro_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-receive-euro-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_receive_euro_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-receive-euro-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -22,24 +22,23 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.groupBox_fillter = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.datagridview_salary = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.label_basicValue = new System.Windows.Forms.Label();
             this.label_basic = new System.Windows.Forms.Label();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,10 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_caculateSalary = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_salary)).BeginInit();
             this.panelFields.SuspendLayout();
@@ -73,17 +69,18 @@
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
+            this.panelData.Controls.Add(this.btnRefresh);
             this.panelData.Controls.Add(this.groupBox_fillter);
             this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.datagridview_salary);
             this.panelData.FillColor = System.Drawing.Color.White;
-            this.panelData.Location = new System.Drawing.Point(17, 308);
+            this.panelData.Location = new System.Drawing.Point(17, 253);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
-            this.panelData.Size = new System.Drawing.Size(1258, 461);
+            this.panelData.Size = new System.Drawing.Size(1258, 516);
             this.panelData.TabIndex = 87;
             // 
             // groupBox_fillter
@@ -94,47 +91,73 @@
             this.groupBox_fillter.FillColor = System.Drawing.Color.Transparent;
             this.groupBox_fillter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_fillter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox_fillter.Location = new System.Drawing.Point(973, 18);
+            this.groupBox_fillter.Location = new System.Drawing.Point(650, 18);
             this.groupBox_fillter.Name = "groupBox_fillter";
             this.groupBox_fillter.Size = new System.Drawing.Size(265, 41);
             this.groupBox_fillter.TabIndex = 89;
             this.groupBox_fillter.Text = "Fillter:";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Location = new System.Drawing.Point(16, 18);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.PlaceholderText = "Search ...";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(472, 41);
+            this.txtSearch.TabIndex = 70;
+            // 
             // datagridview_salary
             // 
             this.datagridview_salary.AllowUserToOrderColumns = true;
             this.datagridview_salary.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagridview_salary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.datagridview_salary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datagridview_salary.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview_salary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview_salary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridview_salary.ColumnHeadersHeight = 50;
             this.datagridview_salary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview_salary.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview_salary.DefaultCellStyle = dataGridViewCellStyle7;
             this.datagridview_salary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.datagridview_salary.Location = new System.Drawing.Point(16, 87);
+            this.datagridview_salary.Location = new System.Drawing.Point(16, 78);
             this.datagridview_salary.Name = "datagridview_salary";
             this.datagridview_salary.RowHeadersVisible = false;
             this.datagridview_salary.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.datagridview_salary.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.datagridview_salary.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.datagridview_salary.RowTemplate.Height = 30;
-            this.datagridview_salary.Size = new System.Drawing.Size(1222, 354);
+            this.datagridview_salary.Size = new System.Drawing.Size(1222, 353);
             this.datagridview_salary.TabIndex = 0;
             this.datagridview_salary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.datagridview_salary.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -325,7 +348,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 272);
+            this.label1.Location = new System.Drawing.Point(31, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 33);
             this.label1.TabIndex = 91;
@@ -375,9 +398,8 @@
             // 
             // btn_caculateSalary
             // 
-            this.btn_caculateSalary.AutoRoundedCorners = true;
             this.btn_caculateSalary.BackColor = System.Drawing.Color.Transparent;
-            this.btn_caculateSalary.BorderRadius = 24;
+            this.btn_caculateSalary.BorderRadius = 15;
             this.btn_caculateSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_caculateSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_caculateSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -386,101 +408,32 @@
             this.btn_caculateSalary.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_caculateSalary.ForeColor = System.Drawing.Color.Black;
             this.btn_caculateSalary.ImageSize = new System.Drawing.Size(28, 28);
-            this.btn_caculateSalary.Location = new System.Drawing.Point(529, 162);
+            this.btn_caculateSalary.Location = new System.Drawing.Point(1033, 188);
             this.btn_caculateSalary.Name = "btn_caculateSalary";
             this.btn_caculateSalary.Size = new System.Drawing.Size(242, 50);
             this.btn_caculateSalary.TabIndex = 92;
             this.btn_caculateSalary.Text = "Calculation of wages";
             this.btn_caculateSalary.Click += new System.EventHandler(this.btn_caculateSalary_Click);
             // 
-            // btnEdit
+            // btnRefresh
             // 
-            this.btnEdit.AutoRoundedCorners = true;
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BorderRadius = 19;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.btnEdit.Image = global::company_management.Properties.Resources.edit;
-            this.btnEdit.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEdit.Location = new System.Drawing.Point(1170, 262);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(49, 40);
-            this.btnEdit.TabIndex = 89;
+            this.btnRefresh.BorderRadius = 15;
+            this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.Image = global::company_management.Properties.Resources.icons8_refresh_32;
+            this.btnRefresh.Location = new System.Drawing.Point(1121, 19);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(117, 40);
+            this.btnRefresh.TabIndex = 103;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BorderRadius = 19;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::company_management.Properties.Resources.trash;
-            this.btnDelete.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnDelete.Location = new System.Drawing.Point(1225, 262);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(50, 40);
-            this.btnDelete.TabIndex = 90;
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoRoundedCorners = true;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.Transparent;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::company_management.Properties.Resources.plus;
-            this.btnSave.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnSave.Location = new System.Drawing.Point(1118, 260);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(46, 42);
-            this.btnSave.TabIndex = 88;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_483;
-            this.txtSearch.Location = new System.Drawing.Point(16, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.PlaceholderText = "Search ...";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(472, 41);
-            this.txtSearch.TabIndex = 70;
-            // 
-            // UCSalary
+            // UcSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -491,13 +444,10 @@
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panelData);
             this.Controls.Add(this.panelFields);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UCSalary";
+            this.Name = "UcSalary";
             this.Size = new System.Drawing.Size(1292, 788);
             this.Load += new System.EventHandler(this.UCSalary_Load);
             this.panelData.ResumeLayout(false);
@@ -513,9 +463,6 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Panel panelData;
         private Guna.UI2.WinForms.Guna2GroupBox groupBox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
@@ -523,7 +470,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelFields;
         private System.Windows.Forms.Label label_basicValue;
         private System.Windows.Forms.Label label_basic;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -538,5 +484,7 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Button btn_caculateSalary;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

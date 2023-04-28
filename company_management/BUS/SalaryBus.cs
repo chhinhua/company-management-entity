@@ -33,27 +33,31 @@ namespace company_management.BUS
         {
             var userDao = _userDao.Value;
 
-            dataGridView.ColumnCount = 11;
+            dataGridView.ColumnCount = 13;
             dataGridView.Columns[0].Name = "Mã";
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[1].Name = "Họ tên";
-            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns[2].Name = "Lương cơ bản ($/h)";
             dataGridView.Columns[3].Name = "Tổng giờ làm (h)";
             dataGridView.Columns[4].Name = "Tăng ca (h)";
             dataGridView.Columns[5].Name = "Giờ nghỉ (h)";
-            dataGridView.Columns[6].Name = "Thưởng ($)";
-            dataGridView.Columns[7].Name = "Phụ cấp ($)";
-            dataGridView.Columns[8].Name = "Bảo hiểm ($)";
-            dataGridView.Columns[9].Name = "TTNCN ($)";
-            dataGridView.Columns[10].Name = "Thực nhận ($)";
+            dataGridView.Columns[6].Name = "Thưởng";
+            dataGridView.Columns[7].Name = "Phụ cấp";
+            dataGridView.Columns[8].Name = "Bảo hiểm";
+            dataGridView.Columns[9].Name = "TTNCN";
+            dataGridView.Columns[10].Name = "Thực nhận";
+            dataGridView.Columns[11].Name = "Từ ngày";
+            dataGridView.Columns[12].Name = "Đến ngày";
+            for (int i = 1; i < 13; i++) { dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; }
+            for (int i = 6; i < 11; i++) { dataGridView.Columns[i].DefaultCellStyle.Format = "C"; }
             dataGridView.Rows.Clear();
 
             foreach (var s in listSalary)
             {
                 string fullName = userDao.GetUserById(s.IdUser).FullName;
-                dataGridView.Rows.Add(s.Id, fullName, s.BasicSalary, s.TotalHours, s.OvertimeHours, 
-                                    s.LeaveHours, s.Bonus, s.Allowance, s.Tax, s.Insurance , s.FinalSalary);
+                dataGridView.Rows.Add(s.Id, fullName, s.BasicSalary.ToString("F2"), 
+                    s.TotalHours, s.OvertimeHours, s.LeaveHours.ToString("F2"), s.Bonus, s.Allowance, 
+                    s.Tax, s.Insurance , s.FinalSalary, s.FromDate.ToString("d-M-yyyy"), s.ToDate.ToString("d/M/yyyy"));
             }
         }
 

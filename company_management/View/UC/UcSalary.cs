@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using company_management.BUS;
 using company_management.DTO;
 using company_management.Utilities;
+using Guna.UI2.WinForms;
 
 namespace company_management.View.UC
 {
@@ -28,7 +29,14 @@ namespace company_management.View.UC
             _salaryBus = new Lazy<SalaryBus>(() => new SalaryBus());
             _salaryDao = new Lazy<SalaryDao>(() => new SalaryDao());
         }
-        
+
+        private void LoadData()
+        {
+            var util = _utils.Value;
+            util.CheckCalculateSalaryStatus(btn_caculateSalary);
+            util.CheckCalculateSalaryStatus(btnRefresh);
+            LoadDataGridview();
+        }
         private void LoadDataGridview()
         {
             var salaryBus = _salaryBus.Value;
@@ -39,15 +47,18 @@ namespace company_management.View.UC
 
         private void UCSalary_Load(object sender, EventArgs e)
         {
-            LoadDataGridview();
+            LoadData();
         }
 
         private void btn_caculateSalary_Click(object sender, EventArgs e)
         {
-            var salaryDao = _salaryDao.Value;
-            DateTime from = new DateTime(2023, 3, 1);
-            DateTime to = new DateTime(2023, 5, 30);
-            salaryDao.CalculateAndSaveSalaryForAllEmployees(from, to);
+            FormCalculateSalary form = new FormCalculateSalary();
+            form.ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

@@ -7,6 +7,7 @@ using Guna.UI2.WinForms;
 using System.Windows.Forms;
 using company_management.BUS;
 using System.Text.RegularExpressions;
+using company_management.View;
 
 namespace company_management.Utilities
 {
@@ -56,11 +57,11 @@ namespace company_management.Utilities
             var userBus = _userBus.Value;
             if (userBus.IsEmployee())
             {
-                control.Enabled = false;
+                control.Visible = false;
             }
             else
             {
-                control.Enabled = true;
+                control.Visible = true;
             }
         }
 
@@ -69,14 +70,26 @@ namespace company_management.Utilities
             var userBus = _userBus.Value;
             if (userBus.IsManager())
             {
-                control.Enabled = true;
+                control.Visible = true;
             }
             else
             {
-                control.Enabled = false;
+                control.Visible = false;
             }
         }
         
+        public void CheckCalculateSalaryStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            if (userBus.IsManager())
+            {
+                control.Visible = true;
+            }
+            else
+            {
+                control.Visible = false;
+            }
+        }
         public void SetFormShadow(Form form)
         {
             Guna2ShadowForm shadowForm = new Guna2ShadowForm();
@@ -88,6 +101,12 @@ namespace company_management.Utilities
 
             form.Dock = DockStyle.Fill;
             form.Show();
+        }
+        
+        public void Alert(string msg, FormAlert.enmType type)
+        {
+            FormAlert frm = new FormAlert();
+            frm.showAlert(msg, type);
         }
     }
 }

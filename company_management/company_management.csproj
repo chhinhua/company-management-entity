@@ -435,6 +435,12 @@
     <Compile Include="View\FormAlert.Designer.cs">
       <DependentUpon>FormAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormCalculateSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCalculateSalary.Designer.cs">
+      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormCompanyInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -574,6 +580,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAlert.resx">
       <DependentUpon>FormAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCalculateSalary.resx">
+      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormCompanyInfo.resx">
       <DependentUpon>FormCompanyInfo.cs</DependentUpon>
@@ -757,6 +766,8 @@
     <None Include="Resources\edit.png" />
     <None Include="Resources\edit - Copy.png" />
     <None Include="Resources\error.png" />
+    <None Include="Resources\caculate-salary.jpg" />
+    <None Include="Resources\icons8-calculate-50.png" />
     <Content Include="Resources\icons8-cancel-48.png" />
   </ItemGroup>
   <ItemGroup />
