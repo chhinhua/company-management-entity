@@ -20,5 +20,4 @@ namespace company_management.DTO
             LoggedInUser = null;
         }
     }
-
 }
