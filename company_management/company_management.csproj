@@ -403,7 +403,6 @@
     <Compile Include="DAO\UserDao.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DTO\Constants.cs" />
-    <Compile Include="DTO\MappingExtensions.cs" />
     <Compile Include="DTO\Project.cs" />
     <Compile Include="DTO\Team.cs" />
     <Compile Include="DTO\TimeKeepingDTO.cs" />
