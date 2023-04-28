@@ -155,7 +155,10 @@ namespace company_management.DAO
                 connection.Open();
 
                 // Tìm tất cả các task được giao cho nhân viên đó với deadline trong khoảng thời gian từ fromDate đến toDate
-                string query = "SELECT SUM(bonus) FROM task WHERE idAssignee = @idUser AND deadline >= @fromDate AND deadline <= @toDate";
+                string query = "SELECT SUM(bonus) FROM task " +
+                               "WHERE idAssignee = @idUser " +
+                               "AND deadline >= @fromDate AND deadline <= @toDate " +
+                               "AND progress = 100";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@idUser", idUser);

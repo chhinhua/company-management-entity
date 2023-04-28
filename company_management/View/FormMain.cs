@@ -126,5 +126,6 @@ namespace company_management.View
             UcHome uCHome = new UcHome();
             AddUc(uCHome);
         }
+        
     }
 }

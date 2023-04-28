@@ -7,109 +7,58 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using company_management.BUS;
 using company_management.DTO;
+using company_management.Utilities;
+using Guna.UI2.WinForms;
 
 namespace company_management.View.UC
 {
     public partial class UcSalary : UserControl
     {
+        private readonly Lazy<Utils> _utils;
+        private readonly Lazy<SalaryBus> _salaryBus;
+        private readonly Lazy<List<Salary>> _listSalary;
         private readonly Lazy<SalaryDao> _salaryDao;
-        private Lazy<TaskDao> _taskDao;
 
         public UcSalary()
         {
             InitializeComponent();
+            _utils = new Lazy<Utils>(() => new Utils());
+            _listSalary = new Lazy<List<Salary>>(() => new List<Salary>());
+            _salaryBus = new Lazy<SalaryBus>(() => new SalaryBus());
             _salaryDao = new Lazy<SalaryDao>(() => new SalaryDao());
-            _taskDao = new Lazy<TaskDao>(() => new TaskDao());
         }
 
-        /*        private void btnLR_Click(object sender, EventArgs e)
-                {
-                    FormLeaveQuest formLR = new FormLeaveQuest();
-                    formLR.ShowDialog();
-                }*/
-
-        private void AddActionColumn()
+        private void LoadData()
         {
-            // Tạo hai cột mới để chứa các nút phê duyệt/từ chối
-            var approveColumn = new DataGridViewCheckBoxColumn();
-            approveColumn.Name = "";
-
-            // Thêm cột vào DataGridView
-            datagridview_salary.Columns.Add(approveColumn);
-            //datagridview_salary.Columns.Add(rejectColumn);
+            var util = _utils.Value;
+            util.CheckCalculateSalaryStatus(btn_caculateSalary);
+            util.CheckCalculateSalaryStatus(btnRefresh);
+            LoadDataGridview();
         }
-
-        private void CustomGridColumn()
+        private void LoadDataGridview()
         {
-            datagridview_salary.Columns["Id"].Visible = false;
-            datagridview_salary.Columns["IdUser"].Visible = false;
-           
-            // Đổi tên cột
-            datagridview_salary.Columns["BasicSalary"].HeaderText = "Luơng cơ bản \n(Vnd)";
-            datagridview_salary.Columns["TotalHours"].HeaderText = "Tổng giờ";
-            datagridview_salary.Columns["OverTimeHours"].HeaderText = "Tăng ca (h)";
-            datagridview_salary.Columns["LeaveHours"].HeaderText = "Nghỉ (h)";
-            datagridview_salary.Columns["Bonus"].HeaderText = "Thưởng (Vnd)";
-            datagridview_salary.Columns["FinalSalary"].HeaderText = "Thực nhận (Vnd)";
+            var salaryBus = _salaryBus.Value;
 
-
-            // custom chiều rộng cột
-            datagridview_salary.Columns[""].Width = 45;
-            datagridview_salary.Columns["TotalHours"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            datagridview_salary.Columns["OverTimeHours"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            datagridview_salary.Columns["LeaveHours"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
-       /* private void datagridview_leaveRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                var approveColumn = datagridview_leaveRequest.Columns["Duyệt"];
-                var rejectColumn = datagridview_leaveRequest.Columns["Từ chối"];
-
-                if (datagridview_leaveRequest.Columns[e.ColumnIndex] == rejectColumn)
-                {
-                    var result = MessageBox.Show("Lưu thay đổi", "Từ chối yêu cầu xin nghỉ!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Duyệt"].Value = false;
-                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = true;
-                    }
-                    else
-                    {
-                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = false;
-                    }
-                }
-                else if (datagridview_leaveRequest.Columns[e.ColumnIndex] == approveColumn)
-                {
-                    datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = false;
-                }
-            }
-
-        }
-*/
-
-        private void loadGridview()
-        {
-            /*List<Salary> data = salaryDAO.GetAllSalaries();
-            datagridview_salary.DataSource = data;*/
+            var salaries = salaryBus.GetListSalaryByPosition();
+            salaryBus.LoadDataGridview(salaries, datagridview_salary);
         }
 
         private void UCSalary_Load(object sender, EventArgs e)
         {
-        //    //AddActionColumn();
-        //    //salaryDAO.InitData();
-        //    //loadGridview();
-        //    //CustomGridColumn();
+            LoadData();
         }
 
         private void btn_caculateSalary_Click(object sender, EventArgs e)
         {
-            var salaryDao = _salaryDao.Value;
-            DateTime from = new DateTime(2023, 3, 1);
-            DateTime to = new DateTime(2023, 5, 30);
-            salaryDao.CalculateAndSaveSalaryForAllEmployees(from, to);
+            FormCalculateSalary form = new FormCalculateSalary();
+            form.ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

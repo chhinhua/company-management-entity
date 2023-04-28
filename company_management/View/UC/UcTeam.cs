@@ -31,9 +31,8 @@ namespace company_management.View.UC
 
         private void LoadDataGridview()
         {
-            var teams = _listTeam.Value;
             var teamBus = _teamBus.Value;
-            teams = teamBus.GetListTeamByPosition();
+            var teams = teamBus.GetListTeamByPosition();
             teamBus.LoadDataGridview(teams, dataGridView_Team);
         }
     }

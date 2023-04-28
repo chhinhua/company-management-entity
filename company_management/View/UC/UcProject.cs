@@ -55,10 +55,9 @@ namespace company_management.View.UC
         
         private void LoadDataGridview()
         {
-            var projects = _listProject.Value;
             var projectBus = _projectBus.Value;
 
-            projects = projectBus.GetListProjectByPosition();
+            var projects = projectBus.GetListProjectByPosition();
             projectBus.LoadDataGridview(projects, dataGridView_Project);
         }
 

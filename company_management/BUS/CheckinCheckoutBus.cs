@@ -68,14 +68,14 @@ namespace company_management.BUS
 
                 if (c.CheckoutTime != null && c.CheckoutTime != default(DateTime))
                 {
-                    checkoutTime = c.CheckoutTime.ToString("hh:mm:ss");
+                    checkoutTime = c.CheckoutTime.ToString("HH:mm:ss");
                 }
                 else
                 {
                     checkoutTime = "";
                 }
 
-                dataGridView.Rows.Add(c.Id, fullName, c.CheckinTime.ToString("hh:mm:ss"), checkoutTime, c.TotalHours, c.Date.ToString("dd/MM/yyyy"));
+                dataGridView.Rows.Add(c.Id, fullName, c.CheckinTime.ToString("HH:mm:ss"), checkoutTime, c.TotalHours, c.Date.ToString("dd/MM/yyyy"));
             }
         }
 

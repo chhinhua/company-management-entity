@@ -1,35 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace company_management.DTO
 {
     public class User
     {
-        private int id;
-        private string username;
-        private string password;
-        private string fullName;
-        private string email;
-        private string phoneNumber;
-        private string address;
-        private byte[] avatar;
-        private int idRole;
-        private int idPosition;
-
-        public int Id { get => id; set => id = value; }
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
-        public string FullName { get => fullName; set => fullName = value; }
-        public string Email { get => email; set => email = value; }
-        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        public string Address { get => address; set => address = value; }
-        public byte[] Avatar { get => avatar; set => avatar = value; }
-        public int IdRole { get => idRole; set => idRole = value; }
-        public int IdPosition { get => idPosition; set => idPosition = value; }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+        public byte[] Avatar { get; set; }
+        public int IdRole { get; set; }
+        public int IdPosition { get; set; }
 
         public User() { }
 
@@ -47,7 +30,7 @@ namespace company_management.DTO
             IdRole = idRole;
         }
 
-        // Dành cho Admin tài khoản thêm
+        // Dành cho Admin thêm tài khoản 
         public User(string username, string password, string fullName,
            string email, string phoneNumber, string address, int idRole)
         {

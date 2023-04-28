@@ -54,7 +54,7 @@ namespace company_management.View.UC
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text;
+            /*string keyword = txtSearch.Text;
 
             // Tạo một chuỗi điều kiện để lọc dữ liệu
             StringBuilder filterExpression = new StringBuilder();
@@ -72,7 +72,7 @@ namespace company_management.View.UC
             }
 
             // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
-            ((DataTable)datagridview_timeKeeping.DataSource).DefaultView.RowFilter = filterExpression.ToString();
+            ((DataTable)datagridview_timeKeeping.DataSource).DefaultView.RowFilter = filterExpression.ToString();*/
         }
 
         private void ClearAll()

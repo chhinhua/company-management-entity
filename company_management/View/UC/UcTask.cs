@@ -93,8 +93,7 @@ namespace company_management.View.UC
         private void LoadDataGridview()
         {
             var taskBus = _taskBus.Value;
-            var tasks = _listTask.Value;
-            tasks = taskBus.GetListTaskByPosition();
+            var tasks = taskBus.GetListTaskByPosition();
             taskBus.LoadDataGridview(tasks, dataGridView_Task);
         }
 
