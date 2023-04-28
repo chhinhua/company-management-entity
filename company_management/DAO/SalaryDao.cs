@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using company_management.DTO;
-using company_management.Entities;
 
 namespace company_management.DAO
 {
@@ -11,46 +10,66 @@ namespace company_management.DAO
     {
         private readonly DBConnection _dBConnection;
         private readonly Lazy<CheckinCheckoutDao> _cicoDao;
-        private readonly Lazy<LeaveRequestDao> _leaveRequestDao;
-        private Lazy<SalaryDao> _salaryDao;
         private readonly Lazy<TaskDao> _taskDao;
         private readonly Lazy<UserDao> _userDao;
 
         public SalaryDao()
         {
-            //dbContext = new company_managementEntities();
             _dBConnection = new DBConnection();
             _cicoDao = new Lazy<CheckinCheckoutDao>(() => new CheckinCheckoutDao());
-            _leaveRequestDao = new Lazy<LeaveRequestDao>(() => new LeaveRequestDao());
-            _salaryDao = new Lazy<SalaryDao>(() => new SalaryDao());
             _taskDao = new Lazy<TaskDao>(() => new TaskDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
         }
 
-        //public List<Salary> GetAllSalaries()
-        //{
-        //    var listSalary = dbContext.salaries.ToList();
-
-        //    return listSalary.Select(salary => MappingExtensions.ToDto<salary, Salary>(salary)).ToList();
-        //}
-
-        public decimal CalculateBonus(double kpiValue, double averageProgress)
+        public List<Salary> GetAllSalary()
         {
-            decimal bonus = 0;
-            double kpiWithProgress = kpiValue + averageProgress;
-
-            // Tính toán lương bonus
-            if (kpiWithProgress >= 0.7)
-            {
-                bonus = (decimal)kpiWithProgress * (decimal)Constants.DEFAULT_BASIC_SALARY;
-            }
-            return bonus;
+            string query = string.Format("SELECT * FROM salary");
+            return _dBConnection.GetListObjectsByQuery<Salary>(query);
         }
 
-        private Salary CalculateSalaryForEmployee(int idUser, DateTime fromDate, DateTime toDate)
+        public List<Salary> GetMySalary(int idUser)
+        {
+            return GetAllSalary().Where(s => s.IdUser == idUser).ToList();
+        }
+
+        private Salary SetBasicInfoOfSalary(int idUser)
         {
             Salary salary = new Salary();
-            salary.IdUser = idUser;
+    
+            using (SqlConnection connection = new SqlConnection(_dBConnection.connString))
+            {
+                string query = "SELECT basicSalary, allowance, insurance, tax FROM user_salary WHERE idUser = @idUser";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idUser", idUser);
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            decimal basicSalary = Convert.ToDecimal(reader["basicSalary"]);
+                            decimal allowance = Convert.ToDecimal(reader["allowance"]);
+                            decimal insurance = Convert.ToDecimal(reader["insurance"]);
+                            decimal tax = Convert.ToDecimal(reader["tax"]);
+                            
+                            salary.IdUser = idUser;
+                            salary.BasicSalary = basicSalary;
+                            salary.Allowance = allowance;
+                            salary.Insurance = insurance;
+                            salary.Tax = tax;
+                        }
+                    }
+                }
+            }
+
+            return salary;
+        }
+        
+        private Salary CalculateSalaryForEmployee(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            Salary salary = SetBasicInfoOfSalary(idUser);
 
             using (SqlConnection connection = new SqlConnection(_dBConnection.connString))
             {
@@ -67,11 +86,6 @@ namespace company_management.DAO
                     bonus = taskDao.CalculateBonusForEmployee(idUser, fromDate, toDate);
                 }
 
-                using (var lrDao = _leaveRequestDao.Value)
-                {
-                    leaveHours += lrDao.GetTotalLeaveHours(idUser, fromDate, toDate, connection);
-                }
-
                 using (var cicoDao = _cicoDao.Value)
                 {
                     totalHours = cicoDao.GetTotalHours(idUser, fromDate, toDate, connection);
@@ -80,32 +94,30 @@ namespace company_management.DAO
                 }
 
                 // Tính toán lương
-                decimal basicSalary = Constants.DEFAULT_BASIC_SALARY; // Giá trị lương cơ bản mặc định
-                decimal hourlyRate = Constants.HourlyRate;
-
-                decimal totalBasicSalary = basicSalary + ((decimal)totalHours * hourlyRate);
+                decimal hourlyRate = salary.BasicSalary;
+                
+                decimal hourlyPay = ((decimal)(totalHours - overtimeHours) * hourlyRate);
                 decimal overtimePay = (decimal)overtimeHours * 1.5m * hourlyRate;
                 decimal leavePay = (decimal)leaveHours * hourlyRate;
-                decimal finalSalary = totalBasicSalary + overtimePay + bonus - leavePay;
-
-                salary.BasicSalary = basicSalary;
+                decimal finalSalary = hourlyPay + overtimePay + bonus + salary.Allowance - leavePay - salary.Tax - salary.Insurance;
+                
                 salary.TotalHours = totalHours;
                 salary.OvertimeHours = overtimeHours;
                 salary.LeaveHours = leaveHours;
                 salary.FinalSalary = finalSalary;
-            }   
+            }
 
             return salary;
         }
 
         private List<int> GetUserIdList()
         {
-            using(var userDao = _userDao.Value)
+            using (var userDao = _userDao.Value)
             {
                 List<User> userList = userDao.GetAllUser();
                 List<int> userIds = userList.Select(u => u.Id).ToList();
                 return userIds;
-            }        
+            }
         }
 
         public void CalculateAndSaveSalaryForAllEmployees(DateTime fromDate, DateTime toDate)
@@ -120,7 +132,9 @@ namespace company_management.DAO
                     Salary salary = CalculateSalaryForEmployee(idUser, fromDate, toDate);
 
                     // Lưu thông tin lương vào bảng salary
-                    string query = "INSERT INTO salary (idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus, finalSalary) VALUES (@idUser, @basicSalary, @totalHours, @overtimeHours, @leaveHours, @bonus, @finalSalary)";
+                    string query =
+                        "INSERT INTO salary (idUser, basicSalary, totalHours, overtimeHours, leaveHours, bonus, allowance, tax, insurance, finalSalary) " +
+                        "VALUES (@idUser, @basicSalary, @totalHours, @overtimeHours, @leaveHours, @bonus, @allowance, @tax, @insurance, @finalSalary)";
                     SqlCommand insertCommand = new SqlCommand(query, connection);
                     insertCommand.Parameters.AddWithValue("@idUser", salary.IdUser);
                     insertCommand.Parameters.AddWithValue("@basicSalary", salary.BasicSalary);
@@ -128,10 +142,27 @@ namespace company_management.DAO
                     insertCommand.Parameters.AddWithValue("@overtimeHours", (decimal)salary.OvertimeHours);
                     insertCommand.Parameters.AddWithValue("@leaveHours", (decimal)salary.LeaveHours);
                     insertCommand.Parameters.AddWithValue("@bonus", salary.Bonus);
+                    insertCommand.Parameters.AddWithValue("@allowance", salary.Allowance);
+                    insertCommand.Parameters.AddWithValue("@tax", salary.Tax);
+                    insertCommand.Parameters.AddWithValue("@insurance", salary.Insurance);
                     insertCommand.Parameters.AddWithValue("@finalSalary", salary.FinalSalary);
                     insertCommand.ExecuteNonQuery();
                 }
             }
+        }
+
+        public decimal CalculateBonus(double kpiValue, double averageProgress)
+        {
+            decimal bonus = 0;
+            double kpiWithProgress = kpiValue + averageProgress;
+
+            // Tính toán lương bonus
+            if (kpiWithProgress >= 0.7)
+            {
+                bonus = (decimal)kpiWithProgress * (decimal)Constants.DEFAULT_BASIC_SALARY;
+            }
+
+            return bonus;
         }
     }
 }

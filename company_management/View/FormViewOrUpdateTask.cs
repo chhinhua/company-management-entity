@@ -42,10 +42,10 @@ namespace company_management.View
         {
             var taskBus = _taskBus.Value;
             taskBus.GetDataToCombobox(combbox_Assignee, combbox_Project);
-            bindingTaskToFields();
+            BindingTaskToFields();
         }
 
-        public void bindingTaskToFields()
+        private void BindingTaskToFields()
         {
             var taskBus = _taskBus.Value;
             var userDao = _userDao.Value;

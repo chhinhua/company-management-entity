@@ -1,10 +1,10 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using company_management.Entities;
 
 namespace company_management.DTO
 {
@@ -37,3 +37,4 @@ namespace company_management.DTO
     }
 
 }
+*/

@@ -44,8 +44,8 @@ namespace company_management.View.UC
         private void LoadDataGridview()
         {
             var userDao = _userDao.Value;
-            List<User> listUser = userDao.GetAllUser();
-            userDao.loadData(dataGridView_User, listUser);
+            var users = userDao.GetAllUser();
+            userDao.loadData(dataGridView_User, users);
         }
 
         private User GetUserFromTextBox()
