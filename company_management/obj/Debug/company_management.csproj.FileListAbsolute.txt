@@ -195,7 +195,6 @@ D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\co
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcSalary.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcTask.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcTimeKeeping.resources
-D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcKpi.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcProject.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcTeam.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormUserProfile.resources

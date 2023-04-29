@@ -60,8 +60,8 @@ namespace company_management.View
                 // loginUser = _userDao.GetUserByUsername("ntute3"); // employee 
 
                 // Team Technical Support
-                //loginUser = _userDao.GetUserByUsername("wdionisi7"); // leader
-                loginUser = _userDao.GetUserByUsername("newuser"); // employee
+                loginUser = _userDao.GetUserByUsername("wdionisi7"); // leader
+                //loginUser = _userDao.GetUserByUsername("newuser"); // employee
                 // loginUser = _userDao.GetUserByUsername("pbartulj"); // employee
                 // loginUser = _userDao.GetUserByUsername("taulti"); // employee
                 // loginUser = _userDao.GetUserByUsername("abrilleman6"); // employee
