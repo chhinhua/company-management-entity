@@ -47,13 +47,6 @@ namespace company_management.View
             AddUc(request);
         }
 
-        private void btnKPI_Click(object sender, EventArgs e)
-        {
-            this.lb_menu_active.Location = new Point(btnKPI.Location.X, btnKPI.Location.Y);
-            UcKpi uckpi = new UcKpi();
-            AddUc(uckpi);
-        }
-
         private void btnSalary_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnSalary.Location.X, btnSalary.Location.Y);

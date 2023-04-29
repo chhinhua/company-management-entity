@@ -22,16 +22,31 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -44,8 +59,8 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,17 +70,16 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panelData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
@@ -147,11 +161,13 @@
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.label8);
             this.guna2Panel4.Controls.Add(this.label9);
+            this.guna2Panel4.CustomizableEdges = customizableEdges1;
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(874, 25);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.guna2Panel4.ShadowDecoration.Enabled = true;
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel4.Size = new System.Drawing.Size(386, 140);
@@ -165,11 +181,13 @@
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.Controls.Add(this.label7);
+            this.guna2Panel3.CustomizableEdges = customizableEdges3;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(455, 25);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel3.Size = new System.Drawing.Size(386, 140);
@@ -183,11 +201,13 @@
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.label4);
             this.guna2Panel2.Controls.Add(this.label5);
+            this.guna2Panel2.CustomizableEdges = customizableEdges5;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(36, 25);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel2.Size = new System.Drawing.Size(386, 140);
@@ -200,15 +220,33 @@
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
             this.panelData.Controls.Add(this.chart1);
+            this.panelData.CustomizableEdges = customizableEdges7;
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(36, 414);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.panelData.Size = new System.Drawing.Size(592, 347);
             this.panelData.TabIndex = 100;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(23, 22);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(542, 300);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // guna2Panel1
             // 
@@ -218,11 +256,13 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.CustomizableEdges = customizableEdges9;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(874, 191);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel1.Size = new System.Drawing.Size(386, 140);
@@ -259,11 +299,13 @@
             this.guna2Panel5.BorderThickness = 1;
             this.guna2Panel5.Controls.Add(this.label3);
             this.guna2Panel5.Controls.Add(this.label10);
+            this.guna2Panel5.CustomizableEdges = customizableEdges11;
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(455, 191);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.guna2Panel5.ShadowDecoration.Enabled = true;
             this.guna2Panel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel5.Size = new System.Drawing.Size(386, 140);
@@ -300,11 +342,13 @@
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.Controls.Add(this.label11);
             this.guna2Panel6.Controls.Add(this.label12);
+            this.guna2Panel6.CustomizableEdges = customizableEdges13;
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
             this.guna2Panel6.Location = new System.Drawing.Point(36, 191);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.guna2Panel6.ShadowDecoration.Enabled = true;
             this.guna2Panel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel6.Size = new System.Drawing.Size(386, 140);
@@ -333,22 +377,6 @@
             this.label12.Text = "Leave Request";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(23, 22);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(542, 300);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
@@ -356,11 +384,13 @@
             this.guna2Panel7.BorderRadius = 20;
             this.guna2Panel7.BorderThickness = 1;
             this.guna2Panel7.Controls.Add(this.chart2);
+            this.guna2Panel7.CustomizableEdges = customizableEdges15;
             this.guna2Panel7.FillColor = System.Drawing.Color.White;
             this.guna2Panel7.Location = new System.Drawing.Point(666, 414);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.guna2Panel7.ShadowDecoration.Enabled = true;
             this.guna2Panel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10, 5, 10, 15);
             this.guna2Panel7.Size = new System.Drawing.Size(594, 347);
@@ -382,7 +412,7 @@
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart2";
             // 
-            // UCHome
+            // UcHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -396,20 +426,19 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.panelData);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UCHome";
+            this.Name = "UcHome";
             this.Size = new System.Drawing.Size(1292, 788);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.guna2Panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

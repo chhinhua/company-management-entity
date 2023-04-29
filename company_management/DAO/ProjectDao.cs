@@ -69,6 +69,12 @@ namespace company_management.DAO
         {
             return GetAllProject().Where(t => t.IdAssignee == idAssignee).ToList();
         }
+        
+        public Project GetProjectById(int id)
+        {
+            string query = $"SELECT * FROM project WHERE id = {id}";
+            return _dBConnection.GetObjectByQuery<Project>(query);
+        }
 
     }
 }

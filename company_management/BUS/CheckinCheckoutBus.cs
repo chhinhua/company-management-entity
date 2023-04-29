@@ -96,5 +96,10 @@ namespace company_management.BUS
             checkinCheckout.CheckoutTime = checkoutTime;
             cicoDao.UpdateCheckinCo(checkinCheckout);
         }
+
+        public void BindingDataStatistics()
+        {
+            
+        }
     }
 }

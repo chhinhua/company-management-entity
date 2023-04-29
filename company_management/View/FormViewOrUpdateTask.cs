@@ -62,12 +62,11 @@ namespace company_management.View
 
             txtbox_Taskname.Text = UcTask.ViewTask.TaskName;
             txtbox_Desciption.Text = UcTask.ViewTask.Description;
-            textBox_Bonus.Text = UcTask.ViewTask.Bonus.ToString();
+            textBox_Bonus.Text = UcTask.ViewTask.Bonus.ToString("C");
             
             label_assigneedTeam.Text = assigneeTeam.Name;
             label_assigneedPerson.Text = assigneeUser.FullName;
 
-            //combbox_Assignee.SelectedValue = assigneeUser.Id;
             circleProgressBar.Value = UcTask.ViewTask.Progress;
             progressValue.Text = UcTask.ViewTask.Progress.ToString() + "%";
 

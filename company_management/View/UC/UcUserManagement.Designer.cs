@@ -24,19 +24,39 @@ namespace company_management.View.UC
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.dataGridView_User = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -71,35 +91,35 @@ namespace company_management.View.UC
             // 
             // dataGridView_User
             // 
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            this.dataGridView_User.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView_User.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_User.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_User.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_User.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_User.ColumnHeadersHeight = 30;
             this.dataGridView_User.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_User.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_User.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_User.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView_User.Location = new System.Drawing.Point(16, 87);
             this.dataGridView_User.Name = "dataGridView_User";
             this.dataGridView_User.RowHeadersVisible = false;
             this.dataGridView_User.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView_User.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView_User.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_User.RowTemplate.Height = 30;
             this.dataGridView_User.Size = new System.Drawing.Size(1222, 352);
             this.dataGridView_User.TabIndex = 0;
@@ -134,11 +154,13 @@ namespace company_management.View.UC
             this.panelData.BorderThickness = 1;
             this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.dataGridView_User);
+            this.panelData.CustomizableEdges = customizableEdges3;
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(17, 314);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 455);
@@ -150,6 +172,7 @@ namespace company_management.View.UC
             this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
             this.txtSearch.BorderRadius = 10;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.CustomizableEdges = customizableEdges1;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -160,7 +183,6 @@ namespace company_management.View.UC
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_483;
             this.txtSearch.Location = new System.Drawing.Point(16, 18);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
@@ -168,6 +190,7 @@ namespace company_management.View.UC
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Search ...";
             this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.txtSearch.Size = new System.Drawing.Size(472, 41);
             this.txtSearch.TabIndex = 70;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -188,12 +211,14 @@ namespace company_management.View.UC
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.txtbox_username);
             this.guna2GroupBox1.Controls.Add(this.label6);
+            this.guna2GroupBox1.CustomizableEdges = customizableEdges17;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.guna2GroupBox1.Location = new System.Drawing.Point(17, 20);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.BorderRadius = 25;
             this.guna2GroupBox1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.guna2GroupBox1.ShadowDecoration.Enabled = true;
             this.guna2GroupBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2GroupBox1.Size = new System.Drawing.Size(1258, 222);
@@ -205,6 +230,7 @@ namespace company_management.View.UC
             this.btn_Save.AutoRoundedCorners = true;
             this.btn_Save.BackColor = System.Drawing.Color.White;
             this.btn_Save.BorderRadius = 18;
+            this.btn_Save.CustomizableEdges = customizableEdges5;
             this.btn_Save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -214,6 +240,7 @@ namespace company_management.View.UC
             this.btn_Save.ForeColor = System.Drawing.Color.White;
             this.btn_Save.Location = new System.Drawing.Point(1147, 163);
             this.btn_Save.Name = "btn_Save";
+            this.btn_Save.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btn_Save.Size = new System.Drawing.Size(91, 39);
             this.btn_Save.TabIndex = 114;
             this.btn_Save.Text = "Lưu";
@@ -224,6 +251,7 @@ namespace company_management.View.UC
             this.txtbox_address.AutoScroll = true;
             this.txtbox_address.BorderRadius = 5;
             this.txtbox_address.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_address.CustomizableEdges = customizableEdges7;
             this.txtbox_address.DefaultText = "";
             this.txtbox_address.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_address.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -243,6 +271,7 @@ namespace company_management.View.UC
             this.txtbox_address.PlaceholderText = "Enter your address";
             this.txtbox_address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_address.SelectedText = "";
+            this.txtbox_address.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.txtbox_address.Size = new System.Drawing.Size(408, 113);
             this.txtbox_address.TabIndex = 74;
             this.txtbox_address.TextChanged += new System.EventHandler(this.txtbox_address_TextChanged);
@@ -263,6 +292,7 @@ namespace company_management.View.UC
             // 
             this.txtbox_phoneNumber.BorderRadius = 5;
             this.txtbox_phoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_phoneNumber.CustomizableEdges = customizableEdges9;
             this.txtbox_phoneNumber.DefaultText = "";
             this.txtbox_phoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_phoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -280,6 +310,7 @@ namespace company_management.View.UC
             this.txtbox_phoneNumber.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_phoneNumber.PlaceholderText = "(+84) 0326474610";
             this.txtbox_phoneNumber.SelectedText = "";
+            this.txtbox_phoneNumber.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.txtbox_phoneNumber.Size = new System.Drawing.Size(280, 32);
             this.txtbox_phoneNumber.TabIndex = 72;
             this.txtbox_phoneNumber.TextChanged += new System.EventHandler(this.txtbox_phoneNumber_TextChanged);
@@ -300,6 +331,7 @@ namespace company_management.View.UC
             // 
             this.txtbox_email.BorderRadius = 5;
             this.txtbox_email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_email.CustomizableEdges = customizableEdges11;
             this.txtbox_email.DefaultText = "";
             this.txtbox_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -317,6 +349,7 @@ namespace company_management.View.UC
             this.txtbox_email.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_email.PlaceholderText = "johndoe@gmail.com";
             this.txtbox_email.SelectedText = "";
+            this.txtbox_email.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.txtbox_email.Size = new System.Drawing.Size(280, 32);
             this.txtbox_email.TabIndex = 70;
             this.txtbox_email.TextChanged += new System.EventHandler(this.txtbox_email_TextChanged);
@@ -337,6 +370,7 @@ namespace company_management.View.UC
             // 
             this.txtbox_fullname.BorderRadius = 5;
             this.txtbox_fullname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_fullname.CustomizableEdges = customizableEdges13;
             this.txtbox_fullname.DefaultText = "";
             this.txtbox_fullname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_fullname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -354,6 +388,7 @@ namespace company_management.View.UC
             this.txtbox_fullname.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_fullname.PlaceholderText = "John Doe Ramesh";
             this.txtbox_fullname.SelectedText = "";
+            this.txtbox_fullname.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.txtbox_fullname.Size = new System.Drawing.Size(258, 32);
             this.txtbox_fullname.TabIndex = 68;
             this.txtbox_fullname.TextChanged += new System.EventHandler(this.txtbox_fullname_TextChanged);
@@ -374,6 +409,7 @@ namespace company_management.View.UC
             // 
             this.txtbox_username.BorderRadius = 5;
             this.txtbox_username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_username.CustomizableEdges = customizableEdges15;
             this.txtbox_username.DefaultText = "";
             this.txtbox_username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -391,6 +427,7 @@ namespace company_management.View.UC
             this.txtbox_username.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtbox_username.PlaceholderText = "johndoe";
             this.txtbox_username.SelectedText = "";
+            this.txtbox_username.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.txtbox_username.Size = new System.Drawing.Size(258, 32);
             this.txtbox_username.TabIndex = 66;
             this.txtbox_username.TextChanged += new System.EventHandler(this.txtbox_username_TextChanged);
@@ -412,6 +449,7 @@ namespace company_management.View.UC
             this.btnDelete.AutoRoundedCorners = true;
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderRadius = 19;
+            this.btnDelete.CustomizableEdges = customizableEdges19;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -425,6 +463,7 @@ namespace company_management.View.UC
             this.btnDelete.ImageSize = new System.Drawing.Size(24, 24);
             this.btnDelete.Location = new System.Drawing.Point(1225, 268);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.btnDelete.Size = new System.Drawing.Size(50, 40);
             this.btnDelete.TabIndex = 109;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
@@ -434,6 +473,7 @@ namespace company_management.View.UC
             this.btnAdd.AutoRoundedCorners = true;
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.BorderRadius = 20;
+            this.btnAdd.CustomizableEdges = customizableEdges21;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -445,11 +485,12 @@ namespace company_management.View.UC
             this.btnAdd.ImageSize = new System.Drawing.Size(24, 24);
             this.btnAdd.Location = new System.Drawing.Point(1182, 266);
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.btnAdd.Size = new System.Drawing.Size(46, 42);
             this.btnAdd.TabIndex = 105;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
-            // UserManagementUC
+            // UcUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -460,7 +501,7 @@ namespace company_management.View.UC
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelData);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UserManagementUC";
+            this.Name = "UcUserManagement";
             this.Size = new System.Drawing.Size(1292, 788);
             this.Load += new System.EventHandler(this.UserManagementUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_User)).EndInit();
@@ -468,7 +509,6 @@ namespace company_management.View.UC
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -477,7 +517,6 @@ namespace company_management.View.UC
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView_User;
         private Guna.UI2.WinForms.Guna2Panel panelData;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
