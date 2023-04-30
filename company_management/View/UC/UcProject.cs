@@ -22,7 +22,8 @@ namespace company_management.View.UC
         private readonly Lazy<ProjectBus> _projectBus;
         private readonly Lazy<List<Project>> _listProject;
         private Lazy<TaskBus> _taskBus;
-        private Lazy<ProjectDao> _projectDao;
+        private readonly Lazy<ProjectDao> _projectDao;
+        private int _selectedId;
 
         public UcProject()
         {
@@ -37,13 +38,26 @@ namespace company_management.View.UC
 
         private void UC_Project_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(GetData());
         }
 
-        private void LoadData()
+        private List<Project> GetData()
         {
-            LoadDataGridview();
+            var projectBus = _projectBus.Value;
+            return projectBus.GetListProjectByPosition();
+        }
+
+        private void LoadData(List<Project> projects)
+        {
+            LoadDataGridview(projects);
+            LoadProgressChart(projects);
             CheckAddButtonStatus();
+        }
+
+        private void LoadProgressChart(List<Project> projects)
+        {
+            var util = _utils.Value;
+            util.LoadProgressChart(chart_projectProgress, label_todoProject, label_inprogressProject, label_doneProject, projects);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -51,22 +65,19 @@ namespace company_management.View.UC
             FormAddProject addProject = new FormAddProject();
             addProject.Show();
         }
-
-
-        private void LoadDataGridview()
+        
+        private void LoadDataGridview(List<Project> listProjects)
         {
             var projectBus = _projectBus.Value;
-
-            var projects = projectBus.GetListProjectByPosition();
-            projectBus.LoadDataGridview(projects, dataGridView_Project);
+            projectBus.LoadDataGridview(listProjects, dataGridView_Project);
         }
 
         private void CheckAddButtonStatus()
         {
             var util = _utils.Value;
-            util.CheckManagerStatus(buttonAdd);
-            util.CheckManagerStatus(buttonRemove);
-            util.CheckEmployeeStatus(button_Edit);
+            util.CheckManagerVisibleStatus(buttonAdd);
+            util.CheckManagerVisibleStatus(buttonRemove);
+            util.CheckEmployeeVisibleStatus(button_Edit);
         }
 
         private void button_Edit_Click(object sender, EventArgs e)
@@ -78,14 +89,14 @@ namespace company_management.View.UC
             //}
             //else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-
+        
         private void btnViewOrUpdate_Click(object sender, EventArgs e)
         {
-            if (ViewProject != null)
+            if (_selectedId != 0)
             {
-                FormViewOrUpdateProject viewProject = new FormViewOrUpdateProject();
-                viewProject.Show();
+                FormViewOrUpdateProject formProject = new FormViewOrUpdateProject();
+                formProject.SetProjectId(_selectedId);
+                formProject.Show();
             }
             else MessageBox.Show("Select a project to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -96,18 +107,46 @@ namespace company_management.View.UC
 
         private void dataGridView_Project_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView_Project.CurrentRow.Selected = true;
-
             if (e.RowIndex != -1)
             {
                 object value = dataGridView_Project.Rows[e.RowIndex].Cells[0].Value;
                 if (value != DBNull.Value)
                 {
-                    int id = Convert.ToInt32(value);
-                    var projectDao = _projectDao.Value;
-                    ViewProject = projectDao.GetProjectById(id);
+                    _selectedId = Convert.ToInt32(value);
+                    MessageBox.Show(_selectedId.ToString());
                 }
             }
+        }
+        
+        private void combobox_progressFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var projectBus = _projectBus.Value;
+            var projects = _listProject.Value;
+            projects.Clear();
+            
+            int selectedIndex = combobox_progressFilter.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 0:
+                    projects = projectBus.GetListProjectByPosition();
+                    break;
+                case 1:
+                    projects = projectBus.GetTodoProjects();
+                    break;
+                case 2:
+                    projects = projectBus.GetInprogressProjects();
+                    break;
+                default:
+                    projects = projectBus.GetDoneProjects();
+                    break;
+            }
+
+            LoadDataGridview(projects);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData(GetData());
         }
     }
 }

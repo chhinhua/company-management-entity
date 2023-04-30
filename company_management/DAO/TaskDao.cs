@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using company_management.Utilities;
 using company_management.View;
 using company_management.View.UC;
 
@@ -13,11 +14,13 @@ namespace company_management.DAO
     public sealed class TaskDao : IDisposable
     {
         private readonly DBConnection _dBConnection;
-        private bool _disposed = false;
         private readonly Lazy<string> _connString;
         private Lazy<List<Task>> _listTask;
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserDao> _userDao;
+        private bool _disposed = false;
+        private Utils _utils;
+        
 
         public TaskDao()
         {
@@ -26,6 +29,7 @@ namespace company_management.DAO
             _listTask = new Lazy<List<Task>>(() => new List<Task>());
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
+            _utils = new Utils();
         }
 
         public void LoadUserToCombobox(ComboBox comboBox)
@@ -75,21 +79,48 @@ namespace company_management.DAO
             string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus, idProject)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
                    task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam, task.Bonus, task.IdProject);
-            _dBConnection.ExecuteQuery(query);
+            try
+            {
+                _dBConnection.ExecuteQuery(query);
+                _utils.Alert("Added successful", FormAlert.enmType.Success);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _utils.Alert("Added failed", FormAlert.enmType.Error);
+            }
         }
 
         public void UpdateTask(Task updateTask)
         {
-            string sqlStr = string.Format("UPDATE task SET " +
-                   "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}', idProject = '{7}' WHERE id = '{8}'",
+            string query = string.Format("UPDATE task SET " +
+                                         "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}', idProject = '{7}' WHERE id = '{8}'",
                    updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.IdProject, updateTask.Id);
-            _dBConnection.ExecuteQuery(sqlStr);
+            try
+            {
+                _dBConnection.ExecuteQuery(query);
+                _utils.Alert("Updated successful", FormAlert.enmType.Success);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _utils.Alert("Updated failed", FormAlert.enmType.Error);
+            }
         }
 
         public void DeleteTask(int id)
         {
-            string sqlStr = string.Format("DELETE FROM task WHERE id = '{0}'", id);
-            _dBConnection.ExecuteQuery(sqlStr);
+            string query = string.Format("DELETE FROM task WHERE id = {0}", id);
+            try
+            {
+                _dBConnection.ExecuteQuery(query);
+                _utils.Alert("Deleted successful", FormAlert.enmType.Success);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _utils.Alert("Deleted failed", FormAlert.enmType.Error);
+            }
         }
 
         public Task GetTaskById(int id)

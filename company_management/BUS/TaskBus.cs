@@ -140,6 +140,16 @@ namespace company_management.BUS
             return taskDao.SearchTasks(txtSearch);
         }
 
+        public List<Task> GetTodoTasks() => GetListTaskByPosition().Where(t => t.Progress == 0).ToList();
+
+        public List<Task> GetInprogressTasks() => GetListTaskByPosition().Where(t => t.Progress > 0 && t.Progress < 100).ToList();
+
+        public List<Task> GetDoneTasks() => GetListTaskByPosition().Where(t => t.Progress == 100).ToList();
+
+        public List<Task> GetMyTasks() => GetListTaskByPosition().Where(t => t.IdAssignee == UserSession.LoggedInUser.Id).ToList();
+        
+        public List<Task> GetMyCreatedTasks() => GetListTaskByPosition().Where(t => t.IdCreator == UserSession.LoggedInUser.Id).ToList();
+        
         public List<Task> SearchTasksByKeyword(Guna2DataGridView gridView, string keyword, 
                         int creator, int taskName, int assignee, int team)
         {

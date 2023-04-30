@@ -29,71 +29,36 @@ namespace company_management.View.UC
             _taskDao = new Lazy<TaskDao>(() => new TaskDao());
             _utils = new Lazy<Utils>(() => new Utils());
         }
-
-        public void Alert(string msg, FormAlert.enmType type)
-        {
-            FormAlert frm = new FormAlert();
-            frm.showAlert(msg, type);
-        }
-
+        
         private void CheckAddButtonStatus()
         {
             var util = _utils.Value;
-            util.CheckEmployeeStatus(buttonAdd);
-            util.CheckEmployeeStatus(buttonRemove);
+            util.CheckEmployeeVisibleStatus(buttonAdd);
+            util.CheckEmployeeVisibleStatus(buttonRemove);
         }
 
-        private void LoadData()
+        private List<Task> GetData()
         {
-            LoadDataGridview();
-            LoadProgressChart();
+            var taskBus = _taskBus.Value;
+            return taskBus.GetListTaskByPosition();
+        }
+        
+        private void LoadData(List<Task> tasks)
+        {
+            LoadDataGridview(tasks);
+            LoadProgressChart(tasks);
             CheckAddButtonStatus();
         }
 
-        private void LoadProgressChart()
+        private void LoadProgressChart(List<Task> tasks)
         {
-            var taskDao = _taskDao.Value;
-            var taskBus = _taskBus.Value;
-            var tasks = _listTask.Value;
-
-            tasks = taskBus.GetListTaskByPosition();
-            TaskStatusPercentage taskStatus = taskDao.GetTaskStatusPercentage(tasks);
-
-            double todoPercent = taskStatus.TodoPercent;
-            double inprogressPercent = taskStatus.InprogressPercent;
-            double donePercent = taskStatus.DonePercent;
-
-            // Định dạng giá trị với 2 chữ số sau dấu thập phân
-            string todoPercentFormatted = todoPercent.ToString("0.00");
-            string inprogressPercentFormatted = inprogressPercent.ToString("0.00");
-            string donePercentFormatted = donePercent.ToString("0.00");
-
-            chart_taskProgress.Series["SeriesProgress"].Points.Clear();
-
-            // Thêm các phần tử vào danh sách
-            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
-            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
-            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", donePercent);
-            // chart_taskProgress.Series["SeriesProgress"].Points[2].LegendText = "Done";
-
-            // Ẩn nhãn trên biểu đồ tròn
-            chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = false;
-
-            chart_taskProgress.Legends.Clear();
-
-            chart_taskProgress.Series["SeriesProgress"].Points[0].Color = Color.FromArgb(214, 40, 40);
-            chart_taskProgress.Series["SeriesProgress"].Points[1].Color = Color.FromArgb(0, 255, 0);
-            chart_taskProgress.Series["SeriesProgress"].Points[2].Color = Color.FromArgb(67, 97, 238);
-
-            label_todoTask.Text = todoPercentFormatted + "%";
-            label_inprogressTask.Text = inprogressPercentFormatted + "%";
-            label_doneTask.Text = donePercentFormatted + "%";
+            var util = _utils.Value;
+            util.LoadProgressChart(chart_taskProgress, label_todoTask, label_inprogressTask, label_doneTask, tasks);
         }
 
-        private void LoadDataGridview()
+        private void LoadDataGridview(List<Task> tasks)
         {
             var taskBus = _taskBus.Value;
-            var tasks = taskBus.GetListTaskByPosition();
             taskBus.LoadDataGridview(tasks, dataGridView_Task);
         }
 
@@ -131,9 +96,10 @@ namespace company_management.View.UC
                 if (result == DialogResult.Yes)
                 {
                     var taskDao = _taskDao.Value;
+                    var util = _utils.Value;
                     taskDao.DeleteTask(ViewTask.Id);
-                    this.Alert("Delete successful", FormAlert.enmType.Success);
-                    LoadDataGridview();
+                    util.Alert("Delete successful", FormAlert.enmType.Success);
+                    LoadData(GetData());
                 }
             }
             else MessageBox.Show("Task not selected!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -191,12 +157,65 @@ namespace company_management.View.UC
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(GetData());
         }
 
         private void UC_Task_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(GetData());
+        }
+
+        private void combobox_taskStatusFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var taskBus = _taskBus.Value;
+            var tasks = _listTask.Value;
+            tasks.Clear();
+            
+            int selectedIndex = combobox_taskStatusFilter.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 0:
+                    tasks = taskBus.GetListTaskByPosition();
+                    break;
+                case 1:
+                    tasks = taskBus.GetMyCreatedTasks();
+                    break;
+                default:
+                    tasks = taskBus.GetMyTasks();
+                    break;
+            }
+
+            LoadData(tasks);
+        }
+
+
+        private void combobox_taskProgressFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var taskBus = _taskBus.Value;
+            var tasks = _listTask.Value;
+            tasks.Clear();
+            
+            int selectedIndex = combobox_taskProgressFilter.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 1:
+                    tasks = taskBus.GetListTaskByPosition();
+                    break;
+                case 2:
+                    tasks = taskBus.GetTodoTasks();
+                    break;
+                case 3:
+                    tasks = taskBus.GetInprogressTasks();
+                    break;
+                case 4:
+                    tasks = taskBus.GetDoneTasks();
+                    break;
+                default:
+                    tasks = taskBus.GetListTaskByPosition();
+                    break;
+            }
+            
+            LoadDataGridview(tasks);
         }
     }
 }

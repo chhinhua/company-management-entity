@@ -3,25 +3,55 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using company_management.DTO;
+using company_management.Utilities;
+using company_management.View;
 
 namespace company_management.DAO
 {
     public sealed class LeaveRequestDao : IDisposable
     {
         private DBConnection _dBConnection;
+        private readonly Utils _utils;
 
         public LeaveRequestDao()
         {
-            
+            _dBConnection = new DBConnection();
+            _utils = new Utils();
         }
 
-        /* public User GetUserById(int userId)
-         {
-             var userEntity = dbContext.users.FirstOrDefault(u => u.id == userId);
+        public void AddRequest(LeaveRequest request)
+        {
+            string query = string.Format(
+                "INSERT INTO leaveRequest (idUser, requestDate, startDate, endDate, numberDay, content, status)" +
+                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
+                request.IdUser, request.RequestDate, request.StartDate, request.EndDate, request.NumberDay, _utils.EscapeSqlString(request.Content), request.Status);
+            if (_dBConnection.ExecuteQuery(query))
+            {
+                _utils.Alert("Add successful", FormAlert.enmType.Success);
+            }
+            else
+            {
+                _utils.Alert("Add failed", FormAlert.enmType.Error);
+            }
+        }
 
-             return MappingExtensions.ToDto<user, User>(userEntity);
-         }*/
+        public List<LeaveRequest> GetAllLeaveRequests()
+        {
+            string query = "SELECT * FROM leaveRequest";
+            return _dBConnection.GetListObjectsByQuery<LeaveRequest>(query);
+        }
 
+        public LeaveRequest GetRequestById(int id)
+        {
+            string query = $"SELECT * FROM leaveRequest WHERE id = {id}";
+            return _dBConnection.GetObjectByQuery<LeaveRequest>(query);
+        }
+        
+        public List<LeaveRequest> GetMyLeaveRequests(int idUser)
+        {
+            return GetAllLeaveRequests().Where(s => s.IdUser == idUser).ToList();
+        }
+        
         public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
             double leaveHours = 0;
@@ -68,5 +98,4 @@ namespace company_management.DAO
             }
         }
     }
-
 }

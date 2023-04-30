@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using company_management.BUS;
 using company_management.DAO;
 using company_management.DTO;
 
@@ -7,51 +9,27 @@ namespace company_management.View.UC
 {
     public partial class UcLeaveRequest : UserControl
     {
+        private readonly Lazy<LeaveRequestDao> _requestDao;
+        private readonly Lazy<LeaveRequestBus> _requestBus;
+        private readonly Lazy<List<LeaveRequest>> _listRequest;
+        private int _selectedId;
+        
         public UcLeaveRequest()
         {
+            _requestBus = new Lazy<LeaveRequestBus>(() => new LeaveRequestBus());
+            _requestDao = new Lazy<LeaveRequestDao>(() => new LeaveRequestDao());
+            _listRequest = new Lazy<List<LeaveRequest>>(() => new List<LeaveRequest>());
             InitializeComponent();
         }
-
+        
         private void UCLeaveRequest_Load(object sender, EventArgs e)
         {
-            //loadGridview();
-            //CustomeGridColumn();
+            LoadData();
         }
 
-        private void btnLR_Click(object sender, EventArgs e)
+        private void LoadData()
         {
-            FormLeaveQuest formLR = new FormLeaveQuest();
-            formLR.ShowDialog();
-        }
-
-        private void CustomGridColumn()
-        {
-            datagridview_leaveRequest.Columns["Id"].Visible = false;
-            datagridview_leaveRequest.Columns["IdUser"].Visible = false;
-
-            // Tạo hai cột mới để chứa các nút phê duyệt/từ chối
-            var approveColumn = new DataGridViewCheckBoxColumn();
-            approveColumn.Name = "Duyệt";
-
-            var rejectColumn = new DataGridViewCheckBoxColumn();
-            rejectColumn.Name = "Từ chối";
-
-            // Đổi tên cột
-            datagridview_leaveRequest.Columns["numberDay"].HeaderText = "Số ngày";
-            datagridview_leaveRequest.Columns["startDate"].HeaderText = "From";
-            datagridview_leaveRequest.Columns["endDate"].HeaderText = "To";
-            datagridview_leaveRequest.Columns["reason"].HeaderText = "Nội dung";
-
-
-            // Thêm cột vào DataGridView
-            datagridview_leaveRequest.Columns.Add(approveColumn);
-            datagridview_leaveRequest.Columns.Add(rejectColumn);
-
-            // custom chiều rộng cột
-            datagridview_leaveRequest.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            datagridview_leaveRequest.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            datagridview_leaveRequest.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            datagridview_leaveRequest.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            LoadDataGridview();
         }
 
         private void datagridview_leaveRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,28 +60,41 @@ namespace company_management.View.UC
 
         }   
 
-        private void LoadGridview()
+        private void LoadDataGridview()
         {
-            /*List<LeaveRequest> data = requestDAO.GetAllLeaveRequests();
-
-            foreach (LeaveRequest request in data)
-            {
-                User user = requestDAO.GetUserById(request.IdUser);
-                request.Employee = user.FullName;
-            }
-
-            datagridview_leaveRequest.DataSource = data;*/
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            LoadGridview();
+            var requestBus = _requestBus.Value;
+            var request = requestBus.GetListRequestByPosition();
+            requestBus.LoadDataGridview(request, datagridview_leaveRequest);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             FormAddRequest requestForm = new FormAddRequest();
             requestForm.Show();
+        }
+
+        private void btnViewOrUpdate_Click(object sender, EventArgs e)
+        {
+            if (_selectedId != 0)
+            {
+                 FormViewOrUpdateRequest formRequest = new FormViewOrUpdateRequest();
+                 formRequest.SetRequestId(_selectedId);
+                 formRequest.Show();
+            }
+            else MessageBox.Show("Bạn chưa chọn đơn nào! Vui lòng chọn một đơn để xem", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        }
+
+        private void datagridview_leaveRequest_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                object value = datagridview_leaveRequest.Rows[e.RowIndex].Cells[0].Value;
+                if (value != DBNull.Value)
+                {
+                    _selectedId = Convert.ToInt32(value);
+                }
+            }
         }
     }
 }

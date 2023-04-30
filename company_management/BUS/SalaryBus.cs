@@ -37,10 +37,10 @@ namespace company_management.BUS
             dataGridView.Columns[0].Name = "Mã";
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[1].Name = "Họ tên";
-            dataGridView.Columns[2].Name = "Lương cơ bản ($/h)";
-            dataGridView.Columns[3].Name = "Tổng giờ làm (h)";
-            dataGridView.Columns[4].Name = "Tăng ca (h)";
-            dataGridView.Columns[5].Name = "Giờ nghỉ (h)";
+            dataGridView.Columns[2].Name = "Lương cơ bản";
+            dataGridView.Columns[3].Name = "Tổng giờ làm";
+            dataGridView.Columns[4].Name = "Tăng ca";
+            dataGridView.Columns[5].Name = "Nghỉ";
             dataGridView.Columns[6].Name = "Thưởng";
             dataGridView.Columns[7].Name = "Phụ cấp";
             dataGridView.Columns[8].Name = "Bảo hiểm";
@@ -55,8 +55,8 @@ namespace company_management.BUS
             foreach (var s in listSalary)
             {
                 string fullName = userDao.GetUserById(s.IdUser).FullName;
-                dataGridView.Rows.Add(s.Id, fullName, s.BasicSalary.ToString("F2"), 
-                    s.TotalHours, s.OvertimeHours, s.LeaveHours.ToString("F2"), s.Bonus, s.Allowance, 
+                dataGridView.Rows.Add(s.Id, fullName, s.BasicSalary.ToString("$0.00/h"), 
+                    s.TotalHours.ToString("0.0'h'"), s.OvertimeHours.ToString("0.0'h'"), s.LeaveHours.ToString("0.0'h'"), s.Bonus, s.Allowance, 
                     s.Tax, s.Insurance , s.FinalSalary, s.FromDate.ToString("d-M-yyyy"), s.ToDate.ToString("d/M/yyyy"));
             }
         }

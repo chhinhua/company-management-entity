@@ -33,7 +33,7 @@ namespace company_management.View
                 User loginUser;
 
                 // Lấy thông tin người dùng đăng nhập
-                //loginUser = _userDao.GetUserByUsername("edalziell2"); // manager
+                loginUser = _userDao.GetUserByUsername("edalziell2"); // manager
                 //loginUser = _userDao_userDao.GetUserByUsername("chhinhua"); // manager
 
                 // Team System Integration
@@ -54,13 +54,13 @@ namespace company_management.View
                 // loginUser = _userDao.GetUserByUsername("esparsholtf"); // employee
 
                 //Team Development
-                //loginUser = _userDao.GetUserByUsername("tmccoish4"); // leader 
-                 //loginUser = _userDao.GetUserByUsername("dsillyh"); // employee 
+               // loginUser = _userDao.GetUserByUsername("tmccoish4"); // leader 
+                //loginUser = _userDao.GetUserByUsername("dsillyh"); // employee 
                 // loginUser = _userDao.GetUserByUsername("ipedlerg"); // employee 
-                // loginUser = _userDao.GetUserByUsername("ntute3"); // employee 
+                //loginUser = _userDao.GetUserByUsername("ntute3"); // employee 
 
                 // Team Technical Support
-                loginUser = _userDao.GetUserByUsername("wdionisi7"); // leader
+                //loginUser = _userDao.GetUserByUsername("wdionisi7"); // leader
                 //loginUser = _userDao.GetUserByUsername("newuser"); // employee
                 // loginUser = _userDao.GetUserByUsername("pbartulj"); // employee
                 // loginUser = _userDao.GetUserByUsername("taulti"); // employee

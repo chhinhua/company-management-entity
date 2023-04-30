@@ -22,26 +22,48 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.checkbox_checkedOut = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.checkbox_checkedIn = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.datetime_fillter = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcLeaveRequest));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
-            this.groupBox_fillter = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.combobox_taskStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.datagridview_leaveRequest = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.buttonEdit = new Guna.UI2.WinForms.Guna2Button();
             this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -61,8 +83,8 @@
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.label_basicValue = new System.Windows.Forms.Label();
             this.label_basic = new System.Windows.Forms.Label();
+            this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
-            this.groupBox_fillter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_leaveRequest)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -71,119 +93,67 @@
             this.panelFields.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkbox_checkedOut
-            // 
-            this.checkbox_checkedOut.BackColor = System.Drawing.Color.Transparent;
-            this.checkbox_checkedOut.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.checkbox_checkedOut.CheckedState.BorderRadius = 10;
-            this.checkbox_checkedOut.CheckedState.BorderThickness = 0;
-            this.checkbox_checkedOut.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.checkbox_checkedOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.checkbox_checkedOut.ForeColor = System.Drawing.Color.Black;
-            this.checkbox_checkedOut.Location = new System.Drawing.Point(383, 10);
-            this.checkbox_checkedOut.Name = "checkbox_checkedOut";
-            this.checkbox_checkedOut.Size = new System.Drawing.Size(107, 31);
-            this.checkbox_checkedOut.TabIndex = 89;
-            this.checkbox_checkedOut.Text = "Từ chối";
-            this.checkbox_checkedOut.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.checkbox_checkedOut.UncheckedState.BorderRadius = 0;
-            this.checkbox_checkedOut.UncheckedState.BorderThickness = 0;
-            this.checkbox_checkedOut.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.checkbox_checkedOut.UseVisualStyleBackColor = false;
-            // 
-            // checkbox_checkedIn
-            // 
-            this.checkbox_checkedIn.BackColor = System.Drawing.Color.Transparent;
-            this.checkbox_checkedIn.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.checkbox_checkedIn.CheckedState.BorderRadius = 10;
-            this.checkbox_checkedIn.CheckedState.BorderThickness = 0;
-            this.checkbox_checkedIn.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.checkbox_checkedIn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.checkbox_checkedIn.ForeColor = System.Drawing.Color.Black;
-            this.checkbox_checkedIn.Location = new System.Drawing.Point(270, 10);
-            this.checkbox_checkedIn.Name = "checkbox_checkedIn";
-            this.checkbox_checkedIn.Size = new System.Drawing.Size(107, 31);
-            this.checkbox_checkedIn.TabIndex = 88;
-            this.checkbox_checkedIn.Text = "Đã duyệt";
-            this.checkbox_checkedIn.UncheckedState.BorderColor = System.Drawing.Color.White;
-            this.checkbox_checkedIn.UncheckedState.BorderRadius = 0;
-            this.checkbox_checkedIn.UncheckedState.BorderThickness = 0;
-            this.checkbox_checkedIn.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.checkbox_checkedIn.UseVisualStyleBackColor = false;
-            // 
-            // datetime_fillter
-            // 
-            this.datetime_fillter.BackColor = System.Drawing.Color.Transparent;
-            this.datetime_fillter.BorderRadius = 10;
-            this.datetime_fillter.Checked = true;
-            this.datetime_fillter.FillColor = System.Drawing.Color.White;
-            this.datetime_fillter.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetime_fillter.ForeColor = System.Drawing.Color.Black;
-            this.datetime_fillter.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datetime_fillter.Location = new System.Drawing.Point(496, 0);
-            this.datetime_fillter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datetime_fillter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.datetime_fillter.Name = "datetime_fillter";
-            this.datetime_fillter.Size = new System.Drawing.Size(155, 41);
-            this.datetime_fillter.TabIndex = 88;
-            this.datetime_fillter.Value = new System.DateTime(2023, 4, 2, 18, 8, 25, 868);
-            // 
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Transparent;
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
-            this.panelData.Controls.Add(this.groupBox_fillter);
+            this.panelData.Controls.Add(this.combobox_taskStatusFilter);
+            this.panelData.Controls.Add(this.btnRefresh);
             this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.datagridview_leaveRequest);
+            this.panelData.CustomizableEdges = customizableEdges7;
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(17, 231);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 538);
             this.panelData.TabIndex = 82;
             // 
-            // groupBox_fillter
+            // combobox_taskStatusFilter
             // 
-            this.groupBox_fillter.BackColor = System.Drawing.Color.White;
-            this.groupBox_fillter.BorderRadius = 10;
-            this.groupBox_fillter.Controls.Add(this.guna2CheckBox1);
-            this.groupBox_fillter.Controls.Add(this.checkbox_checkedOut);
-            this.groupBox_fillter.Controls.Add(this.checkbox_checkedIn);
-            this.groupBox_fillter.Controls.Add(this.datetime_fillter);
-            this.groupBox_fillter.CustomBorderColor = System.Drawing.SystemColors.Control;
-            this.groupBox_fillter.FillColor = System.Drawing.Color.Transparent;
-            this.groupBox_fillter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_fillter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox_fillter.Location = new System.Drawing.Point(587, 18);
-            this.groupBox_fillter.Name = "groupBox_fillter";
-            this.groupBox_fillter.Size = new System.Drawing.Size(651, 41);
-            this.groupBox_fillter.TabIndex = 89;
-            this.groupBox_fillter.Text = "Fillter:";
+            this.combobox_taskStatusFilter.BackColor = System.Drawing.Color.Transparent;
+            this.combobox_taskStatusFilter.BorderRadius = 10;
+            this.combobox_taskStatusFilter.CustomizableEdges = customizableEdges1;
+            this.combobox_taskStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combobox_taskStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_taskStatusFilter.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.combobox_taskStatusFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_taskStatusFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_taskStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combobox_taskStatusFilter.ForeColor = System.Drawing.Color.Black;
+            this.combobox_taskStatusFilter.ItemHeight = 26;
+            this.combobox_taskStatusFilter.Items.AddRange(new object[] { "Tất cả đơn", "Đã duyệt", "Chưa duyệt", "Từ chối", "Đã hủy" });
+            this.combobox_taskStatusFilter.Location = new System.Drawing.Point(544, 19);
+            this.combobox_taskStatusFilter.Name = "combobox_taskStatusFilter";
+            this.combobox_taskStatusFilter.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.combobox_taskStatusFilter.Size = new System.Drawing.Size(156, 32);
+            this.combobox_taskStatusFilter.StartIndex = 0;
+            this.combobox_taskStatusFilter.TabIndex = 104;
             // 
-            // guna2CheckBox1
+            // btnRefresh
             // 
-            this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox1.CheckedState.BorderRadius = 10;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2CheckBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2CheckBox1.Location = new System.Drawing.Point(145, 10);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(103, 31);
-            this.guna2CheckBox1.TabIndex = 90;
-            this.guna2CheckBox1.Text = "Đang chờ";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            this.btnRefresh.BorderRadius = 15;
+            this.btnRefresh.CustomizableEdges = customizableEdges3;
+            this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.Image = global::company_management.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(1116, 19);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.btnRefresh.Size = new System.Drawing.Size(122, 40);
+            this.btnRefresh.TabIndex = 103;
+            this.btnRefresh.Text = "Refresh";
             // 
             // txtSearch
             // 
@@ -191,6 +161,7 @@
             this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
             this.txtSearch.BorderRadius = 10;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.CustomizableEdges = customizableEdges5;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -201,7 +172,6 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::company_management.Properties.Resources.icons8_search_483;
             this.txtSearch.Location = new System.Drawing.Point(16, 18);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
@@ -209,7 +179,8 @@
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Search ...";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(472, 41);
+            this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.txtSearch.Size = new System.Drawing.Size(472, 33);
             this.txtSearch.TabIndex = 70;
             // 
             // datagridview_leaveRequest
@@ -236,7 +207,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagridview_leaveRequest.DefaultCellStyle = dataGridViewCellStyle3;
             this.datagridview_leaveRequest.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.datagridview_leaveRequest.Location = new System.Drawing.Point(16, 87);
+            this.datagridview_leaveRequest.Location = new System.Drawing.Point(16, 81);
             this.datagridview_leaveRequest.Name = "datagridview_leaveRequest";
             this.datagridview_leaveRequest.RowHeadersVisible = false;
             this.datagridview_leaveRequest.RowHeadersWidth = 51;
@@ -244,7 +215,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.datagridview_leaveRequest.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridview_leaveRequest.RowTemplate.Height = 30;
-            this.datagridview_leaveRequest.Size = new System.Drawing.Size(1222, 434);
+            this.datagridview_leaveRequest.Size = new System.Drawing.Size(1222, 440);
             this.datagridview_leaveRequest.TabIndex = 0;
             this.datagridview_leaveRequest.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.datagridview_leaveRequest.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -267,6 +238,7 @@
             this.datagridview_leaveRequest.ThemeStyle.RowsStyle.Height = 30;
             this.datagridview_leaveRequest.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagridview_leaveRequest.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.datagridview_leaveRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridview_leaveRequest_CellClick);
             this.datagridview_leaveRequest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridview_leaveRequest_CellContentClick);
             // 
             // buttonEdit
@@ -274,6 +246,7 @@
             this.buttonEdit.AutoRoundedCorners = true;
             this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
             this.buttonEdit.BorderRadius = 19;
+            this.buttonEdit.CustomizableEdges = customizableEdges9;
             this.buttonEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -286,6 +259,7 @@
             this.buttonEdit.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonEdit.Location = new System.Drawing.Point(1170, 185);
             this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.buttonEdit.Size = new System.Drawing.Size(49, 40);
             this.buttonEdit.TabIndex = 92;
             // 
@@ -294,6 +268,7 @@
             this.buttonRemove.AutoRoundedCorners = true;
             this.buttonRemove.BackColor = System.Drawing.Color.Transparent;
             this.buttonRemove.BorderRadius = 19;
+            this.buttonRemove.CustomizableEdges = customizableEdges11;
             this.buttonRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -307,6 +282,7 @@
             this.buttonRemove.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonRemove.Location = new System.Drawing.Point(1225, 185);
             this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.buttonRemove.Size = new System.Drawing.Size(50, 40);
             this.buttonRemove.TabIndex = 93;
             // 
@@ -315,6 +291,7 @@
             this.buttonAdd.AutoRoundedCorners = true;
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdd.BorderRadius = 20;
+            this.buttonAdd.CustomizableEdges = customizableEdges13;
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -326,6 +303,7 @@
             this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAdd.Location = new System.Drawing.Point(1118, 183);
             this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.buttonAdd.Size = new System.Drawing.Size(46, 42);
             this.buttonAdd.TabIndex = 91;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -348,11 +326,13 @@
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.label8);
             this.guna2Panel4.Controls.Add(this.label9);
+            this.guna2Panel4.CustomizableEdges = customizableEdges15;
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(1039, 15);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.guna2Panel4.ShadowDecoration.Enabled = true;
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel4.Size = new System.Drawing.Size(236, 110);
@@ -389,11 +369,13 @@
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.Controls.Add(this.label7);
+            this.guna2Panel3.CustomizableEdges = customizableEdges17;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(784, 15);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel3.Size = new System.Drawing.Size(241, 110);
@@ -430,11 +412,13 @@
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.label4);
             this.guna2Panel2.Controls.Add(this.label5);
+            this.guna2Panel2.CustomizableEdges = customizableEdges19;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(529, 15);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel2.Size = new System.Drawing.Size(241, 110);
@@ -471,11 +455,13 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.CustomizableEdges = customizableEdges21;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(274, 15);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel1.Size = new System.Drawing.Size(241, 110);
@@ -512,11 +498,13 @@
             this.panelFields.BorderThickness = 1;
             this.panelFields.Controls.Add(this.label_basicValue);
             this.panelFields.Controls.Add(this.label_basic);
+            this.panelFields.CustomizableEdges = customizableEdges23;
             this.panelFields.FillColor = System.Drawing.Color.White;
             this.panelFields.Location = new System.Drawing.Point(17, 15);
             this.panelFields.Name = "panelFields";
             this.panelFields.ShadowDecoration.BorderRadius = 25;
             this.panelFields.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelFields.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.panelFields.ShadowDecoration.Enabled = true;
             this.panelFields.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelFields.Size = new System.Drawing.Size(241, 110);
@@ -545,11 +533,33 @@
             this.label_basic.Text = "Đang chờ xử lý";
             this.label_basic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // UCLeaveRequest
+            // btnViewOrUpdate
+            // 
+            this.btnViewOrUpdate.AutoRoundedCorners = true;
+            this.btnViewOrUpdate.BorderRadius = 19;
+            this.btnViewOrUpdate.CustomizableEdges = customizableEdges25;
+            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnViewOrUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrUpdate.Image")));
+            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrUpdate.Location = new System.Drawing.Point(1072, 185);
+            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
+            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.btnViewOrUpdate.Size = new System.Drawing.Size(40, 40);
+            this.btnViewOrUpdate.TabIndex = 112;
+            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
+            // 
+            // UcLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.btnViewOrUpdate);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
@@ -561,11 +571,10 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panelData);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UCLeaveRequest";
+            this.Name = "UcLeaveRequest";
             this.Size = new System.Drawing.Size(1292, 788);
             this.Load += new System.EventHandler(this.UCLeaveRequest_Load);
             this.panelData.ResumeLayout(false);
-            this.groupBox_fillter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_leaveRequest)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
@@ -573,23 +582,23 @@
             this.guna2Panel1.ResumeLayout(false);
             this.panelFields.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
+        private Guna.UI2.WinForms.Guna2Button btnViewOrUpdate;
+
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_taskStatusFilter;
+
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+
         #endregion
-        private Guna.UI2.WinForms.Guna2CheckBox checkbox_checkedOut;
-        private Guna.UI2.WinForms.Guna2CheckBox checkbox_checkedIn;
-        private Guna.UI2.WinForms.Guna2DateTimePicker datetime_fillter;
+
         private Guna.UI2.WinForms.Guna2Panel panelData;
-        private Guna.UI2.WinForms.Guna2GroupBox groupBox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2DataGridView datagridview_leaveRequest;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Button buttonEdit;
         private Guna.UI2.WinForms.Guna2Button buttonRemove;
         private Guna.UI2.WinForms.Guna2Button buttonAdd;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

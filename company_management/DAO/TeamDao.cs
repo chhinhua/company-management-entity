@@ -1,7 +1,6 @@
 ﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
@@ -25,13 +24,13 @@ namespace company_management.DAO
 
         public Team GetTeamById(int id)
         {
-            string query = string.Format("SELECT * FROM teams WHERE id = {0}", id);
+            string query = $"SELECT * FROM teams WHERE id = {id}";
             return _dBConnection.GetObjectByQuery<Team>(query);
         }
 
         public Team GetTeamByLeader(int id)
         {
-            string query = string.Format("SELECT * FROM teams WHERE idLeader = {0}", id);
+            string query = $"SELECT * FROM teams WHERE idLeader = {id}";
             return _dBConnection.GetObjectByQuery<Team>(query);
         }
 
