@@ -32,13 +32,19 @@ namespace company_management.BUS
         public bool IsEmployee()
         {
             int positionId = UserSession.LoggedInUser.IdPosition;
-            return positionId != 1 && positionId != 2;
+            return positionId == 3;
         }
 
         public bool IsManager()
         {
             int positionId = UserSession.LoggedInUser.IdPosition;
-            return positionId != 2 && positionId != 3;
+            return positionId == 1;
+        }
+        
+        public bool IsLeader()
+        {
+            int positionId = UserSession.LoggedInUser.IdPosition;
+            return positionId == 2;
         }
     }
 }

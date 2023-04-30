@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using company_management.DAO;
@@ -62,13 +63,13 @@ namespace company_management.View
 
             txtbox_Taskname.Text = UcTask.ViewTask.TaskName;
             txtbox_Desciption.Text = UcTask.ViewTask.Description;
-            textBox_Bonus.Text = UcTask.ViewTask.Bonus.ToString("C");
+            textBox_Bonus.Text = UcTask.ViewTask.Bonus.ToString(CultureInfo.CurrentCulture);
             
             label_assigneedTeam.Text = assigneeTeam.Name;
             label_assigneedPerson.Text = assigneeUser.FullName;
 
             circleProgressBar.Value = UcTask.ViewTask.Progress;
-            progressValue.Text = UcTask.ViewTask.Progress.ToString() + "%";
+            progressValue.Text = UcTask.ViewTask.Progress + @"%";
 
             taskBus.SelectComboBoxItemByValue(combobox_progress, UcTask.ViewTask.Progress);
             GetSelectedValueToCombobox(taskBus, idProject, assigneeUser, assigneeTeam);
@@ -123,15 +124,15 @@ namespace company_management.View
         { 
             if (CheckDataInput())
             {
-                var taskBus = _taskBus.Value;
-                var taskDao = _taskDao.Value;
-
                 int progress = int.Parse(combobox_progress.SelectedItem.ToString());
+                
+                var taskBus = _taskBus.Value;
                 Task task = taskBus.GetTaskFromTextBox(txtbox_Taskname.Text, txtbox_Desciption.Text,
                                               dateTime_deadline, combbox_Assignee, progress, textBox_Bonus.Text, combbox_Project);
                 task.Id = UcTask.ViewTask.Id;
+                
+                var taskDao = _taskDao.Value;
                 taskDao.UpdateTask(task);
-                this.Alert("Update successful", FormAlert.enmType.Success);
             }
         }
 

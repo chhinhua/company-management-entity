@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 using company_management.BUS;
 using company_management.DAO;
@@ -17,77 +11,97 @@ namespace company_management.View
 {
     public partial class FormViewOrUpdateProject : Form
     {
-        private readonly Lazy<TaskDao> _taskDao;
         private readonly Lazy<UserDao> _userDao;
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<ImageDao> _imageDao;
         private readonly Lazy<TaskBus> _taskBus;
+        private readonly Lazy<ProjectDao> _projectDao;
+        private readonly Utils _utils;
+        private int _projectId;
 
         public FormViewOrUpdateProject()
         {
-            InitializeComponent();
-            var utils = new Utils();
-            _taskDao = new Lazy<TaskDao>(() => new TaskDao());
+            _utils = new Utils();
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _imageDao = new Lazy<ImageDao>(() => new ImageDao());
             _taskBus = new Lazy<TaskBus>(() => new TaskBus());
-            utils.SetFormShadow(this);
+            _projectDao = new Lazy<ProjectDao>(() => new ProjectDao());
+            InitializeComponent();
         }
 
         private void LoadData()
         {
-            BindingTaskToFields();
+            CheckControlStatusByPosition();
+            BindingProjectToFields();
         }
-        
+
+        private void CheckControlStatusByPosition()
+        {
+            CheckControlStatusForEmployee();
+            CheckControlStatusForLeader();
+        }
+
+        private void CheckControlStatusForEmployee()
+        {
+            _utils.CheckEmployeeReadOnlyStatus(textbox_projectName);
+            _utils.CheckEmployeeReadOnlyStatus(textbox_Desciption);
+            _utils.CheckEmployeeReadOnlyStatus(textBox_projectBonus);
+            _utils.CheckEmployeeEnableStatus(combobox2_progress);
+            _utils.CheckEmployeeEnableStatus(dateTime_startDate2);
+            _utils.CheckEmployeeEnableStatus(dateTime_endDate2);
+            _utils.CheckEmployeeVisibleStatus(button_save);
+        }
+
+        private void CheckControlStatusForLeader()
+        {
+            _utils.CheckLeaderReadOnlyStatus(textbox_projectName);
+            _utils.CheckLeaderReadOnlyStatus(textbox_Desciption);
+            _utils.CheckLeaderReadOnlyStatus(textBox_projectBonus);
+            _utils.CheckLeaderEnableStatus(dateTime_startDate2);
+            _utils.CheckLeaderEnableStatus(dateTime_endDate2);
+        }
+
         private void combobox_progress_SelectedIndexChanged(object sender, EventArgs e)
         {
             int progress = Convert.ToInt32(combobox_progress.SelectedItem);
             circleProgressBar.Value = progress;
-            progressValue.Text = progress.ToString() + "%";
+            progressValue.Text = progress.ToString() + @"%";
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+        public void SetProjectId(int id) => _projectId = id;
 
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BindingProjectToFields()
         {
+            var projectDao = _projectDao.Value;
+            Project project = projectDao.GetProjectById(_projectId);
 
-        }
-        
-        private void BindingTaskToFields()
-        {
-            var taskBus = _taskBus.Value;
             var userDao = _userDao.Value;
+            User assigneeUser = userDao.GetUserById(project.IdAssignee);
+            
             var teamDao = _teamDao.Value;
-            var imageDao = _imageDao.Value;
-            Project project = UcProject.ViewProject;
-
-            int idAssignee = project.IdAssignee;
-            int idProject = project.Id;
-            User assigneeUser = userDao.GetUserById(idAssignee);
             Team assigneeTeam = teamDao.GetTeamById(project.IdTeam);
-
+            
+            var imageDao = _imageDao.Value;
             imageDao.ShowImageInPictureBox(assigneeUser.Avatar, picturebox_userAvatar2);
             imageDao.ShowImageInPictureBox(assigneeTeam.Avatar, picturebox_teamAvatar2);
 
             textbox_projectName.Text = project.Name;
             textbox_Desciption.Text = project.Description;
-            textBox_projectBonus.Text = project.Bonus.ToString("C");
+            textBox_projectBonus.Text = project.Bonus.ToString(CultureInfo.InvariantCulture);
             
             label2_assigneedTeam.Text = assigneeTeam.Name;
             label2_assignedPerson.Text = assigneeUser.FullName;
             
             circleProgressBar2.Value = project.Progress;
-            progressValue2.Text = project.Progress + "%";
+            progressValue2.Text = project.Progress.ToString("0.'%'");
 
+            var taskBus = _taskBus.Value;
             taskBus.SelectComboBoxItemByValue(combobox2_progress, project.Progress);
             try
             {
                 dateTime_startDate2.Value = project.StartDate;
-                dateTime_startDate2.Value = project.EndDate;
+                dateTime_endDate2.Value = project.EndDate;
             }
             catch (Exception e)
             {
@@ -95,9 +109,52 @@ namespace company_management.View
             }
         }
 
+        private Project GetProjectForUpdate()
+        {
+            var projectDao = _projectDao.Value;
+            Project project = projectDao.GetProjectById(_projectId);
+            project.Name = textbox_projectName.Text;
+            project.Description = textbox_Desciption.Text;
+            project.Progress = int.Parse(combobox2_progress.SelectedItem.ToString());
+            project.StartDate = dateTime_startDate2.Value;
+            project.EndDate = dateTime_endDate2.Value;
+            if (textBox_projectBonus.Text != "")
+            {
+                project.Bonus = decimal.Parse(textBox_projectBonus.Text);
+            }
+            
+            return project;
+        }
+        
         private void FormViewOrUpdateProject_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+        
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput())
+            {
+                var projectDao = _projectDao.Value;
+                projectDao.UpdateProject(GetProjectForUpdate());
+            }
+        }
+        
+        private bool CheckDataInput()
+        {
+            if (string.IsNullOrEmpty(textbox_projectName.Text) || string.IsNullOrEmpty(textbox_Desciption.Text))
+            {
+                MessageBox.Show(@"Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
+                return false;
+            }
+            return true;
+        }
+
+        private void combobox2_progress_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int progress = Convert.ToInt32(combobox2_progress.SelectedItem);
+            circleProgressBar2.Value = progress;
+            progressValue2.Text = progress.ToString("0.'%'");
         }
     }
 }

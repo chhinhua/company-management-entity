@@ -90,8 +90,9 @@ namespace company_management
             }
         }
 
-        public void ExecuteQuery(string sqlStr)
+        public bool ExecuteQuery(string sqlStr)
         {
+            bool action = false;
             try
             {
                 using (SqlConnection connection = new SqlConnection(connString))
@@ -101,17 +102,17 @@ namespace company_management
 
                     if (cmd.ExecuteNonQuery() > 0)
                     {
-                        // MessageBox.Show("Successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //this.Alert("Successful", Form_Alert.enmType.Success);
+                        action = true;
                     }
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                this.Alert("Acction faild!", FormAlert.enmType.Warning);
-                //MessageBox.Show("Acction faild!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.ToString());
             }
+
+            return action;
         }
 
         public void Dispose()

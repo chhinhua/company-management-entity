@@ -45,7 +45,6 @@ namespace company_management.View
                 Project project = projectBus.GetProjectFromTextBox(txtbox_projectName.Text, txtbox_Desciption.Text,
                                   dateTime_startDate, dateTime_endDate, combbox_AssigneeTeam, 0, textBox_Bonus.Text);
                 projectDao.AddProject(project);
-                this.Alert("Add successful", FormAlert.enmType.Success);
                 ClearFields();
             }
         }

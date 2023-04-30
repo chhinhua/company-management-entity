@@ -34,10 +34,10 @@ namespace company_management.View
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -51,8 +51,8 @@ namespace company_management.View
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -61,8 +61,6 @@ namespace company_management.View
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_Bonus = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTime_startDate = new System.Windows.Forms.DateTimePicker();
@@ -86,8 +84,7 @@ namespace company_management.View
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_projectBonus = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.button_save = new Guna.UI2.WinForms.Guna2Button();
             this.dateTime_startDate2 = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.combobox2_progress = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -298,14 +295,14 @@ namespace company_management.View
             this.GroupBox_TaskDetail.Controls.Add(this.label1);
             this.GroupBox_TaskDetail.Controls.Add(this.picturebox_userAvatar);
             this.GroupBox_TaskDetail.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.GroupBox_TaskDetail.CustomizableEdges = customizableEdges33;
+            this.GroupBox_TaskDetail.CustomizableEdges = customizableEdges31;
             this.GroupBox_TaskDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupBox_TaskDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox_TaskDetail.ForeColor = System.Drawing.Color.Maroon;
             this.GroupBox_TaskDetail.Location = new System.Drawing.Point(0, 0);
             this.GroupBox_TaskDetail.Name = "GroupBox_TaskDetail";
             this.GroupBox_TaskDetail.ShadowDecoration.Color = System.Drawing.Color.LightGray;
-            this.GroupBox_TaskDetail.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            this.GroupBox_TaskDetail.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.GroupBox_TaskDetail.ShadowDecoration.Enabled = true;
             this.GroupBox_TaskDetail.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.GroupBox_TaskDetail.Size = new System.Drawing.Size(988, 696);
@@ -325,8 +322,7 @@ namespace company_management.View
             this.guna2GroupBox1.Controls.Add(this.label12);
             this.guna2GroupBox1.Controls.Add(this.label13);
             this.guna2GroupBox1.Controls.Add(this.textBox_projectBonus);
-            this.guna2GroupBox1.Controls.Add(this.guna2Button1);
-            this.guna2GroupBox1.Controls.Add(this.guna2Button2);
+            this.guna2GroupBox1.Controls.Add(this.button_save);
             this.guna2GroupBox1.Controls.Add(this.dateTime_startDate2);
             this.guna2GroupBox1.Controls.Add(this.label14);
             this.guna2GroupBox1.Controls.Add(this.combobox2_progress);
@@ -336,14 +332,14 @@ namespace company_management.View
             this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.picturebox_userAvatar2);
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox1.CustomizableEdges = customizableEdges21;
+            this.guna2GroupBox1.CustomizableEdges = customizableEdges19;
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Maroon;
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Color = System.Drawing.Color.LightGray;
-            this.guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.guna2GroupBox1.ShadowDecoration.Enabled = true;
             this.guna2GroupBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2GroupBox1.Size = new System.Drawing.Size(988, 696);
@@ -495,9 +491,9 @@ namespace company_management.View
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label13.Location = new System.Drawing.Point(612, 374);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 24);
+            this.label13.Size = new System.Drawing.Size(91, 24);
             this.label13.TabIndex = 182;
-            this.label13.Text = "Bonus";
+            this.label13.Text = "Bonus ($)";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox_projectBonus
@@ -525,45 +521,24 @@ namespace company_management.View
             this.textBox_projectBonus.Size = new System.Drawing.Size(136, 32);
             this.textBox_projectBonus.TabIndex = 183;
             // 
-            // guna2Button1
+            // button_save
             // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderRadius = 24;
-            this.guna2Button1.CustomizableEdges = customizableEdges13;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2Button1.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Red;
-            this.guna2Button1.Location = new System.Drawing.Point(30, 624);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            this.guna2Button1.Size = new System.Drawing.Size(141, 50);
-            this.guna2Button1.TabIndex = 181;
-            this.guna2Button1.Text = "Cancel";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderRadius = 24;
-            this.guna2Button2.CustomizableEdges = customizableEdges15;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(201, 624);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.guna2Button2.Size = new System.Drawing.Size(139, 50);
-            this.guna2Button2.TabIndex = 180;
-            this.guna2Button2.Text = "Save";
+            this.button_save.BackColor = System.Drawing.Color.White;
+            this.button_save.BorderRadius = 15;
+            this.button_save.CustomizableEdges = customizableEdges13;
+            this.button_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_save.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
+            this.button_save.ForeColor = System.Drawing.Color.White;
+            this.button_save.Location = new System.Drawing.Point(26, 624);
+            this.button_save.Name = "button_save";
+            this.button_save.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.button_save.Size = new System.Drawing.Size(139, 50);
+            this.button_save.TabIndex = 180;
+            this.button_save.Text = "Save";
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // dateTime_startDate2
             // 
@@ -590,7 +565,7 @@ namespace company_management.View
             // 
             this.combobox2_progress.BackColor = System.Drawing.Color.Transparent;
             this.combobox2_progress.BorderRadius = 5;
-            this.combobox2_progress.CustomizableEdges = customizableEdges17;
+            this.combobox2_progress.CustomizableEdges = customizableEdges15;
             this.combobox2_progress.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combobox2_progress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox2_progress.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -601,10 +576,11 @@ namespace company_management.View
             this.combobox2_progress.Items.AddRange(new object[] { "0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" });
             this.combobox2_progress.Location = new System.Drawing.Point(616, 494);
             this.combobox2_progress.Name = "combobox2_progress";
-            this.combobox2_progress.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.combobox2_progress.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.combobox2_progress.Size = new System.Drawing.Size(103, 36);
             this.combobox2_progress.StartIndex = 0;
             this.combobox2_progress.TabIndex = 165;
+            this.combobox2_progress.SelectedIndexChanged += new System.EventHandler(this.combobox2_progress_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -633,7 +609,7 @@ namespace company_management.View
             this.circleProgressBar2.ProgressStartCap = System.Drawing.Drawing2D.LineCap.Round;
             this.circleProgressBar2.ProgressThickness = 35;
             this.circleProgressBar2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.circleProgressBar2.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            this.circleProgressBar2.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.circleProgressBar2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.circleProgressBar2.Size = new System.Drawing.Size(217, 217);
             this.circleProgressBar2.TabIndex = 164;
@@ -646,9 +622,9 @@ namespace company_management.View
             this.progressValue2.BackColor = System.Drawing.Color.Transparent;
             this.progressValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progressValue2.ForeColor = System.Drawing.Color.Red;
-            this.progressValue2.Location = new System.Drawing.Point(62, 89);
+            this.progressValue2.Location = new System.Drawing.Point(51, 89);
             this.progressValue2.Name = "progressValue2";
-            this.progressValue2.Size = new System.Drawing.Size(112, 44);
+            this.progressValue2.Size = new System.Drawing.Size(133, 44);
             this.progressValue2.TabIndex = 120;
             this.progressValue2.Text = "50%";
             this.progressValue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -684,7 +660,7 @@ namespace company_management.View
             this.picturebox_userAvatar2.ImageRotate = 0F;
             this.picturebox_userAvatar2.Location = new System.Drawing.Point(610, 65);
             this.picturebox_userAvatar2.Name = "picturebox_userAvatar2";
-            this.picturebox_userAvatar2.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.picturebox_userAvatar2.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.picturebox_userAvatar2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturebox_userAvatar2.Size = new System.Drawing.Size(50, 44);
             this.picturebox_userAvatar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -710,7 +686,7 @@ namespace company_management.View
             this.picturebox_teamAvatar.ImageRotate = 0F;
             this.picturebox_teamAvatar.Location = new System.Drawing.Point(610, 148);
             this.picturebox_teamAvatar.Name = "picturebox_teamAvatar";
-            this.picturebox_teamAvatar.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            this.picturebox_teamAvatar.ShadowDecoration.CustomizableEdges = customizableEdges21;
             this.picturebox_teamAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturebox_teamAvatar.Size = new System.Drawing.Size(50, 46);
             this.picturebox_teamAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -761,7 +737,7 @@ namespace company_management.View
             this.txtbox_Desciption.BorderColor = System.Drawing.Color.Black;
             this.txtbox_Desciption.BorderRadius = 5;
             this.txtbox_Desciption.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Desciption.CustomizableEdges = customizableEdges24;
+            this.txtbox_Desciption.CustomizableEdges = customizableEdges22;
             this.txtbox_Desciption.DefaultText = "";
             this.txtbox_Desciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_Desciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -779,7 +755,7 @@ namespace company_management.View
             this.txtbox_Desciption.PlaceholderText = "";
             this.txtbox_Desciption.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_Desciption.SelectedText = "";
-            this.txtbox_Desciption.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            this.txtbox_Desciption.ShadowDecoration.CustomizableEdges = customizableEdges23;
             this.txtbox_Desciption.Size = new System.Drawing.Size(548, 377);
             this.txtbox_Desciption.TabIndex = 191;
             // 
@@ -788,7 +764,7 @@ namespace company_management.View
             this.txtbox_projectName.BorderColor = System.Drawing.Color.Black;
             this.txtbox_projectName.BorderRadius = 5;
             this.txtbox_projectName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_projectName.CustomizableEdges = customizableEdges26;
+            this.txtbox_projectName.CustomizableEdges = customizableEdges24;
             this.txtbox_projectName.DefaultText = "";
             this.txtbox_projectName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_projectName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -804,7 +780,7 @@ namespace company_management.View
             this.txtbox_projectName.PasswordChar = '\0';
             this.txtbox_projectName.PlaceholderText = "";
             this.txtbox_projectName.SelectedText = "";
-            this.txtbox_projectName.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            this.txtbox_projectName.ShadowDecoration.CustomizableEdges = customizableEdges25;
             this.txtbox_projectName.Size = new System.Drawing.Size(548, 32);
             this.txtbox_projectName.TabIndex = 190;
             // 
@@ -834,7 +810,7 @@ namespace company_management.View
             this.btnCancel.AutoRoundedCorners = true;
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.BorderRadius = 24;
-            this.btnCancel.CustomizableEdges = customizableEdges28;
+            this.btnCancel.CustomizableEdges = customizableEdges26;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -845,18 +821,17 @@ namespace company_management.View
             this.btnCancel.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnCancel.Location = new System.Drawing.Point(30, 624);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges27;
             this.btnCancel.Size = new System.Drawing.Size(141, 50);
             this.btnCancel.TabIndex = 181;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.AutoRoundedCorners = true;
             this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BorderRadius = 24;
-            this.btnSave.CustomizableEdges = customizableEdges30;
+            this.btnSave.CustomizableEdges = customizableEdges28;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -865,11 +840,10 @@ namespace company_management.View
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(201, 624);
             this.btnSave.Name = "btnSave";
-            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges29;
             this.btnSave.Size = new System.Drawing.Size(139, 50);
             this.btnSave.TabIndex = 180;
             this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // picturebox_userAvatar
             // 
@@ -878,7 +852,7 @@ namespace company_management.View
             this.picturebox_userAvatar.ImageRotate = 0F;
             this.picturebox_userAvatar.Location = new System.Drawing.Point(610, 65);
             this.picturebox_userAvatar.Name = "picturebox_userAvatar";
-            this.picturebox_userAvatar.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            this.picturebox_userAvatar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.picturebox_userAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturebox_userAvatar.Size = new System.Drawing.Size(50, 44);
             this.picturebox_userAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -925,8 +899,7 @@ namespace company_management.View
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2TextBox textBox_projectBonus;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button button_save;
         private System.Windows.Forms.DateTimePicker dateTime_startDate2;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2ComboBox combobox2_progress;

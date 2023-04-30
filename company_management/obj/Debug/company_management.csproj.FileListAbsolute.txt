@@ -113,11 +113,6 @@ D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\En
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Bcl.HashCode.xml
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Data.SqlClient.xml
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.xml
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Microsoft.Extensions.Configuration.xml
@@ -185,7 +180,6 @@ D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\co
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormAddTask.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormAlert.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormCompanyInfo.resources
-D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormLeaveQuest.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormMain.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormAddProject.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormLogin.resources
@@ -205,3 +199,4 @@ D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\co
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcUserManagement.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormCalculateSalary.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.SuggestedBindingRedirects.cache
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormViewOrUpdateRequest.resources

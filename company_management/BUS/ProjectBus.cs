@@ -34,56 +34,61 @@ namespace company_management.BUS
             _listProject = new Lazy<List<Project>>(() => new List<Project>());
         }
 
-        public Project GetProjectFromTextBox(string taskName, string description, DateTimePicker startDate,
+        public Project GetProjectFromTextBox(string name, string description, DateTimePicker startDate,
             DateTimePicker endDate, ComboBox combbox_Assignee, int progress, string bonus)
         {
-            Project project = null;
-            Team selectesTeam;
-            int idAssignee;
             int idCreator = UserSession.LoggedInUser.Id;
-            decimal bonusVaue = 0;
+            decimal bonusValue = 0;
             if (bonus != "")
             {
-                bonusVaue = decimal.Parse(bonus);
+                bonusValue = decimal.Parse(bonus);
             }
 
-            selectesTeam = (Team)combbox_Assignee.SelectedItem;
-            idAssignee = selectesTeam.IdLeader;
-            project = new Project(idCreator, idAssignee, taskName,
-                        description, startDate.Value, endDate.Value, progress, selectesTeam.Id, bonusVaue);
+            Team selectedTeam = (Team)combbox_Assignee.SelectedItem;
+
+            Project project = new Project()
+            {
+                IdCreator = idCreator,
+                IdAssignee = selectedTeam.IdLeader,
+                Name = name,
+                Description = description,
+                StartDate = startDate.Value,
+                EndDate = endDate.Value,
+                Progress = progress,
+                IdTeam = selectedTeam.Id,
+                Bonus = bonusValue
+            };
 
             return project;
         }
-    
+
         public void LoadDataGridview(List<Project> listProject, DataGridView dataGridView)
         {
             var userDao = _userDao.Value;
             var teamDao = _teamDao.Value;
 
-            dataGridView.ColumnCount = 7;
-            dataGridView.Columns[0].Name = "Mã";
+            dataGridView.ColumnCount = 9;
+            dataGridView.Columns[0].Name = "Id";
             dataGridView.Columns[0].Visible = false;
-            dataGridView.Columns[1].Name = "Người tạo";
-            dataGridView.Columns[2].Name = "Tên Project";
-            dataGridView.Columns[2].Width = 275;
-            dataGridView.Columns[3].Name = "Deadline";
-            dataGridView.Columns[4].Name = "Tiến độ";
-            dataGridView.Columns[5].Name = "Người được giao";
-            dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[6].Name = "Team được giao";
-            dataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[1].Name = "Tên Project";
+            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].Name = "Người tạo";
+            dataGridView.Columns[3].Name = "Ngày bắt đầu";
+            dataGridView.Columns[4].Name = "Deadline";
+            dataGridView.Columns[5].Name = "Tiến độ";
+            dataGridView.Columns[6].Name = "Người được giao";
+            dataGridView.Columns[7].Name = "Team được giao";
+            dataGridView.Columns[8].Name = "Bonus";
             dataGridView.Rows.Clear();
 
-            // sort theo deadline tăng dần
-            listProject.Sort((x, y) => DateTime.Compare(x.EndDate, y.EndDate));
-
-            foreach (var t in listProject)
+            foreach (var p in listProject)
             {
-                string creator = userDao.GetUserById(t.IdCreator).FullName;
-                string assignee = userDao.GetUserById(t.IdAssignee).FullName;
-                string team = teamDao.GetTeamById(t.IdTeam).Name;
+                string creator = userDao.GetUserById(p.IdCreator).FullName;
+                string assignee = userDao.GetUserById(p.IdAssignee).FullName;
+                string team = teamDao.GetTeamById(p.IdTeam).Name;
 
-                dataGridView.Rows.Add(t.Id, creator, t.Name, t.EndDate.ToString("dd/MM/yyyy"), t.Progress + " %", assignee, team);
+                dataGridView.Rows.Add(p.Id, p.Name, creator, p.StartDate.ToString("d/M/yyyy"),
+                    p.EndDate.ToString("d/M/yyyy"), p.Progress + " %", assignee, team, p.Bonus.ToString("C"));
             }
         }
 
@@ -109,8 +114,10 @@ namespace company_management.BUS
             }
             else
             {
-                projects = projectDao.GetProjectsAssignedByCurrentUser(userDao.GetLeaderByUser(UserSession.LoggedInUser).Id);
+                projects = projectDao.GetProjectsAssignedByCurrentUser(userDao.GetLeaderByUser(UserSession.LoggedInUser)
+                    .Id);
             }
+
             return projects;
         }
 
@@ -138,7 +145,32 @@ namespace company_management.BUS
                 comboBox.SelectedValue = UcTask.ViewTask.IdProject;
             }
 
-            util.CheckEmployeeStatus(comboBox);
+            util.CheckEmployeeVisibleStatus(comboBox);
+        }
+
+        public List<Project> GetTodoProjects() => GetListProjectByPosition().Where(p => p.Progress == 0).ToList();
+
+        public List<Project> GetInprogressProjects() => GetListProjectByPosition().Where(p => p.Progress > 0 && p.Progress < 100).ToList();
+
+        public List<Project> GetDoneProjects() => GetListProjectByPosition().Where(p => p.Progress == 100).ToList();
+        
+        public TaskStatusPercentage GetProjectStatusPercentage(List<Project> projects)
+        {
+            TaskStatusPercentage projectStatus = new TaskStatusPercentage(0, 0, 0);
+
+            if (projects.Count > 0)
+            {
+                double totalTasks = projects.Count;
+                double todoCount = projects.Count(p => p.Progress == 0);
+                double inprogressCount = projects.Count(p => p.Progress > 0 && p.Progress < 100);
+                double doneCount = projects.Count(p => p.Progress == 100);
+
+                projectStatus.TodoPercent = (todoCount / totalTasks) * 100;
+                projectStatus.InprogressPercent = (inprogressCount / totalTasks) * 100;
+                projectStatus.DonePercent = (doneCount / totalTasks) * 100;
+            }
+
+            return projectStatus;
         }
     }
 }
