@@ -59,9 +59,9 @@ namespace company_management.View.UC
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcProject));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcProject));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -87,10 +87,11 @@ namespace company_management.View.UC
             this.combobox_progressFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
-            this.button_Edit = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.button_edit = new Guna.UI2.WinForms.Guna2Button();
+            this.button_remove = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -101,6 +102,7 @@ namespace company_management.View.UC
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Project)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             this.panelData.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_doneProject
@@ -337,7 +339,7 @@ namespace company_management.View.UC
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Project.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_Project.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView_Project.Location = new System.Drawing.Point(16, 87);
+            this.dataGridView_Project.Location = new System.Drawing.Point(16, 75);
             this.dataGridView_Project.Name = "dataGridView_Project";
             this.dataGridView_Project.RowHeadersVisible = false;
             this.dataGridView_Project.RowHeadersWidth = 20;
@@ -346,7 +348,7 @@ namespace company_management.View.UC
             this.dataGridView_Project.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_Project.RowTemplate.Height = 30;
             this.dataGridView_Project.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_Project.Size = new System.Drawing.Size(1222, 352);
+            this.dataGridView_Project.Size = new System.Drawing.Size(1222, 364);
             this.dataGridView_Project.TabIndex = 0;
             this.dataGridView_Project.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView_Project.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -427,7 +429,7 @@ namespace company_management.View.UC
             this.combobox_progressFilter.ForeColor = System.Drawing.Color.Black;
             this.combobox_progressFilter.ItemHeight = 26;
             this.combobox_progressFilter.Items.AddRange(new object[] { "Tất cả dự án", "Cần làm", "Trong quá trình", "Đã hoàn thành" });
-            this.combobox_progressFilter.Location = new System.Drawing.Point(546, 25);
+            this.combobox_progressFilter.Location = new System.Drawing.Point(546, 20);
             this.combobox_progressFilter.Name = "combobox_progressFilter";
             this.combobox_progressFilter.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.combobox_progressFilter.Size = new System.Drawing.Size(206, 32);
@@ -447,7 +449,7 @@ namespace company_management.View.UC
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
             this.btnRefresh.Image = global::company_management.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(1118, 25);
+            this.btnRefresh.Location = new System.Drawing.Point(1121, 17);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.btnRefresh.Size = new System.Drawing.Size(117, 40);
@@ -480,110 +482,124 @@ namespace company_management.View.UC
             this.txtSearch.PlaceholderText = "Search ...";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            this.txtSearch.Size = new System.Drawing.Size(472, 41);
+            this.txtSearch.Size = new System.Drawing.Size(472, 37);
             this.txtSearch.TabIndex = 70;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.btnViewOrUpdate);
+            this.panel1.Controls.Add(this.buttonAdd);
+            this.panel1.Controls.Add(this.button_edit);
+            this.panel1.Controls.Add(this.button_remove);
+            this.panel1.ForeColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(1059, 265);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(216, 40);
+            this.panel1.TabIndex = 114;
+            // 
+            // btnViewOrUpdate
+            // 
+            this.btnViewOrUpdate.AutoRoundedCorners = true;
+            this.btnViewOrUpdate.BorderRadius = 19;
+            this.btnViewOrUpdate.CustomizableEdges = customizableEdges23;
+            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewOrUpdate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnViewOrUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrUpdate.Image")));
+            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrUpdate.Location = new System.Drawing.Point(16, 0);
+            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
+            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.btnViewOrUpdate.Size = new System.Drawing.Size(50, 40);
+            this.btnViewOrUpdate.TabIndex = 112;
+            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click_1);
             // 
             // buttonAdd
             // 
             this.buttonAdd.AutoRoundedCorners = true;
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdd.BorderRadius = 19;
-            this.buttonAdd.CustomizableEdges = customizableEdges23;
+            this.buttonAdd.CustomizableEdges = customizableEdges25;
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
-            this.buttonAdd.ImageSize = new System.Drawing.Size(28, 28);
-            this.buttonAdd.Location = new System.Drawing.Point(1114, 272);
+            this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
+            this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
+            this.buttonAdd.Location = new System.Drawing.Point(66, 0);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
-            this.buttonAdd.TabIndex = 105;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.buttonAdd.Size = new System.Drawing.Size(50, 40);
+            this.buttonAdd.TabIndex = 91;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
             // 
-            // btnViewOrUpdate
+            // button_edit
             // 
-            this.btnViewOrUpdate.AutoRoundedCorners = true;
-            this.btnViewOrUpdate.BorderRadius = 19;
-            this.btnViewOrUpdate.CustomizableEdges = customizableEdges25;
-            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
-            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnViewOrUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrUpdate.Image")));
-            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnViewOrUpdate.Location = new System.Drawing.Point(1058, 272);
-            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
-            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            this.btnViewOrUpdate.Size = new System.Drawing.Size(40, 40);
-            this.btnViewOrUpdate.TabIndex = 111;
-            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
+            this.button_edit.AutoRoundedCorners = true;
+            this.button_edit.BackColor = System.Drawing.Color.Transparent;
+            this.button_edit.BorderRadius = 19;
+            this.button_edit.CustomizableEdges = customizableEdges27;
+            this.button_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_edit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_edit.FillColor = System.Drawing.Color.Transparent;
+            this.button_edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button_edit.ForeColor = System.Drawing.Color.White;
+            this.button_edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_edit.HoverState.ForeColor = System.Drawing.Color.White;
+            this.button_edit.Image = ((System.Drawing.Image)(resources.GetObject("button_edit.Image")));
+            this.button_edit.ImageSize = new System.Drawing.Size(24, 24);
+            this.button_edit.Location = new System.Drawing.Point(116, 0);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.button_edit.Size = new System.Drawing.Size(50, 40);
+            this.button_edit.TabIndex = 93;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
-            // buttonRemove
+            // button_remove
             // 
-            this.buttonRemove.AutoRoundedCorners = true;
-            this.buttonRemove.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemove.BorderRadius = 19;
-            this.buttonRemove.CustomizableEdges = customizableEdges27;
-            this.buttonRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonRemove.FillColor = System.Drawing.Color.Transparent;
-            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.buttonRemove.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
-            this.buttonRemove.ImageSize = new System.Drawing.Size(28, 28);
-            this.buttonRemove.Location = new System.Drawing.Point(1226, 272);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            this.buttonRemove.Size = new System.Drawing.Size(40, 40);
-            this.buttonRemove.TabIndex = 109;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
-            // 
-            // button_Edit
-            // 
-            this.button_Edit.AutoRoundedCorners = true;
-            this.button_Edit.BackColor = System.Drawing.Color.Transparent;
-            this.button_Edit.BorderRadius = 19;
-            this.button_Edit.CustomizableEdges = customizableEdges29;
-            this.button_Edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_Edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_Edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_Edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_Edit.FillColor = System.Drawing.Color.Transparent;
-            this.button_Edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button_Edit.ForeColor = System.Drawing.Color.White;
-            this.button_Edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.button_Edit.Image = global::company_management.Properties.Resources.edit;
-            this.button_Edit.ImageSize = new System.Drawing.Size(28, 28);
-            this.button_Edit.Location = new System.Drawing.Point(1170, 272);
-            this.button_Edit.Name = "button_Edit";
-            this.button_Edit.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            this.button_Edit.Size = new System.Drawing.Size(40, 40);
-            this.button_Edit.TabIndex = 108;
-            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
+            this.button_remove.AutoRoundedCorners = true;
+            this.button_remove.BackColor = System.Drawing.Color.Transparent;
+            this.button_remove.BorderRadius = 19;
+            this.button_remove.CustomizableEdges = customizableEdges29;
+            this.button_remove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_remove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_remove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_remove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_remove.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_remove.FillColor = System.Drawing.Color.Transparent;
+            this.button_remove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button_remove.ForeColor = System.Drawing.Color.White;
+            this.button_remove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.button_remove.Image = ((System.Drawing.Image)(resources.GetObject("button_remove.Image")));
+            this.button_remove.ImageSize = new System.Drawing.Size(24, 24);
+            this.button_remove.Location = new System.Drawing.Point(166, 0);
+            this.button_remove.Name = "button_remove";
+            this.button_remove.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            this.button_remove.Size = new System.Drawing.Size(50, 40);
+            this.button_remove.TabIndex = 92;
+            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
             // 
             // UcProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.btnViewOrUpdate);
-            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.button_Edit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFields);
             this.Controls.Add(this.guna2Panel3);
@@ -601,16 +617,20 @@ namespace company_management.View.UC
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Project)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btnViewOrUpdate;
+        private Guna.UI2.WinForms.Guna2Button buttonAdd;
+        private Guna.UI2.WinForms.Guna2Button button_edit;
+        private Guna.UI2.WinForms.Guna2Button button_remove;
 
         private Guna.UI2.WinForms.Guna2ComboBox combobox_progressFilter;
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button buttonAdd;
-        private Guna.UI2.WinForms.Guna2Button btnViewOrUpdate;
-        private Guna.UI2.WinForms.Guna2Button buttonRemove;
         private System.Windows.Forms.Label label_doneProject;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
@@ -619,7 +639,6 @@ namespace company_management.View.UC
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button button_Edit;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label_todoProject;

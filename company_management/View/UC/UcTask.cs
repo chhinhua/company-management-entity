@@ -1,15 +1,11 @@
 ﻿using company_management.DAO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using company_management.BUS;
 using company_management.DTO;
 using company_management.Utilities;
+// ReSharper disable All
 
 namespace company_management.View.UC
 {
@@ -30,17 +26,9 @@ namespace company_management.View.UC
             _utils = new Lazy<Utils>(() => new Utils());
         }
         
-        private void CheckAddButtonStatus()
+        private void UC_Task_Load(object sender, EventArgs e)
         {
-            var util = _utils.Value;
-            util.CheckEmployeeVisibleStatus(buttonAdd);
-            util.CheckEmployeeVisibleStatus(buttonRemove);
-        }
-
-        private List<Task> GetData()
-        {
-            var taskBus = _taskBus.Value;
-            return taskBus.GetListTaskByPosition();
+            LoadData(GetData());
         }
         
         private void LoadData(List<Task> tasks)
@@ -49,7 +37,20 @@ namespace company_management.View.UC
             LoadProgressChart(tasks);
             CheckAddButtonStatus();
         }
-
+        
+        private List<Task> GetData()
+        {
+            var taskBus = _taskBus.Value;
+            return taskBus.GetListTaskByPosition();
+        }
+        
+        private void CheckAddButtonStatus()
+        {
+            var util = _utils.Value;
+            util.CheckEmployeeNotVisibleStatus(buttonAdd);
+            util.CheckEmployeeNotVisibleStatus(buttonRemove);
+        }
+        
         private void LoadProgressChart(List<Task> tasks)
         {
             var util = _utils.Value;
@@ -60,25 +61,6 @@ namespace company_management.View.UC
         {
             var taskBus = _taskBus.Value;
             taskBus.LoadDataGridview(tasks, dataGridView_Task);
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void dgvTask_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex == -1 && e.ColumnIndex == dataGridView_Task.Columns["progress"].Index)
-            {
-                e.PaintBackground(e.CellBounds, true);
-                e.PaintContent(e.CellBounds);
-
-                // Thêm ký tự % vào header của cột progress
-                string headerText = dataGridView_Task.Columns["deadline"].HeaderText.Replace("deadline", "") + "(%)";
-                e.Graphics.DrawString(headerText, e.CellStyle.Font, Brushes.Black, e.CellBounds, new StringFormat { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far });
-
-                e.Handled = true;
-            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -160,11 +142,6 @@ namespace company_management.View.UC
             LoadData(GetData());
         }
 
-        private void UC_Task_Load(object sender, EventArgs e)
-        {
-            LoadData(GetData());
-        }
-
         private void combobox_taskStatusFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             var taskBus = _taskBus.Value;
@@ -187,7 +164,6 @@ namespace company_management.View.UC
 
             LoadData(tasks);
         }
-
 
         private void combobox_taskProgressFilter_SelectedIndexChanged(object sender, EventArgs e)
         {

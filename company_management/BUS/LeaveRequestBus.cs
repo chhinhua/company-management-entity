@@ -5,6 +5,7 @@ using company_management.DAO;
 using company_management.DTO;
 using company_management.Utilities;
 using Guna.UI2.WinForms;
+// ReSharper disable All
 
 namespace company_management.BUS
 {

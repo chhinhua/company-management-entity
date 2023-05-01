@@ -66,6 +66,21 @@ namespace company_management.DAO
             }
         }
 
+        public void DeleteProject(int id)
+        {
+            string query = string.Format("DELETE FROM project WHERE id = {0}", id);
+            try
+            {
+                _dBConnection.ExecuteQuery(query);
+                _utils.Alert("Deleted successful", FormAlert.enmType.Success);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _utils.Alert("Deleted failed", FormAlert.enmType.Error);
+            }
+        }
+        
         public void LoadTeamToCombobox(ComboBox comboBox)
         {
             var teamDao = _teamDao.Value;

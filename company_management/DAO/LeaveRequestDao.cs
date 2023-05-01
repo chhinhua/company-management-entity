@@ -19,7 +19,7 @@ namespace company_management.DAO
             _utils = new Utils();
         }
 
-        public void AddRequest(LeaveRequest request)
+         public void AddRequest(LeaveRequest request)
         {
             string query = string.Format(
                 "INSERT INTO leaveRequest (idUser, requestDate, startDate, endDate, numberDay, content, status)" +
@@ -35,6 +35,49 @@ namespace company_management.DAO
             }
         }
 
+        public void UpdateRequest(LeaveRequest request)
+        {
+            string query = string.Format("UPDATE leaveRequest SET idUser='{0}', requestDate='{1}', startDate='{2}', endDate='{3}', numberDay='{4}', content='{5}', status='{6}' WHERE id='{7}'",
+                request.IdUser, request.RequestDate, request.StartDate, request.EndDate, request.NumberDay, request.Content, request.Status, request.Id);
+            if (_dBConnection.ExecuteQuery(query))
+            {
+                _utils.Alert("Successful", FormAlert.enmType.Success);
+            }
+            else
+            {
+                _utils.Alert("Action failed", FormAlert.enmType.Error);
+            }
+        }
+        
+        public void DeleteRequest(int id)
+        {
+            string query = string.Format("DELETE FROM leaveRequest WHERE id = {0}", id);
+            try
+            {
+                _dBConnection.ExecuteQuery(query);
+                _utils.Alert("Deleted successful", FormAlert.enmType.Success);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _utils.Alert("Deleted failed", FormAlert.enmType.Error);
+            }
+        }
+        
+        public void UpdateManaRequest(LeaveRequest request)
+        {
+            string query = string.Format("UPDATE leaveRequest SET idUser='{0}', requestDate='{1}', startDate='{2}', endDate='{3}', numberDay='{4}', content='{5}', status='{6}', idApprover='{7}' WHERE id='{8}'",
+                request.IdUser, request.RequestDate, request.StartDate, request.EndDate, request.NumberDay, request.Content, request.Status, request.IdApprover, request.Id);
+            if (_dBConnection.ExecuteQuery(query))
+            {
+                _utils.Alert("Updated successful", FormAlert.enmType.Success);
+            }
+            else
+            {
+                _utils.Alert("Update failed", FormAlert.enmType.Error);
+            }
+        }
+        
         public List<LeaveRequest> GetAllLeaveRequests()
         {
             string query = "SELECT * FROM leaveRequest";

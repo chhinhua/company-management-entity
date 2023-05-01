@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Linq;
-using System.Data;
-using System.Data.SqlClient;
-using Guna.UI2.WinForms;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using company_management.DTO;
 using company_management.DAO;
-using company_management.View;
 using company_management.View.UC;
 using company_management.Utilities;
+// ReSharper disable All
 
 namespace company_management.BUS
 {
@@ -19,7 +17,6 @@ namespace company_management.BUS
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserDao> _userDao;
         private readonly Lazy<UserBus> _userBus;
-        private readonly Lazy<TaskBus> _taskBus;
         private readonly Lazy<ProjectDao> _projectDao;
         private readonly Lazy<List<Project>> _listProject;
 
@@ -29,13 +26,12 @@ namespace company_management.BUS
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _userBus = new Lazy<UserBus>(() => new UserBus());
-            _taskBus = new Lazy<TaskBus>(() => new TaskBus());
             _projectDao = new Lazy<ProjectDao>(() => new ProjectDao());
             _listProject = new Lazy<List<Project>>(() => new List<Project>());
         }
 
         public Project GetProjectFromTextBox(string name, string description, DateTimePicker startDate,
-            DateTimePicker endDate, ComboBox combbox_Assignee, int progress, string bonus)
+            DateTimePicker endDate, ComboBox comboboxAssignee, int progress, string bonus)
         {
             int idCreator = UserSession.LoggedInUser.Id;
             decimal bonusValue = 0;
@@ -44,7 +40,7 @@ namespace company_management.BUS
                 bonusValue = decimal.Parse(bonus);
             }
 
-            Team selectedTeam = (Team)combbox_Assignee.SelectedItem;
+            Team selectedTeam = (Team)comboboxAssignee.SelectedItem;
 
             Project project = new Project()
             {
@@ -127,14 +123,13 @@ namespace company_management.BUS
             listProject.TrimExcess();
         }
 
+        [SuppressMessage("ReSharper", "CoVariantArrayConversion")]
         public void LoadProjectToCombobox(ComboBox comboBox)
         {
-            var projects = _listProject.Value;
-            var taskBus = _taskBus.Value;
             var util = _utils.Value;
 
             // Hiển thị danh sách team
-            projects = GetListProjectByPosition();
+            var projects = GetListProjectByPosition();
 
             comboBox.Items.AddRange(projects.ToArray());
             comboBox.DisplayMember = "name";
@@ -145,7 +140,7 @@ namespace company_management.BUS
                 comboBox.SelectedValue = UcTask.ViewTask.IdProject;
             }
 
-            util.CheckEmployeeVisibleStatus(comboBox);
+            util.CheckEmployeeNotVisibleStatus(comboBox);
         }
 
         public List<Project> GetTodoProjects() => GetListProjectByPosition().Where(p => p.Progress == 0).ToList();
