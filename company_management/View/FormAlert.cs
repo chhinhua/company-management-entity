@@ -129,5 +129,6 @@ namespace company_management.View
             this.timer1.Interval = 1;
             this.timer1.Start();
         }
+        
     }
 }

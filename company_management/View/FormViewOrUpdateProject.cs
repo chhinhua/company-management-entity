@@ -44,7 +44,6 @@ namespace company_management.View
 
         private void CheckControlStatusForEmployee()
         {
-
             _utils.CheckEmployeeIsReadOnlyStatus(textbox_projectName);
             _utils.CheckEmployeeIsReadOnlyStatus(textbox_Desciption);
             _utils.CheckEmployeeIsReadOnlyStatus(textBox_projectBonus);
@@ -56,7 +55,6 @@ namespace company_management.View
 
         private void CheckControlStatusForLeader()
         {
-
             _utils.CheckLeaderIsReadOnlyStatus(textbox_projectName);
             _utils.CheckLeaderIsReadOnlyStatus(textbox_Desciption);
             _utils.CheckLeaderIsReadOnlyStatus(textBox_projectBonus);

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.Globalization;
-using System.IO;
 using System.Windows.Forms;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.BUS;
 using company_management.View.UC;
 using company_management.Utilities;
-using Guna.UI2.WinForms;
 
 namespace company_management.View
 {
@@ -20,6 +16,7 @@ namespace company_management.View
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<ImageDao> _imageDao;
         private readonly Lazy<TaskBus> _taskBus;
+        private readonly Utils _utils;
 
         public FormViewOrUpdateTask()
         {
@@ -30,13 +27,8 @@ namespace company_management.View
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _imageDao = new Lazy<ImageDao>(() => new ImageDao());
             _taskBus = new Lazy<TaskBus>(() => new TaskBus());
+            _utils =  new Utils();
             utils.SetFormShadow(this);
-        }
-
-        private void Alert(string msg, FormAlert.enmType type)
-        {
-            FormAlert frm = new FormAlert();
-            frm.showAlert(msg, type);
         }
 
         private void LoadData()
@@ -44,37 +36,48 @@ namespace company_management.View
             var taskBus = _taskBus.Value;
             taskBus.GetDataToCombobox(combbox_Assignee, combbox_Project);
             BindingTaskToFields();
+            CheckControlStatusForEmployee();
         }
 
         private void BindingTaskToFields()
         {
-            var taskBus = _taskBus.Value;
+            Task task = UcTask.ViewTask;
+            
             var userDao = _userDao.Value;
+            User assigneeUser = userDao.GetUserById(task.IdAssignee);
+            
             var teamDao = _teamDao.Value;
+            Team assigneeTeam = teamDao.GetTeamById(task.IdTeam);
+
             var imageDao = _imageDao.Value;
-
-            int idAssignee = UcTask.ViewTask.IdAssignee;
-            int idProject = UcTask.ViewTask.IdProject;
-            User assigneeUser = userDao.GetUserById(idAssignee);
-            Team assigneeTeam = teamDao.GetTeamById(UcTask.ViewTask.IdTeam);
-
             imageDao.ShowImageInPictureBox(assigneeUser.Avatar, picturebox_userAvatar);
             imageDao.ShowImageInPictureBox(assigneeTeam.Avatar, picturebox_teamAvatar);
 
-            txtbox_Taskname.Text = UcTask.ViewTask.TaskName;
-            txtbox_Desciption.Text = UcTask.ViewTask.Description;
-            textBox_Bonus.Text = UcTask.ViewTask.Bonus.ToString(CultureInfo.CurrentCulture);
+            txtbox_Taskname.Text = task.TaskName;
+            txtbox_Desciption.Text = task.Description;
+            textBox_Bonus.Text = task.Bonus.ToString(CultureInfo.CurrentCulture);
             
             label_assigneedTeam.Text = assigneeTeam.Name;
             label_assigneedPerson.Text = assigneeUser.FullName;
 
-            circleProgressBar.Value = UcTask.ViewTask.Progress;
-            progressValue.Text = UcTask.ViewTask.Progress + @"%";
+            circleProgressBar.Value = task.Progress;
+            progressValue.Text = task.Progress + @"%";
 
-            taskBus.SelectComboBoxItemByValue(combobox_progress, UcTask.ViewTask.Progress);
-            GetSelectedValueToCombobox(taskBus, idProject, assigneeUser, assigneeTeam);
+            var taskBus = _taskBus.Value;
+            taskBus.SelectComboBoxItemByValue(combobox_progress, task.Progress);
+            GetSelectedValueToCombobox(taskBus, task.IdProject, assigneeUser, assigneeTeam);
         }
 
+        private void CheckControlStatusForEmployee()
+        {
+            _utils.CheckEmployeeIsReadOnlyStatus(txtbox_Taskname);
+            _utils.CheckEmployeeIsReadOnlyStatus(txtbox_Desciption);
+            _utils.CheckEmployeeIsReadOnlyStatus(textBox_Bonus);
+            _utils.CheckEmployeeNotEnableStatus(combbox_Assignee);
+            _utils.CheckEmployeeNotEnableStatus(combbox_Project);
+            _utils.CheckEmployeeNotEnableStatus(dateTime_deadline);
+        }
+        
         private void GetSelectedValueToCombobox(TaskBus taskBus, int idProject, User assigneeUser, Team assigneeTeam)
         {
             if (UserSession.LoggedInUser.IdPosition == 1)
@@ -101,23 +104,18 @@ namespace company_management.View
         {
             if (string.IsNullOrEmpty(txtbox_Taskname.Text))
             {
-                this.Alert("Field required", FormAlert.enmType.Warning);
-                MessageBox.Show("Required fields Empty. Please fill in all fields!");
+                _utils.Alert("Field required", FormAlert.enmType.Warning);
+                MessageBox.Show(@"Các trường là bắt buộc. Vui lòng điền đầy đủ thông tin!");
                 return false;
             }
             return true;
-        }
-
-        private void circleProgressBar_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void combobox_progress_SelectedIndexChanged(object sender, EventArgs e)
         {
             int progress = Convert.ToInt32(combobox_progress.SelectedItem);
             circleProgressBar.Value = progress;
-            progressValue.Text = progress.ToString() + "%";
+            progressValue.Text = progress + @"%";
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)

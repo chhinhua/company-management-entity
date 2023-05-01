@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Linq;
-using System.Data;
-using System.Data.SqlClient;
 using Guna.UI2.WinForms;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
-using company_management.View;
 using company_management.View.UC;
+// ReSharper disable All
 
 namespace company_management.BUS
 {
@@ -91,40 +89,37 @@ namespace company_management.BUS
         }
 
         public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, 
-                ComboBox combbox_Assignee, int progress, string bonus, ComboBox combobox_Project)
+                ComboBox comboboxAssignee, int progress, string bonus, ComboBox comboboxProject)
         {
             var userBus = _userBus.Value;
             var teamDao = _teamDao.Value;
 
-            Team selectedTeam;
-            User selectedUser;
-            Project selectedProject;
-            Task task = null;
+            Task task;
             int idAssignee;
             int idCreator = UserSession.LoggedInUser.Id;
             
-            selectedProject = (Project)combobox_Project.SelectedItem;
-            decimal bonusVaue = 0;
+            var selectedProject = (Project)comboboxProject.SelectedItem;
+            decimal bonusValue = 0;
             if (bonus != "")
             {
-                bonusVaue = decimal.Parse(bonus);
+                bonusValue = decimal.Parse(bonus);
             }
 
             string position = userBus.GetUserPosition();
 
             if (position.Equals("Manager"))
             {
-                selectedTeam = (Team)combbox_Assignee.SelectedItem;
+                var selectedTeam = (Team)comboboxAssignee.SelectedItem;
                 idAssignee = selectedTeam.IdLeader;
                 task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, progress, selectedTeam.Id, bonusVaue, selectedProject.Id);
+                            description, dateTime.Value, progress, selectedTeam.Id, bonusValue, selectedProject.Id);
             }
             else if (position.Equals("Leader"))
             {
-                selectedUser = (User)combbox_Assignee.SelectedItem;
+                var selectedUser = (User)comboboxAssignee.SelectedItem;
                 idAssignee = selectedUser.Id;
                 task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, progress, teamDao.GetTeamByLeader(idCreator).Id, bonusVaue, selectedProject.Id);
+                            description, dateTime.Value, progress, teamDao.GetTeamByLeader(idCreator).Id, bonusValue, selectedProject.Id);
             }
             else
             {

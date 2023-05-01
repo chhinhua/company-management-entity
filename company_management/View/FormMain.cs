@@ -64,7 +64,7 @@ namespace company_management.View
         private void btnUser_Click(object sender, EventArgs e)
         {
             this.lb_menu_active.Location = new Point(btnUser.Location.X, btnUser.Location.Y);
-            UcUserManagement userManagementUC = new UcUserManagement();
+            UcUser userManagementUC = new UcUser();
             AddUc(userManagementUC);
         }
 

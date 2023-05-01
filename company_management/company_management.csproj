@@ -372,6 +372,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\CheckinCheckoutBus.cs" />
+    <Compile Include="BUS\HomeBus.cs" />
     <Compile Include="BUS\LeaveRequestBus.cs" />
     <Compile Include="BUS\ProjectBus.cs" />
     <Compile Include="BUS\SalaryBus.cs" />
@@ -401,6 +402,9 @@
     <Compile Include="DTO\UserSession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\HomeStatistics.cs" />
+    <Compile Include="Utilities\RequestStatistics.cs" />
+    <Compile Include="Utilities\SalariesStatistics.cs" />
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="View\FormAddRequest.cs">
       <SubType>Form</SubType>
@@ -510,11 +514,11 @@
     <Compile Include="View\UC\UcUpdateCPInfo.Designer.cs">
       <DependentUpon>UcUpdateCPInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UcUserManagement.cs">
+    <Compile Include="View\UC\UcUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UcUserManagement.Designer.cs">
-      <DependentUpon>UcUserManagement.cs</DependentUpon>
+    <Compile Include="View\UC\UcUser.Designer.cs">
+      <DependentUpon>UcUser.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormUserProfile.cs">
       <SubType>Form</SubType>
@@ -605,8 +609,8 @@
     <EmbeddedResource Include="View\UC\UcUpdateCPInfo.resx">
       <DependentUpon>UcUpdateCPInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UcUserManagement.resx">
-      <DependentUpon>UcUserManagement.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcUser.resx">
+      <DependentUpon>UcUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormUserProfile.resx">
       <DependentUpon>FormUserProfile.cs</DependentUpon>

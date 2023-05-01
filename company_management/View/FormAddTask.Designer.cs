@@ -30,6 +30,25 @@ namespace company_management.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddTask));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.groupBox_newTask = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,11 +96,13 @@ namespace company_management.View
             this.groupBox_newTask.Controls.Add(this.txtbox_Desciption);
             this.groupBox_newTask.Controls.Add(this.txtbox_taskName);
             this.groupBox_newTask.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.groupBox_newTask.CustomizableEdges = customizableEdges17;
             this.groupBox_newTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_newTask.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_newTask.ForeColor = System.Drawing.Color.Black;
             this.groupBox_newTask.Location = new System.Drawing.Point(0, 0);
             this.groupBox_newTask.Name = "groupBox_newTask";
+            this.groupBox_newTask.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.groupBox_newTask.Size = new System.Drawing.Size(979, 597);
             this.groupBox_newTask.TabIndex = 0;
             // 
@@ -104,6 +125,7 @@ namespace company_management.View
             this.txtBox_cretor.BorderColor = System.Drawing.Color.Black;
             this.txtBox_cretor.BorderRadius = 5;
             this.txtBox_cretor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_cretor.CustomizableEdges = customizableEdges1;
             this.txtBox_cretor.DefaultText = "";
             this.txtBox_cretor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBox_cretor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -120,6 +142,7 @@ namespace company_management.View
             this.txtBox_cretor.PlaceholderText = "";
             this.txtBox_cretor.ReadOnly = true;
             this.txtBox_cretor.SelectedText = "";
+            this.txtBox_cretor.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.txtBox_cretor.Size = new System.Drawing.Size(300, 32);
             this.txtBox_cretor.TabIndex = 108;
             // 
@@ -127,6 +150,7 @@ namespace company_management.View
             // 
             this.combbox_Project.BackColor = System.Drawing.Color.Transparent;
             this.combbox_Project.BorderRadius = 5;
+            this.combbox_Project.CustomizableEdges = customizableEdges3;
             this.combbox_Project.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combbox_Project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combbox_Project.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -136,6 +160,7 @@ namespace company_management.View
             this.combbox_Project.ItemHeight = 30;
             this.combbox_Project.Location = new System.Drawing.Point(652, 232);
             this.combbox_Project.Name = "combbox_Project";
+            this.combbox_Project.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.combbox_Project.Size = new System.Drawing.Size(300, 36);
             this.combbox_Project.TabIndex = 106;
             // 
@@ -162,9 +187,9 @@ namespace company_management.View
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(648, 379);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 103;
-            this.label1.Text = "Bonus";
+            this.label1.Text = "Bonus ($)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox_Bonus
@@ -172,6 +197,7 @@ namespace company_management.View
             this.textBox_Bonus.BorderColor = System.Drawing.Color.Black;
             this.textBox_Bonus.BorderRadius = 5;
             this.textBox_Bonus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Bonus.CustomizableEdges = customizableEdges5;
             this.textBox_Bonus.DefaultText = "";
             this.textBox_Bonus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBox_Bonus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -187,7 +213,8 @@ namespace company_management.View
             this.textBox_Bonus.PasswordChar = '\0';
             this.textBox_Bonus.PlaceholderText = "Exp: 200 $";
             this.textBox_Bonus.SelectedText = "";
-            this.textBox_Bonus.Size = new System.Drawing.Size(175, 32);
+            this.textBox_Bonus.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.textBox_Bonus.Size = new System.Drawing.Size(300, 32);
             this.textBox_Bonus.TabIndex = 104;
             // 
             // dateTime_deadline
@@ -217,36 +244,39 @@ namespace company_management.View
             this.btnCancel.AutoRoundedCorners = true;
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.BorderRadius = 24;
+            this.btnCancel.CustomizableEdges = customizableEdges7;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancel.FillColor = System.Drawing.Color.Gainsboro;
-            this.btnCancel.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnCancel.Image = global::company_management.Properties.Resources.arrow_back_up;
-            this.btnCancel.Location = new System.Drawing.Point(652, 517);
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(24, 517);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(129, 50);
+            this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.btnCancel.Size = new System.Drawing.Size(144, 50);
             this.btnCancel.TabIndex = 99;
-            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Text = "Gõ lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.AutoRoundedCorners = true;
             this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.BorderRadius = 24;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.CustomizableEdges = customizableEdges9;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::company_management.Properties.Resources.device_floppy;
-            this.btnSave.Location = new System.Drawing.Point(803, 517);
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(825, 517);
             this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnSave.Size = new System.Drawing.Size(127, 50);
             this.btnSave.TabIndex = 98;
             this.btnSave.Text = "Lưu";
@@ -256,6 +286,7 @@ namespace company_management.View
             // 
             this.combbox_Assignee.BackColor = System.Drawing.Color.Transparent;
             this.combbox_Assignee.BorderRadius = 5;
+            this.combbox_Assignee.CustomizableEdges = customizableEdges11;
             this.combbox_Assignee.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combbox_Assignee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combbox_Assignee.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -265,6 +296,7 @@ namespace company_management.View
             this.combbox_Assignee.ItemHeight = 30;
             this.combbox_Assignee.Location = new System.Drawing.Point(652, 149);
             this.combbox_Assignee.Name = "combbox_Assignee";
+            this.combbox_Assignee.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.combbox_Assignee.Size = new System.Drawing.Size(300, 36);
             this.combbox_Assignee.TabIndex = 97;
             // 
@@ -315,6 +347,7 @@ namespace company_management.View
             this.txtbox_Desciption.BorderColor = System.Drawing.Color.Black;
             this.txtbox_Desciption.BorderRadius = 5;
             this.txtbox_Desciption.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_Desciption.CustomizableEdges = customizableEdges13;
             this.txtbox_Desciption.DefaultText = "";
             this.txtbox_Desciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_Desciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -332,6 +365,7 @@ namespace company_management.View
             this.txtbox_Desciption.PlaceholderText = "";
             this.txtbox_Desciption.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_Desciption.SelectedText = "";
+            this.txtbox_Desciption.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.txtbox_Desciption.Size = new System.Drawing.Size(584, 287);
             this.txtbox_Desciption.TabIndex = 95;
             // 
@@ -340,6 +374,7 @@ namespace company_management.View
             this.txtbox_taskName.BorderColor = System.Drawing.Color.Black;
             this.txtbox_taskName.BorderRadius = 5;
             this.txtbox_taskName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_taskName.CustomizableEdges = customizableEdges15;
             this.txtbox_taskName.DefaultText = "";
             this.txtbox_taskName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_taskName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -355,10 +390,11 @@ namespace company_management.View
             this.txtbox_taskName.PasswordChar = '\0';
             this.txtbox_taskName.PlaceholderText = "This is title";
             this.txtbox_taskName.SelectedText = "";
+            this.txtbox_taskName.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.txtbox_taskName.Size = new System.Drawing.Size(584, 32);
             this.txtbox_taskName.TabIndex = 94;
             // 
-            // Form_AddTask
+            // FormAddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -373,7 +409,6 @@ namespace company_management.View
             this.groupBox_newTask.ResumeLayout(false);
             this.groupBox_newTask.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion

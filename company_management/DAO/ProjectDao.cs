@@ -1,14 +1,11 @@
 ﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using company_management.View;
-using company_management.View.UC;
-using company_management.BUS;
 using company_management.Utilities;
+// ReSharper disable All
 
 namespace company_management.DAO
 {
@@ -16,18 +13,12 @@ namespace company_management.DAO
     {
         private readonly DBConnection _dBConnection;
         private readonly Lazy<TeamDao> _teamDao;
-        private Lazy<UserDao> _userDao;
-        private Lazy<TaskBus> _taskBus;
-        private Lazy<List<Project>> _listProject;
         private readonly Utils _utils;
 
         public ProjectDao()
         {
             _dBConnection = new DBConnection();
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
-            _userDao = new Lazy<UserDao>(() => new UserDao());
-            _taskBus = new Lazy<TaskBus>(() => new TaskBus());
-            _listProject = new Lazy<List<Project>>(() => new List<Project>());
             _utils = new Utils();
         }
 
@@ -69,15 +60,14 @@ namespace company_management.DAO
         public void DeleteProject(int id)
         {
             string query = string.Format("DELETE FROM project WHERE id = {0}", id);
-            try
+            if (_dBConnection.ExecuteQuery(query))
             {
-                _dBConnection.ExecuteQuery(query);
-                _utils.Alert("Deleted successful", FormAlert.enmType.Success);
+                _utils.Alert("Deleted project successful", FormAlert.enmType.Success);
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
-                _utils.Alert("Deleted failed", FormAlert.enmType.Error);
+                _utils.Alert("Deleted project failed", FormAlert.enmType.Error);
+
             }
         }
         

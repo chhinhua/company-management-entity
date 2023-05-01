@@ -27,20 +27,34 @@ namespace company_management.View.UC
         
         private void UCLeaveRequest_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(GetData());
         }
 
-        private void LoadData()
+        private void LoadData(List<LeaveRequest> requests)
         {
-            LoadDataGridview();
+            LoadDataGridview(requests);
+            LoadRequestsStatistics(requests);
             CheckControlStatus();
         }
 
+        private void LoadRequestsStatistics(List<LeaveRequest> requests)
+        {
+            var requestBus = _requestBus.Value;
+            var requestStatistics = requestBus.GetRequestsStatistics(requests);
+
+            label_allCount.Text = requestStatistics.AllCount.ToString();
+            label_approved.Text = requestStatistics.Approved.ToString();
+            label_rejected.Text = requestStatistics.Rejected.ToString();
+            label_pending.Text = requestStatistics.Pending.ToString();
+            label_cancelled.Text = requestStatistics.Cancelled.ToString();
+        }
+        
         private void CheckControlStatus()
         {
             var util = _utils.Value;
             util.CheckManagerNotVisibleStatus(buttonAdd);
         }
+        
         private void datagridview_leaveRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -69,13 +83,18 @@ namespace company_management.View.UC
 
         }   
 
-        private void LoadDataGridview()
+        private void LoadDataGridview(List<LeaveRequest> requests)
         {
             var requestBus = _requestBus.Value;
-            var request = requestBus.GetListRequestByPosition();
-            requestBus.LoadDataGridview(request, datagridview_leaveRequest);
+            requestBus.LoadDataGridview(requests, datagridview_leaveRequest);
         }
 
+        private List<LeaveRequest> GetData()
+        {
+            var requestBus = _requestBus.Value;
+            return requestBus.GetListRequestByPosition();
+        }
+        
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             FormAddRequest requestForm = new FormAddRequest();
@@ -116,7 +135,7 @@ namespace company_management.View.UC
                 {
                     var requestDao = _requestDao.Value;
                     requestDao.DeleteRequest(_selectedId);
-                    LoadData();
+                    LoadData(GetData());
                 }
             }
             else MessageBox.Show(@"Vui lòng chọn đơn trước!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
@@ -124,7 +143,36 @@ namespace company_management.View.UC
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(GetData());
+        }
+
+        private void combobox_requestStatusFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var requestBus = _requestBus.Value;
+            var requests = _listRequest.Value;
+            requests.Clear();
+            
+            int selectedIndex = combobox_requestStatusFilter.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 1:
+                    requests = requestBus.GetApprovedRequests();
+                    break;
+                case 2:
+                    requests = requestBus.GetPendingRequests();
+                    break;
+                case 3:
+                    requests = requestBus.GetRejectedRequests();
+                    break;
+                case 4:
+                    requests = requestBus.GetCancelledRequests();
+                    break;
+                default:
+                    requests = requestBus.GetListRequestByPosition();
+                    break;
+            }
+
+            LoadData(requests);
         }
     }
 }

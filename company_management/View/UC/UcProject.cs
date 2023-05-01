@@ -15,6 +15,7 @@ namespace company_management.View.UC
         private readonly Lazy<ProjectBus> _projectBus;
         private readonly Lazy<ProjectDao> _projectDao;
         private readonly Lazy<List<Project>> _listProject;
+        private readonly Lazy<TaskDao> _taskDao;
         private int _selectedId;
 
         public UcProject()
@@ -24,6 +25,7 @@ namespace company_management.View.UC
             _listProject = new Lazy<List<Project>>(() => new List<Project>());
             _projectBus = new Lazy<ProjectBus>(() => new ProjectBus());
             _projectDao = new Lazy<ProjectDao>(() => new ProjectDao());
+            _taskDao = new Lazy<TaskDao>(() => new TaskDao());
         }
 
         private void UC_Project_Load(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace company_management.View.UC
             var util = _utils.Value;
             util.CheckManagerIsVisibleStatus(buttonAdd);
             util.CheckManagerIsVisibleStatus(button_edit);
+            util.CheckManagerIsVisibleStatus(button_remove);
             util.CheckEmployeeNotVisibleStatus(button_edit);
         }
 
@@ -140,12 +143,20 @@ namespace company_management.View.UC
         {
             if (_selectedId != 0)
             {
-                DialogResult result = MessageBox.Show("Xác nhận xóa dự án?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Xác nhận xóa dự án? CHÚ Ý: nếu bạn quyết định xóa dự án thì các task liên quan đến dự án đều bị xóa theo!", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    var projectDao = _projectDao.Value;
-                    projectDao.DeleteProject(_selectedId);
-                    LoadData(GetData());
+                    DialogResult result2= MessageBox.Show("Xác nhận xóa dự án?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result2 == DialogResult.Yes)
+                    {
+                        var taskDao = _taskDao.Value;
+                        taskDao.DeleteTasksByProject(_selectedId);
+                    
+                        var projectDao = _projectDao.Value;
+                        projectDao.DeleteProject(_selectedId);
+                    
+                        LoadData(GetData());
+                    }
                 }
             }
             else MessageBox.Show("Vui lòng chọn dự án!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); 

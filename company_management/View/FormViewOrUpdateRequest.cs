@@ -27,7 +27,19 @@ namespace company_management.View
             _utils = new Lazy<Utils>(() => new Utils());
         }
 
-        public void SetRequestId(int id) => _requestId = id;
+        private void FormViewOrUpdateRequest_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            var requestDao = _requestDao.Value;
+            LeaveRequest request = requestDao.GetRequestById(_requestId);
+            BindingRequestToFields();
+            CheckControlStatus(request);
+            CheckControlStatusForCancelledRequest(request);
+        }
 
         private void BindingRequestToFields()
         {
@@ -37,17 +49,10 @@ namespace company_management.View
             var userDao = _userDao.Value;
             User writer = userDao.GetUserById(request.IdUser);
             label_writer.Text = writer.FullName;
-
+            
             var imageDao = _imageDao.Value;
             imageDao.ShowImageInPictureBox(writer.Avatar, picturebox_writer);
-
-            User approver = userDao.GetUserById(request.IdApprover);
-            if (approver != null)
-            {
-                imageDao.ShowImageInPictureBox(approver.Avatar, picturebox_approver);
-                label_approver.Text = approver.FullName;
-            }
-
+            
             if (request.Status == "Approved" || request.Status == "Rejected")
             {
                 combobox_status.SelectedIndex = request.Status == "Approved" ? 0 : 1;
@@ -57,46 +62,21 @@ namespace company_management.View
                 label_approver.Text = "";
             }
 
+            User approver = userDao.GetUserById(request.IdApprover);
+            if (approver != null)
+            {
+                label_approver.Text = approver.FullName;
+                imageDao.ShowImageInPictureBox(approver.Avatar, picturebox_approver);
+            }
+
+            label_numberDay.Text = request.NumberDay + @" ngày";
             label_status.Text = request.Status;
             txtbox_content.Text = request.Content;
             datetime_requestDate.Value = request.RequestDate;
             datetime_startDate.Value = request.StartDate;
             datetime_endDate.Value = request.EndDate;
         }
-
-        private LeaveRequest GetRequestForUpdate()
-        {
-            var requestDao = _requestDao.Value;
-            var util = _utils.Value;
-
-            LeaveRequest request = requestDao.GetRequestById(_requestId);
-            request.RequestDate = datetime_requestDate.Value;
-            request.Content = util.EscapeSqlString(txtbox_content.Text);
-            request.StartDate = datetime_startDate.Value;
-            request.EndDate = datetime_endDate.Value;
-            request.NumberDay = (int)(request.EndDate - request.StartDate).TotalDays;
-
-            if (request.Status != "Canceled")
-            {
-                request.Status = GetStatusFromComboboxStatus();
-                if (request.Status != "Pending")
-                {
-                    request.IdApprover = UserSession.LoggedInUser.Id;
-                }
-            }
-
-            return request;
-        }
-
-        private void LoadData()
-        {
-            var requestDao = _requestDao.Value;
-            LeaveRequest request = requestDao.GetRequestById(_requestId);
-            CheckControlStatus(request);
-            CheckControlStatusForCancelledRequest(request);
-            BindingRequestToFields();
-        }
-
+        
         private void CheckControlStatus(LeaveRequest request)
         {
             var util = _utils.Value;
@@ -120,6 +100,32 @@ namespace company_management.View
                 button_save.Enabled = false;
                 combobox_status.Enabled = false;
             }
+        }
+        
+        public void SetRequestId(int id) => _requestId = id;
+
+        private LeaveRequest GetRequestForUpdate()
+        {
+            var requestDao = _requestDao.Value;
+            var util = _utils.Value;
+
+            LeaveRequest request = requestDao.GetRequestById(_requestId);
+            request.RequestDate = datetime_requestDate.Value;
+            request.Content = util.EscapeSqlString(txtbox_content.Text);
+            request.StartDate = datetime_startDate.Value;
+            request.EndDate = datetime_endDate.Value;
+            request.NumberDay = (int)(request.EndDate - request.StartDate).TotalDays;
+
+            if (request.Status != "Canceled")
+            {
+                request.Status = GetStatusFromComboboxStatus();
+                if (request.Status != "Pending")
+                {
+                    request.IdApprover = UserSession.LoggedInUser.Id;
+                }
+            }
+
+            return request;
         }
 
         private string GetStatusFromComboboxStatus()
@@ -146,15 +152,9 @@ namespace company_management.View
                 MessageBox.Show(@"Nội dung nghỉ phép không được bỏ trống. Vui lòng điền đầy đủ thông tin!");
                 return false;
             }
-
             return true;
         }
-
-        private void FormViewOrUpdateRequest_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
+        
         private void button_save_Click(object sender, EventArgs e)
         {
             if (CheckDataInput())

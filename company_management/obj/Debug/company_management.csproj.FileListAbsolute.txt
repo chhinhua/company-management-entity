@@ -196,7 +196,7 @@ D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\co
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormViewOrUpdateProject.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormViewOrUpdateTask.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcUpdateCpInfo.resources
-D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcUserManagement.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormCalculateSalary.resources
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.csproj.SuggestedBindingRedirects.cache
 D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.FormViewOrUpdateRequest.resources
+D:\Study\LTWD\Project\company-management-project\company_management\obj\Debug\company_management.View.UC.UcUser.resources

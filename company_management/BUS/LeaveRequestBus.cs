@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.Utilities;
 using Guna.UI2.WinForms;
 // ReSharper disable All
-
 
 namespace company_management.BUS
 {
@@ -99,6 +99,25 @@ namespace company_management.BUS
             return requests;
         }
         
+        public List<LeaveRequest> GetPendingRequests() => GetListRequestByPosition().Where(r => r.Status == "Pending").ToList();
+       
+        public List<LeaveRequest> GetApprovedRequests() => GetListRequestByPosition().Where(r => r.Status == "Approved").ToList();
+       
+        public List<LeaveRequest> GetRejectedRequests() => GetListRequestByPosition().Where(r => r.Status == "Rejected").ToList();
+       
+        public List<LeaveRequest> GetCancelledRequests() => GetListRequestByPosition().Where(r => r.Status == "Cancelled").ToList();
+
+        public RequestStatistics GetRequestsStatistics(List<LeaveRequest> requests)
+        {
+            RequestStatistics requestStatistics = new RequestStatistics();
+            requestStatistics.AllCount = requests.Count;
+            requestStatistics.Pending = requests.Where(r => r.Status == "Pending").Count();
+            requestStatistics.Approved = requests.Where(r => r.Status == "Approved").Count();
+            requestStatistics.Cancelled = requests.Where(r => r.Status == "Cancelled").Count();
+            requestStatistics.Rejected = requests.Where(r => r.Status == "Rejected").Count();
+            return requestStatistics;
+        }
+
         private void ClearListRequest(List<LeaveRequest> listRequest)
         {
             listRequest.Clear();

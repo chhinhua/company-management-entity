@@ -89,6 +89,12 @@ namespace company_management.Utilities
             control.Enabled = !userBus.IsLeader();
         }
         
+        public void CheckLeaderNotVisibleStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            control.Visible = !userBus.IsLeader();
+        }
+        
         public void CheckManagerIsReadOnlyStatus<T>(T control) where T : Guna2TextBox
         {
             var userBus = _userBus.Value;

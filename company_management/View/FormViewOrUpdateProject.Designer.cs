@@ -888,7 +888,6 @@ namespace company_management.View
         private System.Windows.Forms.Label label2_assigneedTeam;
 
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picturebox_teamAvatar2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -906,7 +905,6 @@ namespace company_management.View
         private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2CircleProgressBar circleProgressBar2;
         private System.Windows.Forms.Label progressValue2;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picturebox_userAvatar2;
 
