@@ -59,15 +59,9 @@ namespace company_management.View.UC
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-<<<<<<< HEAD
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcProject));
-=======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcProject));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
->>>>>>> hua
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -435,11 +429,7 @@ namespace company_management.View.UC
             this.combobox_progressFilter.ForeColor = System.Drawing.Color.Black;
             this.combobox_progressFilter.ItemHeight = 26;
             this.combobox_progressFilter.Items.AddRange(new object[] { "Tất cả dự án", "Cần làm", "Trong quá trình", "Đã hoàn thành" });
-<<<<<<< HEAD
-            this.combobox_progressFilter.Location = new System.Drawing.Point(546, 25);
-=======
             this.combobox_progressFilter.Location = new System.Drawing.Point(546, 20);
->>>>>>> hua
             this.combobox_progressFilter.Name = "combobox_progressFilter";
             this.combobox_progressFilter.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.combobox_progressFilter.Size = new System.Drawing.Size(206, 32);
@@ -459,11 +449,7 @@ namespace company_management.View.UC
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
             this.btnRefresh.Image = global::company_management.Properties.Resources.refresh;
-<<<<<<< HEAD
-            this.btnRefresh.Location = new System.Drawing.Point(1118, 25);
-=======
             this.btnRefresh.Location = new System.Drawing.Point(1121, 17);
->>>>>>> hua
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.btnRefresh.Size = new System.Drawing.Size(117, 40);
@@ -496,11 +482,7 @@ namespace company_management.View.UC
             this.txtSearch.PlaceholderText = "Search ...";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges20;
-<<<<<<< HEAD
-            this.txtSearch.Size = new System.Drawing.Size(472, 41);
-=======
             this.txtSearch.Size = new System.Drawing.Size(472, 37);
->>>>>>> hua
             this.txtSearch.TabIndex = 70;
             // 
             // panel1
@@ -543,11 +525,7 @@ namespace company_management.View.UC
             this.buttonAdd.AutoRoundedCorners = true;
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdd.BorderRadius = 19;
-<<<<<<< HEAD
-            this.buttonAdd.CustomizableEdges = customizableEdges23;
-=======
             this.buttonAdd.CustomizableEdges = customizableEdges25;
->>>>>>> hua
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -560,40 +538,13 @@ namespace company_management.View.UC
             this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAdd.Location = new System.Drawing.Point(66, 0);
             this.buttonAdd.Name = "buttonAdd";
-<<<<<<< HEAD
-            this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
-            this.buttonAdd.TabIndex = 105;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-=======
             this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.buttonAdd.Size = new System.Drawing.Size(50, 40);
             this.buttonAdd.TabIndex = 91;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
->>>>>>> hua
             // 
             // button_edit
             // 
-<<<<<<< HEAD
-            this.btnViewOrUpdate.AutoRoundedCorners = true;
-            this.btnViewOrUpdate.BorderRadius = 19;
-            this.btnViewOrUpdate.CustomizableEdges = customizableEdges25;
-            this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
-            this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnViewOrUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrUpdate.Image")));
-            this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnViewOrUpdate.Location = new System.Drawing.Point(1058, 272);
-            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
-            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            this.btnViewOrUpdate.Size = new System.Drawing.Size(40, 40);
-            this.btnViewOrUpdate.TabIndex = 111;
-            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
-=======
             this.button_edit.AutoRoundedCorners = true;
             this.button_edit.BackColor = System.Drawing.Color.Transparent;
             this.button_edit.BorderRadius = 19;
@@ -616,56 +567,9 @@ namespace company_management.View.UC
             this.button_edit.Size = new System.Drawing.Size(50, 40);
             this.button_edit.TabIndex = 93;
             this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
->>>>>>> hua
             // 
             // button_remove
             // 
-<<<<<<< HEAD
-            this.buttonRemove.AutoRoundedCorners = true;
-            this.buttonRemove.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemove.BorderRadius = 19;
-            this.buttonRemove.CustomizableEdges = customizableEdges27;
-            this.buttonRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonRemove.FillColor = System.Drawing.Color.Transparent;
-            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.buttonRemove.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
-            this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
-            this.buttonRemove.ImageSize = new System.Drawing.Size(28, 28);
-            this.buttonRemove.Location = new System.Drawing.Point(1226, 272);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            this.buttonRemove.Size = new System.Drawing.Size(40, 40);
-            this.buttonRemove.TabIndex = 109;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
-            // 
-            // button_Edit
-            // 
-            this.button_Edit.AutoRoundedCorners = true;
-            this.button_Edit.BackColor = System.Drawing.Color.Transparent;
-            this.button_Edit.BorderRadius = 19;
-            this.button_Edit.CustomizableEdges = customizableEdges29;
-            this.button_Edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_Edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_Edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_Edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_Edit.FillColor = System.Drawing.Color.Transparent;
-            this.button_Edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button_Edit.ForeColor = System.Drawing.Color.White;
-            this.button_Edit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.button_Edit.Image = global::company_management.Properties.Resources.edit;
-            this.button_Edit.ImageSize = new System.Drawing.Size(28, 28);
-            this.button_Edit.Location = new System.Drawing.Point(1170, 272);
-            this.button_Edit.Name = "button_Edit";
-            this.button_Edit.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            this.button_Edit.Size = new System.Drawing.Size(40, 40);
-            this.button_Edit.TabIndex = 108;
-            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
-=======
             this.button_remove.AutoRoundedCorners = true;
             this.button_remove.BackColor = System.Drawing.Color.Transparent;
             this.button_remove.BorderRadius = 19;
@@ -687,7 +591,6 @@ namespace company_management.View.UC
             this.button_remove.Size = new System.Drawing.Size(50, 40);
             this.button_remove.TabIndex = 92;
             this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
->>>>>>> hua
             // 
             // UcProject
             // 
@@ -718,15 +621,11 @@ namespace company_management.View.UC
             this.ResumeLayout(false);
         }
 
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnViewOrUpdate;
         private Guna.UI2.WinForms.Guna2Button buttonAdd;
         private Guna.UI2.WinForms.Guna2Button button_edit;
         private Guna.UI2.WinForms.Guna2Button button_remove;
-
->>>>>>> hua
         private Guna.UI2.WinForms.Guna2ComboBox combobox_progressFilter;
 
         #endregion

@@ -45,7 +45,7 @@ namespace company_management.View
             this.label_message.ForeColor = System.Drawing.Color.White;
             this.label_message.Location = new System.Drawing.Point(59, 21);
             this.label_message.Name = "label_message";
-            this.label_message.Size = new System.Drawing.Size(190, 21);
+            this.label_message.Size = new System.Drawing.Size(275, 21);
             this.label_message.TabIndex = 4;
             this.label_message.Text = "Message Text";
             // 
@@ -67,19 +67,19 @@ namespace company_management.View
             // 
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
             this.pictureBox2.Image = global::company_management.Properties.Resources.icons8_cancel_25px;
-            this.pictureBox2.Location = new System.Drawing.Point(256, 16);
+            this.pictureBox2.Location = new System.Drawing.Point(340, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 30);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
-            // Form_Alert
+            // FormAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(300, 65);
+            this.ClientSize = new System.Drawing.Size(384, 65);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_message);
             this.Controls.Add(this.pictureBox2);
@@ -89,7 +89,6 @@ namespace company_management.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

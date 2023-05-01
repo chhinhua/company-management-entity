@@ -122,6 +122,20 @@ namespace company_management.DAO
                 _utils.Alert("Deleted failed", FormAlert.enmType.Error);
             }
         }
+        
+        public void DeleteTasksByProject(int projectId)
+        {
+            string query = string.Format("DELETE FROM task WHERE idProject = {0}", projectId);
+            if (_dBConnection.ExecuteQuery(query))
+            {
+                _utils.Alert("Deleted task successful", FormAlert.enmType.Success);
+            }
+            else
+            {
+                _utils.Alert("Deleted task failed", FormAlert.enmType.Error);
+
+            }
+        }
 
         public Task GetTaskById(int id)
         {
