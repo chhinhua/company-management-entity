@@ -41,6 +41,12 @@ namespace company_management.BUS
             return positionId == 1;
         }
         
+        public bool IsHumanResources()
+        {
+            int positionId = UserSession.LoggedInUser.IdPosition;
+            return positionId == 4;
+        }
+        
         public bool IsLeader()
         {
             int positionId = UserSession.LoggedInUser.IdPosition;

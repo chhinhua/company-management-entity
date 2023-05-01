@@ -20,7 +20,7 @@ namespace company_management.BUS
         private readonly Lazy<LeaveRequestDao> _requestDao;
         private readonly Lazy<LeaveRequestBus> _requestBus;
         private readonly Lazy<List<LeaveRequest>> _listRequest;
-        
+
         public LeaveRequestBus()
         {
             _utils = new Lazy<Utils>(() => new Utils());
@@ -32,7 +32,7 @@ namespace company_management.BUS
             _requestDao = new Lazy<LeaveRequestDao>(() => new LeaveRequestDao());
             _listRequest = new Lazy<List<LeaveRequest>>(() => new List<LeaveRequest>());
         }
-        
+
         public void LoadDataGridview(List<LeaveRequest> listProject, DataGridView dataGridView)
         {
             var userDao = _userDao.Value;
@@ -55,13 +55,15 @@ namespace company_management.BUS
 
                 var user = userDao.GetUserById(rq.IdApprover);
                 var approver = user != null ? user.FullName : "N/A";
-                
-                dataGridView.Rows.Add(rq.Id, writer, rq.RequestDate.ToString("d/M/yyyy"), 
-                rq.StartDate.ToString("d/M/yyyy"), rq.EndDate.ToString("d/M/yyyy"), rq.NumberDay, rq.Status, approver);
+
+                dataGridView.Rows.Add(rq.Id, writer, rq.RequestDate.ToString("d/M/yyyy"),
+                    rq.StartDate.ToString("d/M/yyyy"), rq.EndDate.ToString("d/M/yyyy"), rq.NumberDay, rq.Status,
+                    approver);
             }
         }
-        
-        public LeaveRequest GetRequestFromTextBox(Guna2DateTimePicker startDate, Guna2DateTimePicker endDate, Guna2DateTimePicker requestDate, Guna2TextBox content)
+
+        public LeaveRequest GetRequestFromTextBox(Guna2DateTimePicker startDate, Guna2DateTimePicker endDate,
+            Guna2DateTimePicker requestDate, Guna2TextBox content)
         {
             LeaveRequest request = new LeaveRequest
             {
@@ -73,39 +75,37 @@ namespace company_management.BUS
                 Content = content.Text,
                 Status = "Pending"
             };
-            
+
             return request;
         }
-        
+
         public List<LeaveRequest> GetListRequestByPosition()
         {
             var requests = _listRequest.Value;
             var requestDao = _requestDao.Value;
             var userBus = _userBus.Value;
-            var userDao = _userDao.Value;
-            
+
             ClearListRequest(requests);
-            
-            string position = userBus.GetUserPosition();
-            if (position.Equals("Manager"))
-            {
-                requests = requestDao.GetAllLeaveRequests();
-            }
+
+            if (userBus.IsManager())
+            {requests = requestDao.GetAllLeaveRequests();}
             else
-            {
-                requests = requestDao.GetMyLeaveRequests(UserSession.LoggedInUser.Id);
-            }
-            
+            {requests = requestDao.GetMyLeaveRequests(UserSession.LoggedInUser.Id);}
+
             return requests;
         }
-        
-        public List<LeaveRequest> GetPendingRequests() => GetListRequestByPosition().Where(r => r.Status == "Pending").ToList();
-       
-        public List<LeaveRequest> GetApprovedRequests() => GetListRequestByPosition().Where(r => r.Status == "Approved").ToList();
-       
-        public List<LeaveRequest> GetRejectedRequests() => GetListRequestByPosition().Where(r => r.Status == "Rejected").ToList();
-       
-        public List<LeaveRequest> GetCancelledRequests() => GetListRequestByPosition().Where(r => r.Status == "Cancelled").ToList();
+
+        public List<LeaveRequest> GetPendingRequests() =>
+            GetListRequestByPosition().Where(r => r.Status == "Pending").ToList();
+
+        public List<LeaveRequest> GetApprovedRequests() =>
+            GetListRequestByPosition().Where(r => r.Status == "Approved").ToList();
+
+        public List<LeaveRequest> GetRejectedRequests() =>
+            GetListRequestByPosition().Where(r => r.Status == "Rejected").ToList();
+
+        public List<LeaveRequest> GetCancelledRequests() =>
+            GetListRequestByPosition().Where(r => r.Status == "Cancelled").ToList();
 
         public RequestStatistics GetRequestsStatistics(List<LeaveRequest> requests)
         {

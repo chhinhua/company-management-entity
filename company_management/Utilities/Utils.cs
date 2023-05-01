@@ -127,8 +127,7 @@ namespace company_management.Utilities
         
         public void CheckCalculateSalaryStatus<T>(T control) where T : Control
         {
-            var userBus = _userBus.Value;
-            control.Visible = userBus.IsManager();
+            control.Visible = _userBus.Value.IsHumanResources();
         }
         
         public void SetFormShadow(Form form)

@@ -36,8 +36,11 @@ namespace company_management.View
                 //loginUser = _userDao.GetUserByUsername("edalziell2"); // manager
                 //loginUser = _userDao.GetUserByUsername("chhinhua"); // manager
 
+                
+                // Human Resources
+                loginUser = _userDao.GetUserByUsername("linhnguyen"); // Hr
+
                 // Team System Integration
-                loginUser = _userDao.GetUserByUsername("abaldacchinob"); // leader
                  //loginUser = _userDao.GetUserByUsername("ádfád"); // employee
                 // loginUser = _userDao.GetUserByUsername("mboardera"); // employee
                 // loginUser = _userDao.GetUserByUsername("dlaven9"); // employee
