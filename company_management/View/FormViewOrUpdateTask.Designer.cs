@@ -29,6 +29,27 @@ namespace company_management.View
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_Bonus = new Guna.UI2.WinForms.Guna2TextBox();
@@ -92,6 +113,7 @@ namespace company_management.View
             this.textBox_Bonus.BorderColor = System.Drawing.Color.Black;
             this.textBox_Bonus.BorderRadius = 5;
             this.textBox_Bonus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_Bonus.CustomizableEdges = customizableEdges1;
             this.textBox_Bonus.DefaultText = "";
             this.textBox_Bonus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBox_Bonus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -107,6 +129,7 @@ namespace company_management.View
             this.textBox_Bonus.PasswordChar = '\0';
             this.textBox_Bonus.PlaceholderText = "Exp: 200 $";
             this.textBox_Bonus.SelectedText = "";
+            this.textBox_Bonus.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.textBox_Bonus.Size = new System.Drawing.Size(136, 32);
             this.textBox_Bonus.TabIndex = 183;
             // 
@@ -174,6 +197,7 @@ namespace company_management.View
             this.txtbox_Desciption.BorderColor = System.Drawing.Color.Black;
             this.txtbox_Desciption.BorderRadius = 5;
             this.txtbox_Desciption.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_Desciption.CustomizableEdges = customizableEdges3;
             this.txtbox_Desciption.DefaultText = "";
             this.txtbox_Desciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_Desciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -191,6 +215,7 @@ namespace company_management.View
             this.txtbox_Desciption.PlaceholderText = "";
             this.txtbox_Desciption.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_Desciption.SelectedText = "";
+            this.txtbox_Desciption.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.txtbox_Desciption.Size = new System.Drawing.Size(548, 398);
             this.txtbox_Desciption.TabIndex = 173;
             // 
@@ -199,6 +224,7 @@ namespace company_management.View
             this.txtbox_Taskname.BorderColor = System.Drawing.Color.Black;
             this.txtbox_Taskname.BorderRadius = 5;
             this.txtbox_Taskname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_Taskname.CustomizableEdges = customizableEdges5;
             this.txtbox_Taskname.DefaultText = "";
             this.txtbox_Taskname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_Taskname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -214,6 +240,7 @@ namespace company_management.View
             this.txtbox_Taskname.PasswordChar = '\0';
             this.txtbox_Taskname.PlaceholderText = "";
             this.txtbox_Taskname.SelectedText = "";
+            this.txtbox_Taskname.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.txtbox_Taskname.Size = new System.Drawing.Size(548, 32);
             this.txtbox_Taskname.TabIndex = 172;
             // 
@@ -221,6 +248,7 @@ namespace company_management.View
             // 
             this.combobox_progress.BackColor = System.Drawing.Color.Transparent;
             this.combobox_progress.BorderRadius = 5;
+            this.combobox_progress.CustomizableEdges = customizableEdges7;
             this.combobox_progress.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combobox_progress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox_progress.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -228,20 +256,10 @@ namespace company_management.View
             this.combobox_progress.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.combobox_progress.ForeColor = System.Drawing.Color.Black;
             this.combobox_progress.ItemHeight = 30;
-            this.combobox_progress.Items.AddRange(new object[] {
-            "0",
-            "10",
-            "20",
-            "30",
-            "40",
-            "50",
-            "60",
-            "70",
-            "80",
-            "90",
-            "100"});
+            this.combobox_progress.Items.AddRange(new object[] { "0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" });
             this.combobox_progress.Location = new System.Drawing.Point(618, 516);
             this.combobox_progress.Name = "combobox_progress";
+            this.combobox_progress.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.combobox_progress.Size = new System.Drawing.Size(103, 36);
             this.combobox_progress.StartIndex = 0;
             this.combobox_progress.TabIndex = 165;
@@ -274,6 +292,7 @@ namespace company_management.View
             this.circleProgressBar.ProgressStartCap = System.Drawing.Drawing2D.LineCap.Round;
             this.circleProgressBar.ProgressThickness = 35;
             this.circleProgressBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.circleProgressBar.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.circleProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.circleProgressBar.Size = new System.Drawing.Size(217, 217);
             this.circleProgressBar.TabIndex = 164;
@@ -333,12 +352,14 @@ namespace company_management.View
             this.GroupBox_TaskDetail.Controls.Add(this.label1);
             this.GroupBox_TaskDetail.Controls.Add(this.picturebox_userAvatar);
             this.GroupBox_TaskDetail.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.GroupBox_TaskDetail.CustomizableEdges = customizableEdges20;
             this.GroupBox_TaskDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupBox_TaskDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox_TaskDetail.ForeColor = System.Drawing.Color.Maroon;
             this.GroupBox_TaskDetail.Location = new System.Drawing.Point(0, 0);
             this.GroupBox_TaskDetail.Name = "GroupBox_TaskDetail";
             this.GroupBox_TaskDetail.ShadowDecoration.Color = System.Drawing.Color.LightGray;
+            this.GroupBox_TaskDetail.ShadowDecoration.CustomizableEdges = customizableEdges21;
             this.GroupBox_TaskDetail.ShadowDecoration.Enabled = true;
             this.GroupBox_TaskDetail.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.GroupBox_TaskDetail.Size = new System.Drawing.Size(988, 766);
@@ -363,6 +384,7 @@ namespace company_management.View
             this.picturebox_teamAvatar.ImageRotate = 0F;
             this.picturebox_teamAvatar.Location = new System.Drawing.Point(613, 154);
             this.picturebox_teamAvatar.Name = "picturebox_teamAvatar";
+            this.picturebox_teamAvatar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.picturebox_teamAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturebox_teamAvatar.Size = new System.Drawing.Size(50, 46);
             this.picturebox_teamAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -386,6 +408,7 @@ namespace company_management.View
             // 
             this.combbox_Project.BackColor = System.Drawing.Color.Transparent;
             this.combbox_Project.BorderRadius = 5;
+            this.combbox_Project.CustomizableEdges = customizableEdges11;
             this.combbox_Project.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combbox_Project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combbox_Project.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -395,6 +418,7 @@ namespace company_management.View
             this.combbox_Project.ItemHeight = 30;
             this.combbox_Project.Location = new System.Drawing.Point(618, 337);
             this.combbox_Project.Name = "combbox_Project";
+            this.combbox_Project.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.combbox_Project.Size = new System.Drawing.Size(337, 36);
             this.combbox_Project.TabIndex = 187;
             // 
@@ -416,6 +440,7 @@ namespace company_management.View
             // 
             this.combbox_Assignee.BackColor = System.Drawing.Color.Transparent;
             this.combbox_Assignee.BorderRadius = 5;
+            this.combbox_Assignee.CustomizableEdges = customizableEdges13;
             this.combbox_Assignee.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combbox_Assignee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combbox_Assignee.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -425,6 +450,7 @@ namespace company_management.View
             this.combbox_Assignee.ItemHeight = 30;
             this.combbox_Assignee.Location = new System.Drawing.Point(618, 253);
             this.combbox_Assignee.Name = "combbox_Assignee";
+            this.combbox_Assignee.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.combbox_Assignee.Size = new System.Drawing.Size(337, 36);
             this.combbox_Assignee.TabIndex = 185;
             // 
@@ -433,6 +459,7 @@ namespace company_management.View
             this.btnCancel.AutoRoundedCorners = true;
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.BorderRadius = 24;
+            this.btnCancel.CustomizableEdges = customizableEdges15;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -441,9 +468,9 @@ namespace company_management.View
             this.btnCancel.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnCancel.Image = global::company_management.Properties.Resources.arrow_back_up;
             this.btnCancel.Location = new System.Drawing.Point(30, 683);
             this.btnCancel.Name = "btnCancel";
+            this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.btnCancel.Size = new System.Drawing.Size(144, 50);
             this.btnCancel.TabIndex = 181;
             this.btnCancel.Text = "Cancel";
@@ -454,15 +481,16 @@ namespace company_management.View
             this.btnSave.AutoRoundedCorners = true;
             this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BorderRadius = 24;
+            this.btnSave.CustomizableEdges = customizableEdges17;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Font = new System.Drawing.Font("MesloLGM Nerd Font Mono", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::company_management.Properties.Resources.device_floppy;
             this.btnSave.Location = new System.Drawing.Point(204, 683);
             this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.btnSave.Size = new System.Drawing.Size(142, 50);
             this.btnSave.TabIndex = 180;
             this.btnSave.Text = "Save";
@@ -475,13 +503,14 @@ namespace company_management.View
             this.picturebox_userAvatar.ImageRotate = 0F;
             this.picturebox_userAvatar.Location = new System.Drawing.Point(613, 66);
             this.picturebox_userAvatar.Name = "picturebox_userAvatar";
+            this.picturebox_userAvatar.ShadowDecoration.CustomizableEdges = customizableEdges19;
             this.picturebox_userAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturebox_userAvatar.Size = new System.Drawing.Size(50, 46);
             this.picturebox_userAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturebox_userAvatar.TabIndex = 152;
             this.picturebox_userAvatar.TabStop = false;
             // 
-            // Form_ViewOrUpdateTask
+            // FormViewOrUpdateTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -499,7 +528,6 @@ namespace company_management.View
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_userAvatar)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

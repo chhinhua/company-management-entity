@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using company_management.BUS;
-using company_management.DAO;
 using company_management.DTO;
 using company_management.Utilities;
 

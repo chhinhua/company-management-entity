@@ -190,7 +190,7 @@ namespace company_management.View
             this.label_writer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_writer.Location = new System.Drawing.Point(71, 104);
             this.label_writer.Name = "label_writer";
-            this.label_writer.Size = new System.Drawing.Size(151, 28);
+            this.label_writer.Size = new System.Drawing.Size(267, 28);
             this.label_writer.TabIndex = 206;
             this.label_writer.Text = "Writer";
             this.label_writer.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -216,7 +216,7 @@ namespace company_management.View
             this.label_approver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_approver.Location = new System.Drawing.Point(71, 190);
             this.label_approver.Name = "label_approver";
-            this.label_approver.Size = new System.Drawing.Size(285, 28);
+            this.label_approver.Size = new System.Drawing.Size(267, 28);
             this.label_approver.TabIndex = 209;
             this.label_approver.Text = "Đang chờ người duyệt đơn";
             this.label_approver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

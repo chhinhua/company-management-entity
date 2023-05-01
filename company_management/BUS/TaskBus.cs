@@ -72,18 +72,13 @@ namespace company_management.BUS
             ClearListTask(tasks);
 
             if (position.Equals("Manager"))
-            {
-                tasks = taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id);
-            }
+            { tasks = taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id); }
             else if (position.Equals("Leader"))
             {
                 tasks.AddRange(taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id));
                 tasks.AddRange(taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id));
             }
-            else
-            {
-                tasks = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id);
-            }
+            else { tasks = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id); }
 
             return tasks;
         }

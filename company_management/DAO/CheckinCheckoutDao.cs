@@ -15,14 +15,10 @@ namespace company_management.DAO
     {
         private bool _disposed = false;
         private readonly DBConnection _dBConnection;
-        private Lazy<TeamDao> _teamDao;
-        private Lazy<UserDao> _userDao;
 
         public CheckinCheckoutDao()
         {
             _dBConnection = new DBConnection();
-            _teamDao = new Lazy<TeamDao>(() => new TeamDao());
-            _userDao = new Lazy<UserDao>(() => new UserDao());
         }
 
         public void AddCheckinCo(CheckinCheckout cico)

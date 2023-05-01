@@ -65,13 +65,16 @@ namespace company_management.BUS
         public List<Salary> GetListSalaryByPosition()
         {
             var salaries = _listSalary.Value;
+            ClearListSalary(salaries);
+            
             var salaryDao = _salaryDao.Value;
             var userBus = _userBus.Value;
-            ClearListSalary(salaries);
+            
+            if (userBus.IsManager() || userBus.IsHumanResources())
+            {salaries = salaryDao.GetAllSalary();}
+            else
+            {salaries = salaryDao.GetMySalary(UserSession.LoggedInUser.Id);}
 
-            string position = userBus.GetUserPosition();
-            salaries = position.Equals("Manager") ? salaryDao.GetAllSalary() : salaryDao.GetMySalary(UserSession.LoggedInUser.Id);
-           
             return salaries;
         }
 

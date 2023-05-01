@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
 using company_management.View.UC;
+
 // ReSharper disable All
 
 namespace company_management.BUS
@@ -30,19 +31,22 @@ namespace company_management.BUS
             var userBus = _userBus.Value;
 
             ClearListCiCo(cicos);
-            
-            string position = userBus.GetUserPosition();
-            cicos = position.Equals("Manager") ? cicoDao.GetAllCheckinCheckouts() : cicoDao.GetMyCheckinCoCheckouts(UserSession.LoggedInUser.Id);
-            
+
+            if (userBus.IsManager() || userBus.IsHumanResources())
+            { cicos = cicoDao.GetAllCheckinCheckouts(); }
+            else
+            { cicos = cicoDao.GetMyCheckinCoCheckouts(UserSession.LoggedInUser.Id); }
+
+
             return cicos;
         }
-        
+
         private void ClearListCiCo(List<CheckinCheckout> listCiCo)
         {
             listCiCo.Clear();
             listCiCo.TrimExcess();
         }
-        
+
         public void LoadDataGridview(List<CheckinCheckout> listCiCo, DataGridView dataGridView)
         {
             dataGridView.ColumnCount = 6;
@@ -63,7 +67,8 @@ namespace company_management.BUS
 
                 var checkoutTime = c.CheckoutTime != default ? c.CheckoutTime.ToString("HH:mm:ss") : "";
 
-                dataGridView.Rows.Add(c.Id, fullName, c.CheckinTime.ToString("HH:mm:ss"), checkoutTime, c.TotalHours, c.Date.ToString("dd/MM/yyyy"));
+                dataGridView.Rows.Add(c.Id, fullName, c.CheckinTime.ToString("HH:mm:ss"), checkoutTime, c.TotalHours,
+                    c.Date.ToString("dd/MM/yyyy"));
             }
         }
 
@@ -87,7 +92,6 @@ namespace company_management.BUS
 
         public void BindingDataStatistics()
         {
-            
         }
     }
 }

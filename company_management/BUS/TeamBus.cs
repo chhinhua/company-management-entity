@@ -2,8 +2,8 @@
 using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
+// ReSharper disable All
 
 namespace company_management.BUS
 {
@@ -12,17 +12,12 @@ namespace company_management.BUS
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserBus> _userBus;
         private readonly Lazy<UserDao> _userDao;
-        private readonly Lazy<List<Team>> _listTeam;
-
-        //public Lazy<string> connString;
-
+        
         public TeamBus()
         {
-            //connString = new Lazy<string>(() => Properties.Settings.Default.connStr);
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userBus = new Lazy<UserBus>(() => new UserBus());
             _userDao = new Lazy<UserDao>(() => new UserDao());
-            _listTeam = new Lazy<List<Team>>(() => new List<Team>());
         }
 
         public void LoadDataGridview(List<Team> listTeam, DataGridView dataGridView)
@@ -57,21 +52,20 @@ namespace company_management.BUS
             return listTeam;
         }
 
-        public List<User> GetListUserInTeam(int leaderID)
+        public List<User> GetListUserInTeam(int leaderId)
         {
             var teamDao = _teamDao.Value;
-            List<User> listUser = teamDao.GetUserInTeam(leaderID);
+            List<User> listUser = teamDao.GetUserInTeam(leaderId);
             return listUser;
         }
 
         public List<Team> GetListTeamByPosition()
         {
-            var teamDao = _teamDao.Value;
             var userBus = _userBus.Value;
-            var teams = _listTeam.Value;
-            string position = userBus.GetUserPosition();
+            var teamDao = _teamDao.Value;
+            List<Team> teams;
 
-            if (position.Equals("Manager"))
+            if (userBus.IsManager() || userBus.IsHumanResources())
             {
                 teams = teamDao.GetAllTeam();
             }
