@@ -10,6 +10,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.View;
+// ReSharper disable All
 
 namespace company_management.Utilities
 {
@@ -58,40 +59,58 @@ namespace company_management.Utilities
             }
         }
 
-        public void CheckEmployeeVisibleStatus<T>(T control) where T : Control
+        public void CheckEmployeeNotVisibleStatus<T>(T control) where T : Control
         {
             var userBus = _userBus.Value;
             control.Visible = !userBus.IsEmployee();
         }
         
-        public void CheckEmployeeEnableStatus<T>(T control) where T : Control
+        public void CheckEmployeeNotEnableStatus<T>(T control) where T : Control
         {
             var userBus = _userBus.Value;
             control.Enabled = !userBus.IsEmployee();
         }
 
-        public void CheckEmployeeReadOnlyStatus<T>(T control) where T : Guna2TextBox
+        public void CheckEmployeeIsReadOnlyStatus<T>(T control) where T : Guna2TextBox
         {
             var userBus = _userBus.Value;
             control.ReadOnly = userBus.IsEmployee();
         }
-        
-        public void CheckLeaderReadOnlyStatus<T>(T control) where T : Guna2TextBox
+
+        public void CheckLeaderIsReadOnlyStatus<T>(T control) where T : Guna2TextBox
         {
             var userBus = _userBus.Value;
             control.ReadOnly = userBus.IsLeader();
         }
-
-        public void CheckLeaderEnableStatus<T>(T control) where T : Control
+        
+        public void CheckLeaderNotEnableStatus<T>(T control) where T : Control
         {
             var userBus = _userBus.Value;
             control.Enabled = !userBus.IsLeader();
         }
         
-        public void CheckManagerVisibleStatus<T>(T control) where T : Control
+        public void CheckManagerIsReadOnlyStatus<T>(T control) where T : Guna2TextBox
+        {
+            var userBus = _userBus.Value;
+            control.ReadOnly = userBus.IsManager();
+        }
+
+        public void CheckManagerNotEnableStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            control.Enabled = !userBus.IsManager();
+        }
+        
+        public void CheckManagerIsVisibleStatus<T>(T control) where T : Control
         {
             var userBus = _userBus.Value;
             control.Visible = userBus.IsManager();
+        }
+        
+        public void CheckManagerNotVisibleStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            control.Visible = !userBus.IsManager();
         }
 
         public void CheckCancelMyRequestStatus<T>(T control, string status, int writerId) where T : Control

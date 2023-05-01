@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Linq;
-using System.Data;
-using System.Data.SqlClient;
-using Guna.UI2.WinForms;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
-using company_management.View;
 using company_management.View.UC;
+// ReSharper disable All
 
 namespace company_management.BUS
 {
@@ -60,20 +56,12 @@ namespace company_management.BUS
             dataGridView.Columns[5].Name = "Ngày";
             dataGridView.Rows.Clear();
 
-            string checkoutTime = "";
             var userDao = _userDao.Value;
             foreach (var c in listCiCo)
             {
                 string fullName = userDao.GetUserById(c.IdUser).FullName;
 
-                if (c.CheckoutTime != null && c.CheckoutTime != default(DateTime))
-                {
-                    checkoutTime = c.CheckoutTime.ToString("HH:mm:ss");
-                }
-                else
-                {
-                    checkoutTime = "";
-                }
+                var checkoutTime = c.CheckoutTime != default ? c.CheckoutTime.ToString("HH:mm:ss") : "";
 
                 dataGridView.Rows.Add(c.Id, fullName, c.CheckinTime.ToString("HH:mm:ss"), checkoutTime, c.TotalHours, c.Date.ToString("dd/MM/yyyy"));
             }

@@ -1,39 +1,29 @@
-﻿using company_management.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using company_management.BUS;
+using company_management.DAO;
 using company_management.DTO;
-using company_management.View;
-using company_management.View.UC;
 using company_management.Utilities;
+// ReSharper disable All
 
 namespace company_management.View.UC
 {
     public partial class UcProject : UserControl
     {
-        public static Project ViewProject;
         private readonly Lazy<Utils> _utils;
         private readonly Lazy<ProjectBus> _projectBus;
-        private readonly Lazy<List<Project>> _listProject;
-        private Lazy<TaskBus> _taskBus;
         private readonly Lazy<ProjectDao> _projectDao;
+        private readonly Lazy<List<Project>> _listProject;
         private int _selectedId;
 
         public UcProject()
         {
             InitializeComponent();
-            //viewTask = new Task();
             _utils = new Lazy<Utils>(() => new Utils());
             _listProject = new Lazy<List<Project>>(() => new List<Project>());
-            _taskBus = new Lazy<TaskBus>(() => new TaskBus());
-            _projectDao = new Lazy<ProjectDao>(() => new ProjectDao());
             _projectBus = new Lazy<ProjectBus>(() => new ProjectBus());
+            _projectDao = new Lazy<ProjectDao>(() => new ProjectDao());
         }
 
         private void UC_Project_Load(object sender, EventArgs e)
@@ -59,12 +49,6 @@ namespace company_management.View.UC
             var util = _utils.Value;
             util.LoadProgressChart(chart_projectProgress, label_todoProject, label_inprogressProject, label_doneProject, projects);
         }
-
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            FormAddProject addProject = new FormAddProject();
-            addProject.Show();
-        }
         
         private void LoadDataGridview(List<Project> listProjects)
         {
@@ -75,34 +59,9 @@ namespace company_management.View.UC
         private void CheckAddButtonStatus()
         {
             var util = _utils.Value;
-            util.CheckManagerVisibleStatus(buttonAdd);
-            util.CheckManagerVisibleStatus(buttonRemove);
-            util.CheckEmployeeVisibleStatus(button_Edit);
-        }
-
-        private void button_Edit_Click(object sender, EventArgs e)
-        {
-            //if (viewTask != null)
-            //{
-            FormViewOrUpdateProject viewOrUpdate = new FormViewOrUpdateProject();
-            viewOrUpdate.Show();
-            //}
-            //else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-        
-        private void btnViewOrUpdate_Click(object sender, EventArgs e)
-        {
-            if (_selectedId != 0)
-            {
-                FormViewOrUpdateProject formProject = new FormViewOrUpdateProject();
-                formProject.SetProjectId(_selectedId);
-                formProject.Show();
-            }
-            else MessageBox.Show("Select a project to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private void buttonRemove_Click(object sender, EventArgs e)
-        {
+            util.CheckManagerIsVisibleStatus(buttonAdd);
+            util.CheckManagerIsVisibleStatus(button_edit);
+            util.CheckEmployeeNotVisibleStatus(button_edit);
         }
 
         private void dataGridView_Project_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +72,6 @@ namespace company_management.View.UC
                 if (value != DBNull.Value)
                 {
                     _selectedId = Convert.ToInt32(value);
-                    MessageBox.Show(_selectedId.ToString());
                 }
             }
         }
@@ -147,6 +105,50 @@ namespace company_management.View.UC
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData(GetData());
+        }
+
+        private void btnViewOrUpdate_Click_1(object sender, EventArgs e)
+        {
+
+            if (_selectedId != 0)
+            {
+                FormViewOrUpdateProject formProject = new FormViewOrUpdateProject();
+                formProject.SetProjectId(_selectedId);
+                formProject.Show();
+            }
+            else MessageBox.Show("Select a project to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void buttonAdd_Click_1(object sender, EventArgs e)
+        {
+            FormAddProject addProject = new FormAddProject();
+            addProject.Show();
+        }
+
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            if (_selectedId != 0)
+            {
+                FormViewOrUpdateProject formProject = new FormViewOrUpdateProject();
+                formProject.SetProjectId(_selectedId);
+                formProject.Show();
+            }
+            else MessageBox.Show("Select a project to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+            if (_selectedId != 0)
+            {
+                DialogResult result = MessageBox.Show("Xác nhận xóa dự án?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    var projectDao = _projectDao.Value;
+                    projectDao.DeleteProject(_selectedId);
+                    LoadData(GetData());
+                }
+            }
+            else MessageBox.Show("Vui lòng chọn dự án!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
         }
     }
 }

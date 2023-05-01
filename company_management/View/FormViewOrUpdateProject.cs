@@ -5,7 +5,7 @@ using company_management.BUS;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.Utilities;
-using company_management.View.UC;
+// ReSharper disable All
 
 namespace company_management.View
 {
@@ -44,22 +44,24 @@ namespace company_management.View
 
         private void CheckControlStatusForEmployee()
         {
-            _utils.CheckEmployeeReadOnlyStatus(textbox_projectName);
-            _utils.CheckEmployeeReadOnlyStatus(textbox_Desciption);
-            _utils.CheckEmployeeReadOnlyStatus(textBox_projectBonus);
-            _utils.CheckEmployeeEnableStatus(combobox2_progress);
-            _utils.CheckEmployeeEnableStatus(dateTime_startDate2);
-            _utils.CheckEmployeeEnableStatus(dateTime_endDate2);
-            _utils.CheckEmployeeVisibleStatus(button_save);
+
+            _utils.CheckEmployeeIsReadOnlyStatus(textbox_projectName);
+            _utils.CheckEmployeeIsReadOnlyStatus(textbox_Desciption);
+            _utils.CheckEmployeeIsReadOnlyStatus(textBox_projectBonus);
+            _utils.CheckEmployeeNotEnableStatus(combobox2_progress);
+            _utils.CheckEmployeeNotEnableStatus(dateTime_startDate2);
+            _utils.CheckEmployeeNotEnableStatus(dateTime_endDate2);
+            _utils.CheckEmployeeNotVisibleStatus(button_save);
         }
 
         private void CheckControlStatusForLeader()
         {
-            _utils.CheckLeaderReadOnlyStatus(textbox_projectName);
-            _utils.CheckLeaderReadOnlyStatus(textbox_Desciption);
-            _utils.CheckLeaderReadOnlyStatus(textBox_projectBonus);
-            _utils.CheckLeaderEnableStatus(dateTime_startDate2);
-            _utils.CheckLeaderEnableStatus(dateTime_endDate2);
+
+            _utils.CheckLeaderIsReadOnlyStatus(textbox_projectName);
+            _utils.CheckLeaderIsReadOnlyStatus(textbox_Desciption);
+            _utils.CheckLeaderIsReadOnlyStatus(textBox_projectBonus);
+            _utils.CheckLeaderNotEnableStatus(dateTime_startDate2);
+            _utils.CheckLeaderNotEnableStatus(dateTime_endDate2);
         }
 
         private void combobox_progress_SelectedIndexChanged(object sender, EventArgs e)

@@ -84,6 +84,10 @@
             this.label_basicValue = new System.Windows.Forms.Label();
             this.label_basic = new System.Windows.Forms.Label();
             this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
+<<<<<<< HEAD
+=======
+            this.panel1 = new System.Windows.Forms.Panel();
+>>>>>>> hua
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_leaveRequest)).BeginInit();
             this.guna2Panel4.SuspendLayout();
@@ -91,6 +95,7 @@
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.panelFields.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelData
@@ -154,6 +159,10 @@
             this.btnRefresh.Size = new System.Drawing.Size(122, 40);
             this.btnRefresh.TabIndex = 103;
             this.btnRefresh.Text = "Refresh";
+<<<<<<< HEAD
+=======
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+>>>>>>> hua
             // 
             // txtSearch
             // 
@@ -251,16 +260,21 @@
             this.buttonEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEdit.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonEdit.FillColor = System.Drawing.Color.Transparent;
             this.buttonEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
             this.buttonEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             this.buttonEdit.Image = global::company_management.Properties.Resources.edit;
             this.buttonEdit.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonEdit.Location = new System.Drawing.Point(1170, 185);
+            this.buttonEdit.Location = new System.Drawing.Point(166, 0);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.ShadowDecoration.CustomizableEdges = customizableEdges10;
+<<<<<<< HEAD
             this.buttonEdit.Size = new System.Drawing.Size(49, 40);
+=======
+            this.buttonEdit.Size = new System.Drawing.Size(50, 40);
+>>>>>>> hua
             this.buttonEdit.TabIndex = 92;
             // 
             // buttonRemove
@@ -273,6 +287,7 @@
             this.buttonRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonRemove.FillColor = System.Drawing.Color.Transparent;
             this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.buttonRemove.ForeColor = System.Drawing.Color.White;
@@ -280,31 +295,41 @@
             this.buttonRemove.HoverState.ForeColor = System.Drawing.Color.White;
             this.buttonRemove.Image = global::company_management.Properties.Resources.trash;
             this.buttonRemove.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonRemove.Location = new System.Drawing.Point(1225, 185);
+            this.buttonRemove.Location = new System.Drawing.Point(116, 0);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.buttonRemove.Size = new System.Drawing.Size(50, 40);
             this.buttonRemove.TabIndex = 93;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonAdd
             // 
             this.buttonAdd.AutoRoundedCorners = true;
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.buttonAdd.BorderRadius = 20;
+=======
+            this.buttonAdd.BorderRadius = 19;
+>>>>>>> hua
             this.buttonAdd.CustomizableEdges = customizableEdges13;
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
             this.buttonAdd.Image = global::company_management.Properties.Resources.plus;
             this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAdd.Location = new System.Drawing.Point(1118, 183);
+            this.buttonAdd.Location = new System.Drawing.Point(66, 0);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges14;
+<<<<<<< HEAD
             this.buttonAdd.Size = new System.Drawing.Size(46, 42);
+=======
+            this.buttonAdd.Size = new System.Drawing.Size(50, 40);
+>>>>>>> hua
             this.buttonAdd.TabIndex = 91;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -542,11 +567,16 @@
             this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnViewOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+<<<<<<< HEAD
+=======
+            this.btnViewOrUpdate.Dock = System.Windows.Forms.DockStyle.Right;
+>>>>>>> hua
             this.btnViewOrUpdate.FillColor = System.Drawing.Color.Transparent;
             this.btnViewOrUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnViewOrUpdate.ForeColor = System.Drawing.Color.White;
             this.btnViewOrUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrUpdate.Image")));
             this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
+<<<<<<< HEAD
             this.btnViewOrUpdate.Location = new System.Drawing.Point(1072, 185);
             this.btnViewOrUpdate.Name = "btnViewOrUpdate";
             this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -554,21 +584,44 @@
             this.btnViewOrUpdate.TabIndex = 112;
             this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
             // 
+=======
+            this.btnViewOrUpdate.Location = new System.Drawing.Point(16, 0);
+            this.btnViewOrUpdate.Name = "btnViewOrUpdate";
+            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.btnViewOrUpdate.Size = new System.Drawing.Size(50, 40);
+            this.btnViewOrUpdate.TabIndex = 112;
+            this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.btnViewOrUpdate);
+            this.panel1.Controls.Add(this.buttonAdd);
+            this.panel1.Controls.Add(this.buttonRemove);
+            this.panel1.Controls.Add(this.buttonEdit);
+            this.panel1.ForeColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(1059, 178);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(216, 40);
+            this.panel1.TabIndex = 113;
+            // 
+>>>>>>> hua
             // UcLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+<<<<<<< HEAD
             this.Controls.Add(this.btnViewOrUpdate);
+=======
+            this.Controls.Add(this.panel1);
+>>>>>>> hua
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panelFields);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonEdit);
-            this.Controls.Add(this.buttonRemove);
-            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panelData);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UcLeaveRequest";
@@ -581,9 +634,15 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.panelFields.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Panel panel1;
+
+>>>>>>> hua
         private Guna.UI2.WinForms.Guna2Button btnViewOrUpdate;
 
         private Guna.UI2.WinForms.Guna2ComboBox combobox_taskStatusFilter;

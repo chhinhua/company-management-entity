@@ -70,6 +70,10 @@ namespace company_management.View
             this.label = new System.Windows.Forms.Label();
             this.label_status = new System.Windows.Forms.Label();
             this.button_Cancel = new Guna.UI2.WinForms.Guna2Button();
+<<<<<<< HEAD
+=======
+            this.label_approved = new System.Windows.Forms.Label();
+>>>>>>> hua
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_writer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_approver)).BeginInit();
@@ -142,6 +146,10 @@ namespace company_management.View
             this.button_save.Size = new System.Drawing.Size(466, 50);
             this.button_save.TabIndex = 194;
             this.button_save.Text = "Lưu";
+<<<<<<< HEAD
+=======
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+>>>>>>> hua
             // 
             // txtbox_content
             // 
@@ -253,12 +261,21 @@ namespace company_management.View
             this.combobox_status.ForeColor = System.Drawing.Color.Black;
             this.combobox_status.ItemHeight = 30;
             this.combobox_status.Items.AddRange(new object[] { "Duyệt", "Từ chối" });
+<<<<<<< HEAD
             this.combobox_status.Location = new System.Drawing.Point(439, 621);
             this.combobox_status.Name = "combobox_status";
             this.combobox_status.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.combobox_status.Size = new System.Drawing.Size(339, 36);
             this.combobox_status.StartIndex = 0;
             this.combobox_status.TabIndex = 216;
+=======
+            this.combobox_status.Location = new System.Drawing.Point(552, 608);
+            this.combobox_status.Name = "combobox_status";
+            this.combobox_status.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.combobox_status.Size = new System.Drawing.Size(226, 36);
+            this.combobox_status.TabIndex = 216;
+            this.combobox_status.SelectedIndexChanged += new System.EventHandler(this.combobox_status_SelectedIndexChanged);
+>>>>>>> hua
             // 
             // label5
             // 
@@ -355,6 +372,19 @@ namespace company_management.View
             this.button_Cancel.Size = new System.Drawing.Size(113, 31);
             this.button_Cancel.TabIndex = 219;
             this.button_Cancel.Text = "Hủy đơn";
+<<<<<<< HEAD
+=======
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            // 
+            // label_approved
+            // 
+            this.label_approved.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_approved.Location = new System.Drawing.Point(439, 621);
+            this.label_approved.Name = "label_approved";
+            this.label_approved.Size = new System.Drawing.Size(107, 23);
+            this.label_approved.TabIndex = 220;
+            this.label_approved.Text = "Duyệt đơn:";
+>>>>>>> hua
             // 
             // FormViewOrUpdateRequest
             // 
@@ -362,6 +392,10 @@ namespace company_management.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(793, 775);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.label_approved);
+>>>>>>> hua
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.label);
@@ -393,6 +427,11 @@ namespace company_management.View
             this.ResumeLayout(false);
         }
 
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Label label_approved;
+
+>>>>>>> hua
         private Guna.UI2.WinForms.Guna2Button button_Cancel;
 
         private System.Windows.Forms.Label label;
