@@ -1,13 +1,13 @@
 ﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using company_management.Utilities;
 using company_management.View;
 using company_management.View.UC;
+// ReSharper disable All
 
 namespace company_management.DAO
 {
@@ -15,18 +15,15 @@ namespace company_management.DAO
     {
         private readonly DBConnection _dBConnection;
         private readonly Lazy<string> _connString;
-        private Lazy<List<Task>> _listTask;
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserDao> _userDao;
         private bool _disposed = false;
-        private Utils _utils;
-        
+        private readonly Utils _utils;
 
         public TaskDao()
         {
             _dBConnection = new DBConnection();
             _connString = new Lazy<string>(() => Properties.Settings.Default.connStr);         
-            _listTask = new Lazy<List<Task>>(() => new List<Task>());
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _utils = new Utils();
@@ -79,15 +76,14 @@ namespace company_management.DAO
             string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus, idProject)" +
                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
                    task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam, task.Bonus, task.IdProject);
-            try
+            if (_dBConnection.ExecuteQuery(query))
             {
-                _dBConnection.ExecuteQuery(query);
-                _utils.Alert("Added successful", FormAlert.enmType.Success);
+                _utils.Alert("Added task successful", FormAlert.enmType.Success);
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
-                _utils.Alert("Added failed", FormAlert.enmType.Error);
+                _utils.Alert("Add task failed", FormAlert.enmType.Error);
+
             }
         }
 
@@ -96,30 +92,27 @@ namespace company_management.DAO
             string query = string.Format("UPDATE task SET " +
                                          "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}', idProject = '{7}' WHERE id = '{8}'",
                    updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.IdProject, updateTask.Id);
-            try
+            if (_dBConnection.ExecuteQuery(query))
             {
-                _dBConnection.ExecuteQuery(query);
-                _utils.Alert("Updated successful", FormAlert.enmType.Success);
+                _utils.Alert("Updated task successful", FormAlert.enmType.Success);
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
-                _utils.Alert("Updated failed", FormAlert.enmType.Error);
+                _utils.Alert("Update task failed", FormAlert.enmType.Error);
             }
         }
 
         public void DeleteTask(int id)
         {
             string query = string.Format("DELETE FROM task WHERE id = {0}", id);
-            try
+            if (_dBConnection.ExecuteQuery(query))
             {
-                _dBConnection.ExecuteQuery(query);
-                _utils.Alert("Deleted successful", FormAlert.enmType.Success);
+                _utils.Alert("Deleted task successful", FormAlert.enmType.Success);
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
-                _utils.Alert("Deleted failed", FormAlert.enmType.Error);
+                _utils.Alert("Delete task failed", FormAlert.enmType.Error);
+
             }
         }
         
@@ -132,8 +125,7 @@ namespace company_management.DAO
             }
             else
             {
-                _utils.Alert("Deleted task failed", FormAlert.enmType.Error);
-
+                _utils.Alert("Delete task failed", FormAlert.enmType.Error);
             }
         }
 

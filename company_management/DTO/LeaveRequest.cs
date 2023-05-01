@@ -15,18 +15,5 @@ namespace company_management.DTO
         public int IdApprover { get; set; }
         
         public LeaveRequest() { }
-
-        public LeaveRequest(int idUser, DateTime requestDate, DateTime startDate, DateTime endDate, int numberDay, string content, string status, int idApprover)
-        {
-            IdUser = idUser;
-            RequestDate = requestDate;
-            StartDate = startDate;
-            EndDate = endDate;
-            NumberDay = numberDay;
-            Content = content;
-            Status = status;
-            IdApprover = idApprover;
-        }
-        
     }
 }

@@ -63,6 +63,13 @@ namespace company_management.DAO
             return _dBConnection.GetListObjectsByQuery<Team>(query);
         }
 
+        public List<Team> GetMyTeam(int userId)
+        {
+            string query = "SELECT * FROM teams WHERE id IN " +
+                           $"(SELECT DISTINCT idTeam FROM user_team WHERE idUser = {userId})";
+            return _dBConnection.GetListObjectsByQuery<Team>(query);
+        }
+        
         public void LoadData(DataGridView dataGridView)
         {
             dataGridView.ColumnCount = 4;

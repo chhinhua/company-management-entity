@@ -87,20 +87,6 @@ namespace company_management.View.UC
             else MessageBox.Show("Task not selected!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string keyword = txtSearch.Text;
-            int clmnCreator = 1;
-            int clmnTaskName = 2;
-            int clmnAssignee = 3;
-            int clmnTeam = 4;
-
-            var taskBus = _taskBus.Value;
-            var tasks = _listTask.Value;
-            tasks = taskBus.SearchTasksByKeyword(dataGridView_Task, keyword, clmnCreator, clmnTaskName, clmnAssignee, clmnTeam);
-            taskBus.LoadDataGridview(tasks, dataGridView_Task);
-        }
-
         private void btnViewOrUpdate_Click(object sender, EventArgs e)
         {
             if (ViewTask != null)

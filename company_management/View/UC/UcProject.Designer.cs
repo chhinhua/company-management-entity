@@ -50,23 +50,21 @@ namespace company_management.View.UC
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcProject));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.label_doneProject = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -86,7 +84,6 @@ namespace company_management.View.UC
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.combobox_progressFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -401,15 +398,14 @@ namespace company_management.View.UC
             this.panelData.BorderThickness = 1;
             this.panelData.Controls.Add(this.combobox_progressFilter);
             this.panelData.Controls.Add(this.btnRefresh);
-            this.panelData.Controls.Add(this.txtSearch);
             this.panelData.Controls.Add(this.dataGridView_Project);
-            this.panelData.CustomizableEdges = customizableEdges21;
+            this.panelData.CustomizableEdges = customizableEdges19;
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(17, 314);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 455);
@@ -429,10 +425,10 @@ namespace company_management.View.UC
             this.combobox_progressFilter.ForeColor = System.Drawing.Color.Black;
             this.combobox_progressFilter.ItemHeight = 26;
             this.combobox_progressFilter.Items.AddRange(new object[] { "Tất cả dự án", "Cần làm", "Trong quá trình", "Đã hoàn thành" });
-            this.combobox_progressFilter.Location = new System.Drawing.Point(546, 20);
+            this.combobox_progressFilter.Location = new System.Drawing.Point(16, 17);
             this.combobox_progressFilter.Name = "combobox_progressFilter";
             this.combobox_progressFilter.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.combobox_progressFilter.Size = new System.Drawing.Size(206, 32);
+            this.combobox_progressFilter.Size = new System.Drawing.Size(250, 32);
             this.combobox_progressFilter.StartIndex = 0;
             this.combobox_progressFilter.TabIndex = 105;
             this.combobox_progressFilter.SelectedIndexChanged += new System.EventHandler(this.combobox_progressFilter_SelectedIndexChanged);
@@ -457,34 +453,6 @@ namespace company_management.View.UC
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.CustomizableEdges = customizableEdges19;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(16, 20);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.PlaceholderText = "Search ...";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            this.txtSearch.Size = new System.Drawing.Size(472, 37);
-            this.txtSearch.TabIndex = 70;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
@@ -502,7 +470,7 @@ namespace company_management.View.UC
             // 
             this.btnViewOrUpdate.AutoRoundedCorners = true;
             this.btnViewOrUpdate.BorderRadius = 19;
-            this.btnViewOrUpdate.CustomizableEdges = customizableEdges23;
+            this.btnViewOrUpdate.CustomizableEdges = customizableEdges21;
             this.btnViewOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnViewOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnViewOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -515,7 +483,7 @@ namespace company_management.View.UC
             this.btnViewOrUpdate.ImageSize = new System.Drawing.Size(28, 28);
             this.btnViewOrUpdate.Location = new System.Drawing.Point(16, 0);
             this.btnViewOrUpdate.Name = "btnViewOrUpdate";
-            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.btnViewOrUpdate.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.btnViewOrUpdate.Size = new System.Drawing.Size(50, 40);
             this.btnViewOrUpdate.TabIndex = 112;
             this.btnViewOrUpdate.Click += new System.EventHandler(this.btnViewOrUpdate_Click_1);
@@ -525,7 +493,7 @@ namespace company_management.View.UC
             this.buttonAdd.AutoRoundedCorners = true;
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdd.BorderRadius = 19;
-            this.buttonAdd.CustomizableEdges = customizableEdges25;
+            this.buttonAdd.CustomizableEdges = customizableEdges23;
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -538,7 +506,7 @@ namespace company_management.View.UC
             this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAdd.Location = new System.Drawing.Point(66, 0);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.buttonAdd.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.buttonAdd.Size = new System.Drawing.Size(50, 40);
             this.buttonAdd.TabIndex = 91;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
@@ -548,7 +516,7 @@ namespace company_management.View.UC
             this.button_edit.AutoRoundedCorners = true;
             this.button_edit.BackColor = System.Drawing.Color.Transparent;
             this.button_edit.BorderRadius = 19;
-            this.button_edit.CustomizableEdges = customizableEdges27;
+            this.button_edit.CustomizableEdges = customizableEdges25;
             this.button_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -563,7 +531,7 @@ namespace company_management.View.UC
             this.button_edit.ImageSize = new System.Drawing.Size(24, 24);
             this.button_edit.Location = new System.Drawing.Point(116, 0);
             this.button_edit.Name = "button_edit";
-            this.button_edit.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.button_edit.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.button_edit.Size = new System.Drawing.Size(50, 40);
             this.button_edit.TabIndex = 93;
             this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
@@ -573,7 +541,7 @@ namespace company_management.View.UC
             this.button_remove.AutoRoundedCorners = true;
             this.button_remove.BackColor = System.Drawing.Color.Transparent;
             this.button_remove.BorderRadius = 19;
-            this.button_remove.CustomizableEdges = customizableEdges29;
+            this.button_remove.CustomizableEdges = customizableEdges27;
             this.button_remove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_remove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_remove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -587,7 +555,7 @@ namespace company_management.View.UC
             this.button_remove.ImageSize = new System.Drawing.Size(24, 24);
             this.button_remove.Location = new System.Drawing.Point(166, 0);
             this.button_remove.Name = "button_remove";
-            this.button_remove.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            this.button_remove.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.button_remove.Size = new System.Drawing.Size(50, 40);
             this.button_remove.TabIndex = 92;
             this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
@@ -645,7 +613,6 @@ namespace company_management.View.UC
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_projectProgress;
         private Guna.UI2.WinForms.Guna2Panel panelFields;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView_Project;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel panelData;

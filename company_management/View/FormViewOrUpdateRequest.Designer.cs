@@ -71,6 +71,8 @@ namespace company_management.View
             this.label_status = new System.Windows.Forms.Label();
             this.button_Cancel = new Guna.UI2.WinForms.Guna2Button();
             this.label_approved = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_numberDay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_writer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_approver)).BeginInit();
@@ -81,10 +83,10 @@ namespace company_management.View
             this.guna2PictureBox1.CustomizableEdges = customizableEdges1;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(537, 17);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(537, 13);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(21, 22);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(32, 30);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 203;
             this.guna2PictureBox1.TabStop = false;
@@ -137,7 +139,7 @@ namespace company_management.View
             this.button_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button_save.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.button_save.ForeColor = System.Drawing.Color.White;
-            this.button_save.Location = new System.Drawing.Point(170, 713);
+            this.button_save.Location = new System.Drawing.Point(170, 749);
             this.button_save.Name = "button_save";
             this.button_save.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.button_save.Size = new System.Drawing.Size(466, 50);
@@ -255,10 +257,10 @@ namespace company_management.View
             this.combobox_status.ForeColor = System.Drawing.Color.Black;
             this.combobox_status.ItemHeight = 30;
             this.combobox_status.Items.AddRange(new object[] { "Duyệt", "Từ chối" });
-            this.combobox_status.Location = new System.Drawing.Point(552, 608);
+            this.combobox_status.Location = new System.Drawing.Point(439, 650);
             this.combobox_status.Name = "combobox_status";
             this.combobox_status.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.combobox_status.Size = new System.Drawing.Size(226, 36);
+            this.combobox_status.Size = new System.Drawing.Size(339, 36);
             this.combobox_status.TabIndex = 216;
             this.combobox_status.SelectedIndexChanged += new System.EventHandler(this.combobox_status_SelectedIndexChanged);
             // 
@@ -266,17 +268,17 @@ namespace company_management.View
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(225, 495);
+            this.label5.Location = new System.Drawing.Point(71, 491);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(347, 38);
+            this.label5.Size = new System.Drawing.Size(160, 38);
             this.label5.TabIndex = 215;
-            this.label5.Text = "Thời gian nghỉ";
+            this.label5.Text = "Thời gian nghỉ:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(383, 549);
+            this.label2.Location = new System.Drawing.Point(17, 614);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 23);
             this.label2.TabIndex = 214;
@@ -292,12 +294,12 @@ namespace company_management.View
             this.datetime_startDate.FillColor = System.Drawing.Color.White;
             this.datetime_startDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_startDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datetime_startDate.Location = new System.Drawing.Point(17, 536);
+            this.datetime_startDate.Location = new System.Drawing.Point(17, 555);
             this.datetime_startDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_startDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetime_startDate.Name = "datetime_startDate";
             this.datetime_startDate.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            this.datetime_startDate.Size = new System.Drawing.Size(339, 46);
+            this.datetime_startDate.Size = new System.Drawing.Size(321, 46);
             this.datetime_startDate.TabIndex = 212;
             this.datetime_startDate.Value = new System.DateTime(2023, 4, 2, 18, 5, 35, 464);
             // 
@@ -311,19 +313,19 @@ namespace company_management.View
             this.datetime_endDate.FillColor = System.Drawing.Color.White;
             this.datetime_endDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_endDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datetime_endDate.Location = new System.Drawing.Point(439, 536);
+            this.datetime_endDate.Location = new System.Drawing.Point(17, 640);
             this.datetime_endDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_endDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetime_endDate.Name = "datetime_endDate";
             this.datetime_endDate.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.datetime_endDate.Size = new System.Drawing.Size(339, 46);
+            this.datetime_endDate.Size = new System.Drawing.Size(321, 46);
             this.datetime_endDate.TabIndex = 211;
             this.datetime_endDate.Value = new System.DateTime(2023, 4, 26, 20, 37, 46, 0);
             // 
             // label
             // 
             this.label.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(20, 621);
+            this.label.Location = new System.Drawing.Point(439, 555);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(107, 23);
             this.label.TabIndex = 217;
@@ -332,9 +334,9 @@ namespace company_management.View
             // label_status
             // 
             this.label_status.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_status.Location = new System.Drawing.Point(133, 621);
+            this.label_status.Location = new System.Drawing.Point(537, 555);
             this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(143, 23);
+            this.label_status.Size = new System.Drawing.Size(241, 23);
             this.label_status.TabIndex = 218;
             this.label_status.Text = "Status";
             // 
@@ -368,12 +370,34 @@ namespace company_management.View
             this.label_approved.TabIndex = 220;
             this.label_approved.Text = "Duyệt đơn:";
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 529);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 23);
+            this.label1.TabIndex = 221;
+            this.label1.Text = "Từ";
+            // 
+            // label_numberDay
+            // 
+            this.label_numberDay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_numberDay.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_numberDay.Location = new System.Drawing.Point(233, 491);
+            this.label_numberDay.Name = "label_numberDay";
+            this.label_numberDay.Size = new System.Drawing.Size(123, 38);
+            this.label_numberDay.TabIndex = 222;
+            this.label_numberDay.Text = "10 ngày";
+            this.label_numberDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormViewOrUpdateRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(793, 775);
+            this.ClientSize = new System.Drawing.Size(793, 811);
+            this.Controls.Add(this.label_numberDay);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label_approved);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.label_status);
@@ -405,6 +429,10 @@ namespace company_management.View
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_approver)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label_numberDay;
+
+        private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.Label label_approved;
 

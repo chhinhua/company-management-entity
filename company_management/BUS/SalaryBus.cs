@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using company_management.DAO;
 using company_management.DTO;
@@ -78,6 +79,18 @@ namespace company_management.BUS
         {
             listSalary.Clear();
             listSalary.TrimExcess();
+        }
+        
+        public SalariesStatistics GetSalariesStatistics(List<Salary> salaries)
+        {
+            return new SalariesStatistics
+            {
+                TotalHours = salaries.Sum(s => s.TotalHours),
+                TotalAllowance = salaries.Sum(s=>s.Allowance),
+                TotalInsurance = salaries.Sum(s=>s.Insurance),
+                TotalTax = salaries.Sum(s=>s.Tax),
+                TotalFinalSalary = salaries.Sum(s=>s.FinalSalary)
+            };
         }
     }
 }

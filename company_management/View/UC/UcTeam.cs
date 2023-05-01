@@ -1,39 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using company_management.BUS;
-using company_management.DTO;
 using System.Windows.Forms;
+using company_management.DAO;
+using company_management.DTO;
 
 namespace company_management.View.UC
 {
     public partial class UcTeam : UserControl
     {
         private readonly Lazy<TeamBus> _teamBus;
-        private readonly Lazy<List<Team>> _listTeam;
 
         public UcTeam()
         {
-            InitializeComponent();
             _teamBus = new Lazy<TeamBus>(() => new TeamBus());
-            _listTeam = new Lazy<List<Team>>(() => new List<Team>());
+            InitializeComponent();
         }
 
         private void UC_Team_Load(object sender, EventArgs e)
         {
-            LoadDataGridview();
+            LoadData();
         }
 
-        private void LoadDataGridview()
+        private void LoadData()
         {
-            var teamBus = _teamBus.Value;
-            var teams = teamBus.GetListTeamByPosition();
-            teamBus.LoadDataGridview(teams, dataGridView_Team);
+            LoadDataGridview(_teamBus.Value.GetListTeamByPosition());
         }
+        
+        private void LoadDataGridview(List<Team> teams)
+        {
+            _teamBus.Value.LoadDataGridview(teams, dataGridView_Team);
+        }
+
     }
 }

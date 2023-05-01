@@ -32,7 +32,6 @@ namespace company_management.BUS
 
         public Project GetProjectFromTextBox(string name, string description, DateTimePicker startDate,
             DateTimePicker endDate, ComboBox comboboxAssignee, int progress, string bonus)
-
         {
             int idCreator = UserSession.LoggedInUser.Id;
             decimal bonusValue = 0;
@@ -102,7 +101,7 @@ namespace company_management.BUS
 
             if (position.Equals("Manager"))
             {
-                projects = projectDao.GetProjectsCreatedByCurrentUser(UserSession.LoggedInUser.Id);
+                projects = projectDao.GetAllProject();
             }
             else if (position.Equals("Leader"))
             {
@@ -111,8 +110,7 @@ namespace company_management.BUS
             }
             else
             {
-                projects = projectDao.GetProjectsAssignedByCurrentUser(userDao.GetLeaderByUser(UserSession.LoggedInUser)
-                    .Id);
+                projects = projectDao.GetProjectsAssignedByCurrentUser(UserSession.LoggedInUser.Id);
             }
 
             return projects;
@@ -140,7 +138,6 @@ namespace company_management.BUS
             {
                 comboBox.SelectedValue = UcTask.ViewTask.IdProject;
             }
-            util.CheckEmployeeNotVisibleStatus(comboBox);
         }
 
         public List<Project> GetTodoProjects() => GetListProjectByPosition().Where(p => p.Progress == 0).ToList();
