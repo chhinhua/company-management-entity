@@ -24,10 +24,10 @@
 - [ADO.NET](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/) - Cung cấp các lớp để truy cập và quản lý dữ liệu trong các nguồn dữ liệu khác nhau
 - [MS SQL Server](https://www.microsoft.com/en-us/sql-server/) - Hệ quản trị cơ sở dữ liệu được sử dụng
 
-## Tác giả 👱‍♂️👱‍♂️👱‍♂️
+## Thành viên 👱‍♂️👱‍♂️👱‍♂️
 
-- Chhin Hua - [Github](https://github.com/chhinhua)
-- Trung Nghĩa - [Github](https://github.com/TrungNghia232)
-- Duy Nam - [Github](https://github.com/duynam3320)
+- Chau Chhin Hua - 20110646 - [Github](https://github.com/chhinhua)
+- Phạm Trung Nghĩa - 20133073 - [Github](https://github.com/TrungNghia232)
+- Nguyễn Duy Nam - 18133031 - [Github](https://github.com/duynam3320)
 
    
