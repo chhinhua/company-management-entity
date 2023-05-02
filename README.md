@@ -16,7 +16,7 @@
 - Quản lý task: thêm, sửa, xóa và tìm kiếm các task liên quan đến các dự án. ✔
 - Quản lý checkin/checkout: điểm danh các nhân viên vào và ra khỏi công ty, tính giờ làm việc của từng nhân viên trong ngày. ✔
 - Quản lý nghỉ phép: quản lý thông tin về các đơn xin nghỉ phép của nhân viên và trạng thái được chấp nhận hay từ chối. ✔
-- Tính lương: tính toán lương cho từng nhân viên dựa trên số giờ làm việc và tiền thưởng dự án trong một tháng hoặc khoảng thời gian tùy chọn. ✔
+- Tính lương: tính toán lương cho từng nhân viên dựa trên số giờ làm việc và tiền thưởng dự án, tiền phụ cấp, thuế thu nhập cá nhân cộng với thuế bảo hiểm trong một tháng hoặc khoảng thời gian tùy chọn. ✔
 
 ## Công nghệ sử dụng 🗝
 
