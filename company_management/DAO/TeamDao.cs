@@ -12,14 +12,12 @@ namespace company_management.DAO
         private readonly DBConnection _dBConnection;
         private readonly Lazy<string> _connString;
         private readonly Lazy<UserDao> _userDao;
-        private readonly Lazy<List<Team>> _listTeam;
 
         public TeamDao()
         {
             _dBConnection = new DBConnection();
             _connString = new Lazy<string>(() => Properties.Settings.Default.connStr);
             _userDao = new Lazy<UserDao>(() => new UserDao());
-            _listTeam = new Lazy<List<Team>>(() => new List<Team>());
         }
 
         public Team GetTeamById(int id)
@@ -59,7 +57,7 @@ namespace company_management.DAO
 
         public List<Team> GetAllTeam()
         {
-            string query = string.Format("SELECT * FROM teams");
+            string query = "SELECT * FROM teams";
             return _dBConnection.GetListObjectsByQuery<Team>(query);
         }
 
@@ -84,9 +82,8 @@ namespace company_management.DAO
             dataGridView.Rows.Clear();
 
             // sử lý tên team
-            var listTeams = _listTeam.Value;
             var userDao = _userDao.Value;
-            listTeams = GetAllTeam();
+            var listTeams = GetAllTeam();
 
             foreach (var t in listTeams)
             {
@@ -116,9 +113,9 @@ namespace company_management.DAO
 
         public int CountMembers(int idTeam)
         {
-            int result = 0;
+            int result;
         
-            string query = string.Format("SELECT COUNT(*) FROM user_team WHERE idTeam='{0}'", idTeam);
+            string query = $"SELECT COUNT(*) FROM user_team WHERE idTeam='{idTeam}'";
 
             var cnnString = _connString.Value;
             using (SqlConnection connection = new SqlConnection(cnnString))

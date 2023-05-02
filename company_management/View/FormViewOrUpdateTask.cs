@@ -34,7 +34,7 @@ namespace company_management.View
         {
             _taskBus.Value.GetDataToCombobox(combbox_Assignee, combbox_Project);
             BindingTaskToFields();
-            CheckControlStatusForEmployee();
+            CheckControlStatus();
         }
 
         private void BindingTaskToFields()
@@ -62,13 +62,14 @@ namespace company_management.View
             GetSelectedValueToCombobox(taskBus, task.IdProject, assigneeUser, assigneeTeam);
         }
 
-        private void CheckControlStatusForEmployee()
+        private void CheckControlStatus()
         {
             _utils.CheckEmployeeIsReadOnlyStatus(txtbox_Taskname);
             _utils.CheckEmployeeIsReadOnlyStatus(textBox_Bonus);
             _utils.CheckEmployeeNotEnableStatus(combbox_Assignee);
             _utils.CheckEmployeeNotEnableStatus(combbox_Project);
             _utils.CheckEmployeeNotEnableStatus(dateTime_deadline);
+            _utils.CheckHrNotVisibleStatus(btnSave);
         }
         
         private void GetSelectedValueToCombobox(TaskBus taskBus, int idProject, User assigneeUser, Team assigneeTeam)

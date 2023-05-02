@@ -27,7 +27,7 @@ namespace company_management.DAO
 
         public List<Salary> GetAllSalary()
         {
-            string query = string.Format("SELECT * FROM salary");
+            string query = "SELECT * FROM salary";
             return _dBConnection.GetListObjectsByQuery<Salary>(query);
         }
 
@@ -80,10 +80,10 @@ namespace company_management.DAO
                 connection.Open();
 
                 // Tính toán các thành phần của lương
-                double totalHours = 0;
-                double overtimeHours = 0;
-                double leaveHours = 0;
-                decimal bonus = 0;
+                double totalHours;
+                double overtimeHours;
+                double leaveHours;
+                decimal bonus;
 
                 using (var taskDao = _taskDao.Value)
                 {
@@ -168,20 +168,6 @@ namespace company_management.DAO
                     util.Alert("Action failed", FormAlert.enmType.Error);
                 }
             }
-        }
-
-        public decimal CalculateBonus(double kpiValue, double averageProgress)
-        {
-            decimal bonus = 0;
-            double kpiWithProgress = kpiValue + averageProgress;
-
-            // Tính toán lương bonus
-            if (kpiWithProgress >= 0.7)
-            {
-                bonus = (decimal)kpiWithProgress * (decimal)Constants.DEFAULT_BASIC_SALARY;
-            }
-
-            return bonus;
         }
     }
 }

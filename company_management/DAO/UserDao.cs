@@ -1,33 +1,29 @@
 ﻿using company_management.DTO;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+// ReSharper disable All
 
 namespace company_management.DAO
 {
     public sealed class UserDao : IDisposable
     {
         private readonly DBConnection _dBConnection;
-        private Lazy<List<User>> _listUser;
-        private bool _disposed = false;
+        private bool _disposed;
 
         public UserDao()
         {
             _dBConnection = new DBConnection();
-            _listUser = new Lazy<List<User>>(() => new List<User>());
         }
 
         public List<User> GetAllUser()
         {
-            string query = string.Format("SELECT * FROM users");
+            string query = "SELECT * FROM users";
             return _dBConnection.GetListObjectsByQuery<User>(query);
         }
 
-        public void loadData(DataGridView dataGridView, List<User> users)
+        public void LoadData(DataGridView dataGridView, List<User> users)
         {
             dataGridView.ColumnCount = 6;
             dataGridView.Columns[0].Name = "Mã";
@@ -54,13 +50,13 @@ namespace company_management.DAO
 
         public List<User> GetAllLeader()
         {
-            string query = string.Format("SELECT * FROM users WHERE users.idPosition = 2");
+            string query = "SELECT * FROM users WHERE users.idPosition = 2";
             return _dBConnection.GetListObjectsByQuery<User>(query);
         }
 
         public List<User> GetAllEmployee()
         {
-            string query = string.Format("SELECT * FROM users WHERE users.idPosition = 3");
+            string query = "SELECT * FROM users WHERE users.idPosition = 3";
             return _dBConnection.GetListObjectsByQuery<User>(query).ToList();
         }
 

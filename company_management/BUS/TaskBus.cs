@@ -5,8 +5,6 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
-using company_management.View.UC;
-
 // ReSharper disable All
 
 namespace company_management.BUS

@@ -246,7 +246,6 @@
             this.btnForgotpw.TabIndex = 55;
             this.btnForgotpw.Text = "Forgot password?";
             this.btnForgotpw.UseVisualStyleBackColor = false;
-            this.btnForgotpw.Click += new System.EventHandler(this.btnForgotpw_Click);
             // 
             // label2
             // 

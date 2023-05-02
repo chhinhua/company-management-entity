@@ -5,27 +5,20 @@ using System.Windows.Forms;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.Utilities;
-using company_management.View.UC;
 
 namespace company_management.BUS
 {
     public class SalaryBus
     {
-        private readonly Lazy<Utils> _utils;
-        private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserDao> _userDao;
         private readonly Lazy<UserBus> _userBus;
-        private readonly Lazy<TaskBus> _taskBus;
         private readonly Lazy<SalaryDao> _salaryDao;
         private readonly Lazy<List<Salary>> _listSalary;
 
         public SalaryBus()
         {
-            _utils = new Lazy<Utils>(() => new Utils());
-            _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _userBus = new Lazy<UserBus>(() => new UserBus());
-            _taskBus = new Lazy<TaskBus>(() => new TaskBus());
             _salaryDao = new Lazy<SalaryDao>(() => new SalaryDao());
             _listSalary = new Lazy<List<Salary>>(() => new List<Salary>());
         }
