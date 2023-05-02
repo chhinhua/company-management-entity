@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,12 +47,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcSalary));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
-            this.combobox_taskStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.datagridview_salary = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
@@ -87,46 +84,24 @@
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
-            this.panelData.Controls.Add(this.combobox_taskStatusFilter);
             this.panelData.Controls.Add(this.btnRefresh);
             this.panelData.Controls.Add(this.datagridview_salary);
-            this.panelData.CustomizableEdges = customizableEdges5;
+            this.panelData.CustomizableEdges = customizableEdges3;
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(17, 253);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 516);
             this.panelData.TabIndex = 87;
             // 
-            // combobox_taskStatusFilter
-            // 
-            this.combobox_taskStatusFilter.BackColor = System.Drawing.Color.Transparent;
-            this.combobox_taskStatusFilter.BorderRadius = 5;
-            this.combobox_taskStatusFilter.CustomizableEdges = customizableEdges1;
-            this.combobox_taskStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.combobox_taskStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combobox_taskStatusFilter.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.combobox_taskStatusFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.combobox_taskStatusFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.combobox_taskStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.combobox_taskStatusFilter.ForeColor = System.Drawing.Color.Black;
-            this.combobox_taskStatusFilter.ItemHeight = 26;
-            this.combobox_taskStatusFilter.Items.AddRange(new object[] { "Tất cả", "Đã tạo\t", "Được giao" });
-            this.combobox_taskStatusFilter.Location = new System.Drawing.Point(16, 19);
-            this.combobox_taskStatusFilter.Name = "combobox_taskStatusFilter";
-            this.combobox_taskStatusFilter.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.combobox_taskStatusFilter.Size = new System.Drawing.Size(164, 32);
-            this.combobox_taskStatusFilter.StartIndex = 0;
-            this.combobox_taskStatusFilter.TabIndex = 104;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BorderRadius = 15;
-            this.btnRefresh.CustomizableEdges = customizableEdges3;
+            this.btnRefresh.CustomizableEdges = customizableEdges1;
             this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -137,7 +112,7 @@
             this.btnRefresh.Image = global::company_management.Properties.Resources.refresh;
             this.btnRefresh.Location = new System.Drawing.Point(1121, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnRefresh.Size = new System.Drawing.Size(117, 40);
             this.btnRefresh.TabIndex = 103;
             this.btnRefresh.Text = "Refresh";
@@ -209,13 +184,13 @@
             this.panelFields.BorderThickness = 1;
             this.panelFields.Controls.Add(this.label_totalHours);
             this.panelFields.Controls.Add(this.label_basic);
-            this.panelFields.CustomizableEdges = customizableEdges7;
+            this.panelFields.CustomizableEdges = customizableEdges5;
             this.panelFields.FillColor = System.Drawing.Color.White;
             this.panelFields.Location = new System.Drawing.Point(17, 19);
             this.panelFields.Name = "panelFields";
             this.panelFields.ShadowDecoration.BorderRadius = 25;
             this.panelFields.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelFields.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.panelFields.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.panelFields.ShadowDecoration.Enabled = true;
             this.panelFields.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelFields.Size = new System.Drawing.Size(241, 110);
@@ -252,13 +227,13 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.label_totalAllowance);
             this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.CustomizableEdges = customizableEdges9;
+            this.guna2Panel1.CustomizableEdges = customizableEdges7;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(274, 19);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel1.Size = new System.Drawing.Size(241, 110);
@@ -295,13 +270,13 @@
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.label_totalInsurance);
             this.guna2Panel2.Controls.Add(this.label5);
-            this.guna2Panel2.CustomizableEdges = customizableEdges11;
+            this.guna2Panel2.CustomizableEdges = customizableEdges9;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(529, 19);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel2.Size = new System.Drawing.Size(241, 110);
@@ -338,13 +313,13 @@
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.label_totalFinalSalary);
             this.guna2Panel4.Controls.Add(this.label9);
-            this.guna2Panel4.CustomizableEdges = customizableEdges13;
+            this.guna2Panel4.CustomizableEdges = customizableEdges11;
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(1039, 19);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.guna2Panel4.ShadowDecoration.Enabled = true;
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel4.Size = new System.Drawing.Size(236, 110);
@@ -414,13 +389,13 @@
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.label_totalTax);
             this.guna2Panel3.Controls.Add(this.label7);
-            this.guna2Panel3.CustomizableEdges = customizableEdges15;
+            this.guna2Panel3.CustomizableEdges = customizableEdges13;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(784, 19);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel3.Size = new System.Drawing.Size(241, 110);
@@ -430,7 +405,7 @@
             // 
             this.btn_caculateSalary.BackColor = System.Drawing.Color.Transparent;
             this.btn_caculateSalary.BorderRadius = 15;
-            this.btn_caculateSalary.CustomizableEdges = customizableEdges17;
+            this.btn_caculateSalary.CustomizableEdges = customizableEdges15;
             this.btn_caculateSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_caculateSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_caculateSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -442,7 +417,7 @@
             this.btn_caculateSalary.ImageSize = new System.Drawing.Size(28, 28);
             this.btn_caculateSalary.Location = new System.Drawing.Point(997, 188);
             this.btn_caculateSalary.Name = "btn_caculateSalary";
-            this.btn_caculateSalary.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.btn_caculateSalary.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.btn_caculateSalary.Size = new System.Drawing.Size(278, 50);
             this.btn_caculateSalary.TabIndex = 92;
             this.btn_caculateSalary.Text = "Calculation of wages";
@@ -474,8 +449,6 @@
             this.guna2Panel3.ResumeLayout(false);
             this.ResumeLayout(false);
         }
-
-        private Guna.UI2.WinForms.Guna2ComboBox combobox_taskStatusFilter;
 
         #endregion
 

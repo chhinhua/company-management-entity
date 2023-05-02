@@ -120,14 +120,14 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_caculateSalary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAFLSURBVEhL3da7LgVRFMbxEUIhQsIDiI7oVErv4AUkep1L
-        qxAapScQhQ6lzqUSUYtLQYgSnYTw/8ysybZn7XBmpvIlv8y+zF47Z87MmZO1nAH058120oMpLOEQb5hD
-        7XTDCh7gFZ+Rbfw5XZjEAvbwjLDYBy6wibti7BFal8wY5rGDJ4QF5RJbmMUILLpcD9A5Exr4f4kvRVOV
-        eCc1UYlNrH736kVrf93ASy82oFtQ1osxL7U2UEGbN2vwMoP9vPkzttByiuO8Wd7foSt0FFtoOcFR3qxs
-        sIJhWEahp/m+OKpfSbxBmPgSWaaxi3eE8+prXPNl4sVh9IVqE30S/XxYwqIpZWygk9s0LJRSxptMsXhz
-        sTLeZEofFO99EHpBo5zDK2zO0CjL8AqbRTSKXvC38IrfoJU/AOO4RlhcfY23liHoNarnRMdBkCz7AhxJ
-        2JKkFMO/AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAUtJREFUSEvd1rsuBVEUxvERQiFCwgOIjuhUSu/gBSR6nUurEBqlJxCFDqXOpRJR
+        i0tBiBKdhPD/zKzJtmftcGam8iW/zL7MXjtnzsyZk7WcAfTnzXbSgyks4RBvmEPtdMMKHuAVn5Ft/Dld
+        mMQC9vCMsNgHLrCJu2LsEVqXzBjmsYMnhAXlEluYxQgsulwP0DkTGvh/iS9FU5V4JzVRiU2sfvfqRWt/
+        3cBLLzagW1DWizEvtTZQQZs3a/Ayg/28+TO20HKK47xZ3t+hK3QUW2g5wVHerGywgmFYRqGn+b44ql9J
+        vEGY+BJZprGLd4Tz6mtc82XixWH0hWoTfRL9fFjCoillbKCT2zQslFLGm0yxeHOxMt5kSh8U730QekGj
+        nMMrbM7QKMvwCptFNIpe8Lfwit+glT8A47hGWFx9jbeWIeg1qudEx0GQLPsCHEnYkqQUw78AAAAASUVO
+        RK5CYII=
 </value>
   </data>
 </root>
