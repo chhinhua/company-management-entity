@@ -94,23 +94,16 @@ namespace company_management.BUS
             var projectDao = _projectDao.Value;
             var userBus = _userBus.Value;
             var userDao = _userDao.Value;
-
-            string position = userBus.GetUserPosition();
-
+            
             ClearListProject(projects);
 
-            if (position.Equals("Manager"))
+            if (userBus.IsManager() || userBus.IsHumanResources())
             {
                 projects = projectDao.GetAllProject();
             }
-            else if (position.Equals("Leader"))
-            {
-                projects.AddRange(projectDao.GetProjectsCreatedByCurrentUser(UserSession.LoggedInUser.Id));
-                projects.AddRange(projectDao.GetProjectsAssignedByCurrentUser(UserSession.LoggedInUser.Id));
-            }
             else
             {
-                projects = projectDao.GetProjectsAssignedByCurrentUser(UserSession.LoggedInUser.Id);
+                projects = projectDao.GetMyProjects();
             }
 
             return projects;

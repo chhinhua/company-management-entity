@@ -65,6 +65,12 @@ namespace company_management.Utilities
             control.Visible = !userBus.IsEmployee();
         }
         
+        public void CheckHrNotVisibleStatus<T>(T control) where T : Control
+        {
+            var userBus = _userBus.Value;
+            control.Visible = !userBus.IsHumanResources();
+        }
+        
         public void CheckEmployeeNotEnableStatus<T>(T control) where T : Control
         {
             var userBus = _userBus.Value;

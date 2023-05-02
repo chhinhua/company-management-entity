@@ -30,8 +30,8 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -76,6 +76,7 @@
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panel_tabbar = new Guna.UI2.WinForms.Guna2Panel();
             this.pn_main = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_avatar)).BeginInit();
@@ -87,6 +88,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
+            this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox2);
             this.guna2Panel3.Controls.Add(this.picturebox_avatar);
             this.guna2Panel3.Controls.Add(this.combobox_user_action);
@@ -104,8 +106,9 @@
             // 
             this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(36, 4);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(23, 10);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -156,6 +159,7 @@
             this.combobox_user_action.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.combobox_user_action.Size = new System.Drawing.Size(70, 36);
             this.combobox_user_action.TabIndex = 24;
+            this.combobox_user_action.SelectedIndexChanged += new System.EventHandler(this.combobox_user_action_SelectedIndexChanged);
             // 
             // guna2PictureBox9
             // 
@@ -426,6 +430,15 @@
             this.pn_main.Size = new System.Drawing.Size(1292, 788);
             this.pn_main.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(79, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 30);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "KMS Solution";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,6 +460,8 @@
             this.panel_tabbar.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label1;
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;

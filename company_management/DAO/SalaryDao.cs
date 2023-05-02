@@ -108,9 +108,9 @@ namespace company_management.DAO
                 salary.TotalHours = totalHours;
                 salary.OvertimeHours = overtimeHours;
                 salary.LeaveHours = leaveHours;
+                salary.FinalSalary = finalSalary;
                 salary.FromDate = fromDate;
                 salary.ToDate = toDate;
-                salary.FinalSalary = finalSalary;
             }
 
             return salary;
@@ -166,9 +166,7 @@ namespace company_management.DAO
                 {
                     Console.WriteLine(e);
                     util.Alert("Action failed", FormAlert.enmType.Error);
-                    throw;
                 }
-
             }
         }
 

@@ -110,7 +110,6 @@ namespace company_management.View.UC
                  formRequest.Show();
             }
             else MessageBox.Show("Bạn chưa chọn đơn nào! Vui lòng chọn một đơn để xem", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
         }
 
         private void datagridview_leaveRequest_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -172,7 +171,19 @@ namespace company_management.View.UC
                     break;
             }
 
-            LoadData(requests);
+            LoadDataGridview(requests);
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (_selectedId != 0)
+            {
+                FormViewOrUpdateRequest formRequest = new FormViewOrUpdateRequest();
+                formRequest.SetRequestId(_selectedId);
+                formRequest.Show();
+            }
+            else MessageBox.Show("Bạn chưa chọn đơn nào! Vui lòng chọn một đơn để xem", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
     }
 }

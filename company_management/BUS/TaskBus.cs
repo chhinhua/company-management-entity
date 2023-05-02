@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using company_management.DTO;
 using company_management.DAO;
 using company_management.View.UC;
+
 // ReSharper disable All
 
 namespace company_management.BUS
@@ -17,6 +18,7 @@ namespace company_management.BUS
         private readonly Lazy<UserDao> _userDao;
         private readonly Lazy<UserBus> _userBus;
         private readonly Lazy<ProjectBus> _projectBus;
+        private readonly Lazy<ProjectDao> _projectDao;
         private readonly Lazy<List<Task>> _listTask;
 
         public TaskBus()
@@ -26,6 +28,7 @@ namespace company_management.BUS
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _userBus = new Lazy<UserBus>(() => new UserBus());
             _projectBus = new Lazy<ProjectBus>(() => new ProjectBus());
+            _projectDao = new Lazy<ProjectDao>(() => new ProjectDao());
             _listTask = new Lazy<List<Task>>(() => new List<Task>());
         }
 
@@ -57,70 +60,117 @@ namespace company_management.BUS
                 string assignee = userDao.GetUserById(t.IdAssignee).FullName;
                 string team = teamDao.GetTeamById(t.IdTeam).Name;
 
-                dataGridView.Rows.Add(t.Id, creator, t.TaskName, t.Deadline.ToString("dd/MM/yyyy"), t.Progress + " %", assignee, team);
+                dataGridView.Rows.Add(t.Id, creator, t.TaskName, t.Deadline.ToString("dd/MM/yyyy"), t.Progress + " %",
+                    assignee, team);
             }
         }
 
         public List<Task> GetListTaskByPosition()
         {
+            int id = UserSession.LoggedInUser.Id;
             var tasks = _listTask.Value;
             var taskDao = _taskDao.Value;
             var userBus = _userBus.Value;
-
-            string position = userBus.GetUserPosition();
-
             ClearListTask(tasks);
 
-            if (position.Equals("Manager"))
-            { tasks = taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id); }
-            else if (position.Equals("Leader"))
+            if (userBus.IsManager() || userBus.IsHumanResources())
             {
-                tasks.AddRange(taskDao.GetTasksCreatedByCurrentUser(UserSession.LoggedInUser.Id));
-                tasks.AddRange(taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id));
+                tasks = taskDao.GetAllTask();
             }
-            else { tasks = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id); }
+            else if (userBus.IsLeader())
+            {
+                var team = _teamDao.Value.GetTeamByLeader(UserSession.LoggedInUser.Id);
+                tasks.AddRange(taskDao.GetTasksByTeam(team.Id));
+            }
+            else
+            {
+                tasks = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id);
+            }
 
             return tasks;
         }
 
-        public Task GetTaskFromTextBox(string taskName, string description, DateTimePicker dateTime, 
-                ComboBox comboboxAssignee, int progress, string bonus, ComboBox comboboxProject)
+        public Task GetTaskFromFieldsForAdd(string taskName, string description, DateTimePicker deadline,
+            ComboBox comboboxAssignee, ComboBox comboboxProject, string bonus)
         {
             var userBus = _userBus.Value;
             var teamDao = _teamDao.Value;
-
-            Task task;
-            int idAssignee;
-            int idCreator = UserSession.LoggedInUser.Id;
-            
             var selectedProject = (Project)comboboxProject.SelectedItem;
-            decimal bonusValue = 0;
-            if (bonus != "")
+
+            int idAssignee;
+            int idCreator = idAssignee = UserSession.LoggedInUser.Id;
+            int idTeam;
+            int idProject = 0;
+            if (selectedProject != null)
             {
-                bonusValue = decimal.Parse(bonus);
+                idProject = selectedProject.Id;
             }
-
-            string position = userBus.GetUserPosition();
-
-            if (position.Equals("Manager"))
+            
+            if (userBus.IsManager())
             {
                 var selectedTeam = (Team)comboboxAssignee.SelectedItem;
                 idAssignee = selectedTeam.IdLeader;
-                task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, progress, selectedTeam.Id, bonusValue, selectedProject.Id);
+                idTeam = selectedTeam.Id; 
             }
-            else if (position.Equals("Leader"))
+            else if (userBus.IsLeader())
             {
                 var selectedUser = (User)comboboxAssignee.SelectedItem;
                 idAssignee = selectedUser.Id;
-                task = new Task(idCreator, idAssignee, taskName,
-                            description, dateTime.Value, progress, teamDao.GetTeamByLeader(idCreator).Id, bonusValue, selectedProject.Id);
+                idTeam = teamDao.GetTeamByLeader(idCreator).Id;
             }
             else
             {
-                task = new Task(UcTask.ViewTask.IdCreator, UcTask.ViewTask.IdAssignee, taskName, description, dateTime.Value, progress, 
-                                        teamDao.GetTeamByLeader(UcTask.ViewTask.IdCreator).Id, UcTask.ViewTask.Bonus, selectedProject.Id);
+                idTeam = teamDao.GetTeamByUser(UserSession.LoggedInUser.Id).Id;
             }
+            
+            decimal bonusValue = 0.00m;
+            if (bonus != "")
+                bonusValue = decimal.Parse(bonus);
+            
+            return new Task
+            {
+                TaskName = taskName,
+                Description = description,
+                IdCreator = idCreator,
+                IdAssignee = idAssignee,
+                IdTeam = idTeam,
+                IdProject = idProject,
+                Deadline = deadline.Value,
+                Bonus = bonusValue,
+                Progress = 0
+            };
+        }
+        
+        public Task GetTaskFromFieldsForUpdate(int taskId, Guna2TextBox taskName, Guna2TextBox description, DateTimePicker deadline,
+            ComboBox comboboxAssignee, int progress, string bonus, ComboBox comboboxProject)
+        {
+            Task task = _taskDao.Value.GetTaskById(taskId);
+            
+            if (bonus != "")
+            {
+                task.Bonus = decimal.Parse(bonus);
+            }
+            
+            var selectedProject = (Project)comboboxProject.SelectedItem;
+            if (_userBus.Value.IsManager())
+            {
+                var selectedTeam = (Team)comboboxAssignee.SelectedItem;
+                task.IdAssignee = selectedTeam.IdLeader;
+                task.IdTeam = selectedTeam.Id;
+                task.IdProject = selectedProject.Id;
+            }
+            else if (_userBus.Value.IsLeader())
+            {
+                var selectedUser = (User)comboboxAssignee.SelectedItem;
+                task.IdAssignee = selectedUser.Id;
+                task.IdProject = selectedProject.Id;
+            }
+
+            task.TaskName = taskName.Text;
+            task.Description = description.Text;
+            task.Deadline = deadline.Value;
+            task.Progress = progress;
+            
             return task;
         }
 
@@ -132,16 +182,19 @@ namespace company_management.BUS
 
         public List<Task> GetTodoTasks() => GetListTaskByPosition().Where(t => t.Progress == 0).ToList();
 
-        public List<Task> GetInprogressTasks() => GetListTaskByPosition().Where(t => t.Progress > 0 && t.Progress < 100).ToList();
+        public List<Task> GetInprogressTasks() =>
+            GetListTaskByPosition().Where(t => t.Progress > 0 && t.Progress < 100).ToList();
 
         public List<Task> GetDoneTasks() => GetListTaskByPosition().Where(t => t.Progress == 100).ToList();
 
-        public List<Task> GetMyTasks() => GetListTaskByPosition().Where(t => t.IdAssignee == UserSession.LoggedInUser.Id).ToList();
-        
-        public List<Task> GetMyCreatedTasks() => GetListTaskByPosition().Where(t => t.IdCreator == UserSession.LoggedInUser.Id).ToList();
-        
-        public List<Task> SearchTasksByKeyword(Guna2DataGridView gridView, string keyword, 
-                        int creator, int taskName, int assignee, int team)
+        public List<Task> GetMyTasks() =>
+            GetListTaskByPosition().Where(t => t.IdAssignee == UserSession.LoggedInUser.Id).ToList();
+
+        public List<Task> GetMyCreatedTasks() =>
+            GetListTaskByPosition().Where(t => t.IdCreator == UserSession.LoggedInUser.Id).ToList();
+
+        public List<Task> SearchTasksByKeyword(Guna2DataGridView gridView, string keyword,
+            int creator, int taskName, int assignee, int team)
         {
             var tasks = _listTask.Value;
             var taskDao = _taskDao.Value;
@@ -166,6 +219,7 @@ namespace company_management.BUS
                     tasks.Add(task);
                 }
             }
+
             return tasks;
         }
 
@@ -194,10 +248,8 @@ namespace company_management.BUS
 
         public void GetDataToCombobox(ComboBox assignees, ComboBox project)
         {
-            var taskDao = _taskDao.Value;
-            var projectBus = _projectBus.Value;
-            taskDao.LoadUserToCombobox(assignees);
-            projectBus.LoadProjectToCombobox(project);
+            _taskDao.Value.LoadUserToCombobox(assignees);
+            _projectBus.Value.LoadProjectToCombobox(project);
         }
 
         private void ClearListTask(List<Task> listTask)

@@ -14,6 +14,7 @@ namespace company_management.View
         private readonly Lazy<TaskDao> _taskDao;
         private readonly Lazy<TaskBus> _taskBus;
         private readonly Lazy<ProjectBus> _projectBus;
+        private readonly Lazy<Utils> _utils;
 
         public FormAddTask()
         {
@@ -22,6 +23,7 @@ namespace company_management.View
             _taskDao = new Lazy<TaskDao>(() => new TaskDao());
             _taskBus = new Lazy<TaskBus>(() => new TaskBus());
             _projectBus = new Lazy<ProjectBus>(() => new ProjectBus());
+            _utils = new Lazy<Utils>(() => new Utils());
             utils.SetFormShadow(this);
         }
         
@@ -37,18 +39,22 @@ namespace company_management.View
 
         private void GetDataToCombobox(ComboBox assignees, ComboBox project)
         {
-            var taskDao = _taskDao.Value;
-            var projectBus = _projectBus.Value;
-            taskDao.LoadUserToCombobox(assignees);
-            projectBus.LoadProjectToCombobox(project);
+            _taskDao.Value.LoadUserToCombobox(assignees);
+            _projectBus.Value.LoadProjectToCombobox(project);
         }
 
         private void LoadData()
         {
             txtBox_cretor.Text = UserSession.LoggedInUser.FullName;
             GetDataToCombobox(combbox_Assignee, combbox_Project);
+            CheckControlStatusForEmployee();
         }
 
+        private void CheckControlStatusForEmployee()
+        {
+            _utils.Value.CheckEmployeeIsReadOnlyStatus(textBox_Bonus);
+        }
+        
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -58,11 +64,9 @@ namespace company_management.View
         {
             if (CheckDataInput())
             {
-                var taskBus = _taskBus.Value;
-                var taskDao = _taskDao.Value;
-                Task task = taskBus.GetTaskFromTextBox(txtbox_taskName.Text, txtbox_Desciption.Text,
-                                              dateTime_deadline, combbox_Assignee, 0, textBox_Bonus.Text, combbox_Project);
-                taskDao.AddTask(task);
+                Task task = _taskBus.Value.GetTaskFromFieldsForAdd(txtbox_taskName.Text, txtbox_Desciption.Text,
+                                              dateTime_deadline, combbox_Assignee, combbox_Project, textBox_Bonus.Text);
+                _taskDao.Value.AddTask(task);
                 ClearFields();
             }
         }

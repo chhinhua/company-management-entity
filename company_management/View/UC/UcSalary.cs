@@ -44,7 +44,7 @@ namespace company_management.View.UC
             var salaryBus = _salaryBus.Value;
             var salariesStatistics = salaryBus.GetSalariesStatistics(salaries);
 
-            label_totalHours.Text = salariesStatistics.TotalHours.ToString("0.00'h'");
+            label_totalHours.Text = salariesStatistics.TotalHours.ToString("#,##0.00'h'");
             label_totalAllowance.Text = salariesStatistics.TotalAllowance.ToString("C");
             label_totalInsurance.Text = salariesStatistics.TotalInsurance.ToString("C");
             label_totalTax.Text = salariesStatistics.TotalTax.ToString("C");

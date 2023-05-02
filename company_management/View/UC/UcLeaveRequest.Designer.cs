@@ -46,6 +46,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcLeaveRequest));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -55,7 +56,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcLeaveRequest));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.combobox_requestStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -66,18 +66,23 @@
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label_cancelled = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label_pending = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label_rejected = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label_approved = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label_allCount = new System.Windows.Forms.Label();
             this.label_basic = new System.Windows.Forms.Label();
             this.btnViewOrUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -235,6 +240,7 @@
             this.buttonEdit.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.buttonEdit.Size = new System.Drawing.Size(50, 40);
             this.buttonEdit.TabIndex = 92;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonRemove
             // 
@@ -300,6 +306,7 @@
             this.guna2Panel4.BorderColor = System.Drawing.Color.White;
             this.guna2Panel4.BorderRadius = 20;
             this.guna2Panel4.BorderThickness = 1;
+            this.guna2Panel4.Controls.Add(this.label10);
             this.guna2Panel4.Controls.Add(this.label_cancelled);
             this.guna2Panel4.Controls.Add(this.label9);
             this.guna2Panel4.CustomizableEdges = customizableEdges13;
@@ -314,6 +321,14 @@
             this.guna2Panel4.Size = new System.Drawing.Size(236, 110);
             this.guna2Panel4.TabIndex = 99;
             // 
+            // label10
+            // 
+            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
+            this.label10.Location = new System.Drawing.Point(136, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 34);
+            this.label10.TabIndex = 100;
+            // 
             // label_cancelled
             // 
             this.label_cancelled.BackColor = System.Drawing.Color.Transparent;
@@ -324,7 +339,6 @@
             this.label_cancelled.Size = new System.Drawing.Size(188, 50);
             this.label_cancelled.TabIndex = 99;
             this.label_cancelled.Text = "4";
-            this.label_cancelled.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label9
             // 
@@ -332,7 +346,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(36, 67);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(181, 32);
+            this.label9.Size = new System.Drawing.Size(96, 32);
             this.label9.TabIndex = 98;
             this.label9.Text = "Đã hủy bỏ";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,6 +357,7 @@
             this.guna2Panel3.BorderColor = System.Drawing.Color.White;
             this.guna2Panel3.BorderRadius = 20;
             this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Controls.Add(this.label8);
             this.guna2Panel3.Controls.Add(this.label_pending);
             this.guna2Panel3.Controls.Add(this.label7);
             this.guna2Panel3.CustomizableEdges = customizableEdges15;
@@ -357,6 +372,14 @@
             this.guna2Panel3.Size = new System.Drawing.Size(241, 110);
             this.guna2Panel3.TabIndex = 98;
             // 
+            // label8
+            // 
+            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
+            this.label8.Location = new System.Drawing.Point(135, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 34);
+            this.label8.TabIndex = 98;
+            // 
             // label_pending
             // 
             this.label_pending.BackColor = System.Drawing.Color.Transparent;
@@ -367,7 +390,6 @@
             this.label_pending.Size = new System.Drawing.Size(188, 50);
             this.label_pending.TabIndex = 97;
             this.label_pending.Text = "2";
-            this.label_pending.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label7
             // 
@@ -375,7 +397,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(33, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(181, 32);
+            this.label7.Size = new System.Drawing.Size(96, 32);
             this.label7.TabIndex = 96;
             this.label7.Text = "Đang chờ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -386,6 +408,7 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.White;
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.label_rejected);
             this.guna2Panel2.Controls.Add(this.label5);
             this.guna2Panel2.CustomizableEdges = customizableEdges17;
@@ -400,17 +423,25 @@
             this.guna2Panel2.Size = new System.Drawing.Size(241, 110);
             this.guna2Panel2.TabIndex = 96;
             // 
+            // label6
+            // 
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.Location = new System.Drawing.Point(118, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 34);
+            this.label6.TabIndex = 98;
+            // 
             // label_rejected
             // 
             this.label_rejected.BackColor = System.Drawing.Color.Transparent;
             this.label_rejected.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_rejected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(40)))), ((int)(((byte)(226)))));
+            this.label_rejected.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_rejected.Location = new System.Drawing.Point(29, 17);
             this.label_rejected.Name = "label_rejected";
             this.label_rejected.Size = new System.Drawing.Size(188, 50);
             this.label_rejected.TabIndex = 95;
             this.label_rejected.Text = "2";
-            this.label_rejected.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label5
             // 
@@ -418,7 +449,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(32, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 32);
+            this.label5.Size = new System.Drawing.Size(80, 32);
             this.label5.TabIndex = 94;
             this.label5.Text = "Từ chối";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -429,6 +460,7 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label_approved);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.CustomizableEdges = customizableEdges19;
@@ -443,17 +475,25 @@
             this.guna2Panel1.Size = new System.Drawing.Size(241, 110);
             this.guna2Panel1.TabIndex = 97;
             // 
+            // label4
+            // 
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.Location = new System.Drawing.Point(127, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 34);
+            this.label4.TabIndex = 97;
+            // 
             // label_approved
             // 
             this.label_approved.BackColor = System.Drawing.Color.Transparent;
             this.label_approved.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_approved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(40)))), ((int)(((byte)(226)))));
+            this.label_approved.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_approved.Location = new System.Drawing.Point(29, 17);
             this.label_approved.Name = "label_approved";
             this.label_approved.Size = new System.Drawing.Size(188, 50);
             this.label_approved.TabIndex = 95;
             this.label_approved.Text = "6";
-            this.label_approved.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label3
             // 
@@ -461,7 +501,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(32, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 32);
+            this.label3.Size = new System.Drawing.Size(89, 32);
             this.label3.TabIndex = 94;
             this.label3.Text = "Đã duyệt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -472,6 +512,7 @@
             this.panelFields.BorderColor = System.Drawing.Color.White;
             this.panelFields.BorderRadius = 20;
             this.panelFields.BorderThickness = 1;
+            this.panelFields.Controls.Add(this.label2);
             this.panelFields.Controls.Add(this.label_allCount);
             this.panelFields.Controls.Add(this.label_basic);
             this.panelFields.CustomizableEdges = customizableEdges21;
@@ -486,6 +527,14 @@
             this.panelFields.Size = new System.Drawing.Size(241, 110);
             this.panelFields.TabIndex = 95;
             // 
+            // label2
+            // 
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(142, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 34);
+            this.label2.TabIndex = 96;
+            // 
             // label_allCount
             // 
             this.label_allCount.BackColor = System.Drawing.Color.Transparent;
@@ -496,7 +545,6 @@
             this.label_allCount.Size = new System.Drawing.Size(188, 50);
             this.label_allCount.TabIndex = 93;
             this.label_allCount.Text = "3";
-            this.label_allCount.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label_basic
             // 
@@ -504,7 +552,7 @@
             this.label_basic.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_basic.Location = new System.Drawing.Point(28, 67);
             this.label_basic.Name = "label_basic";
-            this.label_basic.Size = new System.Drawing.Size(181, 32);
+            this.label_basic.Size = new System.Drawing.Size(108, 32);
             this.label_basic.TabIndex = 92;
             this.label_basic.Text = "Tất cả đơn";
             this.label_basic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -571,6 +619,13 @@
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+
+        private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.Panel panel1;
         
