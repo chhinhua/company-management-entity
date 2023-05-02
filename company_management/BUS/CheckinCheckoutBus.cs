@@ -32,12 +32,11 @@ namespace company_management.BUS
 
             ClearListCiCo(cicos);
 
-            if (userBus.IsManager() || userBus.IsHumanResources())
+            if (userBus.IsManager())
             { cicos = cicoDao.GetAllCheckinCheckouts(); }
             else
             { cicos = cicoDao.GetMyCheckinCoCheckouts(UserSession.LoggedInUser.Id); }
-
-
+            
             return cicos;
         }
 

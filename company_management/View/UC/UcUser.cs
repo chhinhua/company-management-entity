@@ -43,7 +43,7 @@ namespace company_management.View.UC
         {
             var userDao = _userDao.Value;
             var users = userDao.GetAllUser();
-            userDao.loadData(dataGridView_User, users);
+            userDao.LoadData(dataGridView_User, users);
         }
 
         private User GetUserFromTextBox()
@@ -145,7 +145,7 @@ namespace company_management.View.UC
 
             var userDao = _userDao.Value;
             List<User> listUser = userDao.SearchUsers(keyword);
-            userDao.loadData(dataGridView_User, listUser);
+            userDao.LoadData(dataGridView_User, listUser);
         }
 
         private void dataGridView_User_CellClick(object sender, DataGridViewCellEventArgs e)

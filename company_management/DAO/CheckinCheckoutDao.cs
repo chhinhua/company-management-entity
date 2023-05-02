@@ -1,19 +1,15 @@
 ﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Windows.Forms;
-using company_management.View;
-using company_management.BUS;
 using company_management.View.UC;
 
 namespace company_management.DAO
 {
     public sealed class CheckinCheckoutDao : IDisposable
     {
-        private bool _disposed = false;
+        private bool _disposed;
         private readonly DBConnection _dBConnection;
 
         public CheckinCheckoutDao()
@@ -50,23 +46,10 @@ namespace company_management.DAO
 
         public List<CheckinCheckout> GetAllCheckinCheckouts()
         {
-            string query = string.Format("SELECT * FROM checkin_checkout");
+            string query = "SELECT * FROM checkin_checkout";
             return _dBConnection.GetListObjectsByQuery<CheckinCheckout>(query);
         }
 
-        public List<CheckinCheckout> SearchCheckinCheckouts(string txtSearch)
-        {
-            string query = string.Format("SELECT t.* FROM task t " +
-                "INNER JOIN teams tm ON t.idTeam = tm.id " +
-                "INNER JOIN users u ON(t.idCreator = u.id OR t.idAssignee = u.id) " +
-                "WHERE t.taskName LIKE '%{0}%' " +
-                "OR t.description LIKE '%{0}%' " +
-                "OR tm.name LIKE '%{0}%' " +
-                "OR u.username LIKE '%{0}%' ", txtSearch);
-            return _dBConnection.GetListObjectsByQuery<CheckinCheckout>(query);
-        }
-
-        // Danh sách cico của người đăng nhập
         public List<CheckinCheckout> GetMyCheckinCoCheckouts(int idUser)
         {
             return GetAllCheckinCheckouts().Where(c => c.IdUser == idUser).ToList();

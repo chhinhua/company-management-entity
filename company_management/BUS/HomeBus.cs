@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Windows.Forms;
 using company_management.Utilities;
 
 namespace company_management.BUS

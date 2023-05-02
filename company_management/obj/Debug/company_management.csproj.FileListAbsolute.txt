@@ -101,8 +101,6 @@ C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\c
 C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.csproj.CopyComplete
 C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.exe
 C:\Users\Owner\Desktop\company-management-project\company_management\obj\Debug\company_management.pdb
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Database.mdf
-D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\Database_log.ldf
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.exe.config
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.exe
 D:\Study\LTWD\Project\company-management-project\company_management\bin\Debug\company_management.pdb

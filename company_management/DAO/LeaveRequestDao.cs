@@ -5,6 +5,7 @@ using System.Linq;
 using company_management.DTO;
 using company_management.Utilities;
 using company_management.View;
+// ReSharper disable All
 
 namespace company_management.DAO
 {

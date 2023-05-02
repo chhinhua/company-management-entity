@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace company_management.DTO
+﻿namespace company_management.DTO
 {
     public class Team
     {

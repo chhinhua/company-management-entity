@@ -1,33 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
-using Encoder = System.Drawing.Imaging.Encoder;
+// ReSharper disable All
 
 namespace company_management.DAO
 {
     public class ImageDao
     {
-        private readonly DBConnection _dBConnection;
         private readonly string _connString = Properties.Settings.Default.connStr;
-
-        public ImageDao()
-        {
-            _dBConnection = new DBConnection();
-        }
 
         public void ChooseImageToPictureBox(Guna2CirclePictureBox pictureBox)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png,*.gif)|*.BMP;*.JPG;*.JPEG;*.PNG;*.GIF";
+            openFileDialog.Filter = @"Image Files (*.bmp;*.jpg;*.jpeg,*.png,*.gif)|*.BMP;*.JPG;*.JPEG;*.PNG;*.GIF";
 
             // Cho phép chọn nhiều tệp cùng lúc
             openFileDialog.Multiselect = false;
@@ -102,23 +90,6 @@ namespace company_management.DAO
                         MessageBox.Show("Lưu ảnh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
-        }
-
-        public Image ByteArrayToImage(byte[] byteArray)
-        {
-            try
-            {
-                using (MemoryStream ms = new MemoryStream(byteArray))
-                {
-                    Image image = Image.FromStream(ms);
-                    return image;
-                }
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-                return null;
             }
         }
 
