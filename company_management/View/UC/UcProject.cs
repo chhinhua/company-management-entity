@@ -35,8 +35,7 @@ namespace company_management.View.UC
 
         private List<Project> GetData()
         {
-            var projectBus = _projectBus.Value;
-            return projectBus.GetListProjectByPosition();
+            return _projectBus.Value.GetListProjectByPosition();
         }
 
         private void LoadData(List<Project> projects)
@@ -112,7 +111,6 @@ namespace company_management.View.UC
 
         private void btnViewOrUpdate_Click_1(object sender, EventArgs e)
         {
-
             if (_selectedId != 0)
             {
                 FormViewOrUpdateProject formProject = new FormViewOrUpdateProject();

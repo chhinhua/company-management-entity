@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using company_management.BUS;
 using company_management.Utilities;
 using company_management.View;
 using company_management.View.UC;
+
 // ReSharper disable All
 
 namespace company_management.DAO
@@ -17,15 +19,17 @@ namespace company_management.DAO
         private readonly Lazy<string> _connString;
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserDao> _userDao;
+        private readonly Lazy<UserBus> _userBus;
         private bool _disposed = false;
         private readonly Utils _utils;
 
         public TaskDao()
         {
             _dBConnection = new DBConnection();
-            _connString = new Lazy<string>(() => Properties.Settings.Default.connStr);         
+            _connString = new Lazy<string>(() => Properties.Settings.Default.connStr);
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
+            _userBus = new Lazy<UserBus>(() => new UserBus());
             _utils = new Utils();
         }
 
@@ -36,46 +40,45 @@ namespace company_management.DAO
             var teamDao = _teamDao.Value;
             var userDao = _userDao.Value;
 
-            if (UserSession.LoggedInUser != null)
+            if (_userBus.Value.IsManager() || _userBus.Value.IsHumanResources())
             {
-                if (UserSession.LoggedInUser.IdPosition == 1) // IdPosition = 1 (manager)
-                {
-                    teams = new List<Team>();
-                    teams.AddRange(teamDao.GetAllTeam());
+                teams = new List<Team>();
+                teams.AddRange(teamDao.GetAllTeam());
 
-                    comboBox.Items.AddRange(teams.ToArray());
-                    comboBox.DisplayMember = "name";
-                }
-                else if (UserSession.LoggedInUser.IdPosition == 2) // IdPosition = 2 (leader)
-                {
-                    Team team = teamDao.GetTeamByLeader(UserSession.LoggedInUser.Id);
-                    users = new List<User>();
-                    users.AddRange(userDao.GetEmployeesByTeam(team.Id));
+                comboBox.Items.AddRange(teams.ToArray());
+                comboBox.DisplayMember = "name";
+            }
+            else if (_userBus.Value.IsLeader())
+            {
+                Team team = teamDao.GetTeamByLeader(UserSession.LoggedInUser.Id);
+                users = new List<User>();
+                users.AddRange(userDao.GetEmployeesByTeam(team.Id));
 
-                    comboBox.Items.AddRange(users.ToArray());
-                    comboBox.DisplayMember = "fullName";
-                }
-                else // (employee)
-                { 
-                    // Không có quyền truy cập
-                    comboBox.Enabled = false;
-                    return;
-                }
-
-                comboBox.ValueMember = "id";
-                if (UcTask.ViewTask != null)
-                {
-                    comboBox.SelectedValue = UcTask.ViewTask.IdAssignee;
-                }              
+                comboBox.Items.AddRange(users.ToArray());
+                comboBox.DisplayMember = "fullName";
+            }
+            else
+            {
+                User mySeft = userDao.GetUserById(UserSession.LoggedInUser.Id);
+                comboBox.Items.Add(mySeft);
+                comboBox.DisplayMember = "fullName";
+                comboBox.Enabled = false;
             }
 
+            comboBox.ValueMember = "id";
+            if (UcTask.ViewTask != null)
+            {
+                comboBox.SelectedValue = UcTask.ViewTask.IdAssignee;
+            }
         }
 
         public void AddTask(Task task)
         {
-            string query = string.Format("INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus, idProject)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
-                   task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress, task.IdTeam, task.Bonus, task.IdProject);
+            string query = string.Format(
+                "INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus, idProject)" +
+                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
+                task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress,
+                task.IdTeam, task.Bonus, task.IdProject);
             if (_dBConnection.ExecuteQuery(query))
             {
                 _utils.Alert("Added task successful", FormAlert.enmType.Success);
@@ -83,7 +86,6 @@ namespace company_management.DAO
             else
             {
                 _utils.Alert("Add task failed", FormAlert.enmType.Error);
-
             }
         }
 
@@ -91,7 +93,8 @@ namespace company_management.DAO
         {
             string query = string.Format("UPDATE task SET " +
                                          "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}', idProject = '{7}' WHERE id = '{8}'",
-                   updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline, updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.IdProject, updateTask.Id);
+                updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline,
+                updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.IdProject, updateTask.Id);
             if (_dBConnection.ExecuteQuery(query))
             {
                 _utils.Alert("Updated task successful", FormAlert.enmType.Success);
@@ -112,10 +115,9 @@ namespace company_management.DAO
             else
             {
                 _utils.Alert("Delete task failed", FormAlert.enmType.Error);
-
             }
         }
-        
+
         public void DeleteTasksByProject(int projectId)
         {
             string query = string.Format("DELETE FROM task WHERE idProject = {0}", projectId);
@@ -154,7 +156,7 @@ namespace company_management.DAO
             return taskStatus;
         }
 
-        private List<Task> GetAllTask()
+        public List<Task> GetAllTask()
         {
             string query = string.Format("SELECT * FROM task");
             return _dBConnection.GetListObjectsByQuery<Task>(query);
@@ -169,16 +171,21 @@ namespace company_management.DAO
         {
             return GetAllTask().Where(t => t.IdAssignee == idAssignee).ToList();
         }
+        
+        public List<Task> GetTasksByTeam(int idTeam)
+        {
+            return GetAllTask().Where(t => t.IdTeam == idTeam).ToList();
+        }
 
         public List<Task> SearchTasks(string txtSearch)
         {
             string query = string.Format("SELECT t.* FROM task t " +
-                "INNER JOIN teams tm ON t.idTeam = tm.id " +
-                "INNER JOIN users u ON(t.idCreator = u.id OR t.idAssignee = u.id) " +
-                "WHERE t.taskName LIKE '%{0}%' " +
-                "OR t.description LIKE '%{0}%' " +
-                "OR tm.name LIKE '%{0}%' " +
-                "OR u.username LIKE '%{0}%' ", txtSearch);
+                                         "INNER JOIN teams tm ON t.idTeam = tm.id " +
+                                         "INNER JOIN users u ON(t.idCreator = u.id OR t.idAssignee = u.id) " +
+                                         "WHERE t.taskName LIKE '%{0}%' " +
+                                         "OR t.description LIKE '%{0}%' " +
+                                         "OR tm.name LIKE '%{0}%' " +
+                                         "OR u.username LIKE '%{0}%' ", txtSearch);
             return _dBConnection.GetListObjectsByQuery<Task>(query);
         }
 

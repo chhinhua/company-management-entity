@@ -106,6 +106,13 @@ namespace company_management.DAO
                  "WHERE ut.idUser = '{0}'", idUser);
             return _dBConnection.GetListObjectsByQuery<Team>(query);
         }
+        
+        public Team GetTeamByUser(int idUser)
+        {
+            string query = "SELECT DISTINCT t.* FROM teams t " + "JOIN user_team ut ON t.id = ut.idTeam " +
+                           $"WHERE ut.idUser = '{idUser}'";
+            return _dBConnection.GetObjectByQuery<Team>(query);
+        }
 
         public int CountMembers(int idTeam)
         {

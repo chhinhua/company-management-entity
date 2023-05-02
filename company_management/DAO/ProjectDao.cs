@@ -67,7 +67,6 @@ namespace company_management.DAO
             else
             {
                 _utils.Alert("Deleted project failed", FormAlert.enmType.Error);
-
             }
         }
         
@@ -102,10 +101,22 @@ namespace company_management.DAO
         {
             return GetAllProject().Where(t => t.IdAssignee == idAssignee).ToList();
         }
+        
+        public List<Project> GetMyProjects()
+        {
+            var team = _teamDao.Value.GetTeamByUser(UserSession.LoggedInUser.Id);
+            return GetAllProject().Where(t => t.IdTeam == team.Id).ToList();
+        }
 
         public Project GetProjectById(int id)
         {
             string query = $"SELECT * FROM project WHERE id = {id}";
+            return _dBConnection.GetObjectByQuery<Project>(query);
+        }
+        
+        public Project GetProjectByTeam(int idTeam)
+        {
+            string query = $"SELECT DISTINCT FROM project WHERE idTeam = {idTeam}";
             return _dBConnection.GetObjectByQuery<Project>(query);
         }
     }

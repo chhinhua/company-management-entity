@@ -16,6 +16,7 @@ namespace company_management.View.UC
         private readonly Lazy<TaskDao> _taskDao;
         private readonly Lazy<List<Task>> _listTask;
         private readonly Lazy<Utils> _utils;
+        private int _selectedId;
 
         public UcTask()
         {
@@ -46,9 +47,9 @@ namespace company_management.View.UC
         
         private void CheckAddButtonStatus()
         {
-            var util = _utils.Value;
-            util.CheckEmployeeNotVisibleStatus(buttonAdd);
-            util.CheckEmployeeNotVisibleStatus(buttonRemove);
+            _utils.Value.CheckEmployeeNotVisibleStatus(buttonRemove);
+            _utils.Value.CheckHrNotVisibleStatus(buttonAdd);
+            _utils.Value.CheckHrNotVisibleStatus(buttonRemove);
         }
         
         private void LoadProgressChart(List<Task> tasks)
@@ -71,16 +72,12 @@ namespace company_management.View.UC
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            if (ViewTask.Id != 0)
+            if (_selectedId != 0)
             {
                 DialogResult result = MessageBox.Show("Delete task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (result == DialogResult.Yes)
                 {
-                    var taskDao = _taskDao.Value;
-                    var util = _utils.Value;
-                    taskDao.DeleteTask(ViewTask.Id);
-                    util.Alert("Delete successful", FormAlert.enmType.Success);
+                    _taskDao.Value.DeleteTask(ViewTask.Id);
                     LoadData(GetData());
                 }
             }
@@ -89,36 +86,34 @@ namespace company_management.View.UC
 
         private void btnViewOrUpdate_Click(object sender, EventArgs e)
         {
-            if (ViewTask != null)
+            if (_selectedId != 0)
             {
                 FormViewOrUpdateTask viewOrUpdate = new FormViewOrUpdateTask();
+                viewOrUpdate.SetTaskId(_selectedId);
                 viewOrUpdate.Show();
             }
-            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else MessageBox.Show("Bọn chưa chọn task nào!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void button_Edit_Click(object sender, EventArgs e)
         {
-            if (ViewTask.Id != 0)
+            if (_selectedId != 0)
             {
                 FormViewOrUpdateTask viewOrUpdate = new FormViewOrUpdateTask();
+                viewOrUpdate.SetTaskId(_selectedId);
                 viewOrUpdate.Show();
             }
-            else MessageBox.Show("Select a task to view", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else MessageBox.Show("Bọn chưa chọn task nào!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void dataGridView_Task_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView_Task.CurrentRow.Selected = true;
-
             if (e.RowIndex != -1)
             {
                 object value = dataGridView_Task.Rows[e.RowIndex].Cells[0].Value;
                 if (value != DBNull.Value)
                 {
-                    var taskDao = _taskDao.Value;
-                    int id = Convert.ToInt32(value);
-                    ViewTask = taskDao.GetTaskById(id);
+                    _selectedId = Convert.ToInt32(value);
                 }
             }
         }

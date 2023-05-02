@@ -17,37 +17,31 @@ namespace company_management.View
         private readonly Lazy<ImageDao> _imageDao;
         private readonly Lazy<TaskBus> _taskBus;
         private readonly Utils _utils;
+        private int _taskId;
 
         public FormViewOrUpdateTask()
         {
             InitializeComponent();
-            var utils = new Utils();
             _taskDao = new Lazy<TaskDao>(() => new TaskDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _imageDao = new Lazy<ImageDao>(() => new ImageDao());
             _taskBus = new Lazy<TaskBus>(() => new TaskBus());
             _utils =  new Utils();
-            utils.SetFormShadow(this);
         }
 
         private void LoadData()
         {
-            var taskBus = _taskBus.Value;
-            taskBus.GetDataToCombobox(combbox_Assignee, combbox_Project);
+            _taskBus.Value.GetDataToCombobox(combbox_Assignee, combbox_Project);
             BindingTaskToFields();
             CheckControlStatusForEmployee();
         }
 
         private void BindingTaskToFields()
         {
-            Task task = UcTask.ViewTask;
-            
-            var userDao = _userDao.Value;
-            User assigneeUser = userDao.GetUserById(task.IdAssignee);
-            
-            var teamDao = _teamDao.Value;
-            Team assigneeTeam = teamDao.GetTeamById(task.IdTeam);
+            Task task = _taskDao.Value.GetTaskById(_taskId);
+            User assigneeUser = _userDao.Value.GetUserById(task.IdAssignee);
+            Team assigneeTeam = _teamDao.Value.GetTeamById(task.IdTeam);
 
             var imageDao = _imageDao.Value;
             imageDao.ShowImageInPictureBox(assigneeUser.Avatar, picturebox_userAvatar);
@@ -71,7 +65,6 @@ namespace company_management.View
         private void CheckControlStatusForEmployee()
         {
             _utils.CheckEmployeeIsReadOnlyStatus(txtbox_Taskname);
-            _utils.CheckEmployeeIsReadOnlyStatus(txtbox_Desciption);
             _utils.CheckEmployeeIsReadOnlyStatus(textBox_Bonus);
             _utils.CheckEmployeeNotEnableStatus(combbox_Assignee);
             _utils.CheckEmployeeNotEnableStatus(combbox_Project);
@@ -110,6 +103,8 @@ namespace company_management.View
             }
             return true;
         }
+        
+        public void SetTaskId(int id) => _taskId = id;
 
         private void combobox_progress_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -124,13 +119,10 @@ namespace company_management.View
             {
                 int progress = int.Parse(combobox_progress.SelectedItem.ToString());
                 
-                var taskBus = _taskBus.Value;
-                Task task = taskBus.GetTaskFromTextBox(txtbox_Taskname.Text, txtbox_Desciption.Text,
-                                              dateTime_deadline, combbox_Assignee, progress, textBox_Bonus.Text, combbox_Project);
-                task.Id = UcTask.ViewTask.Id;
-                
-                var taskDao = _taskDao.Value;
-                taskDao.UpdateTask(task);
+                Task task = _taskBus.Value.GetTaskFromFieldsForUpdate(_taskId,txtbox_Taskname, txtbox_Desciption,
+                                     dateTime_deadline, combbox_Assignee, progress, textBox_Bonus.Text, combbox_Project);
+
+                _taskDao.Value.UpdateTask(task);
             }
         }
 

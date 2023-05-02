@@ -119,6 +119,28 @@ namespace company_management.View
             UcHome uCHome = new UcHome();
             AddUc(uCHome);
         }
-        
+
+        private void combobox_user_action_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = combobox_user_action.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 0:
+                   
+                    break;
+                case 1:
+                   
+                    break;
+                case 2:
+                   
+                    break;
+                case 3:
+                    this.Hide();
+                    FormLogin login = new FormLogin();
+                    login.Show();
+                    UserSession.LogoutUser();
+                    break;
+            }
+        }
     }
 }

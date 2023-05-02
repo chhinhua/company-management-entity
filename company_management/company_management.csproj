@@ -418,6 +418,12 @@
     <Compile Include="View\FormAddTask.Designer.cs">
       <DependentUpon>FormAddTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormAddTaskFromProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddTaskFromProject.Designer.cs">
+      <DependentUpon>FormAddTaskFromProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormAlert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddTask.resx">
       <DependentUpon>FormAddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAddTaskFromProject.resx">
+      <DependentUpon>FormAddTaskFromProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAlert.resx">
       <DependentUpon>FormAlert.cs</DependentUpon>
