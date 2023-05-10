@@ -18,7 +18,7 @@ namespace company_management.View
         {
             if (!string.IsNullOrEmpty(tbNewpass.Text) && !string.IsNullOrEmpty(tbConfirmpass.Text))
             {
-                if (!tbNewpass.Text.Equals(tbConfirmpass.Text))
+                if (tbNewpass.Text.Equals(tbConfirmpass.Text))
                 {
                     return true;
                 }
