@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2188c59af886456cb7a7302e02645122" Name="Diagram1">
+        <EntityTypeShape EntityType="company_management_Model.checkin_checkout" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.leaveRequest" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.position" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.project" Width="1.5" PointX="7.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.role" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.salary" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.task" Width="1.5" PointX="12.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.team" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.user_salary" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.user_team" Width="1.5" PointX="10.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="company_management_Model.user" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="company_management_Model.FK_UserCiCo" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_leaveRequest_Approver" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_leaveRequest_users" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_users_position" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_project_assignee" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_project_creator" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_project_teams" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_task_project" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_users_role" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_salary_users" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_tasks_assignee" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_tasks_creator" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_tasks_teams" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_teams_leader" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_user_team_member" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_user_salary_users" ManuallyRouted="false" />
+        <AssociationConnector Association="company_management_Model.FK_user_team_users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

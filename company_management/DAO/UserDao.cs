@@ -3,8 +3,10 @@ using System.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using company_management.Utilities;
 using company_management.View;
+using company_management.Entity;
 
 // ReSharper disable All
 
@@ -12,20 +14,24 @@ namespace company_management.DAO
 {
     public sealed class UserDao : IDisposable
     {
+        private readonly company_management_Entities _dbContext;
         private readonly DBConnection _dBConnection;
+        private readonly IMapper _mapper;
         private readonly Utils _utils;
         private bool _disposed;
 
         public UserDao()
         {
+            _dbContext = new company_management_Entities();
             _dBConnection = new DBConnection();
+            _mapper = MapperContainer.GetMapper();
             _utils = new Utils();
         }
 
         public List<User> GetAllUser()
         {
-            string query = "SELECT * FROM users";
-            return _dBConnection.GetListObjectsByQuery<User>(query);
+            var userList = _dbContext.users.ToList();
+            return _mapper.Map<List<user>, List<User>>(userList);
         }
 
         public void LoadData(DataGridView dataGridView, List<User> users)
