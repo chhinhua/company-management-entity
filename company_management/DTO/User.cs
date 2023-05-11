@@ -26,6 +26,7 @@ namespace company_management.DTO
             PhoneNumber = phoneNumber;
             Address = address;
             IdRole = idRole;
+            IdPosition = 3;
         }
     }
 }

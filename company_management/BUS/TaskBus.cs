@@ -77,12 +77,12 @@ namespace company_management.BUS
             }
             else if (userBus.IsLeader())
             {
-                var team = _teamDao.Value.GetTeamByLeader(UserSession.LoggedInUser.Id);
+                var team = _teamDao.Value.GetTeamByLeader(id);
                 tasks.AddRange(taskDao.GetTasksByTeam(team.Id));
             }
             else
             {
-                tasks = taskDao.GetTasksAssignedByCurrentUser(UserSession.LoggedInUser.Id);
+                tasks = taskDao.GetTasksAssignedByCurrentUser(id);
             }
 
             return tasks;
@@ -172,12 +172,6 @@ namespace company_management.BUS
             return task;
         }
 
-        public List<Task> SearchTasks(string txtSearch)
-        {
-            var taskDao = _taskDao.Value;
-            return taskDao.SearchTasks(txtSearch);
-        }
-
         public List<Task> GetTodoTasks() => GetListTaskByPosition().Where(t => t.Progress == 0).ToList();
 
         public List<Task> GetInprogressTasks() =>
@@ -186,7 +180,7 @@ namespace company_management.BUS
         public List<Task> GetDoneTasks() => GetListTaskByPosition().Where(t => t.Progress == 100).ToList();
 
         public List<Task> GetMyTasks() =>
-            GetListTaskByPosition().Where(t => t.IdAssignee == UserSession.LoggedInUser.Id).ToList();
+            GetListTaskByPosition().Where(t => t.IdAssignee == UserSession.LoggedInUser.Id && t.IdCreator != UserSession.LoggedInUser.Id).ToList();
 
         public List<Task> GetMyCreatedTasks() =>
             GetListTaskByPosition().Where(t => t.IdCreator == UserSession.LoggedInUser.Id).ToList();

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using AutoMapper;
 using company_management.DTO;
+using company_management.Entity;
 using company_management.Utilities;
 using company_management.View;
 // ReSharper disable All
@@ -11,11 +13,15 @@ namespace company_management.DAO
 {
     public sealed class LeaveRequestDao : IDisposable
     {
+        private readonly company_management_Entities _dbContext;
+        private readonly IMapper _mapper;
         private DBConnection _dBConnection;
         private readonly Utils _utils;
 
         public LeaveRequestDao()
         {
+            _dbContext = new company_management_Entities();
+            _mapper = MapperContainer.GetMapper();
             _dBConnection = new DBConnection();
             _utils = new Utils();
         }

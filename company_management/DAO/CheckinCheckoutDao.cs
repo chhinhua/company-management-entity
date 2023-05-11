@@ -1,53 +1,108 @@
 ﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using company_management.Entity;
+using company_management.Utilities;
+using company_management.View;
 using company_management.View.UC;
+
+// ReSharper disable All
 
 namespace company_management.DAO
 {
     public sealed class CheckinCheckoutDao : IDisposable
     {
-        private bool _disposed;
+        private readonly company_management_Entities _dbContext;
+        private readonly IMapper _mapper;
         private readonly DBConnection _dBConnection;
+        private readonly Utils _utils;
+        private bool _disposed;
 
         public CheckinCheckoutDao()
         {
+            _dbContext = new company_management_Entities();
+            _mapper = MapperContainer.GetMapper();
             _dBConnection = new DBConnection();
+            _utils = new Utils();
         }
 
         public void AddCheckinCo(CheckinCheckout cico)
         {
-            string query = string.Format("INSERT INTO checkin_checkout(idUser, checkinTime, date) VALUES ('{0}', '{1}', '{2}'); SELECT SCOPE_IDENTITY();",
-                                      cico.IdUser, cico.CheckinTime, cico.Date);
-            int id = Convert.ToInt32(_dBConnection.ExecuteScalar(query)); // lấy giá trị ID từ cơ sở dữ liệu
-            UcTimeKeeping.LastCheckinCheckoutId = id;
+            try
+            {
+                var newCico = _mapper.Map<checkin_checkout>(cico);
+                _dbContext.checkin_checkout.Add(newCico);
+                _dbContext.SaveChanges();
+                _utils.Alert("Checkin thành công", FormAlert.enmType.Success);
+                UcTimeKeeping.LastCheckinCheckoutId = newCico.id;
+            }
+            catch (Exception)
+            {
+                _utils.Alert("Đang gặp sự cố!", FormAlert.enmType.Error);
+            }
         }
 
         public void UpdateCheckinCo(CheckinCheckout cico)
         {
-            string sqlStr = string.Format("UPDATE checkin_checkout SET checkoutTime = '{0}', totalHours = '{1}' WHERE id = '{2}'",
-                   cico.CheckoutTime, cico.CalculateTotalHours(), cico.Id);
-            _dBConnection.ExecuteQuery(sqlStr);
+            var cicoToUpdate = _dbContext.checkin_checkout.Find(cico.Id);
+            if (cicoToUpdate != null)
+            {
+                cicoToUpdate.checkoutTime = cico.CheckoutTime;
+                cicoToUpdate.totalHours = cico.CalculateTotalHours();
+
+                try
+                {
+                    _dbContext.SaveChangesAsync();
+                    _utils.Alert("Checkout thành công", FormAlert.enmType.Success);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    _utils.Alert("Không thành công!", FormAlert.enmType.Error);
+                }
+            }
+            else
+            {
+                _utils.Alert("Không tìm thấy!", FormAlert.enmType.Warning);
+            }
         }
 
         public void DeleteCheckinCo(int id)
         {
-            string sqlStr = $"DELETE FROM task WHERE id = '{id}'";
-            _dBConnection.ExecuteQuery(sqlStr);
+            try
+            {
+                var cicoToDelete = _dbContext.checkin_checkout.Find(id);
+                if (cicoToDelete != null)
+                {
+                    _dbContext.checkin_checkout.Remove(cicoToDelete);
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Xóa thành công", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    _utils.Alert("Không tìm thấy!", FormAlert.enmType.Warning);
+                }
+            }
+            catch (Exception)
+            {
+                _utils.Alert("Xóa không thành công!", FormAlert.enmType.Error);
+            }
         }
 
         public CheckinCheckout GetCheckinCheckoutById(int id)
         {
-            string query = $"SELECT * FROM checkin_checkout WHERE id = {id}";
-            return _dBConnection.GetObjectByQuery<CheckinCheckout>(query);
+            var cico = _dbContext.checkin_checkout.Find(id);
+            return _mapper.Map<CheckinCheckout>(cico);
         }
 
         public List<CheckinCheckout> GetAllCheckinCheckouts()
         {
-            string query = "SELECT * FROM checkin_checkout";
-            return _dBConnection.GetListObjectsByQuery<CheckinCheckout>(query);
+            var cicoList = _dbContext.checkin_checkout.ToList();
+            return _mapper.Map<List<CheckinCheckout>>(cicoList);
         }
 
         public List<CheckinCheckout> GetMyCheckinCoCheckouts(int idUser)
@@ -59,7 +114,7 @@ namespace company_management.DAO
         public List<CheckinCheckout> GetIncompleteCheckinCheckouts(int idUser)
         {
             DateTime defaultDateTime = new DateTime();
-            return GetAllCheckinCheckouts()     
+            return GetAllCheckinCheckouts()
                 .Where(c => c.IdUser == idUser && c.CheckoutTime == defaultDateTime)
                 .ToList();
         }
@@ -80,86 +135,35 @@ namespace company_management.DAO
                 .Where(c => c.Date.Date == selectedDate.Date)
                 .ToList();
         }
-        
-        public CheckinCheckout GetCheckinById(int id)
-        {
-            string query = string.Format("SELECT * FROM checkin_checkout WHERE id = {0}", id);
-            return _dBConnection.GetObjectByQuery<CheckinCheckout>(query);
-        }
 
         // tổng số giờ làm việc của mỗi nhân viên trong một ngày
-        public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate)
         {
-            string query = "SELECT SUM(totalHours) AS totalHours " +
-                           "FROM checkin_checkout WHERE idUser = @idUser " +
-                           "AND date BETWEEN @fromDate AND @toDate";
-            using (var command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idUser", idUser);
-                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-                command.Parameters.AddWithValue("@toDate", toDate.Date);
+            var totalHours = _dbContext.checkin_checkout
+                .Where(cc => cc.idUser == idUser && cc.date >= fromDate.Date && cc.date <= toDate.Date)
+                .Sum(cc => cc.totalHours) ?? 0;
 
-                object result = command.ExecuteScalar();
-                if (result == DBNull.Value)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return Convert.ToDouble(result);
-                }
-            }
+            return totalHours;
         }
 
         // số giờ tăng ca của mỗi nhân viên trong một ngày
-        public double GetOvertimeHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        public double GetOvertimeHours(int idUser, DateTime fromDate, DateTime toDate)
         {
-            string query = "SELECT SUM(CASE WHEN totalHours > 8 THEN totalHours - 8 ELSE 0 END) AS overtimeHours FROM checkin_checkout WHERE idUser = @idUser AND date BETWEEN @fromDate AND @toDate";
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idUser", idUser);
-                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-                command.Parameters.AddWithValue("@toDate", toDate.Date);
+            var overtimeHours = _dbContext.checkin_checkout
+                .Where(cc => cc.idUser == idUser && cc.date >= fromDate.Date && cc.date <= toDate.Date)
+                .Sum(cc => cc.totalHours > 8 ? cc.totalHours - 8 : 0) ?? 0;
 
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read() && !reader.IsDBNull(0))
-                    {
-                        return Convert.ToDouble(reader[0]);
-                    }
-                    else
-                    {
-                        return 0;
-                    }
-                }
-            }
+            return overtimeHours;
         }
 
         //  số giờ nghỉ phép của mỗi nhân viên trong một ngày
-        public double GetLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
+        public double GetLeaveHours(int idUser, DateTime fromDate, DateTime toDate)
         {
-            string query = "SELECT SUM(CASE WHEN totalHours < 8 THEN (8 - totalHours) ELSE 0 END) " +
-                           "AS leaveHours " +
-                           "FROM checkin_checkout WHERE idUser = @idUser " +
-                           "AND date BETWEEN @fromDate AND @toDate";
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idUser", idUser);
-                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-                command.Parameters.AddWithValue("@toDate", toDate.Date);
+            var leaveHours = _dbContext.checkin_checkout
+                .Where(cc => cc.idUser == idUser && cc.date >= fromDate.Date && cc.date <= toDate.Date)
+                .Sum(cc => cc.totalHours < 8 ? 8 - cc.totalHours : 0) ?? 0;
 
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read() && !reader.IsDBNull(0))
-                    {
-                        return Convert.ToDouble(reader[0]);
-                    }
-                    else
-                    {
-                        return 0;
-                    }
-                }
-            }
+            return leaveHours;
         }
 
         public void Dispose()

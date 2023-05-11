@@ -133,11 +133,8 @@ namespace company_management.View
         
         private void button_save_Click(object sender, EventArgs e)
         {
-            if (CheckDataInput())
-            {
-                var projectDao = _projectDao.Value;
-                projectDao.UpdateProject(GetProjectForUpdate());
-            }
+            if (CheckDataInput()) 
+                _projectDao.Value.UpdateProject(GetProjectForUpdate());
         }
         
         private bool CheckDataInput()

@@ -84,7 +84,7 @@ namespace company_management.BUS
         public void Checkout(DateTime checkoutTime)
         {
             var cicoDao = _cicoDao.Value;
-            CheckinCheckout checkinCheckout = cicoDao.GetCheckinById(UcTimeKeeping.LastCheckinCheckoutId);
+            CheckinCheckout checkinCheckout = cicoDao.GetCheckinCheckoutById(UcTimeKeeping.LastCheckinCheckoutId);
             checkinCheckout.CheckoutTime = checkoutTime;
             cicoDao.UpdateCheckinCo(checkinCheckout);
         }

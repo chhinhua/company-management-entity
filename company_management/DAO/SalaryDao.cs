@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using AutoMapper;
 using company_management.DTO;
+using company_management.Entity;
 using company_management.Utilities;
 using company_management.View;
 
@@ -10,6 +12,8 @@ namespace company_management.DAO
 {
     public class SalaryDao
     {
+        private readonly company_management_Entities _dbContext;
+        private readonly IMapper _mapper;
         private readonly DBConnection _dBConnection;
         private readonly Lazy<CheckinCheckoutDao> _cicoDao;
         private readonly Lazy<TaskDao> _taskDao;
@@ -18,6 +22,8 @@ namespace company_management.DAO
 
         public SalaryDao()
         {
+            _dbContext = new company_management_Entities();
+            _mapper = MapperContainer.GetMapper();
             _dBConnection = new DBConnection();
             _cicoDao = new Lazy<CheckinCheckoutDao>(() => new CheckinCheckoutDao());
             _taskDao = new Lazy<TaskDao>(() => new TaskDao());
@@ -92,9 +98,9 @@ namespace company_management.DAO
 
                 using (var cicoDao = _cicoDao.Value)
                 {
-                    totalHours = cicoDao.GetTotalHours(idUser, fromDate, toDate, connection);
-                    overtimeHours = cicoDao.GetOvertimeHours(idUser, fromDate, toDate, connection);
-                    leaveHours = cicoDao.GetLeaveHours(idUser, fromDate, toDate, connection);
+                    totalHours = cicoDao.GetTotalHours(idUser, fromDate, toDate);
+                    overtimeHours = cicoDao.GetOvertimeHours(idUser, fromDate, toDate);
+                    leaveHours = cicoDao.GetLeaveHours(idUser, fromDate, toDate);
                 }
 
                 // Tính toán lương

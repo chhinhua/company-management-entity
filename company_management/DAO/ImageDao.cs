@@ -3,6 +3,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using AutoMapper;
+using company_management.Entity;
+using company_management.Utilities;
 using Guna.UI2.WinForms;
 // ReSharper disable All
 
@@ -10,8 +13,16 @@ namespace company_management.DAO
 {
     public class ImageDao
     {
+        private readonly company_management_Entities _dbContext;
+        private readonly IMapper _mapper;
         private readonly string _connString = Properties.Settings.Default.connStr;
 
+        public ImageDao()
+        {
+            _dbContext = new company_management_Entities();
+            _mapper = MapperContainer.GetMapper();
+        }
+        
         public void ChooseImageToPictureBox(Guna2CirclePictureBox pictureBox)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

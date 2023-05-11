@@ -54,8 +54,7 @@ namespace company_management.BUS
 
         public List<User> GetListUserInTeam(int leaderId)
         {
-            var teamDao = _teamDao.Value;
-            List<User> listUser = teamDao.GetUserInTeam(leaderId);
+            var listUser = _teamDao.Value.GetUserInTeam(leaderId);
             return listUser;
         }
 

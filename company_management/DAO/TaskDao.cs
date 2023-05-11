@@ -1,10 +1,11 @@
 ﻿using company_management.DTO;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using AutoMapper;
 using company_management.BUS;
+using company_management.Entity;
 using company_management.Utilities;
 using company_management.View;
 using company_management.View.UC;
@@ -15,18 +16,18 @@ namespace company_management.DAO
 {
     public sealed class TaskDao : IDisposable
     {
-        private readonly DBConnection _dBConnection;
-        private readonly Lazy<string> _connString;
+        private readonly company_management_Entities _dbContext;
+        private readonly IMapper _mapper;
         private readonly Lazy<TeamDao> _teamDao;
         private readonly Lazy<UserDao> _userDao;
         private readonly Lazy<UserBus> _userBus;
-        private bool _disposed = false;
+        private bool _disposed;
         private readonly Utils _utils;
 
         public TaskDao()
         {
-            _dBConnection = new DBConnection();
-            _connString = new Lazy<string>(() => Properties.Settings.Default.connStr);
+            _dbContext = new company_management_Entities();
+            _mapper = MapperContainer.GetMapper();
             _teamDao = new Lazy<TeamDao>(() => new TeamDao());
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _userBus = new Lazy<UserBus>(() => new UserBus());
@@ -74,67 +75,97 @@ namespace company_management.DAO
 
         public void AddTask(Task task)
         {
-            string query = string.Format(
-                "INSERT INTO task(idCreator, idAssignee, taskName, description, deadline, progress, idTeam, bonus, idProject)" +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
-                task.IdCreator, task.IdAssignee, task.TaskName, task.Description, task.Deadline, task.Progress,
-                task.IdTeam, task.Bonus, task.IdProject);
-            if (_dBConnection.ExecuteQuery(query))
+            try
             {
-                _utils.Alert("Added task successful", FormAlert.enmType.Success);
+                var newTask = _mapper.Map<task>(task);
+                _dbContext.tasks.Add(newTask);
+                _dbContext.SaveChanges();
+                _utils.Alert("Thêm task thành công", FormAlert.enmType.Success);
             }
-            else
+            catch (Exception ex)
             {
-                _utils.Alert("Add task failed", FormAlert.enmType.Error);
+                MessageBox.Show(ex.ToString());
+                _utils.Alert("Thêm không thành công!", FormAlert.enmType.Error);
             }
         }
 
         public void UpdateTask(Task updateTask)
         {
-            string query = string.Format("UPDATE task SET " +
-                                         "idAssignee = '{0}', taskName = '{1}', description = '{2}', deadline = '{3}', progress = '{4}', idTeam = '{5}', bonus = '{6}', idProject = '{7}' WHERE id = '{8}'",
-                updateTask.IdAssignee, updateTask.TaskName, updateTask.Description, updateTask.Deadline,
-                updateTask.Progress, updateTask.IdTeam, updateTask.Bonus, updateTask.IdProject, updateTask.Id);
-            if (_dBConnection.ExecuteQuery(query))
+            try
             {
-                _utils.Alert("Updated task successful", FormAlert.enmType.Success);
+                var taskToUpdate = _dbContext.tasks.FirstOrDefault(t => t.id == updateTask.Id);
+                if (taskToUpdate != null)
+                {
+                    taskToUpdate.idAssignee = updateTask.IdAssignee;
+                    taskToUpdate.taskName = updateTask.TaskName;
+                    taskToUpdate.description = updateTask.Description;
+                    taskToUpdate.deadline = updateTask.Deadline;
+                    taskToUpdate.progress = updateTask.Progress;
+                    taskToUpdate.idTeam = updateTask.IdTeam;
+                    taskToUpdate.bonus = updateTask.Bonus;
+                    taskToUpdate.idProject = updateTask.IdProject;
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Cập nhật thành công", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    _utils.Alert("Không tìm thấy công việc!", FormAlert.enmType.Warning);
+                }
             }
-            else
+            catch (Exception)
             {
-                _utils.Alert("Update task failed", FormAlert.enmType.Error);
+                _utils.Alert("Cập nhật thất bại!", FormAlert.enmType.Error);
             }
         }
 
         public void DeleteTask(int id)
         {
-            string query = string.Format("DELETE FROM task WHERE id = {0}", id);
-            if (_dBConnection.ExecuteQuery(query))
+            try
             {
-                _utils.Alert("Deleted task successful", FormAlert.enmType.Success);
+                var taskToDelete = _dbContext.tasks.FirstOrDefault(t => t.id == id);
+                if (taskToDelete != null)
+                {
+                    _dbContext.tasks.Remove(taskToDelete);
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Xóa thành công", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    _utils.Alert("Không tìm thấy công việc!", FormAlert.enmType.Warning);
+                }
             }
-            else
+            catch (Exception)
             {
-                _utils.Alert("Delete task failed", FormAlert.enmType.Error);
+                _utils.Alert("Xóa thất bại!", FormAlert.enmType.Error);
             }
         }
 
         public void DeleteTasksByProject(int projectId)
         {
-            string query = string.Format("DELETE FROM task WHERE idProject = {0}", projectId);
-            if (_dBConnection.ExecuteQuery(query))
+            try
             {
-                _utils.Alert("Deleted task successful", FormAlert.enmType.Success);
+                var tasksToDelete = _dbContext.tasks.Where(t => t.idProject == projectId);
+                if (tasksToDelete.Any())
+                {
+                    _dbContext.tasks.RemoveRange(tasksToDelete);
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Xóa thành công", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    _utils.Alert("Không tìm thấy công việc!", FormAlert.enmType.Warning);
+                }
             }
-            else
+            catch (Exception)
             {
-                _utils.Alert("Delete task failed", FormAlert.enmType.Error);
+                _utils.Alert("Xóa thất bại!", FormAlert.enmType.Error);
             }
         }
 
         public Task GetTaskById(int id)
         {
-            string query = string.Format("SELECT * FROM task WHERE id = {0}", id);
-            return _dBConnection.GetObjectByQuery<Task>(query);
+            var task = _dbContext.tasks.FirstOrDefault(t => t.id == id);
+            return _mapper.Map<Task>(task);
         }
 
         public TaskStatusPercentage GetTaskStatusPercentage(List<Task> tasks)
@@ -158,8 +189,8 @@ namespace company_management.DAO
 
         public List<Task> GetAllTask()
         {
-            string query = string.Format("SELECT * FROM task");
-            return _dBConnection.GetListObjectsByQuery<Task>(query);
+            var taskList = _dbContext.tasks.ToList();
+            return _mapper.Map<List<Task>>(taskList);
         }
 
         public List<Task> GetTasksCreatedByCurrentUser(int idCreator)
@@ -177,50 +208,29 @@ namespace company_management.DAO
             return GetAllTask().Where(t => t.IdTeam == idTeam).ToList();
         }
 
-        public List<Task> SearchTasks(string txtSearch)
-        {
-            string query = string.Format("SELECT t.* FROM task t " +
-                                         "INNER JOIN teams tm ON t.idTeam = tm.id " +
-                                         "INNER JOIN users u ON(t.idCreator = u.id OR t.idAssignee = u.id) " +
-                                         "WHERE t.taskName LIKE '%{0}%' " +
-                                         "OR t.description LIKE '%{0}%' " +
-                                         "OR tm.name LIKE '%{0}%' " +
-                                         "OR u.username LIKE '%{0}%' ", txtSearch);
-            return _dBConnection.GetListObjectsByQuery<Task>(query);
-        }
-
         public decimal CalculateBonusForEmployee(int idUser, DateTime fromDate, DateTime toDate)
         {
             decimal totalBonus = 0;
-
-            var cnnString = _connString.Value;
-            using (SqlConnection connection = new SqlConnection(cnnString))
+            
+            try
             {
-                connection.Open();
+                var tasks = _dbContext.tasks
+                    .Where(t => t.idAssignee == idUser && t.deadline >= fromDate && t.deadline <= toDate && t.progress == 100)
+                    .ToList();
 
-                // Tìm tất cả các task được giao cho nhân viên đó với deadline trong khoảng thời gian từ fromDate đến toDate
-                string query = "SELECT SUM(bonus) FROM task " +
-                               "WHERE idAssignee = @idUser " +
-                               "AND deadline >= @fromDate AND deadline <= @toDate " +
-                               "AND progress = 100";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                foreach (var task in tasks)
                 {
-                    command.Parameters.AddWithValue("@idUser", idUser);
-                    command.Parameters.AddWithValue("@fromDate", fromDate);
-                    command.Parameters.AddWithValue("@toDate", toDate);
-
-                    // Tính tổng tiền bonus của tất cả các task được giao cho nhân viên đó
-                    object result = command.ExecuteScalar();
-                    if (result != null && result != DBNull.Value)
-                    {
-                        totalBonus = Convert.ToDecimal(result);
-                    }
+                    totalBonus += task.bonus ?? 0;
                 }
+            }
+            catch (Exception)
+            {
+                _utils.Alert("Lỗi khi tính tổng tiền bonus!", FormAlert.enmType.Error);
             }
 
             return totalBonus;
         }
-
+        
         public void Dispose()
         {
             Dispose(true);
@@ -234,7 +244,7 @@ namespace company_management.DAO
 
             if (disposing)
             {
-                _dBConnection.Dispose();
+                _dbContext.Dispose();
             }
 
             _disposed = true;

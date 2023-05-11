@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Text;
 using System.Windows.Forms;
 using company_management.BUS;
 using company_management.DAO;
 using company_management.DTO;
+// ReSharper disable All
 
 namespace company_management.View.UC
 {
@@ -26,8 +25,7 @@ namespace company_management.View.UC
 
         private void UCTimeKeeping_Load(object sender, EventArgs e)
         {
-            LoadDataGridview();
-            LoadTimeNow();
+            LoadData();
         }
 
         private void Alert(string msg, FormAlert.enmType type)
@@ -36,6 +34,12 @@ namespace company_management.View.UC
             frm.showAlert(msg, type);
         }
 
+        private void LoadData()
+        {
+            LoadDataGridview();
+            LoadTimeNow();
+        }
+        
         private void LoadTimeNow()
         {
             datetime_date.Value = DateTime.Now.Date;
@@ -51,30 +55,7 @@ namespace company_management.View.UC
             List<CheckinCheckout> data = cicoBus.GetListCheckinCheckoutsByPosition();
             cicoBus.LoadDataGridview(data, datagridview_timeKeeping);
         }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            /*string keyword = txtSearch.Text;
-
-            // Tạo một chuỗi điều kiện để lọc dữ liệu
-            StringBuilder filterExpression = new StringBuilder();
-            foreach (DataGridViewColumn column in datagridview_timeKeeping.Columns)
-            {
-                // Chỉ áp dụng lọc cho các cột chứa dữ liệu
-                if (column.Visible && column.Name == "Employee")
-                {
-                    if (filterExpression.Length > 0)
-                    {
-                        filterExpression.Append(" OR ");
-                    }
-                    filterExpression.Append($"[{column.DataPropertyName}] LIKE '%{keyword}%'");
-                }
-            }
-
-            // Áp dụng chuỗi điều kiện lọc dữ liệu vào DataGridView
-            ((DataTable)datagridview_timeKeeping.DataSource).DefaultView.RowFilter = filterExpression.ToString();*/
-        }
-
+        
         private void ClearAll()
         {
             LastCheckinCheckoutId = 0;
@@ -103,7 +84,6 @@ namespace company_management.View.UC
                     DateTime checkinTime = datetime_Checkin.Value;
                     DateTime date = datetime_date.Value.Date;
                     cicoBus.Checkin(checkinTime, date);
-                    this.Alert("Checkin successful", FormAlert.enmType.Success);
                     LoadDataGridview();
                     toggle_checkin.Enabled = false;
                 }
@@ -133,7 +113,6 @@ namespace company_management.View.UC
                     var cicoBus = _cicoBus.Value;
                     DateTime checkoutTime = datetime_Checkout.Value;
                     cicoBus.Checkout(checkoutTime);
-                    this.Alert("Checkout successful", FormAlert.enmType.Success);
                     LoadDataGridview();
 
                     toggle_checkout.Enabled = false;
@@ -178,6 +157,20 @@ namespace company_management.View.UC
                     toggle_checkout.Enabled = false;                
                 }
             }
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            if (LastCheckinCheckoutId != 0)
+            {
+                DialogResult result = MessageBox.Show("Xác nhận xóa?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    _cicoDao.Value.DeleteCheckinCo(LastCheckinCheckoutId); 
+                    LoadData();
+                }
+            }
+            else MessageBox.Show("Bạn chưa chọn chấm công nào!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

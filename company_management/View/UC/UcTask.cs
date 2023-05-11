@@ -41,8 +41,7 @@ namespace company_management.View.UC
         
         private List<Task> GetData()
         {
-            var taskBus = _taskBus.Value;
-            return taskBus.GetListTaskByPosition();
+            return _taskBus.Value.GetListTaskByPosition();
         }
         
         private void CheckAddButtonStatus()
@@ -77,7 +76,7 @@ namespace company_management.View.UC
                 DialogResult result = MessageBox.Show("Delete task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    _taskDao.Value.DeleteTask(ViewTask.Id);
+                    _taskDao.Value.DeleteTask(_selectedId);
                     LoadData(GetData());
                 }
             }
@@ -114,6 +113,7 @@ namespace company_management.View.UC
                 if (value != DBNull.Value)
                 {
                     _selectedId = Convert.ToInt32(value);
+                    ViewTask = _taskDao.Value.GetTaskById(_selectedId);
                 }
             }
         }

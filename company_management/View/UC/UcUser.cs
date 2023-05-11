@@ -12,14 +12,13 @@ namespace company_management.View.UC
         private readonly Lazy<UserDao> _userDao;
         private readonly Lazy<Utils> _utils;
         private int _selectedUserId;
-        private User _user;
+        private User _user = null;
 
         public UcUser()
         {
             InitializeComponent();
             _userDao = new Lazy<UserDao>(() => new UserDao());
             _utils = new Lazy<Utils>(() => new Utils());
-            _user = new User();
         }
 
         private void UcUser_Load(object sender, EventArgs e)
@@ -109,6 +108,7 @@ namespace company_management.View.UC
 
         private void ClearAll()
         {
+            _user = null;
             txtbox_username.Clear();
             txtbox_fullname.Clear();
             txtbox_email.Clear();
@@ -182,12 +182,10 @@ namespace company_management.View.UC
                 if (_user == null)
                 {
                     userDao.AddUser(GetUserFromTextBox());
-                    this.Alert("Add successful", FormAlert.enmType.Success);
                 }
                 else
                 {
                     userDao.UpdateUser(GetUserEditedUser());
-                    this.Alert("Update successful", FormAlert.enmType.Success);
                 }
 
                 LoadData();

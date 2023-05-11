@@ -54,96 +54,168 @@ namespace company_management.DAO
 
         public List<User> SearchUsers(string txtSearch)
         {
-            string query = string.Format("SELECT * FROM users WHERE username like '%{0}%' OR fullName like '%{0}%' " +
-                "OR email like '%{0}%' OR address like '%{0}%' OR phoneNumber like '%{0}%'", txtSearch);
-            return _dBConnection.GetListObjectsByQuery<User>(query);
+            var userList = _dbContext.users
+                .Where(u => u.username.Contains(txtSearch) || u.fullName.Contains(txtSearch) ||
+                            u.email.Contains(txtSearch) || u.address.Contains(txtSearch) ||
+                            u.phoneNumber.Contains(txtSearch)).ToList();
+            return _mapper.Map<List<user>, List<User>>(userList);
         }
 
         public List<User> GetAllLeader()
         {
-            string query = "SELECT * FROM users WHERE users.idPosition = 2";
-            return _dBConnection.GetListObjectsByQuery<User>(query);
+            var userList = _dbContext.users.Where(u => u.idPosition == 2).ToList();
+            return _mapper.Map<List<user>, List<User>>(userList);
         }
 
         public List<User> GetAllEmployee()
         {
-            string query = "SELECT * FROM users WHERE users.idPosition = 3";
-            return _dBConnection.GetListObjectsByQuery<User>(query).ToList();
+            var userList = _dbContext.users.Where(u => u.idPosition == 3).ToList();
+            return _mapper.Map<List<user>, List<User>>(userList);
         }
 
         public List<User> GetEmployeesByTeam(int teamId)
         {
-            string query = string.Format("SELECT u.* FROM users u JOIN user_team ut ON u.id=ut.idUser WHERE ut.idTeam={0} AND u.idPosition=3", teamId);
-            return _dBConnection.GetListObjectsByQuery<User>(query).ToList();
+            var userList = (
+                from u in _dbContext.users
+                join ut in _dbContext.user_team on u.id equals ut.idUser
+                where ut.idTeam == teamId && u.idPosition == 3
+                select u
+            ).ToList();
+            return _mapper.Map<List<user>, List<User>>(userList);
         }
 
         public void AddUser(User user)
         {
-            string sqlStr = string.Format("INSERT INTO users(username, password, fullname, email, phoneNumber, address, idRole)" +
-                   "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
-                   user.Username, user.Password, user.FullName, user.Email, user.PhoneNumber, user.Address, user.IdRole);
-            _dBConnection.ExecuteQuery(sqlStr);
+            try
+            {
+                var newUser = _mapper.Map<User, user>(user);
+                _dbContext.users.Add(newUser);
+                _dbContext.SaveChanges();
+                _utils.Alert("Thêm người dùng thành công", FormAlert.enmType.Success);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                _utils.Alert("Thêm thất bại!", FormAlert.enmType.Error);
+            }
         }
 
         public void UpdateUser(User user)
         {
-            string sqlStr = string.Format("UPDATE users SET " +
-                   "username = '{0}', fullname = '{1}', email = '{2}', phoneNumber = '{3}', address = '{4}', password = '{5}' WHERE id = '{6}'",
-                   user.Username, user.FullName, user.Email, user.PhoneNumber, user.Address, user.Password, user.Id);
-            _dBConnection.ExecuteQuery(sqlStr);
+            try
+            {
+                var userToUpdate = _dbContext.users.FirstOrDefault(u => u.id == user.Id);
+                if (userToUpdate != null)
+                {
+                    userToUpdate.username = user.Username;
+                    userToUpdate.fullName = user.FullName;
+                    userToUpdate.email = user.Email;
+                    userToUpdate.phoneNumber = user.PhoneNumber;
+                    userToUpdate.address = user.Address;
+                    userToUpdate.password = user.Password;
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Cập nhật thành công", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    _utils.Alert("Không tìm thấy người dùng!", FormAlert.enmType.Warning);
+                }
+            }
+            catch (Exception)
+            {
+                _utils.Alert("Cập nhật thất bại!", FormAlert.enmType.Error);
+            }
         }
 
         public void UpdateUserPassword(User user)
         {
-            string query = string.Format("UPDATE users SET password = '{0}' WHERE id = '{1}'", user.Password, user.Id);
-            if (_dBConnection.ExecuteQuery(query))
+            try
             {
-                _utils.Alert("Đổi mật khẩu thành công", FormAlert.enmType.Success);
+                var userToUpdate = _dbContext.users.FirstOrDefault(u => u.id == user.Id);
+                if (userToUpdate != null)
+                {
+                    userToUpdate.password = user.Password;
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Cập nhật mật khẩu thành công", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    _utils.Alert("Không tìm thấy người dùng!", FormAlert.enmType.Warning);
+                }
             }
-            else
+            catch (Exception)
             {
-                _utils.Alert("Đổi không thành công", FormAlert.enmType.Error);
+                _utils.Alert("Đổi không thành công!", FormAlert.enmType.Error);
             }
         }
-        
+
         public void DeleteUser(int id)
         {
-            string sqlStr = string.Format("DELETE FROM users WHERE id = '{0}'", id);
-            _dBConnection.ExecuteQuery(sqlStr);
+            try
+            {
+                var user = _dbContext.users.FirstOrDefault(u => u.id == id);
+                if (user != null)
+                {
+                    _dbContext.users.Remove(user);
+                    _dbContext.SaveChanges();
+                    _utils.Alert("Đã xóa người dùng", FormAlert.enmType.Success);
+                }
+                else
+                    _utils.Alert("Không tìm thấy người dùng!", FormAlert.enmType.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                _utils.Alert("Xóa không thành công!", FormAlert.enmType.Error);
+            }
         }
 
         public User GetUserById(int id)
         {
-            string query = string.Format("SELECT * FROM users WHERE users.id = {0}", id);
-            return _dBConnection.GetObjectByQuery<User>(query);
+            var user = _dbContext.users.FirstOrDefault(u => u.id == id);
+            return _mapper.Map<user, User>(user);
         }
 
         public User GetUserByUsername(string username)
         {
-            string query = string.Format("SELECT * FROM users WHERE users.username = '{0}'", username);
-            return _dBConnection.GetObjectByQuery<User>(query);
+            var user = _dbContext.users.SingleOrDefault(u => u.username.Equals(username));
+            return _mapper.Map<user, User>(user);
         }
-        
+
         public User GetUserByEmail(string email)
         {
-            string query = string.Format("SELECT * FROM users WHERE users.email = '{0}'", email);
-            return _dBConnection.GetObjectByQuery<User>(query);
+            var user = _dbContext.users.SingleOrDefault(u => u.email.Equals(email));
+            return _mapper.Map<user, User>(user);
         }
 
         public User GetLeaderByTeam(Team team)
         {
-            string query = string.Format("SELECT * FROM users WHERE users.id = '{0}'", team.IdLeader);
-            return _dBConnection.GetObjectByQuery<User>(query);
+            var user = _dbContext.users.SingleOrDefault(u => u.id == team.IdLeader);
+            return _mapper.Map<user, User>(user);
         }
 
         public User GetLeaderByUser(User user)
         {
-            string query = string.Format("select * from users where id = (select idLeader " +
-                                                                        "from teams " +
-                                                                        "where id = (select idTeam " +
-                                                                                   "from user_team " +
-                                                                                   "where idUser = '{0}'))", user.Id);
-            return _dBConnection.GetObjectByQuery<User>(query);
+            var teamId = _dbContext.user_team
+                .Where(ut => ut.idUser == user.Id)
+                .Select(ut => ut.idTeam)
+                .FirstOrDefault();
+
+            if (teamId != null)
+            {
+                var leader = _dbContext.users
+                    .Where(u => u.id == _dbContext.teams
+                        .Where(t => t.id == teamId)
+                        .Select(t => t.idLeader)
+                        .FirstOrDefault())
+                    .FirstOrDefault();
+
+                return _mapper.Map<User>(leader);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public List<User> GetListLeader()
@@ -166,7 +238,7 @@ namespace company_management.DAO
                 if (disposing)
                 {
                     // Giải phóng tài nguyên được sử dụng trong class
-                    _dBConnection.Dispose();
+                    _dbContext.Dispose();
                 }
 
                 _disposed = true;

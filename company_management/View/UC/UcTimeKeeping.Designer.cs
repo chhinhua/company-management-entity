@@ -615,6 +615,7 @@
             this.buttonRemove.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.buttonRemove.Size = new System.Drawing.Size(50, 40);
             this.buttonRemove.TabIndex = 96;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonAdd
             // 
