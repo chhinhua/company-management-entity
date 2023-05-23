@@ -7,6 +7,8 @@ using company_management.DTO;
 using company_management.Entity;
 using company_management.Utilities;
 using company_management.View;
+using System.Windows.Forms;
+
 // ReSharper disable All
 
 namespace company_management.DAO
@@ -25,29 +27,42 @@ namespace company_management.DAO
             _dBConnection = new DBConnection();
             _utils = new Utils();
         }
-        
-         public void AddRequest(LeaveRequest request)
+
+        public void AddRequest(LeaveRequest request)
         {
-            string query = string.Format(
-                "INSERT INTO leaveRequest (idUser, requestDate, startDate, endDate, numberDay, content, status)" +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
-                request.IdUser, request.RequestDate, request.StartDate, request.EndDate, request.NumberDay, _utils.EscapeSqlString(request.Content), request.Status);
-            if (_dBConnection.ExecuteQuery(query))
+            try
             {
+                var newLeaveRequest = _mapper.Map<leaveRequest>(request);
+                _dbContext.leaveRequests.Add(newLeaveRequest);
+                _dbContext.SaveChanges();
+
+                // Thông báo thành công
                 _utils.Alert("Add successful", FormAlert.enmType.Success);
             }
-            else
+            catch(Exception e)
             {
+                Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
                 _utils.Alert("Add failed", FormAlert.enmType.Error);
             }
+
         }
          
         public void UpdateRequest(LeaveRequest request)
         {
-            string query = string.Format("UPDATE leaveRequest SET idUser='{0}', requestDate='{1}', startDate='{2}', endDate='{3}', numberDay='{4}', content='{5}', status='{6}' WHERE id='{7}'",
-                request.IdUser, request.RequestDate, request.StartDate, request.EndDate, request.NumberDay, request.Content, request.Status, request.Id);
-            if (_dBConnection.ExecuteQuery(query))
+            var leaveRequest = _dbContext.leaveRequests.FirstOrDefault(lr => lr.id == request.Id);
+            if (leaveRequest != null)
             {
+                leaveRequest.idUser = request.IdUser;
+                leaveRequest.requestDate = request.RequestDate;
+                leaveRequest.startDate = request.StartDate;
+                leaveRequest.endDate = request.EndDate;
+                leaveRequest.numberDay = request.NumberDay;
+                leaveRequest.content = request.Content;
+                leaveRequest.status = request.Status;
+
+                _dbContext.SaveChanges();
+
                 _utils.Alert("Successful", FormAlert.enmType.Success);
             }
             else
@@ -58,25 +73,35 @@ namespace company_management.DAO
         
         public void DeleteRequest(int id)
         {
-            string query = string.Format("DELETE FROM leaveRequest WHERE id = {0}", id);
-            try
+            var leaveRequest = _dbContext.leaveRequests.FirstOrDefault(lr => lr.id == id);
+            if (leaveRequest != null)
             {
-                _dBConnection.ExecuteQuery(query);
+                _dbContext.leaveRequests.Remove(leaveRequest);
+                _dbContext.SaveChanges();
                 _utils.Alert("Deleted successful", FormAlert.enmType.Success);
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
                 _utils.Alert("Deleted failed", FormAlert.enmType.Error);
             }
         }
         
         public void UpdateManaRequest(LeaveRequest request)
         {
-            string query = string.Format("UPDATE leaveRequest SET idUser='{0}', requestDate='{1}', startDate='{2}', endDate='{3}', numberDay='{4}', content='{5}', status='{6}', idApprover='{7}' WHERE id='{8}'",
-                request.IdUser, request.RequestDate, request.StartDate, request.EndDate, request.NumberDay, request.Content, request.Status, request.IdApprover, request.Id);
-            if (_dBConnection.ExecuteQuery(query))
+            var leaveRequest = _dbContext.leaveRequests.FirstOrDefault(lr => lr.id == request.Id);
+            if (leaveRequest != null)
             {
+                leaveRequest.idUser = request.IdUser;
+                leaveRequest.requestDate = request.RequestDate;
+                leaveRequest.startDate = request.StartDate;
+                leaveRequest.endDate = request.EndDate;
+                leaveRequest.numberDay = request.NumberDay;
+                leaveRequest.content = request.Content;
+                leaveRequest.status = request.Status;
+                leaveRequest.idApprover = request.IdApprover;
+
+                _dbContext.SaveChanges();
+
                 _utils.Alert("Updated successful", FormAlert.enmType.Success);
             }
             else
@@ -87,16 +112,16 @@ namespace company_management.DAO
         
         public List<LeaveRequest> GetAllLeaveRequests()
         {
-            string query = "SELECT * FROM leaveRequest";
-            return _dBConnection.GetListObjectsByQuery<LeaveRequest>(query);
+            var leaveRequests = _dbContext.leaveRequests.ToList();
+            return _mapper.Map<List<LeaveRequest>>(leaveRequests);
         }
 
-        public LeaveRequest GetRequestById(int id)
+        public leaveRequest GetRequestById(int id)
         {
-            string query = $"SELECT * FROM leaveRequest WHERE id = {id}";
-            return _dBConnection.GetObjectByQuery<LeaveRequest>(query);
+            var leaveRequest = _dbContext.leaveRequests.FirstOrDefault(lr => lr.id == id);
+            return leaveRequest;
         }
-        
+
         public List<LeaveRequest> GetMyLeaveRequests(int idUser)
         {
             return GetAllLeaveRequests().Where(s => s.IdUser == idUser).ToList();
@@ -104,29 +129,13 @@ namespace company_management.DAO
         
         public double GetTotalLeaveHours(int idUser, DateTime fromDate, DateTime toDate, SqlConnection connection)
         {
-            double leaveHours = 0;
+            double leaveHours = _dbContext.leaveRequests
+                .Where(lr => lr.idUser == idUser && lr.startDate <= toDate && lr.endDate >= fromDate && lr.status == "Approved")
+                .Sum(lr => lr.numberDay * 8) ?? 0;
 
-            // Tìm tất cả các đơn xin nghỉ được chấp thuận trong khoảng thời gian fromDate - toDate
-            string query = "SELECT SUM(numberDay * 8) AS leaveHours " +
-                           "FROM leave_request WHERE idUser = @idUser " +
-                           "AND startDate <= @toDate AND endDate >= @fromDate AND status = 'Approved'";
+            leaveHours = Math.Max(0, leaveHours);
 
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idUser", idUser);
-                command.Parameters.AddWithValue("@fromDate", fromDate.Date);
-                command.Parameters.AddWithValue("@toDate", toDate.Date);
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read() && !reader.IsDBNull(0))
-                    {
-                        leaveHours += Convert.ToDouble(reader["leaveHours"]);
-                    }
-                }
-            }
-
-            return Math.Max(0, leaveHours); // Return non-negative leave hours
+            return leaveHours;
         }
 
         public void Dispose()
