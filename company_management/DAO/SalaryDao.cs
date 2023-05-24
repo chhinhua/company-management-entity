@@ -33,8 +33,8 @@ namespace company_management.DAO
 
         public List<Salary> GetAllSalary()
         {
-            string query = "SELECT * FROM salary";
-            return _dBConnection.GetListObjectsByQuery<Salary>(query);
+            var salaryList = _dbContext.salaries.ToList();
+            return _mapper.Map<List<Salary>>(salaryList);
         }
 
         public List<Salary> GetMySalary(int idUser)

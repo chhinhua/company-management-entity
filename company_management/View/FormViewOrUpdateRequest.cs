@@ -4,6 +4,8 @@ using company_management.BUS;
 using company_management.DAO;
 using company_management.DTO;
 using company_management.Utilities;
+using company_management.Entity;
+
 // ReSharper disable All
 
 namespace company_management.View
@@ -35,7 +37,7 @@ namespace company_management.View
         private void LoadData()
         {
             var requestDao = _requestDao.Value;
-            LeaveRequest request = requestDao.GetRequestById(_requestId);
+            leaveRequest request = requestDao.GetRequestById(_requestId);
             BindingRequestToFields();
             CheckControlStatus(request);
             CheckControlStatusForCancelledRequest(request);
@@ -43,90 +45,90 @@ namespace company_management.View
 
         private void BindingRequestToFields()
         {
-            var requestDao = _requestDao.Value;
-            LeaveRequest request = requestDao.GetRequestById(_requestId);
+        //    var requestDao = _requestDao.Value;
+        //    leaveRequest request = requestDao.GetRequestById(_requestId);
 
-            var userDao = _userDao.Value;
-            User writer = userDao.GetUserById(request.IdUser);
-            label_writer.Text = writer.FullName;
+        //    var userDao = _userDao.Value;
+        //    User writer = userDao.GetUserById(request.IdUser);
+        //    label_writer.Text = writer.FullName;
             
-            var imageDao = _imageDao.Value;
-            imageDao.ShowImageInPictureBox(writer.Avatar, picturebox_writer);
+        //    var imageDao = _imageDao.Value;
+        //    imageDao.ShowImageInPictureBox(writer.Avatar, picturebox_writer);
             
-            if (request.Status == "Approved" || request.Status == "Rejected")
-            {
-                combobox_status.SelectedIndex = request.Status == "Approved" ? 0 : 1;
-            }
-            else if (request.Status == "Cancelled")
-            {
-                label_approver.Text = "";
-            }
+        //    if (request.Status == "Approved" || request.Status == "Rejected")
+        //    {
+        //        combobox_status.SelectedIndex = request.Status == "Approved" ? 0 : 1;
+        //    }
+        //    else if (request.Status == "Cancelled")
+        //    {
+        //        label_approver.Text = "";
+        //    }
 
-            User approver = userDao.GetUserById(request.IdApprover);
-            if (approver != null)
-            {
-                label_approver.Text = approver.FullName;
-                imageDao.ShowImageInPictureBox(approver.Avatar, picturebox_approver);
-            }
+        //    User approver = userDao.GetUserById(request.IdApprover);
+        //    if (approver != null)
+        //    {
+        //        label_approver.Text = approver.FullName;
+        //        imageDao.ShowImageInPictureBox(approver.Avatar, picturebox_approver);
+        //    }
 
-            label_numberDay.Text = request.NumberDay + @" ngày";
-            label_status.Text = request.Status;
-            txtbox_content.Text = request.Content;
-            datetime_requestDate.Value = request.RequestDate;
-            datetime_startDate.Value = request.StartDate;
-            datetime_endDate.Value = request.EndDate;
+        //    label_numberDay.Text = request.NumberDay + @" ngày";
+        //    label_status.Text = request.Status;
+        //    txtbox_content.Text = request.Content;
+        //    datetime_requestDate.Value = request.RequestDate;
+        //    datetime_startDate.Value = request.StartDate;
+        //    datetime_endDate.Value = request.EndDate;
         }
         
-        private void CheckControlStatus(LeaveRequest request)
+        private void CheckControlStatus(leaveRequest request)
         {
-            var util = _utils.Value;
-            util.CheckCancelMyRequestStatus(button_Cancel, request.Status, request.IdUser);
-            util.CheckManagerIsVisibleStatus(combobox_status);
-            util.CheckManagerIsVisibleStatus(label_approved);
-            util.CheckManagerIsReadOnlyStatus(txtbox_content);
-            util.CheckManagerNotEnableStatus(datetime_requestDate);
-            util.CheckManagerNotEnableStatus(datetime_startDate);
-            util.CheckManagerNotEnableStatus(datetime_endDate);
+        //    var util = _utils.Value;
+        //    util.CheckCancelMyRequestStatus(button_Cancel, request.Status, request.IdUser);
+        //    util.CheckManagerIsVisibleStatus(combobox_status);
+        //    util.CheckManagerIsVisibleStatus(label_approved);
+        //    util.CheckManagerIsReadOnlyStatus(txtbox_content);
+        //    util.CheckManagerNotEnableStatus(datetime_requestDate);
+        //    util.CheckManagerNotEnableStatus(datetime_startDate);
+        //    util.CheckManagerNotEnableStatus(datetime_endDate);
         }
 
-        private void CheckControlStatusForCancelledRequest(LeaveRequest request)
+        private void CheckControlStatusForCancelledRequest(leaveRequest request)
         {
-            if (request.Status == "Cancelled")
-            {
-                txtbox_content.ReadOnly = true;
-                datetime_requestDate.Enabled = false;
-                datetime_startDate.Enabled = false;
-                datetime_endDate.Enabled = false;
-                button_save.Enabled = false;
-                combobox_status.Enabled = false;
-            }
+        //    if (request.Status == "Cancelled")
+        //    {
+        //        txtbox_content.ReadOnly = true;
+        //        datetime_requestDate.Enabled = false;
+        //        datetime_startDate.Enabled = false;
+        //        datetime_endDate.Enabled = false;
+        //        button_save.Enabled = false;
+        //        combobox_status.Enabled = false;
+        //    }
         }
         
         public void SetRequestId(int id) => _requestId = id;
 
-        private LeaveRequest GetRequestForUpdate()
-        {
-            var requestDao = _requestDao.Value;
-            var util = _utils.Value;
+        //private LeaveRequest GetRequestForUpdate()
+        //{
+        //    var requestDao = _requestDao.Value;
+        //    var util = _utils.Value;
 
-            LeaveRequest request = requestDao.GetRequestById(_requestId);
-            request.RequestDate = datetime_requestDate.Value;
-            request.Content = util.EscapeSqlString(txtbox_content.Text);
-            request.StartDate = datetime_startDate.Value;
-            request.EndDate = datetime_endDate.Value;
-            request.NumberDay = (int)(request.EndDate - request.StartDate).TotalDays;
+        //    LeaveRequest request = requestDao.GetRequestById(_requestId);
+        //    request.RequestDate = datetime_requestDate.Value;
+        //    request.Content = util.EscapeSqlString(txtbox_content.Text);
+        //    request.StartDate = datetime_startDate.Value;
+        //    request.EndDate = datetime_endDate.Value;
+        //    request.NumberDay = (int)(request.EndDate - request.StartDate).TotalDays;
 
-            if (request.Status != "Canceled")
-            {
-                request.Status = GetStatusFromComboboxStatus();
-                if (request.Status != "Pending")
-                {
-                    request.IdApprover = UserSession.LoggedInUser.Id;
-                }
-            }
+        //    if (request.Status != "Canceled")
+        //    {
+        //        request.Status = GetStatusFromComboboxStatus();
+        //        if (request.Status != "Pending")
+        //        {
+        //            request.IdApprover = UserSession.LoggedInUser.Id;
+        //        }
+        //    }
 
-            return request;
-        }
+        //    return request;
+        //}
 
         private string GetStatusFromComboboxStatus()
         {
@@ -157,29 +159,29 @@ namespace company_management.View
         
         private void button_save_Click(object sender, EventArgs e)
         {
-            if (CheckDataInput())
-            {
-                var requestDao = _requestDao.Value;
-                var userBus = _userBus.Value;
-                if (userBus.IsManager())
-                {
-                    requestDao.UpdateManaRequest(GetRequestForUpdate());
-                }
-                else
-                {
-                    requestDao.UpdateRequest(GetRequestForUpdate());
-                }
-            }
+        //    if (CheckDataInput())
+        //    {
+        //        var requestDao = _requestDao.Value;
+        //        var userBus = _userBus.Value;
+        //        if (userBus.IsManager())
+        //        {
+        //            requestDao.UpdateManaRequest(GetRequestForUpdate());
+        //        }
+        //        else
+        //        {
+        //            requestDao.UpdateRequest(GetRequestForUpdate());
+        //        }
+        //    }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            var requestDao = _requestDao.Value;
-            LeaveRequest request = requestDao.GetRequestById(_requestId);
+        //    var requestDao = _requestDao.Value;
+        //    LeaveRequest request = requestDao.GetRequestById(_requestId);
 
-            request.Status = "Cancelled";
+        //    request.Status = "Cancelled";
 
-            requestDao.UpdateRequest(request);
+        //    requestDao.UpdateRequest(request);
         }
 
         private void combobox_status_SelectedIndexChanged(object sender, EventArgs e)

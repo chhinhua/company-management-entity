@@ -7,6 +7,7 @@ using AutoMapper;
 using company_management.Entity;
 using company_management.Utilities;
 using Guna.UI2.WinForms;
+using System.Linq;
 // ReSharper disable All
 
 namespace company_management.DAO
@@ -52,55 +53,33 @@ namespace company_management.DAO
 
         public void SaveUserAvatar(byte[] imageBytes, int userId)
         {
-            using (SqlConnection connection = new SqlConnection(_connString))
+            var user = _dbContext.users.FirstOrDefault(u => u.id == userId);
+
+            if (user != null)
             {
-                connection.Open();
-
-                string query = "UPDATE users SET avatar=@avatar WHERE id=@idUser";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@avatar", imageBytes);
-                    command.Parameters.AddWithValue("@idUser", userId);
-
-                    int result = command.ExecuteNonQuery();
-
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Lưu ảnh thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lưu ảnh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                user.avatar = imageBytes;
+                _dbContext.SaveChanges();
+                MessageBox.Show("Lưu ảnh thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Lưu ảnh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void SaveTeamAvatar(byte[] imageBytes, int idTeam)
         {
-            using (SqlConnection connection = new SqlConnection(_connString))
+            var team = _dbContext.teams.FirstOrDefault(t => t.id == idTeam);
+
+            if (team != null)
             {
-                connection.Open();
-
-                string query = "UPDATE teams SET avatar=@avatar WHERE id=@idTeam";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@avatar", imageBytes);
-                    command.Parameters.AddWithValue("@idTeam", idTeam);
-
-                    int result = command.ExecuteNonQuery();
-
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Lưu ảnh thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lưu ảnh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                team.avatar = imageBytes;
+                _dbContext.SaveChanges();
+                MessageBox.Show("Lưu ảnh thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Lưu ảnh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

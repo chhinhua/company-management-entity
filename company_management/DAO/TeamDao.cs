@@ -11,7 +11,6 @@ namespace company_management.DAO
     {
         private readonly company_management_Entities _dbContext;
         private readonly IMapper _mapper;
-        
         public TeamDao()
         {
             _dbContext = new company_management_Entities();
