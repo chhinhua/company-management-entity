@@ -21,7 +21,7 @@
 ## Công nghệ sử dụng 🗝
 
 - [Windows Forms](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/?view=netdesktop-7.0&viewFallbackFrom=netdesktop-5.0) - Framework desktop application được sử dụng
-- [ADO.NET](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/) - Cung cấp các lớp để truy cập và quản lý dữ liệu trong các nguồn dữ liệu khác nhau
+- [Entity Framework](https://learn.microsoft.com/en-us/ef/) - Cung cấp các lớp để truy cập và quản lý dữ liệu trong các nguồn dữ liệu khác nhau
 - [MS SQL Server](https://www.microsoft.com/en-us/sql-server/) - Hệ quản trị cơ sở dữ liệu được sử dụng
 
 ## Thành viên 👱‍♂️👱‍♂️👱‍♂️
